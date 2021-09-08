@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>undefined</title>
+        <link>undefined</link>
+        <description>undefined</description>
+        <lastBuildDate>Wed, 08 Sep 2021 10:25:55 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>Feed for Node.js</generator>
+        <item>
+            <title><![CDATA[Creating the Golfcart Programming Language]]></title>
+            <link>undefined/creating-the-golfcart-programming-language</link>
+            <guid>undefined/creating-the-golfcart-programming-language</guid>
+            <pubDate>Fri, 16 Jul 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Writing an interpreter from scratch.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Listening to Satellites with my Raspberry Pi]]></title>
+            <link>undefined/listening-to-satellites-with-my-raspberry-pi</link>
+            <guid>undefined/listening-to-satellites-with-my-raspberry-pi</guid>
+            <pubDate>Sun, 30 May 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Building a live dashboard with the help of a few hardware modules.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Computer Vision and Embroidery]]></title>
+            <link>undefined/computer-vision-and-embroidery</link>
+            <guid>undefined/computer-vision-and-embroidery</guid>
+            <pubDate>Sun, 04 Apr 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Picking the correct thread colors from embroidery hoop images.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[GeoGuessing with Deep Learning]]></title>
+            <link>undefined/geoguessing-with-deep-learning</link>
+            <guid>undefined/geoguessing-with-deep-learning</guid>
+            <pubDate>Wed, 24 Mar 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Applying photo geolocation estimation to the game of GeoGuessr.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[WebAssembly Search Tools for Static Sites]]></title>
+            <link>undefined/webassembly-search-tools-for-static-websites</link>
+            <guid>undefined/webassembly-search-tools-for-static-websites</guid>
+            <pubDate>Sat, 20 Feb 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Building a technical demo to understand this blossoming area of technology.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Generating Text With Markov Chains]]></title>
+            <link>undefined/generating-text-with-markov-chains</link>
+            <guid>undefined/generating-text-with-markov-chains</guid>
+            <pubDate>Sun, 31 Jan 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Generating random but familiar text by building Markov chains from scratch.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Personal Websites and Internet Writing]]></title>
+            <link>undefined/personal-websites-and-internet-writing</link>
+            <guid>undefined/personal-websites-and-internet-writing</guid>
+            <pubDate>Sun, 27 Dec 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[People that inspire me the most (and that I steal from most regularly).]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Building My Own Chess Engine]]></title>
+            <link>undefined/building-my-own-chess-engine</link>
+            <guid>undefined/building-my-own-chess-engine</guid>
+            <pubDate>Sun, 20 Dec 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Exploring the computational complexity of chess. Code snippets in Python so you can do the same.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Writing Software for an Among Us League]]></title>
+            <link>undefined/writing-software-for-an-among-us-league</link>
+            <guid>undefined/writing-software-for-an-among-us-league</guid>
+            <pubDate>Fri, 13 Nov 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Making a casual game more competitive and arguing with my friends about Elo systems.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Learning the Ink Programming Language]]></title>
+            <link>undefined/learning-the-ink-programming-language</link>
+            <guid>undefined/learning-the-ink-programming-language</guid>
+            <pubDate>Tue, 15 Sep 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Picking up Ink and giving back to the community.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Privacy Focused Analytics From Scratch]]></title>
+            <link>undefined/privacy-focused-analytics-from-scratch</link>
+            <guid>undefined/privacy-focused-analytics-from-scratch</guid>
+            <pubDate>Mon, 10 Aug 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Learning more about user data collection by writing my own analytics system.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Boids in WebAssembly Using Go]]></title>
+            <link>undefined/boids-flocking-simulation</link>
+            <guid>undefined/boids-flocking-simulation</guid>
+            <pubDate>Sun, 26 Jul 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[The famous flocking simulation built with the Ebiten game library.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Creating Randomness Without Math.random]]></title>
+            <link>undefined/creating-randomness</link>
+            <guid>undefined/creating-randomness</guid>
+            <pubDate>Sun, 12 Jul 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Building a replacement for JavaScript's random number generator.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[A Practical Introduction to Graphs (Network Diagrams)]]></title>
+            <link>undefined/practical-intro-to-graphs</link>
+            <guid>undefined/practical-intro-to-graphs</guid>
+            <pubDate>Sun, 05 Jul 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Calculating the path between two countries with the least border crossings.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Polyfilling the Fetch API for Old Browsers and Node.js]]></title>
+            <link>undefined/polyfilling-fetch</link>
+            <guid>undefined/polyfilling-fetch</guid>
+            <pubDate>Thu, 25 Jun 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[A quick look at polyfilling, along with with solutions for both environments.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[The Flow of Knowledge in a Team (or Why I Dig Tickets)]]></title>
+            <link>undefined/the-flow-of-knowledge-in-an-engineering-team-or-why-I-dig-tickets</link>
+            <guid>undefined/the-flow-of-knowledge-in-an-engineering-team-or-why-I-dig-tickets</guid>
+            <pubDate>Sun, 31 May 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Engineering tickets often end up meaning a lot. For the product but also emotionally for the individual.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Adding Comments to Gatsby with Netlify Serverless Functions + GitHub]]></title>
+            <link>undefined/adding-comments-to-gatsby-with-netlify-and-github</link>
+            <guid>undefined/adding-comments-to-gatsby-with-netlify-and-github</guid>
+            <pubDate>Fri, 08 May 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Use Netlify serverless functions to let users add comments to a static website.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Hacking Together an E-ink Dashboard]]></title>
+            <link>undefined/hacking-together-an-e-ink-dashboard</link>
+            <guid>undefined/hacking-together-an-e-ink-dashboard</guid>
+            <pubDate>Tue, 28 Apr 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[A prototype Raspberry Pi dashboard to save me talking to my smart assistant.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[How I'm Working Remotely]]></title>
+            <link>undefined/how-im-working-remotely</link>
+            <guid>undefined/how-im-working-remotely</guid>
+            <pubDate>Sun, 26 Apr 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Writing code, working (almost) solo, and exploring remote-life during the UK lockdown.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Twitter Ticker Tape with a POS58 Receipt Printer]]></title>
+            <link>undefined/twitter-ticker-tape</link>
+            <guid>undefined/twitter-ticker-tape</guid>
+            <pubDate>Fri, 10 Apr 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Building a fun toy with my Raspberry Pi, Python, and Tweepy.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Book Review: The Developer's Guide to Content Creation]]></title>
+            <link>undefined/book-review-the-developers-guide-to-content-creation</link>
+            <guid>undefined/book-review-the-developers-guide-to-content-creation</guid>
+            <pubDate>Sun, 08 Mar 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Discussing an amazing resource for those writing for developers.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[DEV Article Analysis]]></title>
+            <link>undefined/dev-article-analysis</link>
+            <guid>undefined/dev-article-analysis</guid>
+            <pubDate>Sun, 19 Jan 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Building a tool for users to analyze their work over time.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Gatsby Sparks Joy]]></title>
+            <link>undefined/gatsby-sparks-joy</link>
+            <guid>undefined/gatsby-sparks-joy</guid>
+            <pubDate>Sat, 11 Jan 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Migrating from Jekyll to Gatsby.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Hardest JavaScript Puzzle I've Ever Solved]]></title>
+            <link>undefined/hardest-javascript-puzzle</link>
+            <guid>undefined/hardest-javascript-puzzle</guid>
+            <pubDate>Sun, 17 Nov 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Writing JavaScript with a one character width restriction.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Let's Build a CAPTCHA Generator with Node.js]]></title>
+            <link>undefined/lets-generate-captchas</link>
+            <guid>undefined/lets-generate-captchas</guid>
+            <pubDate>Mon, 11 Nov 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Using Canvas, Express, and a GitHub Action.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Cloning Memcached with Go]]></title>
+            <link>undefined/cloning-memcached-with-go</link>
+            <guid>undefined/cloning-memcached-with-go</guid>
+            <pubDate>Mon, 21 Oct 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[I'm really starting to enjoy Go.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[My First Golang Program]]></title>
+            <link>undefined/my-first-golang-program</link>
+            <guid>undefined/my-first-golang-program</guid>
+            <pubDate>Wed, 02 Oct 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Conway's Game of Life in Ebiten.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[I Built a Bot to Try and Get Money Back From My Internet Provider]]></title>
+            <link>undefined/bot-vs-isp</link>
+            <guid>undefined/bot-vs-isp</guid>
+            <pubDate>Thu, 22 Aug 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[My most popular project yet!]]></description>
+        </item>
+        <item>
+            <title><![CDATA[My Experience with Pair Programming]]></title>
+            <link>undefined/my-experience-with-pair-programming</link>
+            <guid>undefined/my-experience-with-pair-programming</guid>
+            <pubDate>Tue, 13 Aug 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Pairing for fun and profit.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[An Introduction to Caching on the Web, With Examples in Python]]></title>
+            <link>undefined/introduction-to-caching-with-python</link>
+            <guid>undefined/introduction-to-caching-with-python</guid>
+            <pubDate>Sun, 07 Jul 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[A high-level overview of caching.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[What If I Want My Website to Last for 100 Years?]]></title>
+            <link>undefined/a-website-for-100-years</link>
+            <guid>undefined/a-website-for-100-years</guid>
+            <pubDate>Mon, 24 Jun 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Prepping for the internet to happen.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[A Tutorial on Tricking Google: Encoding Messages in Apostrophes]]></title>
+            <link>undefined/tricking-google-with-apostrophes</link>
+            <guid>undefined/tricking-google-with-apostrophes</guid>
+            <pubDate>Tue, 18 Jun 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Using character codes to hide in plain sight.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Your First Open-Source Pull Request: a Walkthrough]]></title>
+            <link>undefined/your-first-open-source-contribution</link>
+            <guid>undefined/your-first-open-source-contribution</guid>
+            <pubDate>Sun, 16 Jun 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Making a small change to the Jekyll project.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Refactoring JavaScript for Performance and Readability (with Examples!)]]></title>
+            <link>undefined/refactoring-for-performance-and-readability</link>
+            <guid>undefined/refactoring-for-performance-and-readability</guid>
+            <pubDate>Tue, 11 Jun 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[A few tips that have really helped me.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Saving Data in JavaScript Without a Database]]></title>
+            <link>undefined/saving-data-in-javascript-without-a-database</link>
+            <guid>undefined/saving-data-in-javascript-without-a-database</guid>
+            <pubDate>Mon, 03 Jun 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[The title is a lie I also show how to use SQLite.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Interview Question: Implement a Progress Bar]]></title>
+            <link>undefined/interview-question-progress-bar</link>
+            <guid>undefined/interview-question-progress-bar</guid>
+            <pubDate>Mon, 27 May 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Different ways to do one thing well.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Solving Puzzles With High-Performance JavaScript]]></title>
+            <link>undefined/high-performance-javascript</link>
+            <guid>undefined/high-performance-javascript</guid>
+            <pubDate>Sun, 19 May 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[It's fast but is it worth it?]]></description>
+        </item>
+        <item>
+            <title><![CDATA[A Tiny Project, From Inception to Deployment]]></title>
+            <link>undefined/tiny-project-to-completion</link>
+            <guid>undefined/tiny-project-to-completion</guid>
+            <pubDate>Sun, 12 May 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[A JavaScript webscraper for MDN.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Continuous Deployment to Glitch via GitHub Webhooks]]></title>
+            <link>undefined/glitch-to-github-via-webhook</link>
+            <guid>undefined/glitch-to-github-via-webhook</guid>
+            <pubDate>Mon, 06 May 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Joining two of my favorite ecosystems together.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Fun With Linear Time: My Favorite Algorithm]]></title>
+            <link>undefined/majority-vote-algorithm</link>
+            <guid>undefined/majority-vote-algorithm</guid>
+            <pubDate>Tue, 30 Apr 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Breaking down the Boyer–Moore majority vote algorithm with examples in Python.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[What They Don't Teach You at a Computer Science Masters]]></title>
+            <link>undefined/what-they-dont-teach-you-at-a-CS-masters</link>
+            <guid>undefined/what-they-dont-teach-you-at-a-CS-masters</guid>
+            <pubDate>Wed, 24 Apr 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Bubblesort isn't everything.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[The Weird Rules I Set Myself That Got Me a Job]]></title>
+            <link>undefined/the-weird-rules-i-set-myself</link>
+            <guid>undefined/the-weird-rules-i-set-myself</guid>
+            <pubDate>Thu, 18 Apr 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Advice that I haven't seen elsewhere.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[How to Write an Awesome GitHub README]]></title>
+            <link>undefined/writing-an-awesome-github-readme</link>
+            <guid>undefined/writing-an-awesome-github-readme</guid>
+            <pubDate>Sun, 14 Apr 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Attract and educate.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Talking to Python from JavaScript (and Back Again!)]]></title>
+            <link>undefined/talking-between-languages</link>
+            <guid>undefined/talking-between-languages</guid>
+            <pubDate>Thu, 11 Apr 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Let's learn how to pass data back and forth between languages.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Learn the Storage API by Building a Note Taking App (Tutorial)]]></title>
+            <link>undefined/learn-the-storage-api</link>
+            <guid>undefined/learn-the-storage-api</guid>
+            <pubDate>Tue, 09 Apr 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Learning and building.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Embed Your Latest DEV Posts Anywhere (Tutorial)]]></title>
+            <link>undefined/embed-dev-posts</link>
+            <guid>undefined/embed-dev-posts</guid>
+            <pubDate>Sat, 06 Apr 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Using the DEV.to API with Node.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Build a Python Bot to Find Your Website's Dead Links (Tutorial)]]></title>
+            <link>undefined/dead-link-bot</link>
+            <guid>undefined/dead-link-bot</guid>
+            <pubDate>Tue, 02 Apr 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Crawling a website for missing resources using the Python standard library.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Answered: What the Heck is Code Golf?]]></title>
+            <link>undefined/what-the-heck-is-code-golf</link>
+            <guid>undefined/what-the-heck-is-code-golf</guid>
+            <pubDate>Sat, 30 Mar 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[I love code golf and you should too!]]></description>
+        </item>
+        <item>
+            <title><![CDATA[JavaScript One-Liners That Make Me Excited]]></title>
+            <link>undefined/javascript-one-liners</link>
+            <guid>undefined/javascript-one-liners</guid>
+            <pubDate>Thu, 28 Mar 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Dust off your ternary expressions, we're going in.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Need a Friend? Write a Reddit Bot with Python to Follow You Around (Tutorial)]]></title>
+            <link>undefined/reddit-bot-tutorial</link>
+            <guid>undefined/reddit-bot-tutorial</guid>
+            <pubDate>Mon, 25 Mar 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[The basics of building a Reddit bot that listens for phrases and replies to them.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Earn a Build Passing Badge on GitHub! Testing Your Express App with Travis CI (Tutorial)]]></title>
+            <link>undefined/build-passing-badge</link>
+            <guid>undefined/build-passing-badge</guid>
+            <pubDate>Fri, 22 Mar 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[How to setup Travis CI for a Node/Express project.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Coding a Live Cam for the Raspberry Pi in Python (Tutorial)]]></title>
+            <link>undefined/raspberry-pi-live-cam</link>
+            <guid>undefined/raspberry-pi-live-cam</guid>
+            <pubDate>Mon, 18 Mar 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[A lo-fi solution for streaming images from your Raspberry Pi to the web.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[How Flappy Bird Got Me My Start in Software]]></title>
+            <link>undefined/flappy-bird</link>
+            <guid>undefined/flappy-bird</guid>
+            <pubDate>Fri, 15 Mar 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[An overview of how I learned to code. Also a bit on my experience during my CS Masters.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[A Day in the Life of a Mediumly Productive Software Engineer]]></title>
+            <link>undefined/day-in-the-life</link>
+            <guid>undefined/day-in-the-life</guid>
+            <pubDate>Thu, 14 Mar 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Living, working, building, and drinking too much coffee.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Kicking Butt and Taking Names With WebSockets (Tutorial)]]></title>
+            <link>undefined/websockets-javascript-kicking</link>
+            <guid>undefined/websockets-javascript-kicking</guid>
+            <pubDate>Wed, 13 Mar 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[A little on the history of WebSockets and a brief overview on how to use them in JavaScript.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Two Things About My First In-house Software Job That I Didn't See Coming]]></title>
+            <link>undefined/two-things</link>
+            <guid>undefined/two-things</guid>
+            <pubDate>Tue, 12 Mar 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[On enjoying being part of a team.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Creating Cute GitHub Badges Based Off a Project's Mood (Node.js)]]></title>
+            <link>undefined/project-mood</link>
+            <guid>undefined/project-mood</guid>
+            <pubDate>Mon, 11 Mar 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Creating GitHub badges based off the time when most people contribute to a GitHub project.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Real-Time Streaming of Every Emoji Posted as a Comment to Reddit.com]]></title>
+            <link>undefined/emoji-streamer</link>
+            <guid>undefined/emoji-streamer</guid>
+            <pubDate>Mon, 04 Mar 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Building a website which live streams every emoji posted to Reddit.com.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[I Ported Sudoku to Your URL Bar and It Plays like a Dream]]></title>
+            <link>undefined/secret-sudoku</link>
+            <guid>undefined/secret-sudoku</guid>
+            <pubDate>Thu, 21 Feb 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Goofy project in which you can play Sudoku entirely within your URL bar.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Cloning Dominos Order Tracker as a Microservice with Node.js and Firebase!]]></title>
+            <link>undefined/order-tracking-micro</link>
+            <guid>undefined/order-tracking-micro</guid>
+            <pubDate>Wed, 20 Feb 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Writing an order tracker with Node, Express, and Firebase.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Benchmarking WebSocket Servers with Python!]]></title>
+            <link>undefined/websocket-benchmarker</link>
+            <guid>undefined/websocket-benchmarker</guid>
+            <pubDate>Mon, 28 Jan 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Benchmarking websocket servers and frameworks with async Python.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Leetcode - Episode 17 - Moving, Shaking, and Folding (3 x E)]]></title>
+            <link>undefined/leetcode-ep17</link>
+            <guid>undefined/leetcode-ep17</guid>
+            <pubDate>Mon, 21 Jan 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Solutions for: Move Zeroes, Merge Two Sorted Lists, and Merge Two Binary Trees.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Leetcode - Episode 16 - Pretty Efficient (3 x E)]]></title>
+            <link>undefined/leetcode-ep16</link>
+            <guid>undefined/leetcode-ep16</guid>
+            <pubDate>Wed, 16 Jan 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Solutions for: Flipping an Image, Leaf-Similar Trees, and Maximum Depth of N-ary Tree.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Leetcode - Episode 15 - Three Tree Qs (3 x E)]]></title>
+            <link>undefined/leetcode-ep15</link>
+            <guid>undefined/leetcode-ep15</guid>
+            <pubDate>Tue, 15 Jan 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Solutions for: Invert Binary Tree, N-ary Tree Postorder Traversal, and N-ary Tree Preorder Traversal.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Leetcode - Episode 14 - Short, Easy Solutions (3 x E)]]></title>
+            <link>undefined/leetcode-ep14</link>
+            <guid>undefined/leetcode-ep14</guid>
+            <pubDate>Mon, 14 Jan 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Solutions for: Monotonic Array, Max Consecutive Ones, and Contains Duplicate.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Leetcode - Episode 13 - Finding My Stride (3 x M)]]></title>
+            <link>undefined/leetcode-ep13</link>
+            <guid>undefined/leetcode-ep13</guid>
+            <pubDate>Sun, 13 Jan 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Solutions for: Range Sum of BST, Max Increase to Keep City Skyline, and Custom Sort String.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Leetcode - Episode 12 - Starting Early (3 x E)]]></title>
+            <link>undefined/leetcode-ep12</link>
+            <guid>undefined/leetcode-ep12</guid>
+            <pubDate>Sat, 12 Jan 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Solutions for: Verifying an Alien Dictionary, Reverse Only Letters, and Backspace String Compare.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Leetcode - Episode 11 - Faster than 99.17% (1 x M, 2 x E)]]></title>
+            <link>undefined/leetcode-ep11</link>
+            <guid>undefined/leetcode-ep11</guid>
+            <pubDate>Fri, 11 Jan 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Solutions for: Reverse Vowels of a String, Isomorphic Strings, and Reverse Words in a String.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Leetcode - Episode 10 - Short Solutions (1 x M, 2 x E)]]></title>
+            <link>undefined/leetcode-ep10</link>
+            <guid>undefined/leetcode-ep10</guid>
+            <pubDate>Thu, 10 Jan 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Solutions for: Single Number II, Fibonacci Number, and Ransom Note.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Leetcode - Episode 9 - Trudging Through (3x E)]]></title>
+            <link>undefined/leetcode-ep9</link>
+            <guid>undefined/leetcode-ep9</guid>
+            <pubDate>Wed, 09 Jan 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Solutions for: Majority Element, Detect Capital, and Not Boring Movies.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Leetcode - Episode 8 - Breaking Out Some Mediums (3x M, 1x E)]]></title>
+            <link>undefined/leetcode-ep8</link>
+            <guid>undefined/leetcode-ep8</guid>
+            <pubDate>Tue, 08 Jan 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Solutions for: Encode and Decode TinyURL, Insert into a Binary Search Tree, Minimum Add to Make Parentheses Valid, and Goat Latin.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Leetcode - Episode 7 - Getting More Pythonic (3x E)]]></title>
+            <link>undefined/leetcode-ep7</link>
+            <guid>undefined/leetcode-ep7</guid>
+            <pubDate>Mon, 07 Jan 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Solutions for: Two Sum, Valid Anagram, and Length of Last Word.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Leetcode - Episode 6 - Progressively Harder (3x E)]]></title>
+            <link>undefined/leetcode-ep6</link>
+            <guid>undefined/leetcode-ep6</guid>
+            <pubDate>Sun, 06 Jan 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Solutions for: Keyboard Row, Reorder Log Files, and Single Number.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Leetcode - Episode 5 - Fastest Solutions Yet (3x E)]]></title>
+            <link>undefined/leetcode-ep5</link>
+            <guid>undefined/leetcode-ep5</guid>
+            <pubDate>Sat, 05 Jan 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Solutions for: Uncommon Words from Two Sentences, Search in a Binary Search Tree, and Fizz Buzz.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Leetcode - Episode 4 - gnivloS melborP (3x E)]]></title>
+            <link>undefined/leetcode-ep4</link>
+            <guid>undefined/leetcode-ep4</guid>
+            <pubDate>Fri, 04 Jan 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Solutions for: Reverse Words in a String III, Sort Array By Parity II, and Reverse String.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Leetcode - Episode 3 - The Streak Continues (3x E)]]></title>
+            <link>undefined/leetcode-ep3</link>
+            <guid>undefined/leetcode-ep3</guid>
+            <pubDate>Thu, 03 Jan 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Solutions for: Sort Array By Parity, Robot Return to Origin, and Self Dividing Numbers.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Leetcode - Episode 2 - Three More Easys]]></title>
+            <link>undefined/leetcode-ep2</link>
+            <guid>undefined/leetcode-ep2</guid>
+            <pubDate>Wed, 02 Jan 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Solutions for: N-Repeated Element in Size 2N Array, Univalued Binary Tree, and Unique Morse Code Words.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Leetcode - Episode 1 - Three Easys]]></title>
+            <link>undefined/leetcode-ep1</link>
+            <guid>undefined/leetcode-ep1</guid>
+            <pubDate>Tue, 01 Jan 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Episode one of tacking Leetcode problems and discussing solutions. Jewels and Stones, Unique Email Addresses, and To Lower Case.]]></description>
+        </item>
+    </channel>
+</rss>

@@ -1,0 +1,224 @@
+{
+  "redirects": [
+    {
+      "source": "/discuss/webdev/javascript/opensource/2019/06/24/a-website-for-100-years.html",
+      "destination": "/a-website-for-100-years"
+    },
+    {
+      "source": "/webdev/javascript/python/opensource/2019/08/22/bot-vs-isp.html",
+      "destination": "/bot-vs-isp"
+    },
+    {
+      "source": "/javascript/webdev/github/beginners/2019/03/22/build-passing-badge.html",
+      "destination": "/build-passing-badge"
+    },
+    {
+      "source": "/go/tutorial/beginners/showdev/2019/10/21/cloning-memcached-with-go.html",
+      "destination": "/cloning-memcached-with-go"
+    },
+    {
+      "source": "/webdev/career/javascript/2019/03/14/day-in-the-life.html",
+      "destination": "/day-in-the-life"
+    },
+    {
+      "source": "/python/beginners/tutorial/webdev/2019/04/02/dead-link-bot.html",
+      "destination": "/dead-link-bot"
+    },
+    {
+      "source": "/javascript/beginners/webdev/tutorial/2019/04/06/embed-dev-posts.html",
+      "destination": "/embed-dev-posts"
+    },
+    {
+      "source": "/emoji/python/javascript/2019/03/04/emoji-streamer.html",
+      "destination": "/emoji-streamer"
+    },
+    {
+      "source": "/webdev/career/javascript/2019/03/15/flappy-bird.html",
+      "destination": "/flappy-bird"
+    },
+    {
+      "source": "/glitch/github/tutorial/javascript/2019/05/06/glitch-to-github-via-webhook.html",
+      "destination": "/glitch-to-github-via-webhook"
+    },
+    {
+      "source": "/javascript/challenge/webdev/2019/11/17/hardest-javascript-puzzle.html",
+      "destination": "/hardest-javascript-puzzle"
+    },
+    {
+      "source": "/javascript/node/discuss/tutorial/2019/05/19/high-performance-javascript.html",
+      "destination": "/high-performance-javascript"
+    },
+    {
+      "source": "/javascript/css/challenge/beginners/2019/05/27/interview-question-progress-bar.html",
+      "destination": "/interview-question-progress-bar"
+    },
+    {
+      "source": "/webdev/python/beginners/tutorial/2019/07/07/introduction-to-caching-with-python.html",
+      "destination": "/introduction-to-caching-with-python"
+    },
+    {
+      "source": "/javascript/webdev/node/codegolf/2019/03/28/javascript-one-liners.html",
+      "destination": "/javascript-one-liners"
+    },
+    {
+      "source": "/javascript/beginners/webdev/tutorial/2019/04/09/learn-the-storage-api.html",
+      "destination": "/learn-the-storage-api"
+    },
+    {
+      "source": "/algorithms/leetcode/2019/01/01/leet-code.html",
+      "destination": "/leetcode-ep1"
+    },
+    {
+      "source": "/algorithms/leetcode/2019/01/10/leet-code.html",
+      "destination": "/leetcode-ep10"
+    },
+    {
+      "source": "/algorithms/leetcode/2019/01/11/leet-code.html",
+      "destination": "/leetcode-ep11"
+    },
+    {
+      "source": "/algorithms/leetcode/2019/01/12/leet-code.html",
+      "destination": "/leetcode-ep12"
+    },
+    {
+      "source": "/algorithms/leetcode/2019/01/13/leet-code.html",
+      "destination": "/leetcode-ep13"
+    },
+    {
+      "source": "/algorithms/leetcode/2019/01/14/leet-code.html",
+      "destination": "/leetcode-ep14"
+    },
+    {
+      "source": "/algorithms/leetcode/2019/01/15/leet-code.html",
+      "destination": "/leetcode-ep15"
+    },
+    {
+      "source": "/algorithms/leetcode/2019/01/16/leet-code.html",
+      "destination": "/leetcode-ep16"
+    },
+    {
+      "source": "/algorithms/leetcode/2019/01/21/leet-code.html",
+      "destination": "/leetcode-ep17"
+    },
+    {
+      "source": "/algorithms/leetcode/2019/01/02/leet-code.html",
+      "destination": "/leetcode-ep2"
+    },
+    {
+      "source": "/algorithms/leetcode/2019/01/03/leet-code.html",
+      "destination": "/leetcode-ep3"
+    },
+    {
+      "source": "/algorithms/leetcode/2019/01/04/leet-code.html",
+      "destination": "/leetcode-ep4"
+    },
+    {
+      "source": "/algorithms/leetcode/2019/01/05/leet-code.html",
+      "destination": "/leetcode-ep5"
+    },
+    {
+      "source": "/algorithms/leetcode/2019/01/06/leet-code.html",
+      "destination": "/leetcode-ep6"
+    },
+    {
+      "source": "/algorithms/leetcode/2019/01/07/leet-code.html",
+      "destination": "/leetcode-ep7"
+    },
+    {
+      "source": "/algorithms/leetcode/2019/01/08/leet-code.html",
+      "destination": "/leetcode-ep8"
+    },
+    {
+      "source": "/algorithms/leetcode/2019/01/09/leet-code.html",
+      "destination": "/leetcode-ep9"
+    },
+    {
+      "source": "/javascript/webdev/node/tutorial/2019/11/11/lets-generate-captchas.html",
+      "destination": "/lets-generate-captchas"
+    },
+    {
+      "source": "/algorithms/2019/04/30/majority-vote-algorithm.html",
+      "destination": "/majority-vote-algorithm"
+    },
+    {
+      "source": "/beginners/career/productivity/discuss/2019/08/13/my-experience-with-pair-programming.html",
+      "destination": "/my-experience-with-pair-programming"
+    },
+    {
+      "source": "/beginners/go/showdev/opensource/2019/10/02/my-first-golang-program.html",
+      "destination": "/my-first-golang-program"
+    },
+    {
+      "source": "/node/express/firebase/2019/02/20/order-tracking-micro.html",
+      "destination": "/order-tracking-micro"
+    },
+    {
+      "source": "/node/github/javascript/2019/03/11/project-mood.html",
+      "destination": "/project-mood"
+    },
+    {
+      "source": "/python/raspberrypi/beginners/webdev/2019/03/18/raspberry-pi-live-cam.html",
+      "destination": "/raspberry-pi-live-cam"
+    },
+    {
+      "source": "/tutorial/python/beginners/webdev/2019/03/25/reddit-bot-tutorial.html",
+      "destination": "/reddit-bot-tutorial"
+    },
+    {
+      "source": "/javascript/beginners/webdev/tutorial/2019/06/11/refactoring-for-performance-and-readability.html",
+      "destination": "/refactoring-for-performance-and-readability"
+    },
+    {
+      "source": "/javascript/webdev/beginners/tutorial/2019/06/03/saving-data-in-javascript-without-a-database.html",
+      "destination": "/saving-data-in-javascript-without-a-database"
+    },
+    {
+      "source": "/sudoku/front-end/javascript/2019/02/21/secret-sudoku.html",
+      "destination": "/secret-sudoku"
+    },
+    {
+      "source": "/javascript/python/beginners/webdev/2019/04/11/talking-between-languages.html",
+      "destination": "/talking-between-languages"
+    },
+    {
+      "source": "/discuss/career/beginners/productivity/2019/04/18/the-weird-rules-i-set-myself.html",
+      "destination": "/the-weird-rules-i-set-myself"
+    },
+    {
+      "source": "/javascript/webdev/glitch/tutorial/2019/05/12/tiny-project-to-completion.html",
+      "destination": "/tiny-project-to-completion"
+    },
+    {
+      "source": "/discuss/python/beginners/tutorial/2019/06/18/tricking-google-with-apostrophes.html",
+      "destination": "/tricking-google-with-apostrophes"
+    },
+    {
+      "source": "/career/codereview/javascript/2019/03/12/two-things.html",
+      "destination": "/two-things"
+    },
+    {
+      "source": "/websockets/python/projects/2019/01/28/websocket-benchmarker.html",
+      "destination": "/websocket-benchmarker"
+    },
+    {
+      "source": "/node/websockets/javascript/2019/03/13/websockets-javascript-kicking.html",
+      "destination": "/websockets-javascript-kicking"
+    },
+    {
+      "source": "/codegolf/python/javascript/opensource/2019/03/30/what-the-heck-is-code-golf.html",
+      "destination": "/what-the-heck-is-code-golf"
+    },
+    {
+      "source": "/discuss/beginners/career/productivity/2019/04/24/what-they-dont-teach-you-at-a-CS-masters.html",
+      "destination": "/what-they-dont-teach-you-at-a-CS-masters"
+    },
+    {
+      "source": "/github/beginners/tutorial/productivity/2019/04/14/writing-an-awesome-github-readme.html",
+      "destination": "/writing-an-awesome-github-readme"
+    },
+    {
+      "source": "/beginners/opensource/github/tutorial/2019/06/16/your-first-open-source-contribution.html",
+      "destination": "/your-first-open-source-contribution"
+    }
+  ]
+}

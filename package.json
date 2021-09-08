@@ -1,0 +1,23 @@
+{
+  "name": "learn-starter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "^1.6.22",
+    "date-fns": "^2.23.0",
+    "feed": "^4.2.2",
+    "gray-matter": "^4.0.3",
+    "image-size": "^1.0.0",
+    "markdown-to-jsx": "^7.1.3",
+    "next": "^11.1.2",
+    "next-mdx-remote": "^3.0.4",
+    "prism-react-renderer": "^1.2.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  }
+}
