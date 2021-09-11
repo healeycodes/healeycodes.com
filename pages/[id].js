@@ -1,14 +1,18 @@
 import fs from "fs";
 import path from "path";
 import imageSize from "image-size";
+
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
+
 import Highlight, { defaultProps } from "prism-react-renderer";
 import prismTheme from "prism-react-renderer/themes/github";
 import Markdown from "markdown-to-jsx";
-import { getAllPostIds, getPostData } from "../lib/posts";
+import { getAllPostIds, getPostData, getNextAndPrevPosts } from "../lib/posts";
 import Layout from "../components/layout";
 import Date from "../components/date";
+import next from "next";
 
 export async function getStaticPaths() {
   const paths = getAllPostIds();
@@ -31,12 +35,30 @@ export async function getStaticProps({ params }) {
     });
   }
 
+  let prevPost = null;
+  let nextPost = null;
+  const nextAndPrevPosts = getNextAndPrevPosts(params.id);
+  if (nextAndPrevPosts.previous !== null) {
+    prevPost = {
+      id: nextAndPrevPosts.previous,
+      ...getPostData(nextAndPrevPosts.previous).data,
+    };
+  }
+  if (nextAndPrevPosts.next !== null) {
+    nextPost = {
+      id: nextAndPrevPosts.next,
+      ...getPostData(nextAndPrevPosts.next).data,
+    };
+  }
+
   return {
     props: {
       id: params.id,
       source: postData.content,
       imageMetadata,
       ...postData.data,
+      prevPost,
+      nextPost,
     },
   };
 }
@@ -45,9 +67,12 @@ export default function Post({
   id,
   title,
   description,
+  tags,
   date,
   imageMetadata,
   source,
+  prevPost,
+  nextPost,
 }) {
   const seo = { title, description };
 
@@ -55,7 +80,14 @@ export default function Post({
     <Layout {...seo}>
       <h1>{title}</h1>
       <h3>
-        <Date dateString={date} /> in
+        <Date dateString={date} /> in{" "}
+        {tags
+          .map((tag, i) => (
+            <Link href={`/tags/${tag}`} key={i}>
+              {`${tag.charAt(0).toUpperCase()}${tag.slice(1)}`}
+            </Link>
+          ))
+          .reduce((prev, curr) => [prev, ", ", curr])}
       </h3>
       <Markdown
         children={source}
@@ -108,6 +140,14 @@ export default function Post({
           },
         }}
       />
+      <div>
+        {prevPost ? (
+          <Link href={`/${prevPost.id}`}>{`← ${prevPost.title}`}</Link>
+        ) : null}
+        {nextPost ? (
+          <Link href={`/${nextPost.id}`}>{`${nextPost.title} →`}</Link>
+        ) : null}
+      </div>
     </Layout>
   );
 }

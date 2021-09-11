@@ -1,5 +1,6 @@
-import Head from "next/head";
 import siteConfig from "../siteConfig.json";
+import Head from "next/head";
+import Nav from "../components/nav";
 
 export default function Layout({ children, title, description }) {
   return (
@@ -9,9 +10,15 @@ export default function Layout({ children, title, description }) {
           {title} — {siteConfig.AUTHOR_NAME}
         </title>
         <meta name="description" content={description} />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title={`RSS Feed for ${siteConfig.SITE_URL}`}
+          href="/feed.xml"
+        />
         <link rel="shortcut icon" href="/favicon.ico" />
 
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
 
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
@@ -31,6 +38,7 @@ export default function Layout({ children, title, description }) {
 
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
+      <Nav />
       {children}
     </div>
   );

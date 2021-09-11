@@ -2,7 +2,13 @@
   "AUTHOR_NAME": "Andrew Healey",
   "AUTHOR_EMAIL": "healeycodes@gmail.com",
   "AUTHOR_TWITTER": "healeycodes",
+  "AUTHOR_GITHUB": "healeycodes",
   "SITE_TITLE": "Andrew Healey's Blog",
   "SITE_DESC": "Andrew Healey's blog and personal website. Software engineer, writer, creator.",
-  "SITE_URL": "https://healeycodes.com"
+  "SITE_URL": "https://healeycodes.com",
+  "PINNED_POSTS": [
+    "webassembly-search-tools-for-static-websites",
+    "building-my-own-chess-engine",
+    "creating-randomness"
+  ]
 }
