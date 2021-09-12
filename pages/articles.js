@@ -10,7 +10,7 @@ export function getStaticProps() {
 }
 
 export default function Articles({ tags, posts }) {
-  const title = `All Posts`;
+  const title = `All posts`;
   const formattedTags = tags.map(
     (tag) => `${tag.charAt(0).toUpperCase()}${tag.slice(1)}`
   );

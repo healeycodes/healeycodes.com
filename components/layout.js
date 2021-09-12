@@ -4,7 +4,7 @@ import Nav from "../components/nav";
 
 export default function Layout({ children, title, description }) {
   return (
-    <div>
+    <div className="container">
       <Head>
         <title>
           {title} — {siteConfig.AUTHOR_NAME}
@@ -40,6 +40,13 @@ export default function Layout({ children, title, description }) {
       </Head>
       <Nav />
       {children}
+      <style jsx>{`
+        .container {
+          margin-left: auto;
+          margin-right: auto;
+          max-width: 42rem;
+        }
+      `}</style>
     </div>
   );
 }

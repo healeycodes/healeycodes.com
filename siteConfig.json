@@ -10,5 +10,7 @@
     "webassembly-search-tools-for-static-websites",
     "building-my-own-chess-engine",
     "creating-randomness"
-  ]
+  ],
+  "REPO_URL": "https://github.com/healeycodes/personal-website",
+  "EDIT_POST_URL": "https://github.com/healeycodes/personal-website/tree/main/posts"
 }

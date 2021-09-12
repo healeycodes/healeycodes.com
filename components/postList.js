@@ -4,12 +4,12 @@ import Date from "../components/date";
 export default function PostList({ posts }) {
   return (
     <ul>
-      {posts.map(({ id, date, title, tags }) => (
+      {posts.map(({ id, description, date, title, tags }) => (
         <li key={id}>
           <Link href={`/${id}`}>
             <a>{title}</a>
           </Link>
-          <br />
+          <p>{description}</p>
           <small>
             <Date dateString={date} /> in{" "}
             <Link href={`/tags/${tags[0]}`}>{`${tags[0]

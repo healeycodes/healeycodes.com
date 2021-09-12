@@ -23,7 +23,7 @@ export function getStaticProps({ params }) {
 }
 
 export default function TagList({ otherTags, tag, posts }) {
-  const title = `${tag.charAt(0).toUpperCase()}${tag.slice(1)} Posts`;
+  const title = `${tag.charAt(0).toUpperCase()}${tag.slice(1)} posts`;
   const formattedTags = otherTags.map(
     (tag) => `${tag.charAt(0).toUpperCase()}${tag.slice(1)}`
   );

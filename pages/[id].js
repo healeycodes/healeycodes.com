@@ -1,3 +1,5 @@
+import siteConfig from "../siteConfig.json";
+
 import fs from "fs";
 import path from "path";
 import imageSize from "image-size";
@@ -12,7 +14,6 @@ import Markdown from "markdown-to-jsx";
 import { getAllPostIds, getPostData, getNextAndPrevPosts } from "../lib/posts";
 import Layout from "../components/layout";
 import Date from "../components/date";
-import next from "next";
 
 export async function getStaticPaths() {
   const paths = getAllPostIds();
@@ -87,12 +88,13 @@ export default function Post({
               {`${tag.charAt(0).toUpperCase()}${tag.slice(1)}`}
             </Link>
           ))
-          .reduce((prev, curr) => [prev, ", ", curr])}
+          .reduce((prev, curr) => [prev, ", ", curr])}{" "}
+        — <a href={`${siteConfig.EDIT_POST_URL}/${id}.md`}>Edit on GitHub</a>
       </h3>
       <Markdown
         children={source}
         options={{
-          // Here we can extend our pure Markdown posts with React components
+          // Here we can extend our plain Markdown posts with React components
           createElement(type, props, children) {
             if (type === "img") {
               return (
@@ -140,6 +142,12 @@ export default function Post({
           },
         }}
       />
+      <div>
+        Have a comment? I'd love to hear it, please{" "}
+        <a href="mailto:healeycodes@gmail.com">email me</a>. Find an issue with
+        this post? Please{" "}
+        <a href={`${siteConfig.EDIT_POST_URL}/${id}.md`}>edit it on GitHub</a>.
+      </div>
       <div>
         {prevPost ? (
           <Link href={`/${prevPost.id}`}>{`← ${prevPost.title}`}</Link>
