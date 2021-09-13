@@ -11,6 +11,10 @@ export default function Layout({ children, title, description }) {
         </title>
         <meta name="description" content={description} />
         <link
+          href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+          rel="stylesheet"
+        />
+        <link
           rel="alternate"
           type="application/rss+xml"
           title={`RSS Feed for ${siteConfig.SITE_URL}`}
@@ -40,6 +44,27 @@ export default function Layout({ children, title, description }) {
       </Head>
       <Nav />
       {children}
+      <style jsx global>{`
+        html,
+        body {
+          padding: 0;
+          margin: 0;
+          font-family: "Inter", sans-serif;
+        }
+
+        * {
+          box-sizing: border-box;
+        }
+
+        a {
+          color: #0070f3;
+          text-decoration: none;
+        }
+
+        a:hover {
+          text-decoration: underline;
+        }
+      `}</style>
       <style jsx>{`
         .container {
           margin-left: auto;

@@ -3,21 +3,33 @@ import Date from "../components/date";
 
 export default function PostList({ posts }) {
   return (
-    <ul>
+    <div>
       {posts.map(({ id, description, date, title, tags }) => (
-        <li key={id}>
+        <div className="post" key={id}>
           <Link href={`/${id}`}>
             <a>{title}</a>
           </Link>
-          <p>{description}</p>
-          <small>
+          <p className="post-desc">{description}</p>
+          <p className="post-date">
             <Date dateString={date} /> in{" "}
             <Link href={`/tags/${tags[0]}`}>{`${tags[0]
               .charAt(0)
               .toUpperCase()}${tags[0].slice(1)}`}</Link>
-          </small>
-        </li>
+          </p>
+        </div>
       ))}
-    </ul>
+      <style jsx>{`
+        .post {
+          padding-top: 20px;
+        }
+        .post-desc {
+          margin-bottom: 0px;
+        }
+        .post-date {
+          margin-top: 0px;
+          padding-top: 10px;
+        }
+      `}</style>
+    </div>
   );
 }

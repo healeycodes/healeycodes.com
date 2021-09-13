@@ -40,24 +40,27 @@ export default function Home({ allPostsData, description }) {
           things that make people's lives easier. This website is{" "}
           <a href={siteConfig.REPO_URL}>open source</a>.
         </p>
-        <section>
-          <h2>Recent</h2>
-          <PostList posts={allPostsData.slice(0, 3)} />
-          <Link href="/articles">
-            {`Read all ${allPostsData.length} articles →`}
-          </Link>
-        </section>
-        <section>
-          <h2>Most Popular</h2>
-          <PostList
-            posts={allPostsData.filter((post) =>
-              siteConfig.PINNED_POSTS.includes(post.id)
-            )}
-          />
-        </section>
-      </main>
 
+        <div className="posts">
+          <section className="posts-section">
+            <h2>Recent</h2>
+            <PostList posts={allPostsData.slice(0, 3)} />
+            <Link href="/articles">
+              {`Read all ${allPostsData.length} articles →`}
+            </Link>
+          </section>
+          <section className="posts-section">
+            <h2>Most Popular</h2>
+            <PostList
+              posts={allPostsData.filter((post) =>
+                siteConfig.PINNED_POSTS.includes(post.id)
+              )}
+            />
+          </section>
+        </div>
+      </main>
       <footer></footer>
+      {/* This is global to be able to style <Image />*/}
       <style jsx global>{`
         .avatar {
           display: inline;
@@ -67,6 +70,14 @@ export default function Home({ allPostsData, description }) {
         }
         .avatar-text {
           display: inline;
+        }
+      `}</style>
+      <style jsx>{`
+        .posts {
+          display: flex;
+        }
+        .posts-section {
+          flex: 1;
         }
       `}</style>
     </Layout>
