@@ -108,7 +108,7 @@ Let's add another line to our `package.json` so that our tests can be run with `
 
 `npm test` yields the following output.
 
-```
+```bash
  PASS  __tests__/app.test.js
   GET /
     √ responds with 200 (39ms)

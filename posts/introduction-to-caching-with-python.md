@@ -19,7 +19,7 @@ You may have heard of Memcached or Redis. They both allow key/value storage as w
 
 In pseudocode, applying a cache to this situation looks like this:
 
-```
+```text
 do we have key '/books/312' in our cache?
 if so:
     return that value as a response
@@ -38,7 +38,7 @@ Memcached can be deployed using distributed servers that don't communicate with 
 Here's a high-level example of that:
 
 
-```
+```text
 call a hash function on 'books/321'
 turn the hashed value into an index
 check the corresponding cache server
@@ -60,7 +60,7 @@ Here's an example of a race condition involving a cache. We want to display an o
 
 Ideally, it works like this:
 
-```
+```text
 get 'hit_count' from cache
 increase by one
 save new 'hit_count' to cache

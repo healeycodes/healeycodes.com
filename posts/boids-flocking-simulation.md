@@ -267,7 +267,7 @@ What are the benefits of WebAssembly? In brief:
 
 To get our Boid program ready for users, we build the `.wasm` file.
 
-```
+```bash
 GOOS=js GOARCH=wasm go build -o dist/boids.wasm github.com/healeycodes/boids
 ```
 

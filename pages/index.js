@@ -6,6 +6,7 @@ import Link from "next/link";
 
 import Layout from "../components/layout";
 import PostList from "../components/postList";
+import Newsletter from "../components/newsletter";
 
 import { getSortedPostsData, getPostData } from "../lib/posts";
 import { generateRssFeed } from "../lib/rss";
@@ -28,28 +29,38 @@ export async function getStaticProps() {
 }
 
 export default function Home({ allPostsData, description, words }) {
+  function numberWithCommas(x) {
+    // https://stackoverflow.com/a/2901298
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
   return (
     <Layout title="Home" description={description}>
       <main>
         <div className="avatar">
-          <Image
-            className="avatar-image"
-            width={100}
-            height={100}
-            src={meAvatar}
-            alt="Andrew Healey."
-            quality={100}
-          />
+          <Link href="/about">
+            <Image
+              className="avatar-image"
+              width={125}
+              height={125}
+              src={meAvatar}
+              alt="Andrew Healey."
+              quality={100}
+            />
+          </Link>
           <p className="avatar-text">
             Hey, I'm Andrew Healey. I'm a software engineer and writer. I build
-            things that make people's lives easier. I've written {words} words
-            on this <a href={siteConfig.REPO_URL}>open source</a> website.
+            things that make people's lives easier. I've written{" "}
+            {numberWithCommas(words)} words on this{" "}
+            <a href={siteConfig.REPO_URL}>open source</a> website.
           </p>
         </div>
 
         <div className="posts">
           <section className="posts-section">
-            <h2>Recent</h2>
+            <h2>
+              Recent (
+              <Link href="/articles">{`${allPostsData.length} articles`}</Link>)
+            </h2>
             <PostList posts={allPostsData.slice(0, 3)} />
           </section>
           <section className="posts-section">
@@ -61,23 +72,23 @@ export default function Home({ allPostsData, description, words }) {
             />
           </section>
         </div>
-        <div className="more-posts">
-          <Link href="/articles">
-            {`Read all ${allPostsData.length} articles ⟶`}
-          </Link>
-        </div>
       </main>
-      <footer></footer>
+      <footer>
+        <Newsletter />
+      </footer>
       {/* This is global to be able to style <Image />*/}
       <style jsx global>{`
         .avatar {
           display: flex;
           align-items: center;
-          padding-top: 38px;
+          padding-top: 36px;
           padding-bottom: 6px;
         }
         .avatar-text {
           margin-left: 16px;
+        }
+        .avatar-image {
+          cursor: pointer;
         }
       `}</style>
       <style jsx>{`
@@ -88,13 +99,11 @@ export default function Home({ allPostsData, description, words }) {
           flex: 1;
           padding-right: 20px;
         }
-        .more-posts {
-          padding-top: 28px;
-        }
 
         @media only screen and (max-width: 46rem) {
           .avatar {
             display: block;
+            padding-top: 48px;
           }
           .avatar-text {
             margin-left: initial;

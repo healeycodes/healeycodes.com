@@ -140,15 +140,15 @@ Converting an IP address to a country is a little harder. A simple solution is t
 After downloading the database, the package can be used to get a country from an IP:
 
 ```python
-  import geoip2.database
-  # this is expensive, so use this for multiple requests
-  reader = geoip2.database.Reader('./GeoLite2-Country.mmdb')
-  country = ''
-  try:
-      response = reader.country('127.0.0.1')
-      country = response.country.name
-  except geoip2.errors.AddressNotFoundError:
-      pass
+import geoip2.database
+# this is expensive, so use this for multiple requests
+reader = geoip2.database.Reader('./GeoLite2-Country.mmdb')
+country = ''
+try:
+    response = reader.country('127.0.0.1')
+    country = response.country.name
+except geoip2.errors.AddressNotFoundError:
+    pass
 ```
 
 We could also check for [Accept-Language](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language) via `request.accept_languages`.
@@ -271,7 +271,7 @@ It's common to want to view analytics for a given time period like the previous 
 
 A minimal page should look something like this:
 
-```
+```text
 Sun Aug 2 10:32:01 2020 - Sun Aug 9 10:32:01 2020
 
 Paths

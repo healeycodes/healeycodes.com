@@ -1,10 +1,10 @@
-import Image from "next/image";
+import SpacedImage from "../components/image";
 import Layout from "../components/layout";
 import mePresenting from "../public/assets/presenting-high-res.jpg";
 
 export default function About() {
   return (
-    <Layout title="About" description="">
+    <Layout title="About" description="About me">
       <h1>About</h1>
       <p>
         I write software and write about software. I{" "}
@@ -20,8 +20,7 @@ export default function About() {
         . Lately, I've been interested in chess engines, interpreters, and
         digital gardens.
       </p>
-      <Image
-        className="inline-image"
+      <SpacedImage
         src={mePresenting}
         alt="Presenting: When Does Development Spark Joy? Sentimental analysis of commit messages."
         quality={100}

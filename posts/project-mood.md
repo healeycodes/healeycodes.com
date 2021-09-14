@@ -64,7 +64,7 @@ const average = times.reduce((sum, time) => {
 
 It takes ~0.75ms to generate a badge on a modern PC — this includes our title insertion method. Since there is no state being managed, this project would respond well to horizontal scaling. However, the roadmap describes some ways that scale can be managed without throwing money at the problem.
 
-```
+```text
 🚗🚗🚗
 
 - Caching:

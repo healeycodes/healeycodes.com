@@ -237,7 +237,7 @@ c // 4
 
 When I needed to make a design decision for Golfcart, I drew from internal feelings about how computer programs _should_ run. It feels good to own a slice of my computing experience.
 
-Check out the source code and grab the binaries at [https://github.com/healeycodes/golfcart](https://github.com/healeycodes/golfcart) ⛳.
+Check out the source and grab the binaries at [https://github.com/healeycodes/golfcart](https://github.com/healeycodes/golfcart) ⛳.
 
 ## Learning Resources
 

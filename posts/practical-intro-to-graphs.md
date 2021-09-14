@@ -185,7 +185,7 @@ print(f'The shortest path from France to China is: {" -> ".join(path_names)}.')
 
 This prints:
 
-```
+```text
 France is connected to 8 countries.
 They are Andorra, Belgium, Germany, Italy, Luxembourg, Monaco, Spain, Switzerland.
 The shortest path from France to China is: France -> Germany -> Poland -> Russian Federation -> China.

@@ -1,6 +1,9 @@
 import siteConfig from "../siteConfig.json";
+
 import Head from "next/head";
+
 import Nav from "../components/nav";
+import codeTheme from "../components/codeTheme";
 
 export default function Layout({ children, title, description }) {
   return (
@@ -15,7 +18,7 @@ export default function Layout({ children, title, description }) {
           rel="stylesheet"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
           rel="stylesheet"
         />
         <link
@@ -50,8 +53,11 @@ export default function Layout({ children, title, description }) {
       {children}
       <style jsx global>{`
         :root {
-          --text: #0265d5;
+          --link: #0265d5;
+          --link-hover: #496495;
           --light-text: #9999b8;
+          --border: #9a9aa5;
+          --button: #4a7ddd;
         }
 
         html,
@@ -69,31 +75,42 @@ export default function Layout({ children, title, description }) {
         h4,
         h5,
         h6 {
+          letter-spacing: -0.24px;
           font-weight: 400;
           padding-top: 16px;
           padding-bottom: 16px;
         }
 
         p {
+          margin-bottom: 24px;
           line-height: 24px;
           color: #1d1d27;
         }
 
         pre,
         code {
-          font-family: "JetBrains Mono", monospace;
+          font-family: "Roboto Mono", monospace;
           font-size: 14px;
         }
 
+        code {
+          background-color: ${codeTheme.plain.backgroundColor};
+          padding: 4px;
+        }
+
         hr {
-          margin-top: 32px;
-          margin-bottom: 32px;
+          border-top: 1px solid var(--border);
+          margin-top: 48px;
+          margin-bottom: 48px;
         }
 
         div[class*="language-"],
         div[class*="language-"] {
           line-height: 24px;
-          padding: 8px;
+          padding-top: 16px;
+          padding-left: 8px;
+          padding-right: 8px;
+          padding-bottom: 16px;
           overflow: overlay;
         }
 
@@ -102,12 +119,32 @@ export default function Layout({ children, title, description }) {
         }
 
         a {
-          color: var(--text);
+          color: var(--link);
           text-decoration: none;
         }
 
         a:hover {
-          text-decoration: underline;
+          color: var(--link-hover);
+          text-decoration: none;
+        }
+
+        ul {
+          list-style-type: square;
+        }
+
+        li {
+          padding-bottom: 6px;
+        }
+
+        blockquote {
+          margin-left: 16px;
+          border-left-color: var(--border);
+          border-left-style: solid;
+          border-left-width: 1px;
+        }
+
+        blockquote > p {
+          padding-left: 16px;
         }
       `}</style>
       <style jsx>{`

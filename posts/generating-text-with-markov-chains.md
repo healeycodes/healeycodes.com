@@ -140,7 +140,7 @@ def generate_text(model, state_size, min_length):
 Here are those four possible complete sentences from our previous Markov chain. These can be combined infinitely by our function.
 
 
-```
+```python
 'An apple is very bad.'
 'An orange is very bad.'
 'An orange is very good.'

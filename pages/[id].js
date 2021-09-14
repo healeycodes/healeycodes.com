@@ -6,14 +6,15 @@ import imageSize from "image-size";
 
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 
-import Highlight, { defaultProps } from "prism-react-renderer";
-import prismTheme from "prism-react-renderer/themes/github";
 import Markdown from "markdown-to-jsx";
 import { getAllPostIds, getPostData, getNextAndPrevPosts } from "../lib/posts";
+
 import Layout from "../components/layout";
+import SpacedImage from "../components/image";
+import Code from "../components/code";
 import Date from "../components/date";
+import Newsletter from "../components/newsletter";
 
 export async function getStaticPaths() {
   const paths = getAllPostIds();
@@ -101,7 +102,7 @@ export default function Post({
             createElement(type, props, children) {
               if (type === "img") {
                 return (
-                  <Image
+                  <SpacedImage
                     {...props}
                     src={`/posts/${id}/${props.src}`}
                     height={imageMetadata[props.src].height}
@@ -109,38 +110,9 @@ export default function Post({
                     quality={100}
                   />
                 );
-              } else if (
-                type === "code" &&
-                props.className &&
-                props.className.includes("lang-")
-              ) {
-                return (
-                  <Highlight
-                    {...defaultProps}
-                    theme={prismTheme}
-                    code={children}
-                    language={props.className.replace("lang-", "")}
-                    className="code"
-                  >
-                    {({
-                      className,
-                      style,
-                      tokens,
-                      getLineProps,
-                      getTokenProps,
-                    }) => (
-                      <div className={className} style={style}>
-                        {tokens.map((line, i) => (
-                          <div {...getLineProps({ line, key: i })}>
-                            {line.map((token, key) => (
-                              <span {...getTokenProps({ token, key })} />
-                            ))}
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </Highlight>
-                );
+              } else if (type === "code" && props.className) {
+                const language = props.className.replace("lang-", "");
+                return <Code children={children} language={language} />;
               }
               return React.createElement(type, props, children);
             },
@@ -148,20 +120,23 @@ export default function Post({
         />
       </main>
       <hr />
-      <p>
-        Have a comment? I'd love to hear it, please{" "}
-        <a href="mailto:healeycodes@gmail.com">email me</a>.
-      </p>
-      <p>
-        Find an issue with this post? Please{" "}
+      {/* <p>
+        I'd love to hear your comment, please{" "}
+        <a href="mailto:healeycodes@gmail.com">email me</a>. Find an issue?
+        Please{" "}
         <a href={`${siteConfig.EDIT_POST_URL}/${id}.md`}>edit it on GitHub</a>.
-      </p>
+      </p> */}
+      <Newsletter />
       <div className="other-posts">
         {prevPost ? (
-          <Link href={`/${prevPost.id}`}>{`← ${prevPost.title}`}</Link>
+          <div className="other-posts-link">
+            <Link href={`/${prevPost.id}`}>{`← ${prevPost.title}`}</Link>
+          </div>
         ) : null}
         {nextPost ? (
-          <Link href={`/${nextPost.id}`}>{`${nextPost.title} →`}</Link>
+          <div className="other-posts-link">
+            <Link href={`/${nextPost.id}`}>{`${nextPost.title} →`}</Link>{" "}
+          </div>
         ) : null}
       </div>
       <style jsx>{`
@@ -182,10 +157,11 @@ export default function Post({
           color: var(--light-text);
         }
         .other-posts {
-          display: flex;
-          justify-content: space-between;
-          padding-top: 16px;
-          padding-bottom: 16px;
+          padding-top: 48px;
+        }
+        .other-posts-link {
+          display: block;
+          padding-bottom: 32px;
         }
       `}</style>
     </Layout>

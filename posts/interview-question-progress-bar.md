@@ -24,6 +24,7 @@ At the very least, this quick answer shows that you know what `keyframes` and yo
   <div class="progress-bar"></div>
 </div>
 ```
+
 ```css
 .container {
   width: 300px;
@@ -64,6 +65,7 @@ I'm making sure to cache the reference to the loading bar. I work on Smart TVs a
 </div>
 <button onclick="loadBar()">Load</button>
 ```
+
 ```css
 .container {
   width: 300px;
@@ -82,6 +84,7 @@ I'm making sure to cache the reference to the loading bar. I work on Smart TVs a
   width: 100%;
 }
 ```
+
 ```javascript
 const bar = document.querySelector('.progress-bar');
 
@@ -107,6 +110,7 @@ Caching is really important here. You don't want to traverse the DOM for an elem
 <div>Queued bars: <span class="queued">0</span></div>
 <button onclick="loadBar()">Load</button> 
 ```
+
 ```css
 .container {
   width: 300px;
@@ -120,6 +124,7 @@ Caching is really important here. You don't want to traverse the DOM for an elem
   background-color: #90EE90;
 }
 ```
+
 ```javascript
 const bar = document.querySelector('.progress-bar');
 const queued = document.querySelector('.queued');
@@ -166,6 +171,7 @@ The logic is a lot shorter if you don't have to queue bar loads. I ended up deci
 <div>Queued bars: <span class="queued">0</span></div>
 <button onclick="loadBar(1)">Load</button> 
 ```
+
 ```css
 .container {
   width: 300px;
@@ -179,6 +185,7 @@ The logic is a lot shorter if you don't have to queue bar loads. I ended up deci
   background-color: #90EE90;
 }
 ```
+
 ```javascript
 const bar = document.querySelector('.progress-bar');
 const queued = document.querySelector('.queued');

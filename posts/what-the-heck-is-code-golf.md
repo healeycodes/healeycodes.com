@@ -10,7 +10,6 @@ ogimage: "./og-image.png"
 Usually, code golf means one of two things:
 
 - The act of shortening a section of code.
-
 - A wonderfully obscure community on the internet who compete to write _very_ short code. To some, they are seen as a group that 'takes the joke too far' but to me they are **artisans**.
 
 Code golf challenges are not always about writing the shortest code though. Some competitions score on [creativeness](https://codegolf.stackexchange.com/questions/21835/most-creative-way-to-display-42). Some questions are even just asking _is this possible?_ — and the results are beautiful. Later on, we'll see a RegEx that only matches itself.

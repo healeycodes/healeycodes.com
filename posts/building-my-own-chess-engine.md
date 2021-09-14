@@ -90,7 +90,7 @@ Michniewski also provides [piece-square tables](https://www.chessprogramming.org
 
 The bonus of a square may be positive, neutral, or negative. The piece-square tables are presented from White's POV and must be mirrored for Black.
 
-```
+```text
 # a knight's bonuses depending on square
 -50,-40,-30,-30,-30,-30,-40,-50,
 -40,-20,  0,  0,  0,  0,-20,-40,

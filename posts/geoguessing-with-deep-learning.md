@@ -135,7 +135,7 @@ I picked the [World](https://www.geoguessr.com/maps/world) map on GeoGuessr for 
 
 The machine's trimmed results are below.
 
-```
+```bash
 python -m classification.inference --image_dir ../images/
 
                                 lat        lng

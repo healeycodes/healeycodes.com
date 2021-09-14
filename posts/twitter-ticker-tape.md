@@ -190,7 +190,7 @@ Our program is started by running `poller.py`.
 
 If everything went correctly, our POS58 printer should output tweets as they arrive in the following width-restricted format which avoids breaking words where possible.
 
-```
+```text
 jessfraz: Ive started using
 Pocket to keep articles I want
 to read later and also

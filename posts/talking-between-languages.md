@@ -227,7 +227,7 @@ while True:
 
 You can run `node temperature-listener.js` or `python temperature-listener.py` and the result will be the same. The array of temperatures will grow as new data arrives, and our debug log line will result in the following output.
 
-```
+```js
 [ 3.8075910850643098 ]
 [ 3.8075910850643098, -1.5015912681923482 ]
 [ 3.8075910850643098, -1.5015912681923482, 11.97817663641078 ]
