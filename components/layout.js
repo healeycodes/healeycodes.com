@@ -56,7 +56,7 @@ export default function Layout({ children, title, description }) {
           --link: #0265d5;
           --link-hover: #496495;
           --light-text: #9999b8;
-          --border: #9a9aa5;
+          --border: #b6b6c2;
           --button: #4a7ddd;
         }
 
