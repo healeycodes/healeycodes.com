@@ -79,76 +79,84 @@ export default function Post({
 
   return (
     <Layout {...seo}>
-      <h1>{title}</h1>
-      <h3>
-        <Date dateString={date} /> in{" "}
-        {tags
-          .map((tag, i) => (
-            <Link href={`/tags/${tag}`} key={i}>
-              {`${tag.charAt(0).toUpperCase()}${tag.slice(1)}`}
-            </Link>
-          ))
-          .reduce((prev, curr) => [prev, ", ", curr])}{" "}
-        — <a href={`${siteConfig.EDIT_POST_URL}/${id}.md`}>Edit on GitHub</a>
-      </h3>
-      <Markdown
-        children={source}
-        options={{
-          // Here we can extend our plain Markdown posts with React components
-          createElement(type, props, children) {
-            if (type === "img") {
-              return (
-                <Image
-                  {...props}
-                  src={`/posts/${id}/${props.src}`}
-                  height={imageMetadata[props.src].height}
-                  width={imageMetadata[props.src].width}
-                  quality={100}
-                />
-              );
-            } else if (
-              type === "code" &&
-              props.className &&
-              props.className.includes("lang-")
-            ) {
-              return (
-                <Highlight
-                  {...defaultProps}
-                  theme={prismTheme}
-                  code={children}
-                  language={props.className.replace("lang-", "")}
-                >
-                  {({
-                    className,
-                    style,
-                    tokens,
-                    getLineProps,
-                    getTokenProps,
-                  }) => (
-                    <pre className={className} style={style}>
-                      {tokens.map((line, i) => (
-                        <div {...getLineProps({ line, key: i })}>
-                          {line.map((token, key) => (
-                            <span {...getTokenProps({ token, key })} />
-                          ))}
-                        </div>
-                      ))}
-                    </pre>
-                  )}
-                </Highlight>
-              );
-            }
-            return React.createElement(type, props, children);
-          },
-        }}
-      />
-      <div>
+      <header>
+        <h1 className="post-title">{title}</h1>
+        <p className="post-date">
+          <Date dateString={date} /> in{" "}
+          {tags
+            .map((tag, i) => (
+              <Link href={`/tags/${tag}`} key={i}>
+                {`${tag.charAt(0).toUpperCase()}${tag.slice(1)}`}
+              </Link>
+            ))
+            .reduce((prev, curr) => [prev, ", ", curr])}{" "}
+          — <a href={`${siteConfig.EDIT_POST_URL}/${id}.md`}>Edit on GitHub</a>
+        </p>
+      </header>
+      <main className="post-text">
+        <Markdown
+          children={source}
+          options={{
+            // Here we can extend our plain Markdown posts with React components
+            createElement(type, props, children) {
+              if (type === "img") {
+                return (
+                  <Image
+                    {...props}
+                    src={`/posts/${id}/${props.src}`}
+                    height={imageMetadata[props.src].height}
+                    width={imageMetadata[props.src].width}
+                    quality={100}
+                  />
+                );
+              } else if (
+                type === "code" &&
+                props.className &&
+                props.className.includes("lang-")
+              ) {
+                return (
+                  <Highlight
+                    {...defaultProps}
+                    theme={prismTheme}
+                    code={children}
+                    language={props.className.replace("lang-", "")}
+                    className="code"
+                  >
+                    {({
+                      className,
+                      style,
+                      tokens,
+                      getLineProps,
+                      getTokenProps,
+                    }) => (
+                      <div className={className} style={style}>
+                        {tokens.map((line, i) => (
+                          <div {...getLineProps({ line, key: i })}>
+                            {line.map((token, key) => (
+                              <span {...getTokenProps({ token, key })} />
+                            ))}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </Highlight>
+                );
+              }
+              return React.createElement(type, props, children);
+            },
+          }}
+        />
+      </main>
+      <hr />
+      <p>
         Have a comment? I'd love to hear it, please{" "}
-        <a href="mailto:healeycodes@gmail.com">email me</a>. Find an issue with
-        this post? Please{" "}
+        <a href="mailto:healeycodes@gmail.com">email me</a>.
+      </p>
+      <p>
+        Find an issue with this post? Please{" "}
         <a href={`${siteConfig.EDIT_POST_URL}/${id}.md`}>edit it on GitHub</a>.
-      </div>
-      <div>
+      </p>
+      <div className="other-posts">
         {prevPost ? (
           <Link href={`/${prevPost.id}`}>{`← ${prevPost.title}`}</Link>
         ) : null}
@@ -156,6 +164,30 @@ export default function Post({
           <Link href={`/${nextPost.id}`}>{`${nextPost.title} →`}</Link>
         ) : null}
       </div>
+      <style jsx>{`
+        header {
+          padding-top: 16px;
+          padding-bottom: 16px;
+        }
+        .post-title {
+          margin-bottom: 0px;
+          padding-bottom: 0px;
+        }
+        .post-text {
+          padding-top: 16px;
+        }
+        .post-date {
+          margin-top: 0px;
+          padding-top: 8px;
+          color: var(--light-text);
+        }
+        .other-posts {
+          display: flex;
+          justify-content: space-between;
+          padding-top: 16px;
+          padding-bottom: 16px;
+        }
+      `}</style>
     </Layout>
   );
 }

@@ -20,14 +20,15 @@ export default function PostList({ posts }) {
       ))}
       <style jsx>{`
         .post {
-          padding-top: 20px;
+          padding-bottom: 28px;
         }
         .post-desc {
+          margin-top: 4px;
           margin-bottom: 0px;
         }
         .post-date {
           margin-top: 0px;
-          padding-top: 10px;
+          color: var(--light-text);
         }
       `}</style>
     </div>

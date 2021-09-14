@@ -29,8 +29,8 @@ export default function TagList({ otherTags, tag, posts }) {
   );
   return (
     <Layout title={title}>
-      <h1>{title}</h1>
-      <p>
+      <h1 className="tag-desc">{title}</h1>
+      <p className="other-tags">
         Other tags:{" "}
         {formattedTags
           .map((formattedTag, i) => (
@@ -42,6 +42,17 @@ export default function TagList({ otherTags, tag, posts }) {
         or <Link href="/articles">all articles</Link>.
       </p>
       <PostList posts={posts} />
+      <style jsx>{`
+        .tag-desc {
+          margin-bottom: 0px;
+          padding-bottom: 0px;
+        }
+        .other-tags {
+          margin-top: 0px;
+          color: var(--light-text);
+          padding-bottom: 24px;
+        }
+      `}</style>
     </Layout>
   );
 }

@@ -6,7 +6,7 @@ export default function Nav() {
     <nav>
       <ul>
         <li>
-          <Link href="/">Home</Link>
+          <Link href="/">{siteConfig.AUTHOR_NAME}</Link>
         </li>
         <li>
           <Link href="/articles">Articles</Link>
@@ -39,6 +39,19 @@ export default function Nav() {
           </a>
         </li>
       </ul>
+      <style jsx>{`
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-wrap: wrap;
+        }
+        li {
+          padding-top: 16px;
+          padding-right: 16px;
+        }
+      `}</style>
     </nav>
   );
 }

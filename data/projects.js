@@ -132,9 +132,4 @@ export default [
     desc: "A classic algorithm implemented visually with Ebiten.",
     to: "/beginners/go/showdev/opensource/2019/10/02/my-first-golang-program.html",
   },
-  {
-    name: "calorie-king",
-    link: "https://github.com/healeycodes/calorie-king",
-    desc: "A gamified calorie counting app I built to learn React.",
-  },
 ];

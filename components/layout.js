@@ -15,6 +15,10 @@ export default function Layout({ children, title, description }) {
           rel="stylesheet"
         />
         <link
+          href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"
+          rel="stylesheet"
+        />
+        <link
           rel="alternate"
           type="application/rss+xml"
           title={`RSS Feed for ${siteConfig.SITE_URL}`}
@@ -45,11 +49,52 @@ export default function Layout({ children, title, description }) {
       <Nav />
       {children}
       <style jsx global>{`
+        :root {
+          --text: #0265d5;
+          --light-text: #9999b8;
+        }
+
         html,
         body {
           padding: 0;
           margin: 0;
           font-family: "Inter", sans-serif;
+          font-size: 16px;
+          letter-spacing: -0.01em;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-weight: 400;
+          padding-top: 16px;
+          padding-bottom: 16px;
+        }
+
+        p {
+          line-height: 24px;
+          color: #1d1d27;
+        }
+
+        pre,
+        code {
+          font-family: "JetBrains Mono", monospace;
+          font-size: 14px;
+        }
+
+        hr {
+          margin-top: 32px;
+          margin-bottom: 32px;
+        }
+
+        div[class*="language-"],
+        div[class*="language-"] {
+          line-height: 24px;
+          padding: 8px;
+          overflow: overlay;
         }
 
         * {
@@ -57,7 +102,7 @@ export default function Layout({ children, title, description }) {
         }
 
         a {
-          color: #0070f3;
+          color: var(--text);
           text-decoration: none;
         }
 
@@ -69,7 +114,11 @@ export default function Layout({ children, title, description }) {
         .container {
           margin-left: auto;
           margin-right: auto;
-          max-width: 42rem;
+          max-width: 46rem;
+          padding-top: 3rem;
+          padding-left: 1rem;
+          padding-right: 1rem;
+          padding-bottom: 6rem;
         }
       `}</style>
     </div>
