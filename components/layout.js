@@ -14,11 +14,11 @@ export default function Layout({ children, title, description }) {
         </title>
         <meta name="description" content={description} />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter&display=optional"
           rel="stylesheet"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=optional"
           rel="stylesheet"
         />
         <link
