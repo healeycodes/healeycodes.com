@@ -60,12 +60,7 @@ export default function Newsletter() {
         .subscribe {
           // Reset button for mobile
           // TODO: refactor this elsewhere?
-          border: none;
-          background-image: none;
-          background-color: transparent;
-          -webkit-box-shadow: none;
-          -moz-box-shadow: none;
-          box-shadow: none;
+          appearance: none;
 
           font-family: inherit;
           cursor: pointer;
