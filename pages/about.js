@@ -27,7 +27,6 @@ export default function About() {
         src={mePresenting}
         alt="Presenting: When Does Development Spark Joy? Sentimental analysis of commit messages."
         quality={100}
-        layout="responsive"
       />
       <p>
         I like teaching people things that I know. I like video games, running,

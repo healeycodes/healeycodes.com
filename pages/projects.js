@@ -1,3 +1,4 @@
+import siteConfig from "../siteConfig.json";
 import games from "../data/games";
 import projects from "../data/projects";
 

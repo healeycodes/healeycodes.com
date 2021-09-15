@@ -9,6 +9,7 @@ import Link from "next/link";
 
 import Markdown from "markdown-to-jsx";
 import { getAllPostIds, getPostData, getNextAndPrevPosts } from "../lib/posts";
+import imageResize from "../lib/resize";
 
 import Layout from "../components/layout";
 import SpacedImage from "../components/image";
@@ -104,16 +105,10 @@ export default function Post({
                 // Since these images aren't loaded statically, we can't use `layout="responsive"`
                 // instead we can handle the sizing match ourselves because we know the max-width of the article
                 // TODO: this means mobile might load slightly larger images than required
-                let width, height;
-                if (imageMetadata[props.src].width > siteConfig.LAYOUT_WIDTH) {
-                  width = siteConfig.LAYOUT_WIDTH;
-                  height =
-                    imageMetadata[props.src].height *
-                    (siteConfig.LAYOUT_WIDTH / imageMetadata[props.src].width);
-                } else {
-                  width = imageMetadata[props.src].width;
-                  height = imageMetadata[props.src].height;
-                }
+                let { width, height } = imageResize(
+                  imageMetadata[props.src].width,
+                  imageMetadata[props.src].height
+                );
                 return (
                   <SpacedImage
                     {...props}
