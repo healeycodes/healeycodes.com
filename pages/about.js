@@ -20,7 +20,8 @@ export default function About() {
           standing invitation
         </a>
         . Lately, I've been interested in chess engines, interpreters, and
-        digital gardens.
+        digital gardens. This website is built with Next.js and hosted on
+        Vercel. It's <a href={siteConfig.REPO_URL}>open source</a>.
       </p>
       <SpacedImage
         src={mePresenting}
@@ -34,11 +35,7 @@ export default function About() {
       <p>
         I am easily impressed by people and the cool stuff that they build. I
         read a lot of personal and technical blogs. If we've ever interacted,
-        I've visited your website and probably think it's cool.
-      </p>
-      <p>
-        This website is built with Next.js and hosted on Vercel. It's{" "}
-        <a href={siteConfig.REPO_URL}>open source</a>.
+        I've visited your website and probably think it's cool!
       </p>
       <h2>Work</h2>
       <p>
