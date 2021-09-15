@@ -1,10 +1,26 @@
 import siteConfig from "../siteConfig.json";
 import Image from "next/image";
 
+function imageResize(imageWidth, imageHeight) {
+  let width, height;
+  if (imageWidth > siteConfig.LAYOUT_WIDTH) {
+    width = siteConfig.LAYOUT_WIDTH;
+    height = imageHeight * (siteConfig.LAYOUT_WIDTH / imageWidth);
+  } else {
+    width = imageWidth;
+    height = imageHeight;
+  }
+  return { width, height };
+}
+
 export default function SpacedImage(props) {
+  let { width, height } = imageResize(
+    props.originalWidth,
+    props.originalHeight
+  );
   return (
     <div className="spacer">
-      <Image {...props} />
+      <Image {...props} width={width} height={height} />
       <style jsx>{`
         .spacer {
           padding-top: 16px;
