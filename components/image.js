@@ -1,3 +1,4 @@
+import siteConfig from "../siteConfig.json";
 import Image from "next/image";
 
 export default function SpacedImage(props) {

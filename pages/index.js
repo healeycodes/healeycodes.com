@@ -37,16 +37,13 @@ export default function Home({ allPostsData, description, words }) {
     <Layout title="Home" description={description}>
       <main>
         <div className="avatar">
-          <Link href="/about">
-            <Image
-              className="avatar-image"
-              width={125}
-              height={125}
-              src={meAvatar}
-              alt="Andrew Healey."
-              quality={100}
-            />
-          </Link>
+          <Image
+            width={125}
+            height={125}
+            src={meAvatar}
+            alt="Andrew Healey."
+            quality={100}
+          />
           <p className="avatar-text">
             Hey, I'm Andrew Healey. I'm a software engineer and writer. I build
             things that make people's lives easier. I've written{" "}
@@ -86,9 +83,6 @@ export default function Home({ allPostsData, description, words }) {
         }
         .avatar-text {
           margin-left: 16px;
-        }
-        .avatar-image {
-          cursor: pointer;
         }
       `}</style>
       <style jsx>{`

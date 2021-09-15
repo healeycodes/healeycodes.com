@@ -11,7 +11,12 @@ export default function Newsletter() {
         action={`https://buttondown.email/api/emails/embed-subscribe/${siteConfig.BUTTON_DOWN_USER}`}
         method="post"
         target="popupwindow"
-        onSubmit={`window.open('https://buttondown.email/${siteConfig.BUTTON_DOWN_USER}', 'popupwindow')`}
+        onSubmit={() =>
+          window.open(
+            "https://buttondown.email/${siteConfig.BUTTON_DOWN_USER}",
+            "popupwindow"
+          )
+        }
         className="embeddable-buttondown-form"
       >
         <div className="control">
@@ -67,7 +72,7 @@ export default function Newsletter() {
           color: #fff;
           min-width: 8rem;
         }
-        @media only screen and (max-width: 46rem) {
+        @media only screen and (max-width: ${siteConfig.LAYOUT_WIDTH}px) {
           .control {
             display: block;
           }

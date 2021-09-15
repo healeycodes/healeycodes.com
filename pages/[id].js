@@ -101,12 +101,25 @@ export default function Post({
             // Here we can extend our plain Markdown posts with React components
             createElement(type, props, children) {
               if (type === "img") {
+                // Since these images aren't loaded statically, we can't use `layout="responsive"`
+                // instead we can handle the sizing match ourselves because we know the max-width of the article
+                // TODO: this means mobile might load slightly larger images than required
+                let width, height;
+                if (imageMetadata[props.src].width > siteConfig.LAYOUT_WIDTH) {
+                  width = siteConfig.LAYOUT_WIDTH;
+                  height =
+                    imageMetadata[props.src].height *
+                    (siteConfig.LAYOUT_WIDTH / imageMetadata[props.src].width);
+                } else {
+                  width = imageMetadata[props.src].width;
+                  height = imageMetadata[props.src].height;
+                }
                 return (
                   <SpacedImage
                     {...props}
                     src={`/posts/${id}/${props.src}`}
-                    height={imageMetadata[props.src].height}
-                    width={imageMetadata[props.src].width}
+                    height={height}
+                    width={width}
                     quality={100}
                   />
                 );
@@ -120,12 +133,6 @@ export default function Post({
         />
       </main>
       <hr />
-      {/* <p>
-        I'd love to hear your comment, please{" "}
-        <a href="mailto:healeycodes@gmail.com">email me</a>. Find an issue?
-        Please{" "}
-        <a href={`${siteConfig.EDIT_POST_URL}/${id}.md`}>edit it on GitHub</a>.
-      </p> */}
       <Newsletter />
       <div className="other-posts">
         {prevPost ? (

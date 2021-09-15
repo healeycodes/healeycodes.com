@@ -59,7 +59,7 @@ experiments and others are used by people everyday!"
           display: flex;
           flex-wrap: wrap;
         }
-        @media only screen and (max-width: 46rem) {
+        @media only screen and (max-width: ${siteConfig.LAYOUT_WIDTH}px) {
           .project-list {
             display: block;
           }
