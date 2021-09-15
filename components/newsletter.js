@@ -58,6 +58,15 @@ export default function Newsletter() {
           outline: none;
         }
         .subscribe {
+          // Reset button for mobile
+          // TODO: refactor this elsewhere?
+          border: none;
+          background-image: none;
+          background-color: transparent;
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
+
           font-family: inherit;
           cursor: pointer;
           border-radius: 0.25rem;
@@ -75,6 +84,9 @@ export default function Newsletter() {
         @media only screen and (max-width: ${siteConfig.LAYOUT_WIDTH}px) {
           .control {
             display: block;
+          }
+          .email {
+            width: 100%;
           }
           .subscribe {
             margin-top: 8px;
