@@ -20,6 +20,12 @@ It's live, check it out: https://healeycodes.com
 next dev
 ```
 
+## Lint
+
+```
+next lint
+```
+
 ## Build/Run
 
 ```bash

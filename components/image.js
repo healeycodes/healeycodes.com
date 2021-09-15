@@ -14,13 +14,12 @@ function imageResize(imageWidth, imageHeight) {
 }
 
 export default function SpacedImage(props) {
-  let { width, height } = imageResize(
-    props.originalWidth,
-    props.originalHeight
-  );
+  const { originalWidth, originalHeight, ...rest } = props;
+  let { width, height } = imageResize(originalWidth, originalHeight);
+
   return (
     <div className="spacer">
-      <Image {...props} width={width} height={height} />
+      <Image {...rest} width={width} height={height} />
       <style jsx>{`
         .spacer {
           padding-top: 16px;

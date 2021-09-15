@@ -38,6 +38,6 @@ At school we applied languages like Java, JS, and Python, to solve algorithmic p
 
 ### ~
 
-Although I worked hard, I learned more by trying to be [creative on the web](https://github.com/healeycodes), entering [game jams](https://healeycodes.com/games/), and hacking away at weird projects. I pretty much consider myself to be self-taught except I'm lucky enough to put the letters _MSc_ on my resume. The skills that I used to consider paramount have fallen away. I once thought being a programmer was all about eureka moments and collecting a library of algorithms in your brain.
+Although I worked hard, I learned more by trying to be [creative on the web](https://github.com/healeycodes), entering [game jams](https://healeycodes.com/projects/), and hacking away at weird projects. I pretty much consider myself to be self-taught except I'm lucky enough to put the letters _MSc_ on my resume. The skills that I used to consider paramount have fallen away. I once thought being a programmer was all about eureka moments and collecting a library of algorithms in your brain.
 
 When I hear that someone new is joining our team, I don't worry how good they are at writing code. I want to know that they'll listen to my comments in their review (and tell me how I'm wrong!). I want to be able to communicate with them about technical subjects. I want to learn from them but not just about code-related things. Most of all, I hope they are fun to work with.

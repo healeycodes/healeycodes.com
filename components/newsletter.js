@@ -33,6 +33,7 @@ export default function Newsletter() {
       </form>
       <style jsx>{`
         .newsletter-section {
+          margin-top: 16px;
           padding-left: 16px;
           padding-right: 16px;
           padding-bottom: 16px;

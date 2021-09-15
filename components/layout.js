@@ -20,14 +20,6 @@ export default function Layout({ children, title, description }) {
         </title>
         <meta name="description" content={description} />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
-          rel="stylesheet"
-        />
-        <link
           rel="alternate"
           type="application/rss+xml"
           title={`RSS Feed for ${siteConfig.SITE_URL}`}
@@ -101,7 +93,7 @@ export default function Layout({ children, title, description }) {
 
         code {
           background-color: ${codeTheme.plain.backgroundColor};
-          padding: 4px;
+          padding: 2px;
         }
 
         hr {
@@ -140,6 +132,7 @@ export default function Layout({ children, title, description }) {
 
         li {
           padding-bottom: 6px;
+          line-height: 24px;
         }
 
         blockquote {

@@ -96,7 +96,6 @@ export default function Post({
       </header>
       <main className="post-text">
         <Markdown
-          children={source}
           options={{
             // Here we can extend our plain Markdown posts with React components
             createElement(type, props, children) {
@@ -120,7 +119,9 @@ export default function Post({
               return React.createElement(type, props, children);
             },
           }}
-        />
+        >
+          {source}
+        </Markdown>
       </main>
       <hr />
       <Newsletter />

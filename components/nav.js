@@ -34,9 +34,7 @@ export default function Nav() {
           </a>
         </li>
         <li>
-          <a href="/feed.xml" target="_blank">
-            RSS
-          </a>
+          <Link href="/feed.xml">RSS</Link>
         </li>
       </ul>
       <style jsx>{`
