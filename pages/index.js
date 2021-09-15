@@ -38,8 +38,8 @@ export default function Home({ allPostsData, description, words }) {
       <main>
         <div className="avatar">
           <Image
-            width={125}
-            height={125}
+            width={130}
+            height={130}
             src={meAvatar}
             alt="Andrew Healey."
             quality={100}
