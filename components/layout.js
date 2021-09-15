@@ -9,6 +9,12 @@ export default function Layout({ children, title, description }) {
   return (
     <div className="container">
       <Head>
+        <script
+          data-goatcounter={`https://${siteConfig.GOAT_COUNTER}.goatcounter.com/count`}
+          async
+          src="//gc.zgo.at/count.js"
+        />
+
         <title>
           {title} — {siteConfig.AUTHOR_NAME}
         </title>
