@@ -8,7 +8,7 @@ This is version 3 of my website. A plain Next.js website with limited dependanci
 
 ## Open source
 
-I will read all issues/PRs and welcome any changes or suggests that improve this project. However, I can't provide support for running or maintaining this code. 
+I will read all issues/PRs and welcome any changes or suggests that improve this website/the content. However, I can't provide support for running or maintaining this code. 
 
 Please do not copy/publish my writing (e.g. `posts`) — this project doesn't have a license (contact me if this causes you problems) because I still need to write a split license that covers code/code snippets vs. posts.
 
