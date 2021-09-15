@@ -20,7 +20,7 @@ export default function PostList({ posts }) {
       ))}
       <style jsx>{`
         .post {
-          padding-bottom: 28px;
+          padding-bottom: 20px;
         }
         .post-desc {
           margin-top: 4px;

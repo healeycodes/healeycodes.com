@@ -1,3 +1,5 @@
+import siteConfig from "../siteConfig.json";
+
 import SpacedImage from "../components/image";
 import Layout from "../components/layout";
 import mePresenting from "../public/assets/presenting-high-res.jpg";
@@ -33,6 +35,10 @@ export default function About() {
         I am easily impressed by people and the cool stuff that they build. I
         read a lot of personal and technical blogs. If we've ever interacted,
         I've visited your website and probably think it's cool.
+      </p>
+      <p>
+        This website is built with Next.js and hosted on Vercel. It's{" "}
+        <a href={siteConfig.REPO_URL}>open source</a>.
       </p>
       <h2>Work</h2>
       <p>
