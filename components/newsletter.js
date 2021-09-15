@@ -1,6 +1,11 @@
 import siteConfig from "../siteConfig.json";
 
 export default function Newsletter() {
+  const after = () =>
+    window.open(
+      "https://buttondown.email/${siteConfig.BUTTON_DOWN_USER}",
+      "popupwindow"
+    );
   return (
     <div className="newsletter-section">
       <p className="newsletter-desc">
@@ -11,12 +16,7 @@ export default function Newsletter() {
         action={`https://buttondown.email/api/emails/embed-subscribe/${siteConfig.BUTTON_DOWN_USER}`}
         method="post"
         target="popupwindow"
-        onSubmit={() =>
-          window.open(
-            "https://buttondown.email/${siteConfig.BUTTON_DOWN_USER}",
-            "popupwindow"
-          )
-        }
+        onSubmit={after}
         className="embeddable-buttondown-form"
       >
         <div className="control">

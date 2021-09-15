@@ -1,10 +1,16 @@
 import siteConfig from "../siteConfig.json";
+import mePresenting from "../public/assets/presenting-high-res.jpg";
+
+import imageResize from "../lib/resize";
 
 import SpacedImage from "../components/image";
 import Layout from "../components/layout";
-import mePresenting from "../public/assets/presenting-high-res.jpg";
 
 export default function About() {
+  const { width, height } = imageResize(
+    mePresenting.width,
+    mePresenting.height
+  );
   return (
     <Layout title="About" description="About me">
       <h1>About</h1>
@@ -27,6 +33,8 @@ export default function About() {
         src={mePresenting}
         alt="Presenting: When Does Development Spark Joy? Sentimental analysis of commit messages."
         quality={100}
+        width={width}
+        height={height}
       />
       <p>
         I like teaching people things that I know. I like video games, running,
