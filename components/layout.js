@@ -51,11 +51,14 @@ export default function Layout({ children, title, description }) {
       {children}
       <style jsx global>{`
         :root {
+          --text: #1d1d27;
+          --input-background: #fff;
           --link: #0265d5;
           --link-hover: #496495;
           --light-text: #9999b8;
           --border: #b6b6c2;
           --button: #4a7ddd;
+          --button-text: #fff;
         }
 
         html,
@@ -82,7 +85,7 @@ export default function Layout({ children, title, description }) {
         p {
           margin-bottom: 24px;
           line-height: 24px;
-          color: #1d1d27;
+          color: var(--text);
         }
 
         pre,

@@ -51,7 +51,7 @@ export default function Newsletter() {
           display: block;
           border-radius: 0.25rem;
           border-width: 1px;
-          background-color: #fff;
+          background-color: var(--input-background);
           padding: 0.25rem 0.75rem;
           font-size: 1rem;
           font-weight: 400;
@@ -74,7 +74,7 @@ export default function Newsletter() {
           padding: 0.375rem 0.75rem;
           background-color: var(--button);
           font-weight: 500;
-          color: #fff;
+          color: var(--button-text);
           min-width: 8rem;
         }
         @media only screen and (max-width: ${siteConfig.LAYOUT_WIDTH}px) {
