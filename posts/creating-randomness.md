@@ -33,7 +33,7 @@ Math.random() // 2
 Math.random() // 3
 ```
 
-A **pseudorandom number generator** (PRNG) works in a similar manner. A PRNG maintains an internal state and applies math to that state every time a new random number is requested. The seed can be manual or automatic. In the [Go programming language](https://golang.org/pkg/math/rand/#New), you must seed `math/rand` yourself. In the browser, `Math.random` requests random data under the hood from the operating system (OS) to use as a seed.
+A pseudorandom number generator (PRNG) works in a similar manner. A PRNG maintains an internal state and applies math to that state every time a new random number is requested. The seed can be manual or automatic. In the [Go programming language](https://golang.org/pkg/math/rand/#New), you must seed `math/rand` yourself. In the browser, `Math.random` requests random data under the hood from the operating system (OS) to use as a seed.
 
 PRNGs are deterministic. The same seed will always produce the same sequence of numbers. Often, a deterministic outcome is preferred. For example, to generate the same random events on all clients without them having to talk over a network. Or for reproducible performance benchmarks.
 

@@ -2,8 +2,6 @@
 
 My home on the web! The place where I write about software and other software-related miscellanea.
 
-It's live, check it out: https://healeycodes.com
-
 ## Features
 
 - Write posts in Markdown — share with the world
