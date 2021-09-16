@@ -6,7 +6,7 @@ It's live, check it out: https://healeycodes.com
 
 ## Features
 
-- Write posts in Markdown, share with the world
+- Write posts in Markdown — share with the world
 - Clean design focused on content (responsive for desktop/tablet/mobile)
 - Usual benefits of Next.js ([image optimization](https://nextjs.org/docs/basic-features/image-optimization), etc.)
 - Code highlighting via Prism.js
