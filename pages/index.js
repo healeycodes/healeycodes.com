@@ -10,9 +10,11 @@ import Newsletter from "../components/newsletter";
 
 import { getSortedPostsData, getPostData } from "../lib/posts";
 import { generateRssFeed } from "../lib/rss";
+import { generateStorkIndex } from "../lib/stork";
 
 export async function getStaticProps() {
   await generateRssFeed();
+  generateStorkIndex();
   const allPostsData = getSortedPostsData();
   const words = allPostsData.reduce(
     (count, current) =>

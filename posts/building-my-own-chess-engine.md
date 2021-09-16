@@ -176,13 +176,13 @@ There are many configuration commands in the specification and it initially seem
 
 In order to hook my chess engine up to lichess via [lichess-bot](https://github.com/ShailChoksi/lichess-bot), I implemented the following. These commands are send to the engine from lichess-bot:
 
-- `uci` - the engine reports its name, authors, and `uciok`
+- `uci` — the engine reports its name, authors, and `uciok`
 
-- `isready` - the engine reports that it's ready: `readyok`
+- `isready` — the engine reports that it's ready: `readyok`
 
-- `position startpos moves e2e4` - the engine sets it's internal state to match the list of moves
+- `position startpos moves e2e4` — the engine sets it's internal state to match the list of moves
 
-- `go` - the engine should now calculate and respond with the next best move, like `bestmove g8f6`
+- `go` — the engine should now calculate and respond with the next best move, like `bestmove g8f6`
 
 ## A Promise
 
