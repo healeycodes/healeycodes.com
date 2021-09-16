@@ -154,7 +154,7 @@ export default function Layout({ children, title, description }) {
           margin-left: auto;
           margin-right: auto;
           max-width: ${siteConfig.LAYOUT_WIDTH}px;
-          padding-top: 3rem;
+          padding-top: 2rem;
           padding-left: 1rem;
           padding-right: 1rem;
           padding-bottom: 6rem;

@@ -98,10 +98,11 @@ export default function Home({ allPostsData, description, words }) {
         @media only screen and (max-width: 46rem) {
           .avatar {
             display: block;
-            padding-top: 48px;
+            padding-top: 38px;
           }
           .avatar-text {
             margin-left: initial;
+            margin-bottom: 0px;
           }
           .posts {
             display: block;

@@ -46,7 +46,6 @@ export default function Nav() {
           flex-wrap: wrap;
         }
         li {
-          padding-top: 16px;
           padding-right: 16px;
         }
       `}</style>
