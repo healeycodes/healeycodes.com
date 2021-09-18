@@ -28,7 +28,7 @@ const indexTable = document.querySelector("#wikiArticle > table > tbody");
 // There are three <tr>s to a row
 const allRows = indexTable.querySelectorAll('tr');
 const chunkRows = [];
-for (var i = 0; i < allRows.length; i += 3) {
+for (let i = 0; i < allRows.length; i += 3) {
     chunkRows.push([allRows[i], allRows[i + 1], allRows[i + 2]]);
 }
 ```
@@ -76,7 +76,7 @@ const puppeteer = require('puppeteer');
         // There are three <tr>s to a row
         const allRows = indexTable.querySelectorAll('tr');
         const chunkRows = [];
-        for (var i = 0; i < allRows.length; i += 3) {
+        for (let i = 0; i < allRows.length; i += 3) {
             chunkRows.push([allRows[i], allRows[i + 1], allRows[i + 2]]);
         }
 

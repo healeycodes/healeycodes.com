@@ -76,11 +76,11 @@ In Node.js, we commonly use the `sqlite3` [npm package](https://www.npmjs.com/pa
 
 ```javascript
 // hello-sqlite
-var fs = require('fs');
-var dbFile = './.data/sqlite.db'; // Our database file
-var exists = fs.existsSync(dbFile); // Sync is okay since we're booting up
-var sqlite3 = require('sqlite3').verbose(); // For long stack traces
-var db = new sqlite3.Database(dbFile);
+let fs = require('fs');
+let dbFile = './.data/sqlite.db'; // Our database file
+let exists = fs.existsSync(dbFile); // Sync is okay since we're booting up
+let sqlite3 = require('sqlite3').verbose(); // For long stack traces
+let db = new sqlite3.Database(dbFile);
 ```
 
 Through this `db` object, we can interact with our local database like we would through a connection to an outside database.

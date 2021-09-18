@@ -87,8 +87,8 @@ fetch('/read')
     .then(json => renderGraph(json));
 const safeDate = time => new Date(parseInt(time)).toUTCString();
 const renderGraph = (speedData) => {
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx, {
+    let ctx = document.getElementById('myChart').getContext('2d');
+    let myChart = new Chart(ctx, {
     type: 'scatter',
     data: {
         datasets: [{

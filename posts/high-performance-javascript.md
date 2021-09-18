@@ -22,12 +22,12 @@ The environment we're targetting is `nodejs 10.15.0` with `--harmony` ([source](
 A naive solution here is to loop through our stones, looping through the jewels for every stone. We'll be using standard for loops in this article as they are generally the fastest way of iterating data in JavaScript.
 
 ```javascript
-var numJewelsInStones = function(J, S) {
+let numJewelsInStones = function(J, S) {
     let myJewels = 0;
     // Jewels
-    for (var i = 0; i < J.length; i++) {
+    for (let i = 0; i < J.length; i++) {
         // Stones
-        for (var j = 0; j < S.length; j++) { // Nested!
+        for (let j = 0; j < S.length; j++) { // Nested!
             if (J[i] === S[j]) {
                 myJewels++;
             }
@@ -42,10 +42,10 @@ The runtime is quadratic, `O(N^2)`. Their online judge won't actually accept thi
 Let's grab a [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) to get rid of one of the loops. Reducing our runtime down to linear, `O(N)`. Looking up a Set in JavaScript is constant time, `O(1)`.
 
 ```javascript
-var numJewelsInStones = function(J, S) {
+let numJewelsInStones = function(J, S) {
     const jewels = new Set(J); // Set accepts an iterable object
     let myJewels = 0;
-    for (var i = 0; i < S.length; i++) {
+    for (let i = 0; i < S.length; i++) {
         if (jewels.has(S[i])) {
             myJewels++;
         }
@@ -65,13 +65,13 @@ Did you spot that our length is wrong? This is something I forgot as I was testi
 ![ASCII table](asciitable.png)
 
 ```javascript
-var numJewelsInStones = function(J, S) {
+let numJewelsInStones = function(J, S) {
     const jewels = new Int8Array(59);
-    for (var i = 0; i < J.length; i++) {
+    for (let i = 0; i < J.length; i++) {
         jewels[J.charCodeAt(i)-65] = 1;
     }
     let myJewels = 0;
-    for (var i = 0; i < S.length; i++) {
+    for (let i = 0; i < S.length; i++) {
         if (jewels[S.charCodeAt(i)-65] === 1) {
             myJewels++;
         }
@@ -89,18 +89,18 @@ Et voila, our `100% fastest` [submission](https://leetcode.com/submissions/detai
 A naive solution for this might be to loop through the array twice, replacing on the second loop. Let's try that out first.
 
 ```javascript
-var reverseVowels = function(s) {
+let reverseVowels = function(s) {
     const vowels = new Set(['a','e','i','o','u', 'A', 'E', 'I', 'O', 'U']);
     const reversed = [];
     let vowelsFound = [];
     // Find any vowels
-    for (var i = 0; i < s.length; i++) {
+    for (let i = 0; i < s.length; i++) {
         if (vowels.has(s[i])) {
             vowelsFound.push(s[i]);
         }   
     }
     // Build the final string
-    for (var i = 0; i < s.length; i++) {
+    for (let i = 0; i < s.length; i++) {
         if (vowels.has(s[i])) {
             reversed.push(vowelsFound.pop());
         } else {
@@ -114,7 +114,7 @@ var reverseVowels = function(s) {
 This nets us `faster than 97.00%`. The runtime is linear, `O(2N) -> O(N)`, and it reads well but I can't help but think we're looping the string one more time than we have to. Let's try a two-pointer approach. Walking in, step-by-step, from the front and back at the same time, swapping any vowels we see. If there's a middle vowel we just leave it.
 
 ```javascript
-var reverseVowels = function(s) {
+let reverseVowels = function(s) {
     const vowels = new Set(['a','e','i','o','u', 'A', 'E', 'I', 'O', 'U']);
     s = s.split('');
     let front = 0;
@@ -143,7 +143,7 @@ We've reduced a full iteration! This gets us `faster than 98.89%` and it's at th
 First I threw out the Set. The number of vowels is constant and we don't need all that hashing going on. I tried a switch statement but then found a chained if statement was faster. I discovered that in-lining this logic was faster than a function. I then reduced this down to an expression. What I'm trying to say is: the code coming up is gross. It's close-down-your-IDE-and-talk-a-walk gross. But .. [it's](https://leetcode.com/submissions/detail/229918811/) `faster than 100.00%`.
 
 ```javascript
-var reverseVowels = function(s) {
+let reverseVowels = function(s) {
     s = s.split('');
     let front = 0;
     let back = s.length - 1;
@@ -193,7 +193,7 @@ This is a common puzzle and it was the hardest to improve the runtime for becaus
 I actually crashed a browser tab by trying to calculate the 50th term with this function.
 
 ```javascript
-var fib = function(N) {
+let fib = function(N) {
     if (N < 2) {
         return N;
     }
@@ -205,7 +205,7 @@ We get `faster than 36.63%` for this answer. Ouch. In production, this is the ki
 
 ```javascript
 const memo = [0, 1];
-var fib = function(N) {
+let fib = function(N) {
     if (memo[N] !== undefined) {
         return memo[N];
     }
@@ -218,7 +218,7 @@ var fib = function(N) {
 `faster than 94.25%`. LeetCode doesn't store data between each run-through of our code so we'll have to try something different. We've interested in calculating *one* number of the sequence just *once*. I think we can throw away that array. Let's look at the iterative solution.
 
 ```javascript
-var fib = function(N) {
+let fib = function(N) {
     if (N < 2) {
         return N;
     }

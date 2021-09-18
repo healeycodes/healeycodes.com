@@ -161,7 +161,7 @@ function changeNote() {
 
 The Storage API abstracts away the heavy lifting for us.
 
-User's need a way to name and create notes. `newNote()` does just that. It uses [Element#insertBefore](https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore) to place the new note at the top of the selectbox. This method is called on the parent element. `var insertedNode = parentNode.insertBefore(newNode, referenceNode);`. What's neat about this method is that it accepts a null value as the second argument. Meaning we can call `insertBefore` on empty parent elements!
+User's need a way to name and create notes. `newNote()` does just that. It uses [Element#insertBefore](https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore) to place the new note at the top of the selectbox. This method is called on the parent element. `let insertedNode = parentNode.insertBefore(newNode, referenceNode);`. What's neat about this method is that it accepts a null value as the second argument. Meaning we can call `insertBefore` on empty parent elements!
 
 ```javascript
 /**
