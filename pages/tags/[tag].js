@@ -29,19 +29,23 @@ export default function TagList({ otherTags, tag, posts }) {
   );
   return (
     <Layout title={title}>
-      <h1 className="tag-desc">{title}</h1>
-      <p className="other-tags">
-        Other tags:{" "}
-        {formattedTags
-          .map((formattedTag, i) => (
-            <Link href={`/tags/${otherTags[i]}`} key={i}>
-              {formattedTag}
-            </Link>
-          ))
-          .reduce((prev, curr) => [prev, ", ", curr])}{" "}
-        or <Link href="/articles">all articles</Link>.
-      </p>
-      <PostList posts={posts} />
+      <heading>
+        <h1 className="tag-desc">{title}</h1>
+      </heading>
+      <main>
+        <p className="other-tags">
+          Other tags:{" "}
+          {formattedTags
+            .map((formattedTag, i) => (
+              <Link href={`/tags/${otherTags[i]}`} key={i}>
+                {formattedTag}
+              </Link>
+            ))
+            .reduce((prev, curr) => [prev, ", ", curr])}{" "}
+          or <Link href="/articles">all articles</Link>.
+        </p>
+        <PostList posts={posts} />
+      </main>
       <style jsx>{`
         .tag-desc {
           margin-bottom: 0px;

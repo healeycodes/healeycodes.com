@@ -16,18 +16,22 @@ export default function Articles({ tags, posts }) {
   );
   return (
     <Layout title={title}>
-      <h1 className="tag-desc">{title}</h1>
-      <p className="other-tags">
-        Other tags:{" "}
-        {formattedTags
-          .map((formattedTag, i) => (
-            <Link href={`/tags/${tags[i]}`} key={i}>
-              {formattedTag}
-            </Link>
-          ))
-          .reduce((prev, curr) => [prev, ", ", curr])}
-      </p>
-      <PostList posts={posts} />
+      <heading>
+        <h1 className="tag-desc">{title}</h1>
+      </heading>
+      <main>
+        <p className="other-tags">
+          Other tags:{" "}
+          {formattedTags
+            .map((formattedTag, i) => (
+              <Link href={`/tags/${tags[i]}`} key={i}>
+                {formattedTag}
+              </Link>
+            ))
+            .reduce((prev, curr) => [prev, ", ", curr])}
+        </p>
+        <PostList posts={posts} />
+      </main>
       <style jsx>{`
         .tag-desc {
           margin-bottom: 0px;

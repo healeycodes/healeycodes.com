@@ -3,7 +3,7 @@ import siteConfig from "../siteConfig.json";
 export default function Newsletter() {
   const after = () =>
     window.open(
-      "https://buttondown.email/${siteConfig.BUTTON_DOWN_USER}",
+      `https://buttondown.email/${siteConfig.BUTTON_DOWN_USER}`,
       "popupwindow"
     );
   return (
