@@ -1,4 +1,5 @@
 import siteConfig from "../siteConfig.json";
+
 import Link from "next/link";
 
 export default function Nav() {

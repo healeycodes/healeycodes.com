@@ -1,4 +1,5 @@
 import siteConfig from "../siteConfig.json";
+
 import Image from "next/image";
 
 function imageResize(imageWidth, imageHeight) {

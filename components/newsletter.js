@@ -60,7 +60,7 @@ export default function Newsletter() {
         }
         .subscribe {
           // Reset button for mobile
-          // TODO: refactor this elsewhere?
+          // TODO: refactor button styling elsewhere?
           appearance: none;
 
           font-family: inherit;
