@@ -27,7 +27,9 @@ experiments and others are used by people everyday!"
         <div className="project-list">
           {projects.map((project, i) => (
             <div className="project" key={i}>
-              <a href={project.link}>{project.name}</a>
+              <a href={project.link} target="_blank">
+                {project.name}
+              </a>
               <p className="project-desc">{project.desc}</p>
               {project.to ? (
                 <p className="project-post">
@@ -41,7 +43,9 @@ experiments and others are used by people everyday!"
         <div className="project-list">
           {games.map((game, i) => (
             <div className="project" key={i}>
-              <a href={game.link}>{game.name}</a>
+              <a href={game.link} target="_blank">
+                {game.name}
+              </a>
               <p className="project-desc">{game.desc}</p>
             </div>
           ))}

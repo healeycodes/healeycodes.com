@@ -177,11 +177,8 @@ There are many configuration commands in the specification and it initially seem
 In order to hook my chess engine up to lichess via [lichess-bot](https://github.com/ShailChoksi/lichess-bot), I implemented the following. These commands are send to the engine from lichess-bot:
 
 - `uci` — the engine reports its name, authors, and `uciok`
-
 - `isready` — the engine reports that it's ready: `readyok`
-
 - `position startpos moves e2e4` — the engine sets it's internal state to match the list of moves
-
 - `go` — the engine should now calculate and respond with the next best move, like `bestmove g8f6`
 
 ## A Promise
@@ -190,20 +187,16 @@ I have found a great joy interacting with the chess community over the last mont
 
 I took breaks from writing this article to play chess against Dad on a real board. We're missing a white rook and use a pencil sharpener as a replacement piece. He has been telling me stories about playing chess decades ago — before IBM's [Deep Blue](https://en.wikipedia.org/wiki/Deep_Blue_(chess_computer)) emerged and beat Garry Kasparov, the reigning world champion, on its second attempt in 1997.
 
-If you are within my social circle, you will have experienced me evangelizing chess and chess engines over the last month — now that I have published this, I promise to chill out a little bit ♟️
+If you are within my social circle, you will have experienced me evangelizing chess and chess engines over the last month — now that I have published this, I promise to chill out a little bit.
 
 ## Other Resources
 
 To build [healeycodes/andoma](https://github.com/healeycodes/andoma), I used the following resources (and recommend all of them).
 
 - [Chess Programming Wiki](https://www.chessprogramming.org/Main_Page) — an incredible wealth of knowledge exists here. I spent hours reading through intermediate and advanced concepts just for fun
-
 - [Algorithms Explained – minimax and alpha-beta pruning](https://www.youtube.com/watch?v=l-hh51ncgDI) — Sebastian Lague's breakdowns of algorithms are very approachable and this one is no different
-
 - [A step-by-step guide to building a simple chess AI](https://www.freecodecamp.org/news/simple-chess-ai-step-by-step-1d55a9266977/) — this JavaScript-based tutorial introduces concepts with explicit code snippets. The source code of the final solution is quite readable too
-
 - [thomasahle/sunfish](https://github.com/thomasahle/sunfish) — a simple, feature complete engine to learn from 
-
 - [zserge/carnatus](https://github.com/zserge/carnatus) — a clone of sunfish in Go
 
 <br>
