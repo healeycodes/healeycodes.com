@@ -10,7 +10,6 @@ export default function Code({ children, language }) {
         theme={codeTheme}
         code={children}
         language={language}
-        className="code"
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <div className={className} style={style}>
