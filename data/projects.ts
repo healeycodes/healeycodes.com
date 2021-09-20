@@ -41,8 +41,8 @@ export default [
     to: "/go/tutorial/beginners/showdev/2019/10/21/cloning-memcached-with-go.html",
   },
   {
-    name: "personal-website",
-    link: "https://github.com/healeycodes/personal-website",
+    name: "healeycodes.com",
+    link: "https://github.com/healeycodes/healeycodes.com",
     desc: "Next.js blog and portfolio website.",
   },
   {
