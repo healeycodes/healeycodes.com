@@ -1,10 +1,12 @@
 ## healeycodes.com
 
-My home on the web! The place where I write about software and other software-related miscellanea.
+My home on the web! This is where I write about software.
+
+Issues/bug reports are very welcome. PRs are also welcome (but open an issue first).
 
 ## Features
 
-- Write posts in Markdown — share with the world
+- Write posts in Markdown — share with the world!
 - Clean design focused on content (responsive for desktop/tablet/mobile)
 - Usual benefits of Next.js ([image optimization](https://nextjs.org/docs/basic-features/image-optimization), etc.)
 - Code highlighting via Prism.js
