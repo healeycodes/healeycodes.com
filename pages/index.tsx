@@ -30,7 +30,7 @@ export async function getStaticProps() {
 }
 
 export default function Home({ allPostsData, description, words }) {
-  function numberWithCommas(x) {
+  function numberWithCommas(x: number) {
     // https://stackoverflow.com/a/2901298
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
@@ -74,9 +74,7 @@ export default function Home({ allPostsData, description, words }) {
       <footer>
         <Newsletter />
       </footer>
-      {/* This is global to be able to style <Image />*/}
-      <style jsx global>{`
-        .avatar {
+      <style jsx>{`.avatar {
           display: flex;
           align-items: center;
           padding-top: 36px;
@@ -85,8 +83,6 @@ export default function Home({ allPostsData, description, words }) {
         .avatar-text {
           margin-left: 16px;
         }
-      `}</style>
-      <style jsx>{`
         .posts {
           display: flex;
         }

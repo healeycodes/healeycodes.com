@@ -6,14 +6,12 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link
-            rel="preload"
             href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
-            as="font"
+            rel="stylesheet"
           />
           <link
-            rel="preload"
             href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
-            as="font"
+            rel="stylesheet"
           />
         </Head>
         <body>

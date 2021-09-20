@@ -31,7 +31,7 @@ export function getSortedPostsData() {
     // Combine the data with the id
     return {
       id: fileName.replace(".md", ""),
-      content: matterResult.data.content,
+      content: matterResult.content,
       title: matterResult.data.title,
       description: matterResult.data.description,
       date: matterResult.data.date,
