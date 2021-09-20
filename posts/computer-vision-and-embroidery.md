@@ -115,7 +115,6 @@ for idx, color in enumerate(filtered):
 _Update – two readers emailed in with advice._
 
 - _One suggested converting RGB to a color space that better matches human visual perception, like CIELAB._
-
 - _Another suggested compressing the color space by using K-means clustering (by guessing K as the number of threads)_
 
 ## A sparkle of presentation

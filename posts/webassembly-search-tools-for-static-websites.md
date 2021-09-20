@@ -159,8 +159,6 @@ A search tool for static sites is a good fit for Wasm, and I hope to see project
 - Front-of-the-front-end (results UI)
 - Developer integration (APIs, docs)
 
-
-  
 So, thank your local open source developer today.
 
 <br>

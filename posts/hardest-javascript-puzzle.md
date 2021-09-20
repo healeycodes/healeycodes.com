@@ -18,7 +18,6 @@ Don't scroll too fast unless you want spoilers.
 ### [Codewars: Multi Line Task++: Hello World](https://www.codewars.com/kata/5935558a32fb828aad001213)
 
 - Write a function `f` that returns `Hello, world!`.
-
 - Every line must have at most 2 characters, and the total number of lines must be less than 40.
 
 Without the line restriction. The solution is:
@@ -126,7 +125,6 @@ Let's take it up a level to the harder version that started this journey!
 ### Codewars: [Multi Line Task∞: Hello World](https://www.codewars.com/kata/59a421985eb5d4bb41000031)
 
 - Write a function `f` that returns `Hello, world!`.
-
 - Every line must have __at most 1 character__, and the total number of lines must be less than 145.
 
 Without having first solved the two-characters-per-line version I don't think I would have come close to answering this version.

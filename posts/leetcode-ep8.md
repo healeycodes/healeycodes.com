@@ -144,7 +144,6 @@ Problem: Translate a sentence `S` into Goat Latin.
 Rules:
 
 - If there is a starting constant, move it to the end.
-
 - Add `ma` to the end. Add an `a` for every word in the sentence so far.
 
 I was surprised to find that it's quicker to use Python string operations as opposed to creating an array to fit the new word into. I think if you were able to create fixed size arrays in Python then it might be quicker to keep `extend` an array. However, whatever implementation of Python that Leetcode are using is probably doing this under the surface.
