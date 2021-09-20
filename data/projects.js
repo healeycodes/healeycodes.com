@@ -41,6 +41,11 @@ export default [
     to: "/go/tutorial/beginners/showdev/2019/10/21/cloning-memcached-with-go.html",
   },
   {
+    name: "personal-website",
+    link: "https://github.com/healeycodes/personal-website",
+    desc: "Next.js blog and portfolio website.",
+  },
+  {
     name: "among-us-friends",
     link: "https://github.com/healeycodes/among-us-friends",
     desc: "An ELO and player tracking system for the game Among Us.",
