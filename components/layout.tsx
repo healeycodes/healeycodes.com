@@ -108,10 +108,10 @@ export default function Layout({ children, title, description }) {
         div[class*="language-"],
         div[class*="language-"] {
           line-height: 24px;
-          padding-top: 16px;
+          padding-top: 8px;
           padding-left: 8px;
           padding-right: 8px;
-          padding-bottom: 16px;
+          padding-bottom: 8px;
           overflow: overlay;
         }
 

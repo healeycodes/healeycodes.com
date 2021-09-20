@@ -20,7 +20,7 @@ export default function About() {
           >
             standing invitation
           </a>
-          . Lately, I've been interested in chess engines, interpreters, and
+          . Lately, I've been interested in chess engines, programming language interpreters, and
           digital gardens. This website is built with Next.js and hosted on
           Vercel. It's <a href={siteConfig.REPO_URL}>open source</a>.
         </p>
