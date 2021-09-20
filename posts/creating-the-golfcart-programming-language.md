@@ -160,6 +160,7 @@ log("fib_memo: " + str(time() - t))
 ```
 
 For more detailed examples, see:
+
 - [Example programs](https://github.com/healeycodes/golfcart/tree/main/example%20programs)
 - [Specification programs](https://github.com/healeycodes/golfcart/tree/main/example%20programs/spec%20programs)
 - [Programs that purposefully throw errors](https://github.com/healeycodes/golfcart/tree/main/example%20programs/error%20programs)
