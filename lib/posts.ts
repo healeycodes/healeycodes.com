@@ -31,7 +31,11 @@ export function getSortedPostsData() {
     // Combine the data with the id
     return {
       id: fileName.replace(".md", ""),
-      ...matterResult.data,
+      content: matterResult.data.content,
+      title: matterResult.data.title,
+      description: matterResult.data.description,
+      date: matterResult.data.date,
+      tags: matterResult.data.tags,
     };
   });
 
@@ -47,7 +51,7 @@ export function getSortedPostsData() {
   });
 }
 
-export function getPostData(id) {
+export function getPostData(id: string) {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const matterResult = matter(fileContents);
@@ -58,7 +62,7 @@ export function getPostData(id) {
   };
 }
 
-export function getNextAndPrevPosts(id) {
+export function getNextAndPrevPosts(id: string) {
   const allPosts = getSortedPostsData()
     .map((post) => post.id)
     .reverse();
@@ -81,7 +85,7 @@ export function getNextAndPrevPosts(id) {
   }
 }
 
-export function getPostsFilteredByTag(tag) {
+export function getPostsFilteredByTag(tag: string) {
   return getSortedPostsData().filter((post) => post.tags.includes(tag));
 }
 

@@ -23,6 +23,7 @@ export async function generateRssFeed() {
       rss2: `${siteConfig.SITE_URL}/feed.xml`,
     },
     author,
+    copyright: "Andrew Healey",
   });
 
   posts.forEach((post) => {

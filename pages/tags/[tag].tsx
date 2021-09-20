@@ -23,15 +23,14 @@ export function getStaticProps({ params }) {
 }
 
 export default function TagList({ otherTags, tag, posts }) {
-  const title = `${tag.charAt(0).toUpperCase()}${tag.slice(1)} posts`;
+  const formattedTag = `${tag.charAt(0).toUpperCase()}${tag.slice(1)}`;
   const formattedTags = otherTags.map(
     (tag) => `${tag.charAt(0).toUpperCase()}${tag.slice(1)}`
   );
+  const title = `${formattedTag} posts`;
   return (
-    <Layout title={title}>
-      <heading>
-        <h1 className="tag-desc">{title}</h1>
-      </heading>
+    <Layout title={title} description={`All posts tagged with ${formattedTag}`}>
+      <h1 className="tag-desc">{title}</h1>
       <main>
         <p className="other-tags">
           Other tags:{" "}

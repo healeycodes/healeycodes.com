@@ -105,14 +105,14 @@ export default function Post({
                 // TODO: this means mobile might load slightly larger images than required
                 return (
                   <SpacedImage
-                    {...props}
-                    src={`/posts/${id}/${props.src}`}
-                    originalHeight={imageMetadata[props.src].height}
+                    {...props} // @ts-ignore
+                    src={`/posts/${id}/${props.src}`} // @ts-ignore
+                    originalHeight={imageMetadata[props.src].height} // @ts-ignore
                     originalWidth={imageMetadata[props.src].width}
                     quality={100}
                   />
-                );
-              } else if (type === "code" && props.className) {
+                ); // @ts-ignore
+              } else if (type === "code" && props.className) { // @ts-ignore 
                 const language = props.className.replace("lang-", "");
                 return <Code children={children} language={language} />;
               }

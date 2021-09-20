@@ -2,8 +2,8 @@ import siteConfig from "../siteConfig.json";
 
 import Head from "next/head";
 
-import Nav from "../components/nav";
-import codeTheme from "../components/codeTheme";
+import Nav from "./nav";
+import codeTheme from "./codeTheme";
 
 export default function Layout({ children, title, description }) {
   return (

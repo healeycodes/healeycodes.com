@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Date from "../components/date";
+import Date from "./date";
 
 export default function PostList({ posts }) {
   return (

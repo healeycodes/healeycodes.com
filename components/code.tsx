@@ -1,6 +1,6 @@
 import Highlight, { defaultProps } from "prism-react-renderer";
 
-import codeTheme from "../components/codeTheme";
+import codeTheme from "./codeTheme";
 
 export default function Code({ children, language }) {
   return (

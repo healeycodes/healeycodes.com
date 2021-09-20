@@ -7,9 +7,7 @@ import Layout from "../components/layout";
 export default function About() {
   return (
     <Layout title="About" description="About me">
-      <heading>
-        <h1>About</h1>
-      </heading>
+      <h1>About</h1>
       <main>
         <p>
           I write software and write about software. I{" "}

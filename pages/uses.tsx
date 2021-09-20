@@ -3,9 +3,7 @@ import Layout from "../components/layout";
 export default function About() {
   return (
     <Layout title="Uses" description="My gear and tools.">
-      <heading>
-        <h1>Uses</h1>
-      </heading>
+      <h1>Uses</h1>
       <main>
         <h3>Gear</h3>
         <ul>

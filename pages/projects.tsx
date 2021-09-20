@@ -13,9 +13,7 @@ export default function Projects() {
       description="Some of the software I've released. Some of the projects are fun
 experiments and others are used by people everyday!"
     >
-      <heading>
-        <h1>Open Source</h1>
-      </heading>
+      <h1>Open Source</h1>
       <main>
         <p>
           Here's some of the software I've released. Some of the projects are

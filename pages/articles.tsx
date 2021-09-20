@@ -15,10 +15,8 @@ export default function Articles({ tags, posts }) {
     (tag) => `${tag.charAt(0).toUpperCase()}${tag.slice(1)}`
   );
   return (
-    <Layout title={title}>
-      <heading>
-        <h1 className="tag-desc">{title}</h1>
-      </heading>
+    <Layout title={title} description="A list of every article I've written.">
+      <h1 className="tag-desc">{title}</h1>
       <main>
         <p className="other-tags">
           Other tags:{" "}

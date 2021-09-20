@@ -8,12 +8,12 @@ class MyDocument extends Document {
           <link
             rel="preload"
             href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
-            rel="stylesheet"
+            as="font"
           />
           <link
             rel="preload"
             href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
-            rel="stylesheet"
+            as="font"
           />
         </Head>
         <body>
