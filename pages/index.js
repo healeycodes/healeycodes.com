@@ -35,7 +35,7 @@ export default function Home({ allPostsData, description, words }) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
   return (
-    <Layout title="Home" description={description}>
+    <Layout title="Blog" description={description}>
       <main>
         <div className="avatar">
           <Image
