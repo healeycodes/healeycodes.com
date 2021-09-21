@@ -77,7 +77,7 @@ Since everything builds to a folder called `/public`, the Netlify configuration 
 
 ## Why Learn Ink At All?
 
-Sometimes I am too career driven in the languages and technologies that I pick up. So I wanted to make sure that I was still learning to explore and be creative — unencumbered by StackOverflow surveys that detail what technologies make you most employable. And what is more esoteric than a language that only two people actively code with (to my knowledge: myself and Linus).
+Sometimes I am too career-driven in the languages and technologies that I pick up. So I wanted to make sure that I was still learning to explore and be creative — unencumbered by StackOverflow surveys that detail what technologies make you most employable. And what is more esoteric than a language that only two people actively code with (to my knowledge: myself and Linus).
 
 I find Ink enjoyable to write code with. It's terse, functional, and for small solutions it's extremely clear to read. Programs are easy to share and deploy; a binary and a script. After reading some of Linus's passionate [technical articles](https://dotink.co/posts/) about Ink I felt an unexplainable yearning to try it out. So I did.
 
