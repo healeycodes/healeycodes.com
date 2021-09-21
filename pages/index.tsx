@@ -44,6 +44,7 @@ export default function Home({ allPostsData, description, words }) {
             src={meAvatar}
             alt="Andrew Healey."
             quality={100}
+            placeholder="blur"
           />
           <p className="avatar-text">
             Hey, I'm Andrew Healey. I'm a software engineer and writer. I build
