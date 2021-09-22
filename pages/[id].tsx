@@ -43,13 +43,13 @@ export async function getStaticProps({ params }) {
   if (nextAndPrevPosts.previous !== null) {
     prevPost = {
       id: nextAndPrevPosts.previous,
-      ...getPostData(nextAndPrevPosts.previous).data,
+      ...getPostData(nextAndPrevPosts.previous),
     };
   }
   if (nextAndPrevPosts.next !== null) {
     nextPost = {
       id: nextAndPrevPosts.next,
-      ...getPostData(nextAndPrevPosts.next).data,
+      ...getPostData(nextAndPrevPosts.next),
     };
   }
 
@@ -58,7 +58,7 @@ export async function getStaticProps({ params }) {
       id: params.id,
       source: postData.content,
       imageMetadata,
-      ...postData.data,
+      ...postData,
       prevPost,
       nextPost,
     },
@@ -100,9 +100,6 @@ export default function Post({
             // Here we can extend our plain Markdown posts with React components
             createElement(type, props, children) {
               if (type === "img") {
-                // Since these images aren't loaded statically, we can't use `layout="responsive"`
-                // instead we can handle the sizing match ourselves because we know the max-width of the article
-                // TODO: this means mobile might load slightly larger images than required
                 return (
                   <SpacedImage
                     {...props} // @ts-ignore
