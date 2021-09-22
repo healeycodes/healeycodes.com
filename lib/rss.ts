@@ -3,7 +3,11 @@ import fs from "fs";
 import { Feed } from "feed";
 import { getSortedPostsData } from "./posts";
 
+const RSS_FEED_FOLDER = "./public";
+const RSS_FEED = "./public/feed.xml";
+
 export async function generateRssFeed() {
+  const timer = Date.now();
   const posts = await getSortedPostsData();
   const date = new Date();
   const author = {
@@ -40,6 +44,7 @@ export async function generateRssFeed() {
     });
   });
 
-  fs.mkdirSync("./public", { recursive: true });
-  fs.writeFileSync("./public/feed.xml", feed.rss2());
+  fs.mkdirSync(RSS_FEED_FOLDER, { recursive: true });
+  fs.writeFileSync(RSS_FEED, feed.rss2());
+  console.log(`RSS feed built in ${Date.now() - timer}ms`);
 }

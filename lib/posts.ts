@@ -2,10 +2,10 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
-const postsDirectory = path.join(process.cwd(), "posts");
+const POSTS_DIRECTORY = path.join(process.cwd(), "posts");
 
 export function getAllPostIds() {
-  const fileNames = fs.readdirSync(postsDirectory);
+  const fileNames = fs.readdirSync(POSTS_DIRECTORY);
 
   return fileNames.map((fileName) => {
     return {
@@ -18,11 +18,11 @@ export function getAllPostIds() {
 
 export function getSortedPostsData() {
   // Get directory names under /posts
-  const fileNames = fs.readdirSync(postsDirectory);
+  const fileNames = fs.readdirSync(POSTS_DIRECTORY);
 
   const allPostsData = fileNames.map((fileName) => {
     // Read markdown file as string
-    const fullPath = path.join(postsDirectory, path.join(fileName));
+    const fullPath = path.join(POSTS_DIRECTORY, path.join(fileName));
     const fileContents = fs.readFileSync(fullPath, "utf8");
 
     // Use gray-matter to parse the post metadata section
@@ -52,13 +52,17 @@ export function getSortedPostsData() {
 }
 
 export function getPostData(id: string) {
-  const fullPath = path.join(postsDirectory, `${id}.md`);
+  const fullPath = path.join(POSTS_DIRECTORY, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const matterResult = matter(fileContents);
 
   return {
     id,
-    ...matterResult,
+    content: matterResult.content,
+    title: matterResult.data.title,
+    description: matterResult.data.description,
+    date: matterResult.data.date,
+    tags: matterResult.data.tags,
   };
 }
 
