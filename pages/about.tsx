@@ -26,6 +26,7 @@ export default function About() {
         </p>
         <SpacedImage
           src={mePresenting}
+          placeholder="blur"
           alt="Presenting: When Does Development Spark Joy? Sentimental analysis of commit messages."
           quality={100}
           originalWidth={mePresenting.width}
