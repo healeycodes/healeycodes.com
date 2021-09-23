@@ -1,18 +1,21 @@
 ## healeycodes.com
 
-My home on the web! This is where I write about software.
+My home on the web! A collection of thoughts and software experiments.
 
 Issues/bug reports are very welcome. PRs are also welcome (but open an issue first).
 
 ## Features
 
-- Write posts in Markdown — share with the world!
-- Clean design focused on content (responsive for desktop/tablet/mobile)
-- Usual benefits of Next.js ([image optimization](https://nextjs.org/docs/basic-features/image-optimization), etc.)
-- Code highlighting via Prism.js
-- Newsletter CTA to Buttondown
-- All core features work without JavaScript
+- Next.js hosted on Vercel
+- Write posts in plain Markdown and share with the world!
+- RSS feed
+- Simple design focused on content (responsive for desktop/mobile)
+- Code highlighting via `prism-react-renderer`
+- Newsletter CTA (powered by Buttondown)
+- All core features work without JavaScript enabled
 - Privacy-friendly analytics via GoatCounter
+
+Most configuration is handled via `siteConfig.json`
 
 ## Dev
 
