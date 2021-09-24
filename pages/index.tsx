@@ -92,7 +92,7 @@ export default function Home({ allPostsData, description, words }) {
           padding-right: 20px;
         }
 
-        @media only screen and (max-width: 46rem) {
+        @media only screen and (max-width: ${siteConfig.LAYOUT_WIDTH}px) {
           .avatar {
             display: block;
             padding-top: 38px;

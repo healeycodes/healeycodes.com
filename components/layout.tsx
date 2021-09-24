@@ -154,10 +154,10 @@ export default function Layout({ children, title, description }) {
           margin-left: auto;
           margin-right: auto;
           max-width: ${siteConfig.LAYOUT_WIDTH}px;
-          padding-top: 2rem;
-          padding-left: 1rem;
-          padding-right: 1rem;
-          padding-bottom: 6rem;
+          padding-top: 32px;
+          padding-left: 16px;
+          padding-right: 16px;
+          padding-bottom: 96px;
         }
       `}</style>
     </div>

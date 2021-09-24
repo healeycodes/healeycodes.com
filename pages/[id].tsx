@@ -33,7 +33,7 @@ export async function getStaticProps({ params }) {
   if (fs.existsSync(postImages)) {
     const imageFiles = fs.readdirSync(postImages);
     imageFiles.forEach((image) => {
-      imageMetadata[image] = imageSize(path.join(postImages, image));
+      imageMetadata[image] = { ...imageSize(path.join(postImages, image)) };
     });
   }
 
