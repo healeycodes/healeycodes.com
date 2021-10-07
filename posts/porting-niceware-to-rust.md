@@ -1,6 +1,6 @@
 ---
 title: "Porting Niceware to Rust"
-date: "2021-10-07"
+date: "2021-10-08"
 tags: ["rust"]
 description: "The sensation of incremental progress when programming with Rust."
 ogimage: "./og-image.png"
