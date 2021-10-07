@@ -1,5 +1,5 @@
 ---
-title: "Porting niceware to Rust"
+title: "Porting Niceware to Rust"
 date: "2021-10-07"
 tags: ["rust"]
 description: "The sensation of incremental progress when programming with Rust."
@@ -8,7 +8,7 @@ ogimage: "./og-image.png"
 
 I've been thinking about the sensation of incremental progress when programming with Rust. I come from dynamic programming land and I recently had a breakthrough with my productivity in Rust — instead of a technical challenge, I had to overcome an emotional barrier.
 
-I used to find Rust all-round less fun than other languages. Progress felt slow and when I started battling the borrow checker it seemed like I was stuck in a loop. However, I've turned a corner and now see that I was framing my progress incorrectly. Most of these thoughts arrived while I was porting niceware to Rust ([healeycodes/rust-niceware](https://github.com/healeycodes/rust-niceware)) after reading the following [twitter thread](https://twitter.com/steveklabnik/status/1445048008874332160).
+I used to find Rust all-round less fun than other languages. Progress felt slow and when I started battling the borrow checker it seemed like I was stuck in a loop. However, I've turned a corner and now see that I was framing my progress incorrectly. Most of these thoughts arrived while I was porting Niceware to Rust ([healeycodes/rust-niceware](https://github.com/healeycodes/rust-niceware)) after reading the following [twitter thread](https://twitter.com/steveklabnik/status/1445048008874332160).
 
 > @steveklabnik
 
@@ -24,7 +24,7 @@ I used to find Rust all-round less fun than other languages. Progress felt slow 
 
 > Part of *that* is because I think a lot of people don't experience iterating on the static semantics of their program and fixing compile errors as "programming". It feels like some sort of separate, less rewarding chore.
 
-## niceware
+## Niceware
 
 [diracdeltas/niceware](https://github.com/diracdeltas/niceware) is a small, elegant library to generate or convert random bytes into passphrases in Node and the browser. It's a reversible mapping of bytes-to-words, using a word list sized exactly 2^16. Given an even number of `u8` bytes, you get half that amount of words. `[255, 255] -> ["zyzzyva"]` and vice versa.
 
@@ -74,7 +74,7 @@ I find myself looking back on a lot of my half-finished Rust projects that I nev
 
 ## Cargo
 
-This was also my first time publishing something to crates.io. The DX/UX of Cargo is comparable to npm's. For simple use-cases, it gets out of your way, and there are just a handful of few steps to provide your code to the world.
+This was also my first time publishing something to crates.io. The DX/UX of Cargo is comparable to npm's. For simple use-cases, it gets out of your way, and there are just a handful of few steps to give your code to the world.
 
 - `cargo init` to create the initial local files
 - I edited `Cargo.toml` to add description/version/dependencies
