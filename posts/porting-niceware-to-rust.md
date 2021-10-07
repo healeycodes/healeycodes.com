@@ -26,15 +26,13 @@ I used to find Rust all-round less fun than other languages. Progress felt slow 
 
 ## Niceware
 
-[diracdeltas/niceware](https://github.com/diracdeltas/niceware) is a small, elegant library to generate or convert random bytes into passphrases in Node and the browser. It's a reversible mapping of bytes-to-words, using a word list sized exactly 2^16. Given an even number of `u8` bytes, you get half that amount of words. `[255, 255] -> ["zyzzyva"]` and vice versa.
+[diracdeltas/niceware](https://github.com/diracdeltas/niceware) is a small, elegant JavaScript library to generate or convert random bytes into passphrases in Node and the browser. It's a reversible mapping of bytes-to-words, using a word list sized exactly 2^16. Given an even number of bytes, you get half that amount of words. `[255, 255] -> ["zyzzyva"]` and vice versa.
 
-It has three core functions.
+It has three core functions with great test coverage so it's a good candidate for porting and continuing my Rust learning adventure.
 
 - `bytesToPassphrase`
 - `passphraseToBytes`
 - `generatePassphrase`
-
-Along with great test coverage, this makes it a good candidate for porting and continuing my Rust learning adventure.
 
 After two hours of coding, reading docs, and StackOverflow perusing, I realized that I hadn't executed my library yet. I relied entirely on IDE plugins to point out my errors, display warnings, and offer Quick Fixes.
 
@@ -72,9 +70,11 @@ I find myself looking back on a lot of my half-finished Rust projects that I nev
 
 > It matters when the error is caught. A syntax error my IDE catches is obviously my fault. A logic error at runtime is obviously my fault. A complicated type error that is hard to see even when I'm looking? That's less compelling.
 
+Maybe I'll go back to some of them.
+
 ## Cargo
 
-This was also my first time publishing something to crates.io. The DX/UX of Cargo is comparable to npm's. For simple use-cases, it gets out of your way, and there are just a handful of few steps to give your code to the world.
+Oh, and this was also my first time publishing something to crates.io! The DX/UX of Cargo is comparable to npm's. For simple use-cases, it gets out of your way, and there are just a handful of few steps to give your code to the world.
 
 - `cargo init` to create the initial local files
 - I edited `Cargo.toml` to add description/version/dependencies
@@ -85,4 +85,4 @@ This was also my first time publishing something to crates.io. The DX/UX of Carg
 
 Also see [Publishing on crates.io](https://www.notion.so/Porting-niceware-to-Rust-61d4c51d907a4b3bb8e845063dc7e3e1#e514d9aaa0c7432398fb472e92be4c41).
 
-I'm not sure who is downloading [my crate](https://crates.io/crates/rust-niceware) but I'd appreciate any thoughts/issues on [healeycodes/rust-niceware](https://github.com/healeycodes/rust-niceware) to help me improve at Rust :)
+I'm not sure who is downloading [my small crate](https://crates.io/crates/rust-niceware) but I'd appreciate any thoughts/issues on [healeycodes/rust-niceware](https://github.com/healeycodes/rust-niceware) to help me improve at Rust :)
