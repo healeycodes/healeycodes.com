@@ -1,6 +1,8 @@
 import siteConfig from "../siteConfig.json";
 import meAvatar from "../public/assets/avatar-v1.jpg";
 
+const { execSync } = require('child_process');
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,6 +17,11 @@ import { generateStorkConfig } from "../lib/stork";
 export async function getStaticProps() {
   await generateRssFeed();
   generateStorkConfig();
+
+  // TODO: remove, just for testing deployment logs
+  const storkStdout = execSync('./stork.sh')
+  console.log(storkStdout)
+  // --
 
   const allPostsData = getSortedPostsData();
   const words = allPostsData.reduce(
