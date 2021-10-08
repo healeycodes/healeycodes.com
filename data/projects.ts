@@ -18,9 +18,15 @@ export default [
     to: "/webassembly-search-tools-for-static-websites",
   },
   {
+    name: "rust-niceware",
+    link: "https://github.com/healeycodes/rust-niceware",
+    desc: "Generate or convert random bytes into passphrases. A Rust port of niceware.",
+    to: "/porting-niceware-to-rust",
+  },
+  {
     name: "pi",
     link: "https://github.com/healeycodes/pi",
-    desc: "Monorepo for my Raspberry Pi dashboard and GPS satellite listener",
+    desc: "Monorepo for my Raspberry Pi dashboard and GPS satellite listener.",
     to: "/listening-to-satellites-with-my-raspberry-pi",
   },
   {
