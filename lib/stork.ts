@@ -17,19 +17,18 @@ export function generateStorkConfig() {
 base_directory = "posts"
 url_prefix = "https://healeycodes.com/"
 frontmatter_handling = "Omit"
-files = [`;
+files = [\n`;
   const fileNames = fs.readdirSync(postsDirectory);
   fileNames.forEach((fileName) => {
     const fullPath = path.join(postsDirectory, path.join(fileName));
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const { data } = matter(fileContents);
-    config += `{
-        path = "${fileName}",
-        url = "${fileName.replace(".md", "")}",
-        title = "${data.title}"
-},`;
+    config +=
+      `  { path = "${fileName}",` +
+      ` url = "${fileName.replace(".md", "")}",` +
+      ` title = "${data.title}" },\n`;
   });
-  config += `]
+  config += `\n]
 `;
   fs.writeFileSync(path.join(process.cwd(), "stork-posts.toml"), config);
 }
