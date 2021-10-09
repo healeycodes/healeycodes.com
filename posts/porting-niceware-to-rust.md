@@ -83,6 +83,6 @@ Oh, and this was also my first time publishing something to crates.io! The DX/UX
 - `cargo publish --dry-run` (there were no problems)
 - `cargo publish`!
 
-Also see [Publishing on crates.io](https://www.notion.so/Porting-niceware-to-Rust-61d4c51d907a4b3bb8e845063dc7e3e1#e514d9aaa0c7432398fb472e92be4c41).
+Also see [Publishing on crates.io](https://doc.rust-lang.org/cargo/reference/publishing.html).
 
 I'm not sure who is downloading [my small crate](https://crates.io/crates/rust-niceware) but I'd appreciate any thoughts/issues on [healeycodes/rust-niceware](https://github.com/healeycodes/rust-niceware) to help me improve at Rust :)
