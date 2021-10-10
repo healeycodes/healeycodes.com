@@ -43,7 +43,7 @@ However, my Rust code ran perfectly. No problems. More importantly, I had manage
 The Rust standard library (and its documentation) continue to impress me i.e. the [binary_search](https://doc.rust-lang.org/std/vec/struct.Vec.html#method.binary_search) methods, one version seen below, are flexible and practical.
 
 ```rust
-pub fn passphrase_to_bytes(words: Vec<&str>) -> Result<Vec<u8>, error::UnknownWordError> {
+pub fn passphrase_to_bytes(words: &[&str]) -> Result<Vec<u8>, error::UnknownWordError> {
     let mut bytes: Vec<u8> = vec![0; words.len() * 2];
 
     for (index, word) in words.iter().enumerate() {
