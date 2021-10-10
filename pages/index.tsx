@@ -1,8 +1,6 @@
 import siteConfig from "../siteConfig.json";
 import meAvatar from "../public/assets/avatar-v1.jpg";
 
-const { execSync } = require('child_process');
-
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,16 +10,15 @@ import Newsletter from "../components/newsletter";
 
 import { getSortedPostsData, getPostData } from "../lib/posts";
 import { generateRssFeed } from "../lib/rss";
-import { generateStorkConfig } from "../lib/stork";
+import { generateStorkConfig, generateStorkIndex } from "../lib/stork";
 
 export async function getStaticProps() {
   await generateRssFeed();
-  generateStorkConfig();
-
-  // TODO: remove, just for testing deployment logs
-  const storkStdout = execSync('./stork.sh')
-  console.log(storkStdout)
-  // --
+  // https://vercel.com/docs/concepts/projects/environment-variables
+  if (process.env.VERCEL == '1') {
+    generateStorkConfig();
+    generateStorkIndex();
+  }
 
   const allPostsData = getSortedPostsData();
   const words = allPostsData.reduce(

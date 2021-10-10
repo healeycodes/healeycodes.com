@@ -5,6 +5,9 @@
 14:09:38.527  	Error: Command "npm run build && chmod +x stork.sh && ./stork.sh" exited with 127
 */
 
+import siteConfig from "../siteConfig.json";
+
+import { execSync } from "child_process";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -15,7 +18,7 @@ export function generateStorkConfig() {
   let config = `
 [input]
 base_directory = "posts"
-url_prefix = "https://healeycodes.com/"
+url_prefix = "${siteConfig.SITE_URL}/"
 frontmatter_handling = "Omit"
 files = [\n`;
   const fileNames = fs.readdirSync(postsDirectory);
@@ -31,4 +34,9 @@ files = [\n`;
   config += `\n]
 `;
   fs.writeFileSync(path.join(process.cwd(), "stork-posts.toml"), config);
+}
+
+export function generateStorkIndex() {
+  const storkStdout = execSync("./stork.sh");
+  console.log(storkStdout);
 }
