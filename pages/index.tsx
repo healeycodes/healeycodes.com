@@ -10,9 +10,15 @@ import Newsletter from "../components/newsletter";
 
 import { getSortedPostsData, getPostData } from "../lib/posts";
 import { generateRssFeed } from "../lib/rss";
+import { generateStorkConfig, generateStorkIndex } from "../lib/stork";
 
 export async function getStaticProps() {
   await generateRssFeed();
+  // https://vercel.com/docs/concepts/projects/environment-variables
+  if (process.env.VERCEL == '1') {
+    generateStorkConfig();
+    generateStorkIndex();
+  }
 
   const allPostsData = getSortedPostsData();
   const words = allPostsData.reduce(
