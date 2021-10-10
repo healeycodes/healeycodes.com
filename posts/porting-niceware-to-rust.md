@@ -8,7 +8,7 @@ ogimage: "./og-image.png"
 
 I've been thinking about the sensation of incremental progress when programming with Rust. I come from dynamic programming land and I recently had a breakthrough with my productivity in Rust — instead of a technical challenge, I had to overcome an emotional barrier.
 
-I used to find Rust all-round less fun than other languages. Progress felt slow and when I started battling the borrow checker it seemed like I was stuck in a loop. However, I've turned a corner and now see that I was framing my progress incorrectly. Most of these thoughts arrived while I was porting Niceware to Rust ([healeycodes/rust-niceware](https://github.com/healeycodes/rust-niceware)) after reading the following [twitter thread](https://twitter.com/steveklabnik/status/1445048008874332160).
+I used to find Rust all-round less fun than other languages. Progress felt slow and when I started battling the borrow checker it seemed like I was stuck in a loop. However, I've turned a corner and now see that I was framing my progress incorrectly. Most of these thoughts arrived while I was porting Niceware to Rust ([healeycodes/niceware](https://github.com/healeycodes/niceware)) after reading the following [twitter thread](https://twitter.com/steveklabnik/status/1445048008874332160).
 
 > @steveklabnik
 
@@ -42,23 +42,42 @@ However, my Rust code ran perfectly. No problems. More importantly, I had manage
 
 The Rust standard library (and its documentation) continue to impress me i.e. the [binary_search](https://doc.rust-lang.org/std/vec/struct.Vec.html#method.binary_search) methods, one version seen below, are flexible and practical.
 
-```rust
-pub fn passphrase_to_bytes(words: &[&str]) -> Result<Vec<u8>, error::UnknownWordError> {
-    let mut bytes: Vec<u8> = vec![0; words.len() * 2];
+_This code snippet has been updated. Kixunil left a PR which made changes to this function relating to performance and idiomatic Rust in [#2](https://github.com/healeycodes/niceware/pull/2) (big thanks to them)._
 
-    for (index, word) in words.iter().enumerate() {
-        match words::ALL_WORDS.binary_search(&&*word.to_lowercase()) {
-            Ok(word_index) => {
-                bytes[2 * index] = (word_index / 256) as u8;
-                bytes[2 * index + 1] = (word_index % 256) as u8;
-            }
-            Err(_) => {
-                return Err(error::UnknownWordError::new(&format!(
-                    "unknown word: {}",
-                    word
-                )))
-            }
+```rust
+/// Decode words into bytes
+///
+/// This tries to find words in the dictionary and produce the bytes that would have generated
+/// them.
+///
+/// ## Errors
+///
+/// This currently returns an error if a word is not found and returns no other errors.
+pub fn passphrase_to_bytes(words: &[&str]) -> Result<Vec<u8>, UnknownWordError> {
+    let mut bytes: Vec<u8> = Vec::with_capacity(words.len() * 2);
+    let mut word_buffer = [0; MAX_WORD_LEN];
+
+    for word in words {
+        // If a word is longer than maximum then we will definitely not find it.
+        // MAX_WORD_LEN is tested below.
+        if word.len() > MAX_WORD_LEN {
+            return Err(UnknownWordError::new(word));
         }
+        // All words are ascii (test below) so we can just do ascii lowercase.
+        for (src, dst) in word.bytes().zip(&mut word_buffer) {
+            *dst = src.to_ascii_lowercase();
+        }
+        let word_lowercase = &word_buffer[..word.len()];
+
+        let word_index = words::ALL_WORDS
+            .binary_search_by_key(&word_lowercase, |word| word.as_bytes())
+            .map_err(|_| UnknownWordError::new(word))?;
+
+        // Casting is safe because we have 2^16 words so the index can not possibly be greater than
+        // 2^16 - 1. 2^16 - 1 / 256 == 255
+        bytes.push((word_index / 256) as u8);
+        // Casting is safe because x % 256 is always at most 255
+        bytes.push((word_index % 256) as u8);
     }
     Ok(bytes)
 }
@@ -85,4 +104,4 @@ Oh, and this was also my first time publishing something to crates.io! The DX/UX
 
 Also see [Publishing on crates.io](https://doc.rust-lang.org/cargo/reference/publishing.html).
 
-I'm not sure who is downloading [my small crate](https://crates.io/crates/rust-niceware) but I'd appreciate any thoughts/issues on [healeycodes/rust-niceware](https://github.com/healeycodes/rust-niceware) to help me improve at Rust :)
+I'm not sure who is downloading [my small crate](https://crates.io/crates/niceware) but I'd appreciate any thoughts/issues on [healeycodes/niceware](https://github.com/healeycodes/niceware) to help me improve at Rust :)
