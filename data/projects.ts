@@ -18,8 +18,8 @@ export default [
     to: "/webassembly-search-tools-for-static-websites",
   },
   {
-    name: "rust-niceware",
-    link: "https://github.com/healeycodes/rust-niceware",
+    name: "niceware",
+    link: "https://github.com/healeycodes/niceware",
     desc: "Generate or convert random bytes into passphrases. A Rust port of niceware.",
     to: "/porting-niceware-to-rust",
   },
