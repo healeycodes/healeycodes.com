@@ -51,6 +51,7 @@ export default function Home({ allPostsData, description, words }) {
             alt="Andrew Healey."
             quality={100}
             placeholder="blur"
+            priority={true}
           />
           <p className="avatar-text">
             Hey, I'm Andrew Healey. I'm a software engineer and writer. I build

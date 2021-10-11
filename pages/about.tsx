@@ -31,6 +31,7 @@ export default function About() {
           quality={100}
           originalWidth={mePresenting.width}
           originalHeight={mePresenting.height}
+          priority={true}
         />
         <p>
           I like teaching people things that I know. I like video games,
