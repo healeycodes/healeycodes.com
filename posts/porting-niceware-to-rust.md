@@ -52,32 +52,25 @@ _This code snippet has been updated. Kixunil left a PR which made changes to thi
 ///
 /// ## Errors
 ///
-/// This currently returns an error if a word is not found and returns no other errors.
-pub fn passphrase_to_bytes(words: &[&str]) -> Result<Vec<u8>, UnknownWordError> {
+/// This function returns an UnknownWord error if a word is not found in the dictionary.
+pub fn passphrase_to_bytes(words: &[&str]) -> Result<Vec<u8>, Error> {
     let mut bytes: Vec<u8> = Vec::with_capacity(words.len() * 2);
-    let mut word_buffer = [0; MAX_WORD_LEN];
 
     for word in words {
         // If a word is longer than maximum then we will definitely not find it.
         // MAX_WORD_LEN is tested below.
         if word.len() > MAX_WORD_LEN {
-            return Err(UnknownWordError::new(word));
+            return Err(Error::UnknownWord {
+                word: word.to_string(),
+            });
         }
         // All words are ascii (test below) so we can just do ascii lowercase.
-        for (src, dst) in word.bytes().zip(&mut word_buffer) {
-            *dst = src.to_ascii_lowercase();
-        }
-        let word_lowercase = &word_buffer[..word.len()];
-
         let word_index = words::ALL_WORDS
-            .binary_search_by_key(&word_lowercase, |word| word.as_bytes())
-            .map_err(|_| UnknownWordError::new(word))?;
-
-        // Casting is safe because we have 2^16 words so the index can not possibly be greater than
-        // 2^16 - 1. 2^16 - 1 / 256 == 255
-        bytes.push((word_index / 256) as u8);
-        // Casting is safe because x % 256 is always at most 255
-        bytes.push((word_index % 256) as u8);
+            .binary_search(&&word.to_ascii_lowercase()[..])
+            .map_err(|_| Error::UnknownWord {
+                word: word.to_string(),
+            })?;
+        bytes.extend(u16::to_be_bytes(word_index.try_into().unwrap()));
     }
     Ok(bytes)
 }
