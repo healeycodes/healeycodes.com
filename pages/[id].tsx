@@ -107,6 +107,7 @@ export default function Post({
                     originalHeight={imageMetadata[props.src].height} // @ts-ignore
                     originalWidth={imageMetadata[props.src].width}
                     quality={100}
+                    priority={true}
                   />
                 ); // @ts-ignore
               } else if (type === "code" && props.className) { // @ts-ignore 
