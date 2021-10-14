@@ -7,7 +7,7 @@ description: "WebAssembly meets 16000 HTML checkboxes."
 
 ![DOOM rendered in 320x200](doom-checkboxes.png)
 
-You can [play now](https://healeycodes.github.io/doom-checkboxes/) (desktop only, best with Chrome), view the [source code](https://github.com/healeycodes/doom-checkboxes), or read on for the how.
+You can [play now](https://healeycodes.github.io/doom-checkboxes/) (desktop Chrome only), view the [source code](https://github.com/healeycodes/doom-checkboxes), or read on for the how.
 
 Earlier this week, I read a post on Bryan Braun's blog called [I keep making things out of checkboxes](https://www.bryanbraun.com/2021/09/21/i-keep-making-things-out-of-checkboxes/) where he describes building [Checkboxland](https://www.bryanbraun.com/checkboxland/) at the Recurse Center.
 
