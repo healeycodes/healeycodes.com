@@ -96,7 +96,7 @@ export default function Layout({ children, title, description }) {
 
         code {
           background-color: ${codeTheme.plain.backgroundColor};
-          padding: 2px;
+          padding: 3px;
         }
 
         hr {
