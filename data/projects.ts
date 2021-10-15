@@ -24,6 +24,12 @@ export default [
     to: "/porting-niceware-to-rust",
   },
   {
+    name: "doom-checkboxes",
+    link: "https://github.com/healeycodes/doom-checkboxes",
+    desc: "DOOM rendered via checkboxes in a web browser.",
+    to: "/doom-rendered-via-checkboxes",
+  },
+  {
     name: "pi",
     link: "https://github.com/healeycodes/pi",
     desc: "Monorepo for my Raspberry Pi dashboard and GPS satellite listener.",
