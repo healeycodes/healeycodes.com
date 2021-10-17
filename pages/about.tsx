@@ -42,12 +42,12 @@ export default function About() {
           read a lot of personal and technical blogs. If we've ever interacted,
           I've visited your website and probably think it's cool!
         </p>
+        <h2>Things I Like (continued)</h2>
+        <p>Technical books I recommend include Grokking Algorithms, Crafting Interpreters, Classic Computing Problems in Python, and The Computational Beauty of Nature.</p>
+        <p>I read non-tech too. Authors I recommend include Patricia Lockwood and Ben Lerner. In my undergrad, I mostly studied post-WWII fiction.</p>
+        <p>I like being outside and prefer cold days. I enjoy the rain.</p>
         <h2>Work</h2>
-        <p>
-          I currently lead a team of three software engineers building very cool
-          things for the web! Lately, I've been focusing on improving the
-          observability of our systems and keeping things fast!
-        </p>
+        <p>Software Engineer.</p>
         <h2>Education</h2>
         <ul>
           <li>M.S.c. in Computer Science (Distinction)</li>
