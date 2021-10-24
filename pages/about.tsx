@@ -44,7 +44,7 @@ export default function About() {
         </p>
         <h2>Things I Like (continued)</h2>
         <p>Technical books I recommend include Grokking Algorithms, Crafting Interpreters, Classic Computing Problems in Python, and The Computational Beauty of Nature.</p>
-        <p>I read non-tech too. Authors I recommend include Patricia Lockwood and Ben Lerner. In my undergrad, I mostly studied post-WWII fiction.</p>
+        <p>Non-tech authors I recommend include Patricia Lockwood and Ben Lerner. In my undergrad, I mostly studied post-WWII fiction.</p>
         <p>I like being outside and prefer cold days. I enjoy the rain.</p>
         <h2>Work</h2>
         <p>Software Engineer.</p>
