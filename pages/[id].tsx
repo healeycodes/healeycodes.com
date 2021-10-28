@@ -97,7 +97,7 @@ export default function Post({
       <main className="post-text">
         <Markdown
           options={{
-            // Here we can extend our plain Markdown posts with React components
+            // Extend plain Markdown posts with React components
             createElement(type, props, children) {
               if (type === "img") {
                 return (
@@ -113,6 +113,10 @@ export default function Post({
               } else if (type === "code" && props.className) { // @ts-ignore 
                 const language = props.className.replace("lang-", "");
                 return <Code children={children} language={language} />;
+              } else if (type === 'a') {
+                return <a key={Math.random()} href={props.href}>{children}</a>
+                console.log(type, props, children);
+                console.log('')
               }
               return React.createElement(type, props, children);
             },

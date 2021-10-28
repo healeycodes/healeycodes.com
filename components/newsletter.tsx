@@ -59,10 +59,7 @@ export default function Newsletter() {
           outline: none;
         }
         .subscribe {
-          // Reset button for mobile
-          // TODO: refactor button styling elsewhere?
           appearance: none;
-
           font-family: inherit;
           cursor: pointer;
           border-radius: 0.25rem;

@@ -1,10 +1,3 @@
-// TODO:
-// Vercel uses Amazon Linux 2 which doesn't seem compatible with Stork's Ubuntu build
-/*
-14:09:38.517  	./stork-ubuntu-16-04-v1.2.1: error while loading shared libraries: libssl.so.1.0.0: cannot open shared object file: No such file or directory
-14:09:38.527  	Error: Command "npm run build && chmod +x stork.sh && ./stork.sh" exited with 127
-*/
-
 import siteConfig from "../siteConfig.json";
 
 import { execSync } from "child_process";
