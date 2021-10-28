@@ -113,10 +113,6 @@ export default function Post({
               } else if (type === "code" && props.className) { // @ts-ignore 
                 const language = props.className.replace("lang-", "");
                 return <Code children={children} language={language} />;
-              } else if (type === 'a') {
-                return <a key={Math.random()} href={props.href}>{children}</a>
-                console.log(type, props, children);
-                console.log('')
               }
               return React.createElement(type, props, children);
             },
