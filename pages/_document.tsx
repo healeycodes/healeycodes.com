@@ -1,9 +1,11 @@
+import siteConfig from "../siteConfig.json";
+
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang={siteConfig.SITE_LANG}>
         <Head>
           <link
             href="https://fonts.googleapis.com/css2?family=Inter&display=swap"

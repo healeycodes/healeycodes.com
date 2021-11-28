@@ -21,6 +21,7 @@ export default function Newsletter() {
       >
         <div className="control">
           <input
+            required
             className="email"
             placeholder="adalovelace@gmail.com"
             type="email"
