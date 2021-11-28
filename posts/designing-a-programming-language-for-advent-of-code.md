@@ -50,6 +50,12 @@ However, this is a day one puzzle. The real challenge will be the mid-to-late mo
 
 In many ways, Adventlang is the successor to [Golfcart](https://github.com/healeycodes/golfcart) (one of my previous language experiments). They are both tree-walk interpreters for strongly-typed but highly dynamic languages and their interpreters are written in Go.
 
+Bob Nystrom reminds us how tree-walk interpreters work in [Crafting Interpreters](https://craftinginterpreters.com/a-map-of-the-territory.html#tree-walk-interpreters):
+
+> Some programming languages begin executing code right after parsing it to an AST (with maybe a bit of static analysis applied). To run the program, the interpreter traverses the syntax tree one branch and leaf at a time, evaluating each node as it goes.
+
+> This implementation style is common for student projects and little languages, but is not widely used for general-purpose languages since it tends to be slow.
+
 An Adventlang program is a series of statements and expressions. An expression is a statement that results in a value and can sit on the right-side of an assignment. A statement “does something” and its result cannot be captured.
 
 ```js
