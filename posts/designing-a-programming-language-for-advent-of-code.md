@@ -100,7 +100,7 @@ type Value interface {
 A raw string becomes a `StringValue` (an array of bytes), a list becomes a `ListValue` (an int-to-&Value map) and so on. These are passed around and type asserted to handle the flow of logic.
 
 ```go
-// pkg/adventlang/eval.go
+// pkg/adventlang/eval.go (trimmed)
 
 // An example type assertion of a `Value`
 if stringValue, okString := value.(StringValue); okString {
