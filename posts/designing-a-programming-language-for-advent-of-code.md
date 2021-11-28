@@ -13,7 +13,7 @@ While building [Adventlang](https://github.com/healeycodes/adventlang), the ques
 
 I need logic, math, and functions, and a few simple data structures like lists and dictionaries. In the runtime, I need to be able to read in a puzzle file and write to standard output.
 
-Let's look at the solution to AoC 2019 day one, [part one](https://adventofcode.com/2019/day/1). This is one of Adventlang's integration tests (for more examples of language features, check out the [test files](https://github.com/healeycodes/adventlang/tree/main/tests)).
+Let's look at the solution to AoC 2019 day one, [part two](https://adventofcode.com/2019/day/1). This is one of Adventlang's integration tests (for more examples of language features, check out the [test files](https://github.com/healeycodes/adventlang/tree/main/tests)).
 
 ```js
 let puzzle = [];
@@ -31,16 +31,20 @@ let max = func (x, y) {
     return y
 };
 
-let part_one_fuel = 0;
+let part_two_fuel = 0;
 for (let i = 0; i < len(puzzle); i = i + 1) {
     let mass = puzzle[i];
     let fuel = floor(mass / 3) - 2;
-    part_one_fuel = part_one_fuel + fuel;
+    part_two_fuel = part_two_fuel + fuel;
+    while (fuel > 0) {
+        fuel = max(0, floor(fuel / 3) - 2);
+        part_two_fuel = part_two_fuel + fuel;
+    }
 }
-log(part_one_fuel);
+log(part_two_fuel);
 ```
 
-However, this is the part one of a day one puzzle. The real challenge will be the mid-to-late month puzzles. Perhaps I’ll need to add a basic RegEx parser to the standard library!
+However, this is a day one puzzle. The real challenge will be the mid-to-late month puzzles. Perhaps I’ll need to add a basic RegEx parser to the standard library!
 
 ## Language Design
 
