@@ -9,7 +9,7 @@ In the second half of November, I designed and implemented a programming languag
 
 While building [Adventlang](https://github.com/healeycodes/adventlang), the question I asked myself early on was:
 
-> What is the minimum about of features I need to not hate my life during this festive season?
+> What is the minimum amount of features I need to not hate my life during this festive season?
 
 I need logic, math, and functions, and a few simple data structures like lists and dictionaries. In the runtime, I need to be able to read in a puzzle file and write to standard output.
 
