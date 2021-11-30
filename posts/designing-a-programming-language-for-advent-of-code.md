@@ -2,7 +2,7 @@
 title: "Designing a Programming Language for Advent of Code"
 date: "2021-11-28"
 tags: ["go"]
-description: "What is the minimum about of features I need to not hate my life during this festive season?"
+description: "What is the minimum amount of features I need to not hate my life during this festive season?"
 ---
 
 In the second half of November, I designed and implemented a programming language for [Advent of Code](https://adventofcode.com/) (AoC). I'll be using it to solve AoC's daily puzzles and adding to the standard library as I go. Will this language make it easier for you to solve the puzzles? No, certainly not. Here be dragons, etc. But it will increase my level of fun as I tap into the joyous energy that comes with forced-creativity-through-restriction.
