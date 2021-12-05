@@ -47,7 +47,7 @@ export default function Articles({ tags, posts }) {
               'posts',
               'stork-posts.st'
             );
-            let elem: HTMLElement = document.querySelector('.stork')
+            let elem: HTMLElement | null = document.querySelector('.stork')
             if (elem) {
               elem.style.visibility = 'visible'
             }
