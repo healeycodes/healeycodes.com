@@ -6,6 +6,12 @@ export default [
     to: "/building-my-own-chess-engine",
   },
   {
+    name: "adventlang",
+    link: "https://github.com/healeycodes/adventlang",
+    desc: "A programming language for Advent of Code.",
+    to: "/designing-a-programming-language-for-advent-of-code",
+  },
+  {
     name: "golfcart",
     link: "https://github.com/healeycodes/golfcart",
     desc: "A minimal programming language inspired by Ink, JavaScript, and Python.",
