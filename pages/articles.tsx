@@ -1,4 +1,6 @@
+import Head from 'next/head';
 import Link from "next/link";
+import Script from 'next/script'
 import { getAllTags, getSortedPostsData } from "../lib/posts";
 import Layout from "../components/layout";
 import PostList from "../components/postList";
@@ -16,6 +18,9 @@ export default function Articles({ tags, posts }) {
   );
   return (
     <Layout title={title} description="A list of every article I've written.">
+      <Head>
+        <link rel="stylesheet" href="https://files.stork-search.net/basic.css" />
+      </Head>
       <h1 className="tag-desc">{title}</h1>
       <main>
         <p className="other-tags">
@@ -28,6 +33,18 @@ export default function Articles({ tags, posts }) {
             ))
             .reduce((prev, curr) => [prev, ", ", curr])}
         </p>
+        <div className="stork-wrapper">
+          <input placeholder="Search all posts.." data-stork="posts" className="stork-input" />
+          <div data-stork="posts-output" className="stork-output"></div>
+        </div>
+        <Script
+          src="https://files.stork-search.net/stork.js"
+          // @ts-ignore
+          onLoad={() => window.stork.register(
+            'posts',
+            'stork-posts.st'
+          )}
+        />
         <PostList posts={posts} />
       </main>
       <style jsx>{`
@@ -39,6 +56,9 @@ export default function Articles({ tags, posts }) {
           margin-top: 0px;
           color: var(--light-text);
           padding-bottom: 24px;
+        }
+        .stork-wrapper {
+          padding-bottom: 48px;
         }
       `}</style>
     </Layout>
