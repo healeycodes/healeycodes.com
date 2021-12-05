@@ -49,7 +49,6 @@ export default function Articles({ tags, posts }) {
             );
             let elem: HTMLElement = document.querySelector('.stork-wrapper')
             if (elem) {
-              // Only show 
               elem.style.visibility = 'visible'
             }
           }}
