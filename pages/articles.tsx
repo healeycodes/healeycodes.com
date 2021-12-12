@@ -19,7 +19,7 @@ export default function Articles({ tags, posts }) {
   return (
     <Layout title={title} description="A list of every article I've written.">
       <Head>
-        <link rel="stylesheet" href="https://files.stork-search.net/flat.css" />
+        <link rel="stylesheet" href="https://files.stork-search.net/basic.css" />
       </Head>
       <h1 className="tag-desc">{title}</h1>
       <main>
