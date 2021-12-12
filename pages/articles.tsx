@@ -33,9 +33,11 @@ export default function Articles({ tags, posts }) {
             ))
             .reduce((prev, curr) => [prev, ", ", curr])}
         </p>
-        <div className="stork-wrapper">
-          <input placeholder="Search all posts.." data-stork="posts" className="stork-input" />
-          <div data-stork="posts-output" className="stork-output"></div>
+        <div className="stork-loader">
+          <div className="stork-wrapper">
+            <input placeholder="Search all posts.." data-stork="posts" className="stork-input" />
+            <div data-stork="posts-output" className="stork-output"></div>
+          </div>
         </div>
         <Script
           src="https://files.stork-search.net/stork.js"
@@ -45,7 +47,7 @@ export default function Articles({ tags, posts }) {
               'posts',
               'stork-posts.st'
             );
-            let elem: HTMLElement | null = document.querySelector('.stork-wrapper')
+            let elem: HTMLElement | null = document.querySelector('.stork-loader')
             if (elem) {
               elem.style.visibility = 'visible'
             }
@@ -63,7 +65,7 @@ export default function Articles({ tags, posts }) {
           color: var(--light-text);
           padding-bottom: 24px;
         }
-        .stork-wrapper {
+        .stork-loader {
           padding-bottom: 48px;
           visibility: hidden;
         }
@@ -72,7 +74,7 @@ export default function Articles({ tags, posts }) {
       {/* Ensure we don't show empty space for users without JS */}
       <noscript>
         <style>{`
-          .stork-wrapper {
+          .stork-loader {
             display: none;
           }`}
         </style>
