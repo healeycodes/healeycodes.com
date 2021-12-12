@@ -1,4 +1,6 @@
+import Head from 'next/head';
 import Link from "next/link";
+import Script from 'next/script'
 import { getAllTags, getSortedPostsData } from "../lib/posts";
 import Layout from "../components/layout";
 import PostList from "../components/postList";
@@ -16,6 +18,9 @@ export default function Articles({ tags, posts }) {
   );
   return (
     <Layout title={title} description="A list of every article I've written.">
+      <Head>
+        <link rel="stylesheet" href="https://files.stork-search.net/basic.css" />
+      </Head>
       <h1 className="tag-desc">{title}</h1>
       <main>
         <p className="other-tags">
@@ -28,6 +33,26 @@ export default function Articles({ tags, posts }) {
             ))
             .reduce((prev, curr) => [prev, ", ", curr])}
         </p>
+        <div className="stork-loader">
+          <div className="stork-wrapper">
+            <input placeholder="Search all posts.." data-stork="posts" className="stork-input" />
+            <div data-stork="posts-output" className="stork-output"></div>
+          </div>
+        </div>
+        <Script
+          src="https://files.stork-search.net/stork.js"
+          onLoad={() => {
+            // @ts-ignore
+            window.stork.register(
+              'posts',
+              'stork-posts.st'
+            );
+            let elem: HTMLElement | null = document.querySelector('.stork-loader')
+            if (elem) {
+              elem.style.visibility = 'visible'
+            }
+          }}
+        />
         <PostList posts={posts} />
       </main>
       <style jsx>{`
@@ -40,7 +65,20 @@ export default function Articles({ tags, posts }) {
           color: var(--light-text);
           padding-bottom: 24px;
         }
+        .stork-loader {
+          padding-bottom: 48px;
+          visibility: hidden;
+        }
       `}</style>
+
+      {/* Ensure we don't show empty space for users without JS */}
+      <noscript>
+        <style>{`
+          .stork-loader {
+            display: none;
+          }`}
+        </style>
+      </noscript>
     </Layout>
   );
 }
