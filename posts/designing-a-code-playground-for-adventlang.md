@@ -182,7 +182,7 @@ In the below diagram, a user runs code twice (the second run being requested bef
 
 I added a dropdown with example programs for users to play around with and picked snippets that show a range of the languages features. I also added a timer that measures the run time inside the worker.
 
-![The Fibonacci example in the playground.](fib.png)
+![The Quicksort example in the playground.](quicksort.png)
 
 I want to write a syntax reference either on or linked from the code playground. Some feedback I received was that when visiting the page, users were unsure how to start writing code and what language features were available. This is expected as I'm in the process of expanding a personal language to be more approachable.
 
