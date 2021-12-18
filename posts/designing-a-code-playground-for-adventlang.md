@@ -23,6 +23,7 @@ To get it to run in a web browser, I compiled the `web/run.go` entry point to [W
 // ..
 
 func main() {
+    // A function called `adventlang` will be set on the global scope
 	js.Global().Set("adventlang", js.FuncOf(run))
 
 	// Leave a channel open to ensure this program
