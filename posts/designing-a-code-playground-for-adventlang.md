@@ -5,11 +5,11 @@ tags: ["go"]
 description: "Using Web Workers and WebAssembly to build a speedy UI."
 ---
 
-I'm nine puzzles into my challenge to design and use a programming language to solve 2021's [Advent of Code](https://adventofcode.com/). I wrote about how and why I created Adventlang in a [previous post](https://healeycodes.com/designing-a-programming-language-for-advent-of-code). Today, I'm here to announce that I got side tracked and shipped a [code playground](https://healeycodes.github.io/adventlang/) so that you (and by you, I mean me) can write and execute Adventlang programs in a web browser, which makes it easier to share runnable code snippets with my friends. Another goal was to speed up the write → execute loop.
+I'm nine puzzles into my challenge to design and use a programming language to solve 2021's [Advent of Code](https://adventofcode.com/). I wrote about how and why I created Adventlang in a [previous post](https://healeycodes.com/designing-a-programming-language-for-advent-of-code). Today, I'm here to announce that I got side tracked and shipped a [code playground](https://healeycodes.github.io/adventlang/) so that you (and by you, I mean me) can write and execute Adventlang programs in a web browser, which makes it easier to share runnable code snippets with friends. Another goal was to speed up the write → execute loop.
 
 ![The code playground's user interface. Input section, run button, output section.](full.png)
 
-Adventlang's interpreter is written with Go. The CLI interpreter runs programs by accepting a filename via command line arguments. The main function reads the file and passes both filename (for stack traces) and source code to `RunProgram`. This same function is used when importing modules too (by using the returned context, aka scope, instead of the output).
+Adventlang's interpreter is written with Go. The CLI interpreter runs programs by accepting a filename via command line arguments. The main function reads the file and passes both the filename (for stack traces) and source code to `RunProgram`. This same function is used when importing modules too (by using the returned context, aka scope, instead of the output).
 
 ```go
 func RunProgram(filename string, source string) (string, *Context, error)
@@ -182,7 +182,7 @@ I added a dropdown with example programs for users to play around with and picke
 
 ![The Fibonacci example in the playground.](fib.png)
 
-I want to write a syntax reference either on or linked from the code playground. Some feedback I received was that when visiting the page, users were unsure how to start writing code and what language features were available. This is expected as I'm in the progress of expanding a personal language to be more approachable.
+I want to write a syntax reference either on or linked from the code playground. Some feedback I received was that when visiting the page, users were unsure how to start writing code and what language features were available. This is expected as I'm in the process of expanding a personal language to be more approachable.
 
 ## Unexplored Ideas
 
