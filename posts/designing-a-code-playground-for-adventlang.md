@@ -54,6 +54,8 @@ func run(this js.Value, args []js.Value) interface{} {
 To run our Wasm module in the browser, we need Go's JavaScript support file (`wasm_exec.js`) to provide an [importObject](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/instantiateStreaming#parameters) (you can think of this as necessary “glue code”). It can be found distributions of Go 1.11 onwards. To keep the version in sync with the system's Go installation, I added a line to the code playground's build script:
 
 ```bash
+# build_wasm.sh
+
 # Get matching version of wasm_exec for Go installation
 cp "$(go env GOROOT)/misc/wasm/wasm_exec.js" docs/wasm_exec.js
 # Compile!
