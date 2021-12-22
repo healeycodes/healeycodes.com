@@ -54,7 +54,7 @@ export default function Home({ allPostsData, description, words }) {
             priority={true}
           />
           <p className="avatar-text">
-            Hey, I'm Andrew Healey. I'm a software engineer and writer. I build
+            Hey, I'm Andrew Healey. I'm a software engineer. I build
             things that make people's lives easier. I've written{" "}
             {numberWithCommas(words)} words on this{" "}
             <a href={siteConfig.REPO_URL}>open source</a> website.

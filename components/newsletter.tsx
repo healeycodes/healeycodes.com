@@ -38,41 +38,21 @@ export default function Newsletter() {
           padding-left: 16px;
           padding-right: 16px;
           padding-bottom: 16px;
-          border: 1px solid var(--border);
+          border: 1px solid var(--text-muted);
           border-radius: 0.25rem;
+        }
+        .newsletter-desc {
+          color: var(--text-main);
         }
         .control {
           display: flex;
-          max-width: 500px;
         }
         .email {
-          border: 0 solid;
-          border-color: var(--border);
-          font-family: inherit;
-          display: block;
-          border-radius: 0.25rem;
-          border-width: 1px;
-          background-color: var(--input-background);
-          padding: 0.25rem 0.75rem;
-          font-size: 1rem;
-          font-weight: 400;
-          margin-right: 0.5rem;
-          outline: none;
+          min-width: 150px;
         }
         .subscribe {
-          appearance: none;
-          font-family: inherit;
-          cursor: pointer;
           border-radius: 0.25rem;
           border-width: 1px;
-          border-color: transparent;
-          vertical-align: middle;
-          font-size: 1rem;
-          line-height: 1.5rem;
-          padding: 0.375rem 0.75rem;
-          background-color: var(--button);
-          font-weight: 500;
-          color: var(--button-text);
           min-width: 8rem;
         }
         @media only screen and (max-width: ${siteConfig.LAYOUT_WIDTH}px) {
@@ -80,7 +60,7 @@ export default function Newsletter() {
             display: block;
           }
           .email {
-            width: 100%;
+            width: calc(100% - 21px);
           }
           .subscribe {
             margin-top: 8px;

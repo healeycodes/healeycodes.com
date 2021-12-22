@@ -28,7 +28,6 @@ export default function PostList({ posts }) {
         }
         .post-date {
           margin-top: 0px;
-          color: var(--light-text);
         }
       `}</style>
     </div>

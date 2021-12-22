@@ -50,24 +50,10 @@ export default function Layout({ children, title, description }) {
       <Nav />
       {children}
       <style jsx global>{`
-        :root {
-          --text: #1d1d27;
-          --input-background: #fff;
-          --link: #0265d5;
-          --link-hover: #496495;
-          --light-text: #73738b;
-          --border: #b6b6c2;
-          --button: #4a7ddd;
-          --button-text: #fff;
-        }
-
         html,
         body {
-          padding: 0;
-          margin: 0;
-          font-family: "Inter", sans-serif;
+          font-family: "Inter", -apple-system, BlinkMacSystemFont, avenir, helvetica, helvetica neue, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
           font-size: 16px;
-          letter-spacing: -0.01em;
         }
 
         h1,
@@ -76,7 +62,6 @@ export default function Layout({ children, title, description }) {
         h4,
         h5,
         h6 {
-          letter-spacing: -0.24px;
           font-weight: 400;
           padding-top: 16px;
           padding-bottom: 16px;
@@ -85,22 +70,9 @@ export default function Layout({ children, title, description }) {
         p {
           margin-bottom: 24px;
           line-height: 24px;
-          color: var(--text);
-        }
-
-        pre,
-        code {
-          font-family: "Roboto Mono", monospace;
-          font-size: 14px;
-        }
-
-        code {
-          background-color: ${codeTheme.plain.backgroundColor};
-          padding: 3px;
         }
 
         hr {
-          border-top: 1px solid var(--border);
           margin-top: 48px;
           margin-bottom: 48px;
         }
@@ -115,38 +87,17 @@ export default function Layout({ children, title, description }) {
           overflow: overlay;
         }
 
-        * {
-          box-sizing: border-box;
-        }
-
         a {
-          color: var(--link);
           text-decoration: none;
         }
 
         a:hover {
-          color: var(--link-hover);
           text-decoration: none;
-        }
-
-        ul {
-          list-style-type: square;
         }
 
         li {
           padding-bottom: 6px;
           line-height: 24px;
-        }
-
-        blockquote {
-          margin-left: 16px;
-          border-left-color: var(--border);
-          border-left-style: solid;
-          border-left-width: 1px;
-        }
-
-        blockquote > p {
-          padding-left: 16px;
         }
       `}</style>
       <style jsx>{`
