@@ -21,6 +21,7 @@ experiments and others are used by people everyday!"
           pull requests and issues on all of them — and I'm happy to onboard
           you.
         </p>
+        <p>Most of these are GitHub repositories hence the lowercase titles.</p>
         <h2>Projects</h2>
         <div className="project-list">
           {projects.map((project, i) => (
