@@ -39,7 +39,8 @@ export default function Articles({ tags, posts }) {
             <div data-stork="posts-output" className="stork-output"></div>
           </div>
         </div>
-        <Script
+        {/* Stork is broken when navigating between pages */}
+        {/* <Script
           src="https://files.stork-search.net/stork.js"
           onLoad={() => {
             // @ts-ignore
@@ -52,7 +53,7 @@ export default function Articles({ tags, posts }) {
               elem.style.visibility = 'visible'
             }
           }}
-        />
+        /> */}
         <PostList posts={posts} />
       </main>
       <style jsx>{`
