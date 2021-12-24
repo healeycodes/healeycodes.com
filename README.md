@@ -14,7 +14,6 @@ Issues/bug reports are very welcome. PRs are also welcome (but open an issue fir
 - Newsletter CTA (powered by Buttondown)
 - All core features work without JavaScript enabled
 - Privacy-friendly analytics via GoatCounter
-- Full-text post search (powered by Stork)
 
 Most configuration is handled via `siteConfig.json`
 
