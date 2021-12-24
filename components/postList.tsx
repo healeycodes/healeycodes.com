@@ -27,7 +27,7 @@ export default function PostList({ posts }) {
           margin-bottom: 0px;
         }
         .post-date {
-          margin-top: 0px;
+          margin-top: 5px;
         }
       `}</style>
     </div>

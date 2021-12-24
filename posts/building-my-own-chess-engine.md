@@ -104,7 +104,7 @@ The bonus of a square may be positive, neutral, or negative. The piece-square ta
 
 For the king, Michniewski provides two tables — one for the middle game and one for the end game. He defines the end game as being either if:
 
-> Both sides have no queens or
+> Both sides have no queens, or
 
 > Every side which has a queen has additionally no other pieces or one minorpiece maximum.
 
