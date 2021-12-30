@@ -10,13 +10,13 @@ I've been thinking about the sensation of incremental progress when programming 
 
 I used to find Rust all-round less fun than other languages. Progress felt slow and when I started battling the borrow checker it seemed like I was stuck in a loop. However, I've turned a corner and now see that I was framing my progress incorrectly. Most of these thoughts arrived while I was porting Niceware to Rust ([healeycodes/niceware](https://github.com/healeycodes/niceware)) after reading the following [twitter thread](https://twitter.com/steveklabnik/status/1445048008874332160).
 
-> @steveklabnik
+> **@steveklabnik**
 
 > this is 10000% an idle thought, but
 
 > do we perceive languages with stricter compilers as being more difficult because when something doesn't compile, we blame the compiler, but in languages that are looser (or interpreted), when something doesn't work, we blame ourselves?
 
-> @munificentbob
+> **@munificentbob**
 
 > I think that's part of it. But there's also something different about the sensation of incremental progress. If I can at least run my program and have it do something before it dies, I feel like I'm making some kind of progress. ... 
 
