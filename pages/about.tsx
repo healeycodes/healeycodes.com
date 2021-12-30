@@ -47,7 +47,7 @@ export default function About() {
         <p>Non-tech authors I recommend include Patricia Lockwood and Ben Lerner. In my undergrad, I mostly studied post-WWII fiction.</p>
         <p>I like being outside and prefer cold days. I enjoy the rain.</p>
         <h2>Work</h2>
-        <p>Software Engineer.</p>
+        <p>I'm a software engineer at Vercel.</p>
         <h2>Education</h2>
         <ul>
           <li>M.S.c. in Computer Science (Distinction)</li>

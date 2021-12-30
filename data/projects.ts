@@ -8,7 +8,7 @@ export default [
   {
     name: "adventlang",
     link: "https://github.com/healeycodes/adventlang",
-    desc: "A programming language for Advent of Code.",
+    desc: "A programming language (+ code playground) for Advent of Code.",
     to: "/designing-a-programming-language-for-advent-of-code",
   },
   {
