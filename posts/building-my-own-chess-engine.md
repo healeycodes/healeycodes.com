@@ -12,7 +12,7 @@ I was wrong.
 
 But I made it there in the end and created a toy chess engine ([healeycodes/andoma](https://github.com/healeycodes/andoma)) that I am proud of. It can play a game of chess and solve simple chess puzzles like mate-in-two or mate-in-three. It has a slim UCI interface which means it can be hooked up to lichess.org via [lichess-bot](https://github.com/ShailChoksi/lichess-bot) — a bridge between the lichess API and chess bots.
 
-The first speed bump in its development was grasping the computational the complexity of chess — how fast, and wide, the search tree grows. When a chess game starts, white can open in twenty different ways and black can respond in twenty different ways also. After the first full turn, there are 400 variations possible. After the third full turn, there are [over 119 million](https://en.wikipedia.org/wiki/Shannon_number#Shannon's_calculation).
+The first speed bump in its development was grasping the computational complexity of chess — how fast, and wide, the search tree grows. When a chess game starts, white can open in twenty different ways and black can respond in twenty different ways also. After the first full turn, there are 400 variations possible. After the third full turn, there are [over 119 million](https://en.wikipedia.org/wiki/Shannon_number#Shannon's_calculation).
 
 Claude Shannon calculated that there are around `10^120` possible games of chess in his seminal paper _Programming a Computer for Playing Chess_ in 1950. In _Rage Against the Machines_, Nate Silver [quotes](https://fivethirtyeight.com/features/rage-against-the-machines/) Diego Rasskin-Gutman, who said:
 
