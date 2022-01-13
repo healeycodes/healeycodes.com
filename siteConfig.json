@@ -16,5 +16,6 @@
     "EDIT_POST_URL": "https://github.com/healeycodes/healeycodes.com/tree/main/posts",
     "BUTTON_DOWN_USER": "healeycodes",
     "GOAT_COUNTER": "healeycodes",
-    "LAYOUT_WIDTH": 725
+    "LAYOUT_WIDTH": 725,
+    "BUMP_DEPLOY": 1
 }
