@@ -28,7 +28,7 @@ I went with [vladmandic/human](https://github.com/vladmandic/human) — another 
 
 I split the emotions into good vs. bad to get a clearer read of my mood. The overall score swings between -1 (very bad) and 1 (very good). I don't want to be spammed with cats every time I itch my nose and trigger a frame of video that's interpreted as negative so I added a three-second trailing average to look for prolonged periods of negative emotion. There's also a timeout of five minutes after sending a cat before it starts checking again.
 
-![Side by side comparison of the debug log when I'm happy vs. when I'm sad](happysad.png)
+![Side by side comparison of the debug log when I'm happy vs. when I'm sad.](happysad.png)
 
 I wrote all the frontend code in an `index.html` file for the prototype. The main loop runs at 30-40FPS on a decade-old desktop (it reads emotion accurately at far lower FPS and should probably be capped to save resources).
 
@@ -68,11 +68,11 @@ r = requests.post(
 )
 ```
 
-You'd think that I would be most impressed by my computer being able to read the emotions from my face but I actually think Pushover is the coolest part of this project. I think it's a one person business ran by [jcs](https://jcs.org/) (maybe someone can confirm). The phrase “it just works” is over used but Pushover is the real deal. I'm going to use it to replace Slack/email/text alerts in my future projects.
+You'd think that I would be most impressed by my computer being able to read the emotions from my face but I actually think Pushover is the coolest part of this project. The phrase "it just works" is over-used but I found Pushover to be the real deal. I'm going to use it to replace Slack/email/text alerts in my future projects.
 
 ## The Cats
 
-I glued together two APIs to get the message data. A random name comes from [https://randomuser.me/api/](https://randomuser.me/api/) and a random cat image is downloaded from [https://api.thecatapi.com/v1/images/search](https://api.thecatapi.com/v1/images/search). I actually need to download and resize the images because The Cat API (Cats as a Service) seems committed to providing very high resolution felines. Which is how I ended up with this cutely-named function:
+I glued together two APIs to get the message data. A random name comes from [https://randomuser.me/api/](https://randomuser.me/api/) and a random cat image is downloaded from [https://api.thecatapi.com/v1/images/search](https://api.thecatapi.com/v1/images/search). I actually need to download and resize the images because The Cat API (Cats as a Service) seems committed to providing very high resolution felines (we're talking 5MB+). Which is how I ended up with this cutely-named function:
 
 ```python
 def shrink_cat(path):
