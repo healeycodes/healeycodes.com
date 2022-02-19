@@ -56,7 +56,7 @@ The web server runs locally and serves this file and the model data. The full so
 
 ## Notifications
 
-I used [Pushover](https://pushover.net/) to send notifications to my iPhone. The [API](https://pushover.net/api)/docs and [community libraries](https://support.pushover.net/i44-example-code-and-pushover-libraries) are delightful, and there's a one month free trial (no credit required, etc). I had heard of programmers using Pushover as part of different home automation projects and was keen to try it out.
+I used [Pushover](https://pushover.net/) to send notifications to my iPhone. The [API](https://pushover.net/api)/docs and [community libraries](https://support.pushover.net/i44-example-code-and-pushover-libraries) are delightful, and there's a one month free trial (no credit card required, etc). I had heard of programmers using Pushover as part of different home automation projects and was keen to try it out.
 
 Here's how I send a message and an image from `server.py`:
 
