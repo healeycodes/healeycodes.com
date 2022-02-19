@@ -7,7 +7,9 @@ description: "I wrote a program that sends cats to my phone when I'm sad at the 
 
 I wrote a program that sends cats to my phone when I'm sad at the computer. I was inspired by a tweet I saw last week. I've lost the link but, to paraphrase, it went something like this:
 
-> I'm okay submitting to The Algorithm as long as it knows when I'm sad and forwards cats directly to my face
+> I'm okay submitting myself to The Algorithm as long as it knows when I'm sad and forwards cats directly to my face
+
+I figured that you could probably solve this problem locally without leaking any personal data.
 
 <center>
 
@@ -15,7 +17,7 @@ I wrote a program that sends cats to my phone when I'm sad at the computer. I wa
 
 </center>
 
-Our computers are fast enough that we can run machine learning models in a browser the  background, maybe without even noticing. I tried out a few different JavaScript libraries that came prepackaged with trained models, and evaluated them by the following criteria:
+Our computers are fast enough that we can run machine learning models in a browser the  background, maybe without even noticing. I tried out a few different JavaScript face recognition libraries that came prepackaged with trained models, and evaluated them by the following criteria:
 
 - Is there example code I can easily hack on?
 - Does it accurately reporting when I'm frowning, furrowing, or furious?
@@ -27,6 +29,8 @@ I went with [vladmandic/human](https://github.com/vladmandic/human) — another 
 ```
 
 I split the emotions into good vs. bad to get a clearer read of my mood. The overall score swings between -1 (very bad) and 1 (very good). I don't want to be spammed with cats every time I itch my nose and trigger a frame of video that's interpreted as negative so I added a three-second trailing average to look for prolonged periods of negative emotion. There's also a timeout of five minutes after sending a cat before it starts checking again.
+
+You can see some of the emotion scores below in the debug console I added.
 
 ![Side by side comparison of the debug log when I'm happy vs. when I'm sad.](happysad.png)
 
@@ -52,9 +56,9 @@ The web server runs locally and serves this file and the model data. The full so
 
 ## Notifications
 
-I used [Pushover](https://pushover.net/) to send notifications to my iPhone. The [API](https://pushover.net/api)/docs and [community libraries](https://support.pushover.net/i44-example-code-and-pushover-libraries) are delightful, and there's a one month free trial. I had heard of programmers using Pushover as part of different home automation projects and was keen to try it out.
+I used [Pushover](https://pushover.net/) to send notifications to my iPhone. The [API](https://pushover.net/api)/docs and [community libraries](https://support.pushover.net/i44-example-code-and-pushover-libraries) are delightful, and there's a one month free trial (no credit required, etc). I had heard of programmers using Pushover as part of different home automation projects and was keen to try it out.
 
-Here's how I send a message and an image:
+Here's how I send a message and an image from `server.py`:
 
 ```python
 r = requests.post(
@@ -81,7 +85,9 @@ def shrink_cat(path):
     image.save(path)
 ```
 
-I used Python's `SimpleHTTPRequestHandler` to serve my static files. My plan was to have no backend running for this, and while that's still an achievable goal, I found it quicker to write the API glue code in Python. When I realised that I needed an API route to handle the "send cat" event I was about to install Flask when I realised I could just .. keep on using this simple server by adding this hack:
+I used Python's `SimpleHTTPRequestHandler` to serve my static files. This is the same server that runs when you serve files with the famous one-liner `python -m http.server`.
+
+My plan was to have no backend running for this, and while that's still an achievable goal, I found it quicker to write the API glue code in Python. When I realised that I needed an API route to handle the "send cat" event I was about to install Flask when I realised I could just .. keep on using this simple server by adding this hack:
 
 ```python
 class HttpRequestHandler(http.server.SimpleHTTPRequestHandler):
@@ -89,7 +95,7 @@ class HttpRequestHandler(http.server.SimpleHTTPRequestHandler):
 	# future employers, please look away
     # while I override this function
     def translate_path(self, path):
-        if path.endswith("send_cat/"):
+        if path == "/web/cat.json":
             send_cat()
 
         return super().translate_path(path)
