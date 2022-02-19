@@ -1,7 +1,6 @@
 import siteConfig from "../siteConfig.json";
 
 import Head from "next/head";
-import Script from 'next/script'
 
 import Nav from "./nav";
 import codeTheme from "./codeTheme";
@@ -10,12 +9,6 @@ export default function Layout({ children, title, description }) {
   return (
     <div className="container">
       <Head>
-        <Script
-          data-goatcounter={`https://${siteConfig.GOAT_COUNTER}.goatcounter.com/count`}
-          async
-          src="//gc.zgo.at/count.js"
-        />
-
         <title>
           {title} — {siteConfig.AUTHOR_NAME}
         </title>
