@@ -17,7 +17,7 @@ I figured that you could probably solve this problem locally without leaking any
 
 </center>
 
-Our computers are fast enough that we can run machine learning models in a browser the  background, maybe without even noticing. I tried out a few different JavaScript face recognition libraries that came prepackaged with trained models, and evaluated them by the following criteria:
+Our computers are fast enough that we can run machine learning models in a browser in the background, maybe without even noticing. I tried out a few different JavaScript face recognition libraries that came prepackaged with trained models, and evaluated them by the following criteria:
 
 - Is there example code I can easily hack on?
 - Does it accurately reporting when I'm frowning, furrowing, or furious?
