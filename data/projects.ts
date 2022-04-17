@@ -30,6 +30,11 @@ export default [
     to: "/porting-niceware-to-rust",
   },
   {
+    name: "tools",
+    link: "https://github.com/healeycodes/tools",
+    desc: "Terminal tools, written from scratch.",
+  },
+  {
     name: "if-sad-send-cat",
     link: "https://github.com/healeycodes/if-sad-send-cat",
     desc: "A program that sends cats to my phone when I'm sad at the computer.",
@@ -40,6 +45,11 @@ export default [
     link: "https://github.com/healeycodes/doom-checkboxes",
     desc: "DOOM rendered via checkboxes in a web browser.",
     to: "/doom-rendered-via-checkboxes",
+  },
+  {
+    name: "tld-quiz",
+    link: "https://github.com/healeycodes/tld-quiz",
+    desc: "How well do you know your top-level domains (TLDs)?",
   },
   {
     name: "pi",
