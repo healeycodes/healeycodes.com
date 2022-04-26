@@ -248,7 +248,6 @@ I used these:
 - [Crafting Interpreters](https://craftinginterpreters.com/)
 - [A Frontend Programmer's Guide to Languages](https://thatjdanisso.cool/programming-languages)
 - [The Ink blog](https://dotink.co/posts/)
-- [Build your own programming language](https://thesephist.com/posts/pl/)
 
 I've not tried but have heard great things about:
 

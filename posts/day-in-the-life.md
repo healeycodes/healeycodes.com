@@ -74,5 +74,3 @@ I try and complete a small project end-to-end every weekend. This last weekend, 
 #### Backmatter
 
 Recently, I've joined Twitter to become more of a part of the developer community (I want to give back!) — I'm at [@healeycodes](https://twitter.com/healeycodes). I'm also looking for fun open source projects (big, small, or tiny). Feel free to reach out.
-
-🚴🚴🚴🚴🚴🚴🚴🚴🚴🚴🚴🚴🚴🚴🚴🚴🚴🚴🚴🚴🚴🚴🚴🚴
