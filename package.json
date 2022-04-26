@@ -13,7 +13,7 @@
     "gray-matter": "^4.0.3",
     "image-size": "^1.0.0",
     "markdown-to-jsx": "^7.1.5",
-    "next": "^12.1.0",
+    "next": "11.1.4",
     "prism-react-renderer": "^1.2.1",
     "prismjs": "^1.25.0",
     "react": "^17.0.2",
