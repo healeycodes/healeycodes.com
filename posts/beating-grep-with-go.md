@@ -99,6 +99,8 @@ More thoughts by Gallant on these results:
 
 > Also, GNU grep should do well here too. It should get the 'Facebook' literal and look for lines containing that. And then only run the full regex engine on those lines. So you can actually work-around a slow regex engine. (It's also worthwhile if you have a fast regex engine!)
 
+If we look at the user time in the regex benchmark results, we can see that `grep` is much more efficient than `grup` and `sift`. However, the brute force multithreaded approach of `grup` and `sift` means that `grep` falls behind.
+
 ## Next Steps
 
 I need to profile more to figure out the most impactful optimizations but there are a few obvious ones like parallel directory traversal à la `ripgrep`. Also, faster output with a buffer — currently each line match is a print call!
