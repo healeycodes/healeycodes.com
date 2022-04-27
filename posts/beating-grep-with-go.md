@@ -73,6 +73,32 @@ As expected, the massively parallel tools (all sitting at 500%+ CPU) beat the st
 
 My first version of `grup` was slow and impractical. It remains impractical, and feature-less, but at least it's not slow! Maybe I'll dare to describe [healeycodes/tools](https://github.com/healeycodes/tools) as [blazing fast](https://twitter.com/acdlite/status/974390255393505280).
 
+## Benchmarks (continued)
+
+After I published this post, Gallant ([@burntsushi5](https://twitter.com/burntsushi5)) [suggested](https://twitter.com/burntsushi5/status/1519279733703331841) comparing regex searches. I repeated the same setup steps as above and used his query. It matches two terms across two text files.
+
+```bash
+rg -uuu "\w{10} Facebook" react/
+# 0.82s user 3.76s system 328% cpu 1.395 total
+
+sift -n "\w{10} Facebook" react/
+# 58.07s user 3.24s system 610% cpu 10.044 total
+
+grup -n -re "\w{10} Facebook" react/
+# 42.32s user 3.20s system 449% cpu 10.119 total
+
+grep -r -n "\w{10} Facebook" react/
+# 20.49s user 1.50s system 95% cpu 22.988 total
+```
+
+Here `ripgrep` pulls far in front. This specific benchmark stresses the regex implementation more than anything else. `ripgrep` is built on top of [Rust's regex engine](https://github.com/rust-lang/regex) which uses finite automata, [SIMD](https://github.com/BurntSushi/ripgrep/discussions/1822), and aggressive literal optimizations.
+
+More thoughts by Gallant on these results:
+
+> Yeah, Go's regex engine really hurts you there!
+
+> Also, GNU grep should do well here too. It should get the 'Facebook' literal and look for lines containing that. And then only run the full regex engine on those lines. So you can actually work-around a slow regex engine. (It's also worthwhile if you have a fast regex engine!)
+
 ## Next Steps
 
 I need to profile more to figure out the most impactful optimizations but there are a few obvious ones like parallel directory traversal à la `ripgrep`. Also, faster output with a buffer — currently each line match is a print call!
