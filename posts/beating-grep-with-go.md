@@ -93,7 +93,7 @@ grep -r -n "\w{10} Facebook" react/
 
 Here `ripgrep` pulls far in front. This specific benchmark stresses the regex implementation more than anything else. `ripgrep` is built on top of [Rust's regex engine](https://github.com/rust-lang/regex) which uses finite automata, [SIMD](https://github.com/BurntSushi/ripgrep/discussions/1822), and aggressive literal optimizations.
 
-More thoughts by Gallant on these results:
+[More](https://twitter.com/burntsushi5/status/1519337194061766660) [thoughts](https://twitter.com/burntsushi5/status/1519345971053965315) by Gallant on these results:
 
 > Yeah, Go's regex engine really hurts you there!
 
