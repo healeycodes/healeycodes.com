@@ -18,6 +18,12 @@ export default [
     to: "/creating-the-golfcart-programming-language",
   },
   {
+    name: "tools",
+    link: "https://github.com/healeycodes/tools",
+    desc: "Terminal tools, written from scratch.",
+    to: "/beating-grep-with-go",
+  },
+  {
     name: "crane-search",
     link: "https://github.com/healeycodes/crane-search",
     desc: "A full-text WebAssembly search engine for static websites. Build, index, and fly.",
@@ -28,11 +34,6 @@ export default [
     link: "https://github.com/healeycodes/niceware",
     desc: "Generate or convert random bytes into passphrases. A Rust port of niceware.",
     to: "/porting-niceware-to-rust",
-  },
-  {
-    name: "tools",
-    link: "https://github.com/healeycodes/tools",
-    desc: "Terminal tools, written from scratch.",
   },
   {
     name: "if-sad-send-cat",
