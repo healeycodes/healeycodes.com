@@ -116,6 +116,7 @@ export default function Layout({ children, title, description }) {
         a {
           color: var(--link);
           text-decoration: none;
+          word-wrap: break-word;
         }
 
         a:hover {
