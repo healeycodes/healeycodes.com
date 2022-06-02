@@ -13,16 +13,12 @@ export default function Projects() {
       description="Some of the software I've released. Some of the projects are fun
 experiments and others are used by people everyday!"
     >
-      <h1>Open Source</h1>
+      <h1>Projects</h1>
       <main>
         <p>
-          Here's some of the software I've released. Some of the projects are
-          fun experiments and others are used by people everyday! I'm accepting
-          pull requests and issues on all of them — and I'm happy to onboard
-          you.
+          I write software for me and for you.
         </p>
-        <p>Most of these are GitHub repositories hence the lowercase titles.</p>
-        <h2>Projects</h2>
+        <h2>Open Source</h2>
         <div className="project-list">
           {projects.map((project, i) => (
             <div className="project" key={i}>
@@ -38,7 +34,8 @@ experiments and others are used by people everyday!"
             </div>
           ))}
         </div>
-        <h2>Games</h2>
+        <h2>Game Jams</h2>
+        <p>I miss doing game jams, it's been a while.</p>
         <div className="project-list">
           {games.map((game, i) => (
             <div className="project" key={i}>

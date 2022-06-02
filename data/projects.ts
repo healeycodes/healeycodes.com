@@ -53,6 +53,11 @@ export default [
     desc: "How well do you know your top-level domains (TLDs)?",
   },
   {
+    name: "sokoban",
+    link: " https://github.com/healeycodes/sokoban",
+    desc: "Sokoban clone written with LÖVE.",
+  },
+  {
     name: "pi",
     link: "https://github.com/healeycodes/pi",
     desc: "Monorepo for my Raspberry Pi dashboard and GPS satellite listener.",

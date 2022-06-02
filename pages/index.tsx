@@ -45,8 +45,8 @@ export default function Home({ allPostsData, description, words }) {
       <main>
         <div className="avatar">
           <Image
-            width={130}
-            height={130}
+            width={140}
+            height={140}
             src={meAvatar}
             alt="Andrew Healey."
             quality={100}
@@ -54,8 +54,7 @@ export default function Home({ allPostsData, description, words }) {
             priority={true}
           />
           <p className="avatar-text">
-            Hey, I'm Andrew Healey. I'm a software engineer at Vercel. I build
-            things that make people's lives easier. I've written{" "}
+            Hey, I'm Andrew Healey. I'm a software engineer at Vercel, and a big fan of the information superhighway. I've written{" "}
             {numberWithCommas(words)} words on this{" "}
             <a href={siteConfig.REPO_URL}>open source</a> website.
           </p>
