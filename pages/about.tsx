@@ -20,7 +20,7 @@ export default function About() {
           >
             standing invitation
           </a>
-          . Research interests: personal computing, game solvers (chess, sokoban, and more), and programming language design. This <a href={siteConfig.REPO_URL}>open source</a> website is built with Next.js.
+          . My research interests include personal computing, game solvers (chess, sokoban, and more), and programming language design. This <a href={siteConfig.REPO_URL}>open source</a> website is built with Next.js.
         </p>
         <SpacedImage
           src={mePresenting}
