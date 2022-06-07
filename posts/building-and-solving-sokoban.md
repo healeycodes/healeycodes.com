@@ -26,7 +26,7 @@ player on goal: +
          floor: (space)
 ```
 
-Levels are surrounded by walls and have an equal number of boxes and goals. Here's a small level that can be solved in three key presses.
+Levels are surrounded by walls and have an equal number of boxes and goals. Here's a small level that can be solved in three key presses. The player `@` needs to travel two positions right, and then push the box `$` onto the goal.
 
 ```text
 #######
@@ -48,7 +48,7 @@ My Sokoban game stores level state in a 2D array. It's not the most efficient re
 ]
 ```
 
-To move the player around the level, direction coordinates are passed to the game object in XY notation e.g. right is `[0, 1]`. If the move is legal (only one box can be pushed at a time), it's applied to the internal level state. As players and boxes have two states, on goal and off goal, there's some thorny logic to place the correct characters.
+To move the player around the level, direction coordinates are passed to the [game object](https://github.com/healeycodes/sokoban/blob/main/game/index.ts) in XY notation e.g. right is `[0, 1]`. If the move is legal (only one box can be pushed at a time), it's applied to the internal level state. During a move, there's some thorny logic to place the correct characters because players and boxes have two states, on goal and off goal.
 
 A history of level states is also stored to enable undo/reset functionality. This is pretty important when a player is 100 moves deep in a puzzle and hits a deadlock.
 
