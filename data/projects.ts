@@ -30,6 +30,12 @@ export default [
     to: "/webassembly-search-tools-for-static-websites",
   },
   {
+    name: "sokoban",
+    link: "https://github.com/healeycodes/sokoban",
+    desc: "Sokoban game and automated puzzle solver.",
+    to: "/building-and-solving-sokoban",
+  },
+  {
     name: "niceware",
     link: "https://github.com/healeycodes/niceware",
     desc: "Generate or convert random bytes into passphrases. A Rust port of niceware.",
@@ -51,11 +57,6 @@ export default [
     name: "tld-quiz",
     link: "https://github.com/healeycodes/tld-quiz",
     desc: "How well do you know your top-level domains (TLDs)?",
-  },
-  {
-    name: "sokoban",
-    link: " https://github.com/healeycodes/sokoban",
-    desc: "Sokoban clone written with LÖVE.",
   },
   {
     name: "pi",
