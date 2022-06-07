@@ -90,6 +90,7 @@ export default function Layout({ children, title, description }) {
 
         code {
           background-color: ${codeTheme.plain.backgroundColor};
+          color: #e3116c;
           padding: 2px;
         }
 
