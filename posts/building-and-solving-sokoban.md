@@ -2,7 +2,7 @@
 title: "Building and Solving Sokoban"
 date: "2022-06-07"
 tags: ["javascript"]
-description: "An introduction to automated puzzle solving."
+description: "Creating an automated solver for Sokoban puzzles."
 ogimage: "./og-image.png"
 ---
 
