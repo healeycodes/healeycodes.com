@@ -22,7 +22,7 @@ Most configuration is handled via `siteConfig.json`
 e2e tests for mobile/desktop via Playwright.
 
 ```
-npx playwright install
+npx playwright install-deps
 npm i
 npm run e2e:test
 ```
