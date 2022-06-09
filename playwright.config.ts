@@ -7,8 +7,8 @@ const config: PlaywrightTestConfig = {
   timeout: 30 * 1000,
   // Test directory
   testDir: path.join(__dirname, "e2e"),
-  // If a test fails, retry it additional 0 times
-  retries: 0,
+  // If a test fails, retry it additional 1 times
+  retries: 1,
   // Artifacts folder where screenshots, videos, and traces are stored.
   outputDir: "test-results/",
 
@@ -55,13 +55,13 @@ const config: PlaywrightTestConfig = {
     {
       name: "Mobile Chrome",
       use: {
-        ...devices["Pixel 5"],
+        ...devices["iPhone SE"],
       },
     },
-    {
-      name: "Mobile Safari",
-      use: devices["iPhone 12"],
-    },
+    // {
+    //   name: "Mobile Safari",
+    //   use: devices["iPhone 12"],
+    // },
   ],
 };
 export default config;
