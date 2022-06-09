@@ -10,8 +10,7 @@ export default function Projects() {
   return (
     <Layout
       title="Projects"
-      description="Some of the software I've released. Some of the projects are fun
-experiments and others are used by people everyday!"
+      description="A list of my open source projects."
     >
       <h1>Projects</h1>
       <main>
