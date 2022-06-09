@@ -19,10 +19,9 @@ Most configuration is handled via `siteConfig.json`
 
 ## Test
 
-e2e tests for mobile/desktop via Playwright.
+e2e tests with Playwright. See `.github\workflows\e2e.yml`.
 
 ```
-npx playwright install-deps
 npm i
 npm run e2e:test
 ```

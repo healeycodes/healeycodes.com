@@ -55,13 +55,13 @@ const config: PlaywrightTestConfig = {
     {
       name: "Mobile Chrome",
       use: {
-        ...devices["Pixel 5"],
+        ...devices["iPhone SE"],
       },
     },
-    {
-      name: "Mobile Safari",
-      use: devices["iPhone 12"],
-    },
+    // {
+    //   name: "Mobile Safari",
+    //   use: devices["iPhone 12"],
+    // },
   ],
 };
 export default config;
