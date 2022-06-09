@@ -2,13 +2,13 @@
 
 My home on the web! A collection of thoughts and software experiments.
 
-Issues/bug reports are very welcome. PRs are also welcome (but open an issue first).
+Issues/bug reports are very welcome.
 
 ## Features
 
 - Next.js hosted on Vercel
-- Write posts in plain Markdown and share with the world!
-- RSS feed
+- Markdown + images
+- RSS feed (links, not full content)
 - Simple design focused on content (responsive for desktop/mobile)
 - Code highlighting via `prism-react-renderer`
 - Newsletter CTA (powered by Buttondown)
@@ -17,21 +17,25 @@ Issues/bug reports are very welcome. PRs are also welcome (but open an issue fir
 
 Most configuration is handled via `siteConfig.json`
 
+## Test
+
+e2e tests for mobile/desktop via Playwright.
+
+```
+npx playwright install
+npm i
+npm run e2e:test
+```
+
 ## Dev
 
 ```
-next dev
+npm i
+npm run dev
 ```
 
-## Build/Run
+## Copying
 
-```bash
-next build
-next start
-```
+Feel free to use any of my writing or code for educational reasons (e.g. you're teaching a class).
 
-## License
-
-All post content is © 2021 Andrew Healey and contributors. All rights reserved.
-
-Otherwise, the code is MIT. I can be more specific if you need — message me.
+Otherwise, check with me before republishing my writing (I'll give permission 99% of the time).
