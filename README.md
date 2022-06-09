@@ -23,6 +23,8 @@ e2e tests with Playwright. See `.github\workflows\e2e.yml`.
 
 ```
 npm i
+npx playwright install
+npx playwright install-deps
 npm run e2e:test
 ```
 
