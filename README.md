@@ -17,7 +17,7 @@ Issues/bug reports are very welcome.
 
 Most configuration is handled via `siteConfig.json`
 
-## Test
+## Tests
 
 e2e tests with Playwright. See `.github\workflows\e2e.yml`.
 
@@ -39,4 +39,4 @@ npm run dev
 
 Feel free to use any of my writing or code for educational reasons (e.g. you're teaching a class).
 
-Otherwise, check with me before republishing my writing (I'll give permission 99% of the time).
+Otherwise, check with me before republishing my writing or code (I'll give permission 99% of the time).
