@@ -21,7 +21,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - run: npx playwright install
-      - run: npx playwright install-deps
-      - run: npm ci
-      - run: npm run test:e2e
+      - run: echo "skipping e2e tests.."
+      # - run: npx playwright install
+      # - run: npx playwright install-deps
+      # - run: npm ci
+      # - run: npm run test:e2e

@@ -18,6 +18,12 @@ export default [
     to: "/creating-the-golfcart-programming-language",
   },
   {
+    name: "bitcask-lite",
+    link: "https://github.com/healeycodes/bitcask-lite",
+    desc: "A log-structured hash table database. Speedy K/V store for datasets larger than memory.",
+    to: "/implementing-bitcask-a-log-structured-hash-table",
+  },
+  {
     name: "tools",
     link: "https://github.com/healeycodes/tools",
     desc: "Terminal tools, written from scratch.",
