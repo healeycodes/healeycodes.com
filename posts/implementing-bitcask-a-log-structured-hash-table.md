@@ -29,8 +29,8 @@ In bitcask-lite, keys and metadata live in a concurrent map based on [orcaman/co
 type ConcurrentMap[V any] []*MapShard[V]
 
 type MapShard[V any] struct {
-	items map[string]V
-	mu    *sync.Mutex
+  items map[string]V
+  mu    *sync.Mutex
 }
 ```
 
@@ -54,30 +54,30 @@ func (logStore *LogStore) StreamGet(key string, w io.Writer) (bool, error) {
 
   // Lock the map shard
   access := logStore.keys.AccessShard(key)
-	defer access.Unlock()
-	item, found := logStore.keys.Get(key)
+  defer access.Unlock()
+  item, found := logStore.keys.Get(key)
 
-	if !found {
-        // Key not found
-		return false, nil
-	} else if int(time.Now().UnixMilli()) >= item.expire {
-        // Key found but it's expired..
-        // so we can clean it up (aka lazy garbage collection!)
-		logStore.keys.Delete(key)
-		return false, nil
-	}
+  if !found {
+    // Key not found
+    return false, nil
+  } else if int(time.Now().UnixMilli()) >= item.expire {
+    // Key found but it's expired..
+    // so we can clean it up (aka lazy garbage collection!)
+    logStore.keys.Delete(key)
+    return false, nil
+  }
 
-	f, err := os.Open(item.file)
-    // ..
-	defer f.Close()
+  f, err := os.Open(item.file)
+  // ..
+  defer f.Close()
 
-    // Set the offset for the upcoming read
-	_, err = f.Seek(int64(item.valuePos), 0)
-    // ..
+  // Set the offset for the upcoming read
+  _, err = f.Seek(int64(item.valuePos), 0)
+  // ..
 
-    // Pipe it to the HTTP response
-	_, err = io.CopyN(w, f, int64(item.valueSize))
-    // .. 
+  // Pipe it to the HTTP response
+  _, err = io.CopyN(w, f, int64(item.valueSize))
+  // .. 
   return true, nil
 }
 ```
@@ -143,9 +143,9 @@ I also skipped adding CRCs (cyclic redundancy checks), and instead of setting to
 // Set takes key, expire, value
 err := logStore.Set(key, 0, []byte(""))
 if err != nil {
-	log.Printf("couldn't delete %s: %s", key, err)
-	w.WriteHeader(500)
-	return
+  log.Printf("couldn't delete %s: %s", key, err)
+  w.WriteHeader(500)
+  return
 }
 ```
 
