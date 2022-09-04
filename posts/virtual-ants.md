@@ -132,23 +132,22 @@ Below, a screenshot of my playground renders the progression of `RRLRR` — whic
 
 In our previous code examples, we defined a grid with `'r'` or `'l'` in each cell but now we need to handle additional states as the cell cycles through the list of turn directions.
 
-We can change the cell to be an index into the list of turn directions.
+We can change each cell to be an index into the list of turn directions.
 
 ```javascript
 const rules = ['r', 'r', 'l', 'r', 'r']
+
+// After the first simulation step with an upwards facing ant at (2, 2)
 const grid = [
   [0, 0, 0, 0, 0],
+  [0, 0, 1, 0, 0],
   [0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0],
-] // [x][y]
-
-// To find the starting direction
-// we access rules[grid[2][2]]
+] 
 ```
 
-When an ant visits a cell, it looks up the turn from `rules`, increments the index (or sets it to zero as it wraps around).
+When an ant visits a cell, it looks up the turn direction from `rules`, increments the index (or sets it to zero as it wraps around).
 
 In order to support multiple ants, we can keep an ant array — and then in the step function, we can loop the array and apply the rules to each ant in turn, mutating the grid as we go.
 
