@@ -2,7 +2,7 @@
 title: "Virtual Ants"
 date: "2022-09-04"
 tags: ["javascript"]
-description: "Implenting Langton's ant with the multi-color extension."
+description: "Artificial life and Langton's ant."
 ogimage: "./og-image.png"
 ---
 
