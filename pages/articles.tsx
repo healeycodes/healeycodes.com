@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getAllTags, getSortedPostsData } from "../lib/posts";
 import Layout from "../components/layout";
 import PostList from "../components/postList";
+import { formatTag } from "../lib/util";
 
 export function getStaticProps() {
   return {
@@ -12,7 +13,7 @@ export function getStaticProps() {
 export default function Articles({ tags, posts }) {
   const title = `All posts`;
   const formattedTags = tags.map(
-    (tag) => `${tag.charAt(0).toUpperCase()}${tag.slice(1)}`
+    (tag) => formatTag(tag)
   );
   return (
     <Layout title={title} description="A list of every article I've written.">

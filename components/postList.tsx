@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { formatTag } from "../lib/util";
 import Date from "./date";
 
 export default function PostList({ posts }) {
@@ -12,9 +13,7 @@ export default function PostList({ posts }) {
           <p className="post-desc">{description}</p>
           <p className="post-date">
             <Date dateString={date} /> in{" "}
-            <Link href={`/tags/${tags[0]}`}>{`${tags[0]
-              .charAt(0)
-              .toUpperCase()}${tags[0].slice(1)}`}</Link>
+            <Link href={`/tags/${tags[0]}`}>{formatTag(tags[0])}</Link>
           </p>
         </div>
       ))}

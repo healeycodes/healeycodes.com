@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getAllTags, getPostsFilteredByTag } from "../../lib/posts";
 import Layout from "../../components/layout";
 import PostList from "../../components/postList";
+import { formatTag } from "../../lib/util";
 
 export function getStaticPaths() {
   const tags = getAllTags();
@@ -23,9 +24,9 @@ export function getStaticProps({ params }) {
 }
 
 export default function TagList({ otherTags, tag, posts }) {
-  const formattedTag = `${tag.charAt(0).toUpperCase()}${tag.slice(1)}`;
+  const formattedTag = formatTag(tag)
   const formattedTags = otherTags.map(
-    (tag) => `${tag.charAt(0).toUpperCase()}${tag.slice(1)}`
+    (tag) => formatTag(tag)
   );
   const title = `${formattedTag} posts`;
   return (

@@ -15,6 +15,7 @@ import SpacedImage from "../components/image";
 import Code from "../components/code";
 import Date from "../components/date";
 import Newsletter from "../components/newsletter";
+import { formatTag } from "../lib/util";
 
 export async function getStaticPaths() {
   const paths = getAllPostIds();
@@ -88,7 +89,7 @@ export default function Post({
           {tags
             .map((tag, i) => (
               <Link href={`/tags/${tag}`} key={i}>
-                {`${tag.charAt(0).toUpperCase()}${tag.slice(1)}`}
+                {formatTag(tag)}
               </Link>
             ))
             .reduce((prev, curr) => [prev, ", ", curr])}{" "}
