@@ -4,7 +4,6 @@ date:   "2019-08-13"
 tags: ["career"]
 path: "beginners/career/productivity/discuss/2019/08/13/my-experience-with-pair-programming.html"
 description: "Pairing for fun and profit."
-ogimage: "./og-image.png"
 ---
 
 I learnt about pair programming at university when we were studying Agile methodologies. At the time it seemed very full-on — almost scary. I pictured myself stumbling over my keyboard as my co-worker facepalmed behind me. In reality, pair programming sessions have helped me to evolve as a developer and I actually find it more relaxing to tackle something as a team of two.

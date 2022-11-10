@@ -4,7 +4,6 @@ date: "2019-04-02"
 tags: ["python"]
 path: "python/beginners/tutorial/webdev/2019/04/02/dead-link-bot.html"
 description: "Crawling a website for missing resources using the Python standard library."
-ogimage: "./og-image.png"
 ---
 
 Dead links and images and be frustrating for visitors. Manually checking for them can be even more frustrating! We're going to build a bot that crawls a website for missing resources using just the Python standard library.

@@ -3,7 +3,6 @@ title: "Creating the Golfcart Programming Language"
 date: "2021-07-16"
 tags: ["go"]
 description: "Writing an interpreter from scratch."
-ogimage: "./og-image.png"
 ---
 
 [Golfcart](https://github.com/healeycodes/golfcart) is a minimal programming language inspired by Ink, JavaScript, and Python – implemented in Go. It's a toy programming language that I built to use for Advent of Code 2021.

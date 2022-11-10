@@ -4,7 +4,6 @@ date: "2019-04-30"
 tags: ["algorithms"]
 path: "algorithms/2019/04/30/majority-vote-algorithm.html"
 description: "Breaking down the Boyer–Moore majority vote algorithm with examples in Python."
-ogimage: "./og-image.png"
 ---
 
 _Boyer–Moore majority vote algorithm_ — I love this algorithm because it's amazing _and_ approachable. I first saw it on a LeetCode discuss thread, and it blew everyone away. Some people were, like, irate. [169. Majority Element](https://leetcode.com/problems/majority-element/).

@@ -4,7 +4,6 @@ date:   "2019-03-04"
 tags: ["javascript"]
 path: "emoji/python/javascript/2019/03/04/emoji-streamer.html"
 description: "Building a website which live streams every emoji posted to Reddit.com."
-ogimage: "./og-image.png"
 ---
 
 Let's say we want to find every emoji as it's posted to Reddit. First, we'll define what an emoji is. The Unicode Consortium keeps their [data lists](http://unicode.org/Public/emoji/12.0/) avaliable. We'll bring them in via a JSON file. The file has descriptions and other things we don't need so we'll clean the data a bit and store it in an efficient `Set`. If we're checking whether a character is or isn't an emoji over 5k times a second we'll need the `O(1)` look-up time!

@@ -4,7 +4,6 @@ date:   "2019-06-16"
 tags: ["career"]
 path: "beginners/opensource/github/tutorial/2019/06/16/your-first-open-source-contribution.html"
 description: "Making a small change to the Jekyll project."
-ogimage: "./og-image.png"
 ---
 
 _"You should contribute to open-source." ⁠— The Internet._

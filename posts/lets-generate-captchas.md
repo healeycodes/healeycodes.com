@@ -4,7 +4,6 @@ date:   "2019-11-11"
 tags: ["javascript"]
 path: "javascript/webdev/node/tutorial/2019/11/11/lets-generate-captchas.html"
 description: "Using Canvas, Express, and a GitHub Action."
-ogimage: "./og-image.png"
 ---
 
 CAPTCHAs are [not accessible](https://www.w3.org/TR/turingtest/) and in some cases not even effective but there's a lot to be learned by generating our own!

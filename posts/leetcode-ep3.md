@@ -4,7 +4,6 @@ date:   "2019-01-03"
 tags: ["algorithms"]
 path: "algorithms/leetcode/2019/01/03/leet-code.html"
 description: "Solutions for: Sort Array By Parity, Robot Return to Origin, and Self Dividing Numbers."
-ogimage: "./og-image.png"
 ---
 
 Continuing the Leetcode streak with more Python solving. I have a New Year's Resolution related to Leetcode but I feel that to speak it is to jynx it.

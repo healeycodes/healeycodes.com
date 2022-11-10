@@ -4,7 +4,6 @@ date:   "2019-05-12"
 tags: ["javascript"]
 path: "javascript/webdev/glitch/tutorial/2019/05/12/tiny-project-to-completion.html"
 description: "A JavaScript webscraper for MDN."
-ogimage: "./og-image.png"
 ---
 
 When I was starting out, I never understood how to tackle 'projects'. It was hard to understand the scope of a project from a glance, as well as the steps and considerations. I wanted to see behind the scenes. We all work differently but in this article I'm showing how I work when I get an idea-spark for something tiny. Come watch me scratch an itch.

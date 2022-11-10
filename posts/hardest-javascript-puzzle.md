@@ -4,7 +4,6 @@ date:   "2019-11-17"
 tags: ["javascript", "fun"]
 path: "javascript/challenge/webdev/2019/11/17/hardest-javascript-puzzle.html"
 description: "Writing JavaScript with a one character width restriction."
-ogimage: "./og-image.png"
 ---
 
 I love code puzzles. Always have. My deskmate told me about a puzzle that no one in the office had been able to solve when they shared it around. I was intrigued because of the challenge but also because it was a JavaScript puzzle.

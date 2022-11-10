@@ -4,7 +4,6 @@ date:   "2019-01-08"
 tags: ["algorithms"]
 path: "algorithms/leetcode/2019/01/08/leet-code.html"
 description: "Solutions for: Encode and Decode TinyURL, Insert into a Binary Search Tree, Minimum Add to Make Parentheses Valid, and Goat Latin."
-ogimage: "./og-image.png"
 ---
 
 Three Mediums today. I looked at the Parentheses problem last night so it's been bouncing around my head all day.

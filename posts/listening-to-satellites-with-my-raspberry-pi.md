@@ -3,7 +3,6 @@ title: "Listening to Satellites with my Raspberry Pi"
 date: "2021-05-30"
 tags: ["python"]
 description: "Building a live dashboard with the help of a few hardware modules."
-ogimage: "./og-image.png"
 ---
 
 - [Architecture](#architecture)

@@ -3,7 +3,6 @@ title:  "DEV Article Analysis"
 date:   "2020-01-19"
 tags: ["javascript"]
 description: "Building a tool for users to analyze their work over time."
-ogimage: "./og-image.png"
 ---
 
 My second passion alongside coding is writing. Whenever I can combine them, I do. 

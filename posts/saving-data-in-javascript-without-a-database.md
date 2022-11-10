@@ -4,7 +4,6 @@ date:   "2019-06-03"
 tags: ["javascript"]
 path: "javascript/webdev/beginners/tutorial/2019/06/03/saving-data-in-javascript-without-a-database.html"
 description: "The title is a lie I also show how to use SQLite."
-ogimage: "./og-image.png"
 ---
 
 You've just written a great piece of JavaScript. But when the running process stops, or the user refreshes, all of that nice data **disappears into the ether**.

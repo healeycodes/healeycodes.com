@@ -3,7 +3,6 @@ title: "Implementing Bitcask, a Log-Structured Hash Table"
 date: "2022-08-15"
 tags: ["go"]
 description: "Shipping a speedy key/value store for datasets larger than memory."
-ogimage: "./og-image.png"
 ---
 
 [Bitcask](https://en.wikipedia.org/wiki/Bitcask) is an application for storing and retrieving key/value data using log-structured hash tables. It stores keys and metadata in memory with the values on disk. Retrieving a value is fast because it requires a single disk seek. 

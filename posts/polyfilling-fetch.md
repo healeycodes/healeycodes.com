@@ -3,7 +3,6 @@ title: "Polyfilling the Fetch API for Old Browsers and Node.js"
 date: "2020-06-25"
 tags: ["javascript"]
 description: "A quick look at polyfilling, along with with solutions for both environments."
-ogimage: "./og-image.png"
 ---
 
 First some definitions.

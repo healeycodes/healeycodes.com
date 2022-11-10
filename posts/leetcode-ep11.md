@@ -4,7 +4,6 @@ date:   "2019-01-11"
 tags: ["algorithms"]
 path: "algorithms/leetcode/2019/01/11/leet-code.html"
 description: "Solutions for: Reverse Vowels of a String, Isomorphic Strings, and Reverse Words in a String."
-ogimage: "./og-image.png"
 ---
 
 Watch out string problems: I'm coming for you.

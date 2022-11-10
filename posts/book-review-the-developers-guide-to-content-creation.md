@@ -3,7 +3,6 @@ title:  "Book Review: The Developer's Guide to Content Creation"
 date:   "2020-03-08"
 tags: ["career"]
 description: "Discussing an amazing resource for those writing for developers."
-ogimage: "./og-image.png"
 ---
 
 I'm in year two of technical blogging and I've learned a lot. I have far _far_ more views and comments than I thought I would at this point. At the beginning I was throwing my thoughts into the void and it felt good. Reading [**The Developer's Guide to Content Creation**](https://www.developersguidetocontent.com/) reminded me of those roots. It inspired me.

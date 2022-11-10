@@ -3,7 +3,6 @@ title:  "Hacking Together an E-ink Dashboard"
 date:   "2020-04-28"
 tags: ["python"]
 description: "A prototype Raspberry Pi dashboard to save me talking to my smart assistant."
-ogimage: "./og-image.png"
 ---
 
 I realized I was asking Google Assistant the same questions over and over again. Like _What's the current weather?_ or _What's on my calendar for today?_ So I set out to build a small dashboard for my Raspberry Pi that I could check instead.

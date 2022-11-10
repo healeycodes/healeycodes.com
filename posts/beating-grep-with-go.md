@@ -3,7 +3,6 @@ title: "Beating grep with Go"
 date: "2022-04-26"
 tags: ["go"]
 description: "Writing a fast file searching program and benchmarking it."
-ogimage: "./og-image.png"
 ---
 
 Andrew Gallant's [ripgrep introduction post](https://blog.burntsushi.net/ripgrep/) showed us that classic Unix tools like `grep` (and its later iterations like `ag`) can be dramatically improved in the areas of raw performance, user-experience, and correctness. These [modern Unix tools](https://github.com/ibraheemdev/modern-unix) (like `ripgrep`, `bat`, `jq`, `exa`, or `fd`) aren't quite drop-in replacements but they're close enough to avoid paper cuts, and for [most use cases](https://github.com/BurntSushi/ripgrep#why-shouldnt-i-use-ripgrep) are better than the originals in a programmer's daily workflow.

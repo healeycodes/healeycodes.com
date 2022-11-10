@@ -4,7 +4,6 @@ date:   "2019-01-10"
 tags: ["algorithms"]
 path: "algorithms/leetcode/2019/01/10/leet-code.html"
 description: "Solutions for: Single Number II, Fibonacci Number, and Ransom Note."
-ogimage: "./og-image.png"
 ---
 
 I'm really learning a lot by reading the discussion boards after submitting each of my near-optimal solutions -- especially, optimization. I'm also noticing holes in my toolset. E.g., bitwise -- as we'll see in just a second.

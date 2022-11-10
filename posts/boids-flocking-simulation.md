@@ -3,7 +3,6 @@ title: "Boids in WebAssembly Using Go"
 date: "2020-07-26"
 tags: ["go"]
 description: "The famous flocking simulation built with the Ebiten game library."
-ogimage: "./og-image.png"
 ---
 
 Lately, I've been revisiting concepts and algorithms that I got stuck on when I was learning to code. One of them is the boids flocking simulation.

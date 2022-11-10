@@ -4,7 +4,6 @@ date:   "2019-06-18"
 tags: ["python"]
 path: "discuss/python/beginners/tutorial/2019/06/18/tricking-google-with-apostrophes.html"
 description: "Using character codes to hide in plain sight."
-ogimage: "./og-image.png"
 ---
 
 Genius [suspected](https://bgr.com/2019/06/17/genius-vs-google-lyrics-results-on-search-copied-from-lyrics-site/) their lyrics were being scraped by Google but they needed a way to prove it. So they watermarked some of their lyrics with a message in Morse code. It read __Red Handed__. It was encoded using different types of apostrophes. I suspect they used _U+0027 APOSTROPHE_ and _U+2019 RIGHT SINGLE QUOTATION MARK_ since those are the most commonly used but I can't be sure.

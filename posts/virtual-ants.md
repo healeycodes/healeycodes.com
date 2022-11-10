@@ -3,7 +3,6 @@ title: "Virtual Ants"
 date: "2022-09-04"
 tags: ["javascript"]
 description: "Artificial life and Langton's ant."
-ogimage: "./og-image.png"
 ---
 
 Christopher Langton defines artificial life as *the synthetic approach to biology: rather than take living things apart, artificial life attempts to put living things together.* [Langton's ant](https://en.wikipedia.org/wiki/Langton%27s_ant) attempts to capture emergent collective behaviors observed in insect colonies.

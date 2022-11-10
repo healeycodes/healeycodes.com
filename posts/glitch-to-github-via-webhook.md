@@ -4,7 +4,6 @@ date:   "2019-05-06"
 tags: ["javascript"]
 path: "glitch/github/tutorial/javascript/2019/05/06/glitch-to-github-via-webhook.html"
 description: "Joining two of my favorite ecosystems together."
-ogimage: "./og-image.png"
 ---
 
 We're going to use Glitch as a free container platform to host our application. Better yet, it will have continuous deployment! Whenever we commit to our `master` branch on GitHub, a secure webhook will be sent to our project, which will update, build, and restart itself.

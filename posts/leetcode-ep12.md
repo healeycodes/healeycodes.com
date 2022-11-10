@@ -4,7 +4,6 @@ date:   "2019-01-12"
 tags: ["algorithms"]
 path: "algorithms/leetcode/2019/01/12/leet-code.html"
 description: "Solutions for: Verifying an Alien Dictionary, Reverse Only Letters, and Backspace String Compare."
-ogimage: "./og-image.png"
 ---
 
 Today we're doing 'Saturday Morning Coffee' solutions -- instead of '10pm Work Night' solutions!

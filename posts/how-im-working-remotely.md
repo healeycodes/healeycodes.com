@@ -3,7 +3,6 @@ title: "How I'm Working Remotely"
 date: "2020-04-26"
 tags: ["career"]
 description: "Writing code, working (almost) solo, and exploring remote-life during the UK lockdown."
-ogimage: "./og-image.png"
 ---
 
 Madeline and I moved our living room around so our desks could be up against the blinds in the lightest area. We have our full work setups here. We carried the gear home in a duffle bag and went back a week later for the [chairs](https://en.wikipedia.org/wiki/Aeron_chair) which, while being amongst the most ergonomic objects I've ever touched, rattled like heck as we wheeled them home.

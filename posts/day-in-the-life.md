@@ -4,7 +4,6 @@ date:   "2019-03-14"
 tags: ["career"]
 path: "webdev/career/javascript/2019/03/14/day-in-the-life.html"
 description: "Living, working, building, and drinking too much coffee."
-ogimage: "./og-image.png"
 ---
 
 *This blog is for my past self who worried about what they would be doing day-to-day after graduating.*

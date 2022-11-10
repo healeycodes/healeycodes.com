@@ -4,7 +4,6 @@ date:   "2019-03-12"
 tags: ["career"]
 path: "career/codereview/javascript/2019/03/12/two-things.html"
 description: "On enjoying being part of a team."
-ogimage: "./og-image.png"
 ---
 
 #### Code review is the best part of the job

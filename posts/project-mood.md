@@ -4,7 +4,6 @@ date:   "2019-03-11"
 tags: ["javascript"]
 path: "node/github/javascript/2019/03/11/project-mood.html"
 description: "Creating GitHub badges based off the time when most people contribute to a GitHub project."
-ogimage: "./og-image.png"
 ---
 
 This Sunday, I worked on an API that creates a GitHub badge based off a **project's mood**. Mood meaning the average time of day that the repository is worked on. I find that I work on different projects at different times of the day. In the morning, I skew towards back-end focused repositories. Maybe it's the coffee? ☕

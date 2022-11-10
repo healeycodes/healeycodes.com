@@ -4,7 +4,6 @@ date:   "2019-03-22"
 tags: ["javascript"]
 path: "javascript/webdev/github/beginners/2019/03/22/build-passing-badge.html"
 description: "How to setup Travis CI for a Node/Express project."
-ogimage: "./og-image.png"
 ---
 
 Travis CI offers free test builds for open source projects on GitHub. You'd be a fool not to take them up on their offer. Their email alerts have saved my projects many times before.

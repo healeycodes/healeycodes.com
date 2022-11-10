@@ -4,7 +4,6 @@ date:   "2019-02-20"
 tags: ["javascript"]
 path: "node/express/firebase/2019/02/20/order-tracking-micro.html"
 description: "Writing an order tracker with Node, Express, and Firebase."
-ogimage: "./og-image.png"
 ---
 
 Order trackers are a great example of AJAX-ness: a web page updating itself fluidly in the background (even though customers will be spam refreshing!)

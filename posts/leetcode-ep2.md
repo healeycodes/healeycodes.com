@@ -4,7 +4,6 @@ date:   "2019-01-02"
 tags: ["algorithms"]
 path: "algorithms/leetcode/2019/01/02/leet-code.html"
 description: "Solutions for: N-Repeated Element in Size 2N Array, Univalued Binary Tree, and Unique Morse Code Words."
-ogimage: "./og-image.png"
 ---
 
 After warming up (literally, I cycled home in *frosty* weather) I tackled some more Leetcode problems today.

@@ -3,7 +3,6 @@ title: "Computer Vision and Embroidery"
 date: "2021-04-04"
 tags: ["python"]
 description: "Picking the correct thread colors from embroidery hoop images."
-ogimage: "./og-image.png"
 ---
 
 Over the weekend, I wrote a program that tries to identify which DMC threads are used in embroidery hoop images. I didn't take a computer vision course at university — nor had I used OpenCV before — so it was fun to learn a few things and I hope you learn from my learnings.

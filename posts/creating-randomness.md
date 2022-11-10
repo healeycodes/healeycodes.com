@@ -3,7 +3,6 @@ title: "Creating Randomness Without Math.random"
 date: "2020-07-12"
 tags: ["javascript"]
 description: "Building a replacement for JavaScript's random number generator."
-ogimage: "./og-image.png"
 ---
 
 In JavaScript, you can create random numbers using `Math.random()`. But what if we wanted to create our own random values in the browser without this function?

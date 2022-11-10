@@ -3,7 +3,6 @@ title: "Building and Solving Sokoban"
 date: "2022-06-07"
 tags: ["javascript"]
 description: "Creating an automated solver for Sokoban puzzles."
-ogimage: "./og-image.png"
 ---
 
 There are many parallels between chess engines and [Sokoban](https://en.wikipedia.org/wiki/Sokoban) solvers. Both games have a large branching factor, and similar algorithms and techniques are shared between them. However, unlike the game of chess where computers reign supreme, complex Sokoban puzzles are out of reach for automated solvers.

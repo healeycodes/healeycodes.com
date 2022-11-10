@@ -4,7 +4,6 @@ date:   "2019-01-06"
 tags: ["algorithms"]
 path: "algorithms/leetcode/2019/01/06/leet-code.html"
 description: "Solutions for: Keyboard Row, Reorder Log Files, and Single Number."
-ogimage: "./og-image.png"
 ---
 
 I've been going through the problems roughly sorted by their acceptance rate: higher `->` lower. Today, the difficulty is slowly creeping up. I'm looking forward to tackling some Mediums soon.

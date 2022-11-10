@@ -4,7 +4,6 @@ date:   "2019-03-13"
 tags: ["javascript"]
 path: "node/websockets/javascript/2019/03/13/websockets-javascript-kicking.html"
 description: "A little on the history of WebSockets and a brief overview on how to use them in JavaScript."
-ogimage: "./og-image.png"
 ---
 
 A little over six months ago, I completed my thesis on WebSocket server performance. I've had a chance to use them in (global) production, and lemme tell you, this technology kicks ass!

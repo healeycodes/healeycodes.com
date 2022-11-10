@@ -4,7 +4,6 @@ date:   "2019-03-28"
 tags: ["javascript", "fun"]
 path: "javascript/webdev/node/codegolf/2019/03/28/javascript-one-liners.html"
 description: "Dust off your ternary expressions, we're going in."
-ogimage: "./og-image.png"
 ---
 
 _Dust off your ternary expressions, we're going in._

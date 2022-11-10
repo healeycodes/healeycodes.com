@@ -3,7 +3,6 @@ title: "WebAssembly Search Tools for Static Sites"
 date: "2021-02-20"
 tags: ["go"]
 description: "Building a technical demo to understand this blossoming area of technology."
-ogimage: "./og-image.png"
 ---
 
 The challenge of searching static websites is effectively a solved problem with brilliant, yet widely unadopted, solutions.

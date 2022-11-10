@@ -4,7 +4,6 @@ date:   "2019-03-30"
 tags: ["fun"]
 path: "codegolf/python/javascript/opensource/2019/03/30/what-the-heck-is-code-golf.html"
 description: "I love code golf and you should too!"
-ogimage: "./og-image.png"
 ---
 
 Usually, code golf means one of two things:

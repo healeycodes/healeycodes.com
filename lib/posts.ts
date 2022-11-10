@@ -64,6 +64,7 @@ export function getPostData(id: string) {
     description: matterResult.data.description,
     date: matterResult.data.date,
     tags: matterResult.data.tags,
+    outdated: matterResult.data.outdated || false,
   };
 }
 

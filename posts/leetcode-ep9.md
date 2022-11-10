@@ -4,7 +4,6 @@ date:   "2019-01-09"
 tags: ["algorithms"]
 path: "algorithms/leetcode/2019/01/09/leet-code.html"
 description: "Solutions for: Majority Element, Detect Capital, and Not Boring Movies."
-ogimage: "./og-image.png"
 ---
 
 The three-a-day streak nearly ended today.

@@ -4,7 +4,6 @@ date:   "2019-06-11"
 tags: ["javascript"]
 path: "javascript/beginners/webdev/tutorial/2019/06/11/refactoring-for-performance-and-readability.html"
 description: "A few tips that have really helped me."
-ogimage: "./og-image.png"
 ---
 
 Recently, I wrote an article about [how to write very fast JavaScript](/javascript/node/discuss/tutorial/2019/05/19/high-performance-javascript.html). Some of the examples took it to the extreme and became very quick at the cost of being totally unmaintainable. There's a middle ground between speed and comprehension and that's where _good code_ lives.

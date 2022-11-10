@@ -3,7 +3,6 @@ title: "Recent Projects I Didn't Finish"
 date: "2022-11-07"
 tags: ["javascript"]
 description: "A few ideas I tried. Including flamegraphs, fast HTTP routing, and infinite chess."
-ogimage: "./og-image.png"
 ---
 
 I normally write about completed projects. Ideas that I've turned into runnable programs.

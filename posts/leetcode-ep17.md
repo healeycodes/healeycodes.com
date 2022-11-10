@@ -4,7 +4,6 @@ date:   "2019-01-21"
 tags: ["algorithms"]
 path: "algorithms/leetcode/2019/01/21/leet-code.html"
 description: "Solutions for: Move Zeroes, Merge Two Sorted Lists, and Merge Two Binary Trees."
-ogimage: "./og-image.png"
 ---
 
 I'm a big fan of all three problems and solutions today. I must say that these Easys are getting harder than their counterparts though. But I do often sort by acceptance rate high->low.

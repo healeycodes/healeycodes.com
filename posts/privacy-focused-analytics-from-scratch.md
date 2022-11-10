@@ -3,7 +3,6 @@ title: "Privacy Focused Analytics From Scratch"
 date: "2020-08-10"
 tags: ["python"]
 description: "Learning more about user data collection by writing my own analytics system."
-ogimage: "./og-image.png"
 ---
 
 I wanted to learn more about web analytics so I budgeted myself a few hours and built a toy analytics system.

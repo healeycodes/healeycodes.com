@@ -5,7 +5,6 @@ tags: ["python", "javascript"]
 popular: true
 path: "javascript/python/beginners/webdev/2019/04/11/talking-between-languages.html"
 description: "Let's learn how to pass data back and forth between languages."
-ogimage: "./og-image.png"
 ---
 
 Something a lot of beginners struggle with is the concept of passing data between different programming languages. It's far more simple to understand that a value exists in a variable which can be passed around from function to function. However, to go beyond the program's edges we must serialize our data in some way. We'll look at two ways that these two languages can communicate. AJAX requests via the new Fetch API, and piping between local processes.

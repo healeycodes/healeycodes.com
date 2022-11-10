@@ -3,7 +3,6 @@ title: "Gatsby Sparks Joy"
 date: "2020-01-11"
 tags: ["javascript"]
 description: "Migrating from Jekyll to Gatsby."
-ogimage: "./og-image.png"
 ---
 
 I migrated from Jekyll to Gatsby recently and so far I've had a really neat time. The whole process took about a week of casual coding (a few hours here and there). The Gatsby ecosystem enabled me to quickly add a few features to my blog that I thought were missing; dark mode, better syntax highlighting, and the ability to design with components.

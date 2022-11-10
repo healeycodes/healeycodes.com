@@ -3,7 +3,6 @@ title: "Adding Comments to Gatsby with Netlify Serverless Functions + GitHub"
 date: "2020-05-08"
 tags: ["javascript"]
 description: "Use Netlify serverless functions to let users add comments to a static website."
-ogimage: "./og-image.png"
 ---
 
 I wanted to accept user comments on a Gatsby website and store them on GitHub. As in, I wanted the comments to go straight into a file called `comments.json` in my repository. So I could use something as simple as

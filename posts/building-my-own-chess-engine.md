@@ -3,7 +3,6 @@ title: "Building My Own Chess Engine"
 date: "2020-12-20"
 tags: ["python"]
 description: "Exploring the computational complexity of chess. Code snippets in Python so you can do the same."
-ogimage: "./og-image.png"
 ---
 
 I have been learning chess (again) and how to program a chess engine (for the first time) over the last month. After skimming some introductory texts, I was convinced that building a simple chess engine — one that would put up a fair fight against a casual player — would take no more than a few days.

@@ -4,7 +4,6 @@ date:   "2019-04-14"
 tags: ["career"]
 path: "github/beginners/tutorial/productivity/2019/04/14/writing-an-awesome-github-readme.html"
 description: "Attract and educate."
-ogimage: "./og-image.png"
 ---
 
 I read through the earliest README I could [find](http://pdp-10.trailing-edge.com/decuslib10-04/01/43,50322/read.me.html). Written in 1975 by William J. Earl at the CS department of UIC. The text is a little dry but also surprisingly relatable, some 44 years later. _"Due to a bug in the compiler, this function does not compile correctly"_.

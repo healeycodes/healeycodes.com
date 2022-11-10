@@ -3,7 +3,6 @@ title:  "The Flow of Knowledge in a Team (or Why I Dig Tickets)"
 date:   "2020-05-31"
 tags: ["career"]
 description: "Engineering tickets often end up meaning a lot. For the product but also emotionally for the individual."
-ogimage: "./og-image.png"
 ---
 
 Engineering tickets often end up meaning a lot. For the product but also emotionally for the individual. It's the engineer's job to be involved in the whole process from before the ticket even exists. Engineers refine the ticket, estimate the ticket, and shuffle it through columns on a sprint board until customers receive a feature.

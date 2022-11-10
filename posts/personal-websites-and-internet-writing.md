@@ -3,7 +3,6 @@ title: "Personal Websites and Internet Writing"
 date: "2020-12-27"
 tags: ["fun"]
 description: "People that inspire me the most (and that I steal from most regularly)."
-ogimage: "./og-image.png"
 ---
 
 I chose five personal websites out of the thirty or so I visit regularly and tried to understand what it is about them that utterly captures me.

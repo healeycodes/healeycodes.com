@@ -3,7 +3,6 @@ title: "Generating Text With Markov Chains"
 date: "2021-01-31"
 tags: ["python"]
 description: "Generating random but familiar text by building Markov chains from scratch."
-ogimage: "./og-image.png"
 ---
 
 I wanted to write a program that I could feed a bunch of novels and then produce similar text to the author's writing.

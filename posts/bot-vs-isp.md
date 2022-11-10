@@ -4,7 +4,6 @@ date:   "2019-08-22"
 tags: ["python"]
 path: "webdev/javascript/python/opensource/2019/08/22/bot-vs-isp.html"
 description: "My most popular project yet!"
-ogimage: "./og-image.png"
 ---
 
 In my contract with my ISP, they gave me a range of speeds to expect but also a speed that was the guaranteed minimum. If they aren't able to keep above this minimum, I'm eligible for a discount a few times per year.

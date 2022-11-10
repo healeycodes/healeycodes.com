@@ -4,7 +4,6 @@ date:   "2019-03-15"
 tags: ["career"]
 path: "webdev/career/javascript/2019/03/15/flappy-bird.html"
 description: "An overview of how I learned to code. Also a bit on my experience during my CS Masters."
-ogimage: "./og-image.png"
 ---
 
 After watching my flappy bird bounce and respond to my keystrokes, a fire was lit inside me. I just had completed a Unity tutorial at age 22. It had been a childhood dream to create software — to be an _engineer_. But it never really happened. So I decided to make it happen.

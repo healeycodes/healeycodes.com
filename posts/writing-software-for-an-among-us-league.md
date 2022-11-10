@@ -3,7 +3,6 @@ title: "Writing Software for an Among Us League"
 date: "2020-11-13"
 tags: ["javascript"]
 description: "Making a casual game more competitive and arguing with my friends about Elo systems."
-ogimage: "./og-image.png"
 ---
 
 Lately, I've been playing a lot of [Among Us](https://en.wikipedia.org/wiki/Among_Us) with my friends. It's a refreshing change of pace from the competitive FPS titles that we usually play. However, we've managed to inject a 'healthy' dose of competitiveness into our games in the form of a league that I built some software for. 

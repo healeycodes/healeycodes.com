@@ -3,7 +3,6 @@ title: "GeoGuessing with Deep Learning"
 date: "2021-03-24"
 tags: ["python"]
 description: "Applying photo geolocation estimation to the game of GeoGuessr."
-ogimage: "./og-image.png"
 ---
 
 - [A dash of deep learning](#a-dash-of-deep-learning)

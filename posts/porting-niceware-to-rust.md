@@ -3,7 +3,6 @@ title: "Porting Niceware to Rust"
 date: "2021-10-08"
 tags: ["rust"]
 description: "The sensation of incremental progress when programming with Rust."
-ogimage: "./og-image.png"
 ---
 
 I've been thinking about the sensation of incremental progress when programming with Rust. I come from dynamic programming land and I recently had a breakthrough with my productivity in Rust — instead of a technical challenge, I had to overcome an emotional barrier.

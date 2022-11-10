@@ -4,7 +4,6 @@ date:   "2019-03-18"
 tags: ["python"]
 path: "python/raspberrypi/beginners/webdev/2019/03/18/raspberry-pi-live-cam.html"
 description: "A lo-fi solution for streaming images from your Raspberry Pi to the web."
-ogimage: "./og-image.png"
 ---
 
 

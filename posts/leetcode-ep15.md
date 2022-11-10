@@ -4,7 +4,6 @@ date:   "2019-01-15"
 tags: ["algorithms"]
 path: "algorithms/leetcode/2019/01/15/leet-code.html"
 description: "Solutions for: Invert Binary Tree, N-ary Tree Postorder Traversal, and N-ary Tree Preorder Traversal."
-ogimage: "./og-image.png"
 ---
 
 I felt like it was time to knock some of these tree questions out. I find that solving tree questions in Python leads to simple, elegant code.

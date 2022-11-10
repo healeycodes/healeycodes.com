@@ -4,7 +4,6 @@ date:   "2019-05-19"
 tags: ["javascript"]
 path: "javascript/node/discuss/tutorial/2019/05/19/high-performance-javascript.html"
 description: "It's fast but is it worth it?"
-ogimage: "./og-image.png"
 ---
 
 Premature optimization is the root of all evil. It's also the root of this article.

@@ -4,7 +4,6 @@ date:   "2019-01-01"
 tags: ["algorithms"]
 path: "algorithms/leetcode/2019/01/01/leet-code.html"
 description: "Episode one of tacking Leetcode problems and discussing solutions. Jewels and Stones, Unique Email Addresses, and To Lower Case."
-ogimage: "./og-image.png"
 ---
 
 This series involves tackling Leetcode problems and discussing my solutions with an aim to improve at problem solving and algorithmic analysis. For most problems, I will be aiming for the most optimal solution. I've recently been reviewing some academic content on algorithms and data-structures.

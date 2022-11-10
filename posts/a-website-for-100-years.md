@@ -4,7 +4,6 @@ date:   "2019-06-24"
 tags: ["fun"]
 path: "discuss/webdev/javascript/opensource/2019/06/24/a-website-for-100-years.html"
 description: "Prepping for the internet to happen."
-ogimage: "./og-image.png"
 ---
 
 When all other resources fail me, technical blogs come to the rescue. They provide insight into my problem, clues about the design of a potential solution, and sometimes humor or even an emotional connection. I collect new tech blogs. I devour them.

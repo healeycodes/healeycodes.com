@@ -4,7 +4,6 @@ date:   "2019-07-07"
 tags: ["python"]
 path: "webdev/python/beginners/tutorial/2019/07/07/introduction-to-caching-with-python.html"
 description: "A high-level overview of caching."
-ogimage: "./og-image.png"
 ---
 
 ## What's a cache?

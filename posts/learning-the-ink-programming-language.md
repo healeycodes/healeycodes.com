@@ -3,7 +3,6 @@ title: "Learning the Ink Programming Language"
 date: "2020-09-15"
 tags: ["fun"]
 description: "Picking up Ink and giving back to the community."
-ogimage: "./og-image.png"
 ---
 
 I first heard about the [Ink](https://dotink.co/) programming language when I came across [Polyx](https://github.com/thesephist/polyx). Polyx is a productivity suite written in Ink that includes homegrown replacements for Dropbox and Trello as well as a personal relationship manager and a read-it-later service. [Linus Lee](https://thesephist.com/) is the sole author of Ink and Polyx. I read through the source code of Polyx because I was interested in owning my own personal infrastructure — and this was the start of my journey with Ink!

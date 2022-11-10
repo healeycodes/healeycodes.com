@@ -4,7 +4,6 @@ date:   "2019-01-04"
 tags: ["algorithms"]
 path: "algorithms/leetcode/2019/01/04/leet-code.html"
 description: "Solutions for: Reverse Words in a String III, Sort Array By Parity II, and Reverse String."
-ogimage: "./og-image.png"
 ---
 
 Two out of three problems involve reversing today hence the title.

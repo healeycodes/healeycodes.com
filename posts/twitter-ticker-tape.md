@@ -3,7 +3,6 @@ title: "Twitter Ticker Tape with a POS58 Receipt Printer"
 date: "2020-04-10"
 tags: ["python"]
 description: "Building a fun toy with my Raspberry Pi, Python, and Tweepy."
-ogimage: "./og-image.png"
 ---
 
 Screens tend to keep me awake in the evening so I wondered if I could print out my Twitter home timeline, live, as I read a book in the evening.

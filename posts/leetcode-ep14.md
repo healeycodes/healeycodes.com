@@ -4,7 +4,6 @@ date:   "2019-01-14"
 tags: ["algorithms"]
 path: "algorithms/leetcode/2019/01/14/leet-code.html"
 description: "Solutions for: Monotonic Array, Max Consecutive Ones, and Contains Duplicate."
-ogimage: "./og-image.png"
 ---
 
 I'm not too excited about any of my solutions today. They're all fairly optimal but I suppose I would class them as 'entry-level' array problems. They didn't require any three-dimensional thinking.

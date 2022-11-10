@@ -4,7 +4,6 @@ date:   "2019-01-16"
 tags: ["algorithms"]
 path: "algorithms/leetcode/2019/01/16/leet-code.html"
 description: "Solutions for: Flipping an Image, Leaf-Similar Trees, and Maximum Depth of N-ary Tree."
-ogimage: "./og-image.png"
 ---
 
 More algorithms today. Pretty efficient ones at that. All above 90% ranked on the first submission. I'm beginning to find a lot of patterns that can be applied to the different problems. Most of the Easy binary tree questions are guilty of this.

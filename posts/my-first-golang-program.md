@@ -4,7 +4,6 @@ date:   "2019-10-02"
 tags: ["go"]
 path: "beginners/go/showdev/opensource/2019/10/02/my-first-golang-program.html"
 description: "Conway's Game of Life in Ebiten."
-ogimage: "./og-image.png"
 ---
 
 I’m new to Go. Over the last week, I completed [A Tour of Go](https://tour.golang.org/welcome/1) and tonight I wrote my first program, an interactive [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life). I used [Ebiten](https://github.com/hajimehoshi/ebiten) which describes itself as *a dead simple 2D game library in Go*. Given its current stage of development, the [documentation](https://ebiten.org/) and [examples](https://github.com/hajimehoshi/ebiten/tree/master/examples) are amazing. It's also cross-platform 🎮.

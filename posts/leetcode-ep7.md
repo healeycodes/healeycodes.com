@@ -4,7 +4,6 @@ date:   "2019-01-07"
 tags: ["algorithms"]
 path: "algorithms/leetcode/2019/01/07/leet-code.html"
 description: "Solutions for: Two Sum, Valid Anagram, and Length of Last Word."
-ogimage: "./og-image.png"
 ---
 
 This blog is now live! A lot of these posts were just sitting on my computer but it's now hooked up to GitHub Pages via Jekyll. GitHub Pages was very pleasant to use and extend.

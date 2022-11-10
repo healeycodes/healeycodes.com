@@ -4,7 +4,6 @@ date:   "2019-10-21"
 tags: ["go"]
 path: "go/tutorial/beginners/showdev/2019/10/21/cloning-memcached-with-go.html"
 description: "I'm really starting to enjoy Go."
-ogimage: "./og-image.png"
 ---
 
 My [first program](https://github.com/healeycodes/conways-game-of-life) in Go was Conway's Game of Life. This time I made an [in-memory HTTP caching server](https://github.com/healeycodes/in-memory-cache-over-http) with similar methods to Memcached like increment/decrement and append/prepend.

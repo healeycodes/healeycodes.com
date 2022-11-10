@@ -4,7 +4,6 @@ date:   "2019-01-05"
 tags: ["algorithms"]
 path: "algorithms/leetcode/2019/01/05/leet-code.html"
 description: "Solutions for: Uncommon Words from Two Sentences, Search in a Binary Search Tree, and Fizz Buzz."
-ogimage: "./og-image.png"
 ---
 
 Title refers to my runtime rankings against other users *not* how long it took me to complete these. Ran into a couple of stubborn bugs, one of which was failing to read the question properly because I jumped ahead - doh.

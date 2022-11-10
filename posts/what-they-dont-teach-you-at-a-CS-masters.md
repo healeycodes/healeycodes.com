@@ -4,7 +4,6 @@ date:   "2019-04-24"
 tags: ["career"]
 path: "discuss/beginners/career/productivity/2019/04/24/what-they-dont-teach-you-at-a-CS-masters.html"
 description: "Bubblesort isn't everything."
-ogimage: "./og-image.png"
 ---
 
 My B.A. is in Creative Writing. I applied to study a Masters in Computer Science to get better at theory, fill the gaps in my knowledge, and to be a better software engineer. Here are a few things that weren't on the curriculum.

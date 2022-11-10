@@ -4,7 +4,6 @@ date:   "2019-01-13"
 tags: ["algorithms"]
 path: "algorithms/leetcode/2019/01/13/leet-code.html"
 description: "Solutions for: Range Sum of BST, Max Increase to Keep City Skyline, and Custom Sort String."
-ogimage: "./og-image.png"
 ---
 
 Today has been a good day.

@@ -4,7 +4,6 @@ date:   "2019-04-06"
 tags: ["javascript"]
 path: "javascript/beginners/webdev/tutorial/2019/04/06/embed-dev-posts.html"
 description: "Using the DEV.to API with Node."
-ogimage: "./og-image.png"
 ---
 
 Let's look at how the DEV.to API can be used to embed a list of your recent posts. We'll also sort them by their positive reactions! All it takes is a splash of client-side JavaScript. The API is [not released](https://github.com/thepracticaldev/dev.to/issues/2187) yet, is not documented, and will likely change but I'll keep this post up to date.

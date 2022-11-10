@@ -71,6 +71,7 @@ export default function Post({
   description,
   tags,
   date,
+  outdated,
   imageMetadata,
   source,
   prevPost,
@@ -95,6 +96,9 @@ export default function Post({
         </p>
       </header>
       <main className="post-text">
+        {outdated === true ? <aside>
+          <small><b>This is outdated!</b> I don't stand by this post anymore — my beliefs have changed, or I've stopped doing it this way, or I realized it's just flat out wrong. I like keeping old writing online to look back on so that's why it's still here, in its glorious wrongness.</small>
+        </aside> : null}
         <Markdown
           options={{
             // Extend plain Markdown posts with React components
@@ -158,6 +162,11 @@ export default function Post({
         .other-posts-link {
           display: block;
           padding-bottom: 32px;
+        }
+        aside {
+          background-color: #d7d5ce;
+          padding: 1.5em 1.5em;
+          margin-bottom: 2.5em;
         }
       `}</style>
     </Layout>

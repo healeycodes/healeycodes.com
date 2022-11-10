@@ -4,7 +4,6 @@ date:   "2019-02-21"
 tags: ["javascript"]
 path: "sudoku/front-end/javascript/2019/02/21/secret-sudoku.html"
 description: "Goofy project in which you can play Sudoku entirely within your URL bar."
-ogimage: "./og-image.png"
 ---
 
 Sudoku powered by the dark arts of `window.location.hash`, which means zero page refreshes are required. Unfortunately this means that the browser history gets spammed.

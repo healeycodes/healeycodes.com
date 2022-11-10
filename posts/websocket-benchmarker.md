@@ -4,7 +4,6 @@ date:   "2019-01-28"
 tags: ["python"]
 path: "websockets/python/projects/2019/01/28/websocket-benchmarker.html"
 description: "Benchmarking websocket servers and frameworks with async Python."
-ogimage: "./og-image.png"
 ---
 
 WebSockets run a large part of the web today. But which servers and frameworks are the best? Well, that depends on how you define best. If you're after raw performance then the following post may be of interest to you. I will be going over some of my design notes for a small benchmark program I wrote in Python with [asyncio](https://docs.python.org/3/library/asyncio.html) and [websockets](https://github.com/aaugustin/websockets).

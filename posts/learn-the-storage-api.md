@@ -4,7 +4,6 @@ date:   "2019-04-09"
 tags: ["javascript"]
 path: "javascript/beginners/webdev/tutorial/2019/04/09/learn-the-storage-api.html"
 description: "Learning and building."
-ogimage: "./og-image.png"
 ---
 
 Let's learn about `window.localStorage` by building a tiny note-taking app with some simple HTML, CSS, and JavaScript. We'll code up a small UI and autosave the user's notes to their browser. My co-worker keeps all of his snippets on something just like this. I can't believe the mileage he gets out of 50-60 lines of code!

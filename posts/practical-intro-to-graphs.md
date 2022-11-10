@@ -3,7 +3,6 @@ title: "A Practical Introduction to Graphs (Network Diagrams)"
 date: "2020-07-05"
 tags: ["python"]
 description: "Calculating the path between two countries with the least border crossings."
-ogimage: "./og-image.png"
 ---
 
 A graph is a structure that represents the connections between objects. They can be used for social network analysis, working out someone's [Erdős number](https://en.wikipedia.org/wiki/Erd%C5%91s_number), finding the shortest path through a maze, and many other [applications](https://en.wikipedia.org/wiki/Graph_theory#Applications).

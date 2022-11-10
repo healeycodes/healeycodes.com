@@ -1,6 +1,4 @@
-import Head from 'next/head';
 import Link from "next/link";
-import Script from 'next/script'
 import { getAllTags, getSortedPostsData } from "../lib/posts";
 import Layout from "../components/layout";
 import PostList from "../components/postList";

@@ -4,7 +4,6 @@ date:   "2019-03-25"
 tags: ["python"]
 path: "tutorial/python/beginners/webdev/2019/03/25/reddit-bot-tutorial.html"
 description: "The basics of building a Reddit bot that listens for phrases and replies to them."
-ogimage: "./og-image.png"
 ---
 
 We're going to write a Reddit bot that listens for specific phrases and responds to comments that contain them. We'll learn how the Reddit API can be interacted with in Python, while making a bot buddy of our own.
