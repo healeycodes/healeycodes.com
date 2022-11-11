@@ -9,9 +9,9 @@ export default function About() {
         <ul>
           <li>Work</li>
           <ul>
-            <li>Latest MacBook Pro</li>
-            <li>Terminal (+ ripgrep, git, nano)</li>
-            <li>VS Code</li>
+            <li>MacBook Pro (M1)</li>
+            <li>Terminal (+ zsh, ripgrep, git, nano)</li>
+            <li>VS Code (+ GitLens)</li>
             <li>Slack</li>
           </ul>
           <li>Personal</li>
