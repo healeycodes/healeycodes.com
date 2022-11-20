@@ -29,7 +29,7 @@ export default function Articles({ tags, posts }) {
             ))
             .reduce((prev, curr) => [prev, ", ", curr])}
         </p>
-        <PostList posts={posts} />
+        <PostList posts={posts} hideTags={false} />
       </main>
       <style jsx>{`
         .tag-desc {

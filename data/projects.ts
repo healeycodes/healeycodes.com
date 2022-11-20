@@ -65,6 +65,12 @@ export default [
     desc: "How well do you know your top-level domains (TLDs)?",
   },
   {
+    name: "codeguessr",
+    link: "https://github.com/healeycodes/codeguessr",
+    desc: "Like GeoGuessr but for code. An open source project quiz.",
+    to: "/codeguessr",
+  },
+  {
     name: "pi",
     link: "https://github.com/healeycodes/pi",
     desc: "Monorepo for my Raspberry Pi dashboard and GPS satellite listener.",

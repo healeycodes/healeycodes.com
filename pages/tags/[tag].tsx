@@ -44,7 +44,7 @@ export default function TagList({ otherTags, tag, posts }) {
             .reduce((prev, curr) => [prev, ", ", curr])}{" "}
           or <Link href="/articles">all articles</Link>.
         </p>
-        <PostList posts={posts} />
+        <PostList posts={posts} hideTags={false} />
       </main>
       <style jsx>{`
         .tag-desc {

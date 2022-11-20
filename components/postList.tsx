@@ -2,7 +2,7 @@ import Link from "next/link";
 import { formatTag } from "../lib/util";
 import Date from "./date";
 
-export default function PostList({ posts }) {
+export default function PostList({ posts, hideTags }) {
   return (
     <div>
       {posts.map(({ id, description, date, title, tags }) => (
@@ -12,8 +12,7 @@ export default function PostList({ posts }) {
           </Link>
           <p className="post-desc">{description}</p>
           <p className="post-date">
-            <Date dateString={date} /> in{" "}
-            <Link href={`/tags/${tags[0]}`}>{formatTag(tags[0])}</Link>
+            <Date dateString={date} /> {!hideTags && <>in <Link href={`/tags/${tags[0]}`}>{formatTag(tags[0])}</Link></>}
           </p>
         </div>
       ))}
