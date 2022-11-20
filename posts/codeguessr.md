@@ -65,7 +65,9 @@ Armed with a function to get a random code snippet, I needed just enough UI to m
 The code snippet is rendered with `<pre>` and `<code>` tags so that [highlight.js](https://highlightjs.org/) can find it in the DOM.
 
 ```jsx
-<pre className={styles.snippet}><code>{snippet}</code></pre>
+<pre className={styles.snippet}>
+  <code>{snippet}</code>
+</pre>
 ```
 
 Ideally, I would have spent some time integrating highlight.js in my React code so that I don't have something-that's-not-React mutating the DOM. Whenever the snippet changes, highlight.js greps the page and syntax highlights all the code blocks it finds.
