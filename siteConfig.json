@@ -1,20 +1,20 @@
 {
-    "SITE_LANG": "en",
-    "AUTHOR_NAME": "Andrew Healey",
-    "AUTHOR_EMAIL": "healeycodes@gmail.com",
-    "AUTHOR_TWITTER": "healeycodes",
-    "AUTHOR_GITHUB": "healeycodes",
-    "SITE_TITLE": "Andrew Healey's Blog",
-    "SITE_DESC": "Andrew Healey's blog and personal website. Software engineer, writer, creator.",
-    "SITE_URL": "https://healeycodes.com",
-    "PINNED_POSTS": [
-        "webassembly-search-tools-for-static-websites",
-        "building-my-own-chess-engine",
-        "geoguessing-with-deep-learning"
-    ],
-    "REPO_URL": "https://github.com/healeycodes/healeycodes.com",
-    "EDIT_POST_URL": "https://github.com/healeycodes/healeycodes.com/tree/main/posts",
-    "BUTTON_DOWN_USER": "healeycodes",
-    "GOAT_COUNTER": "healeycodes",
-    "LAYOUT_WIDTH": 725
+  "SITE_LANG": "en",
+  "AUTHOR_NAME": "Andrew Healey",
+  "AUTHOR_EMAIL": "healeycodes@gmail.com",
+  "AUTHOR_TWITTER": "healeycodes",
+  "AUTHOR_GITHUB": "healeycodes",
+  "SITE_TITLE": "Andrew Healey's Blog",
+  "SITE_DESC": "Andrew Healey's blog and personal website. Software engineer, writer, creator.",
+  "SITE_URL": "https://healeycodes.com",
+  "PINNED_POSTS": [
+    "beating-grep-with-go",
+    "building-my-own-chess-engine",
+    "geoguessing-with-deep-learning"
+  ],
+  "REPO_URL": "https://github.com/healeycodes/healeycodes.com",
+  "EDIT_POST_URL": "https://github.com/healeycodes/healeycodes.com/tree/main/posts",
+  "BUTTON_DOWN_USER": "healeycodes",
+  "GOAT_COUNTER": "healeycodes",
+  "LAYOUT_WIDTH": 725
 }
