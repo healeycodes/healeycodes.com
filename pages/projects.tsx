@@ -5,8 +5,9 @@ import projects from "../data/projects";
 import Link from "next/link";
 
 import Layout from "../components/layout";
+import { starCounter } from "../lib/github";
 
-export default function Projects() {
+export default function Projects({ totalStars }: { totalStars: number }) {
   return (
     <Layout
       title="Projects"
@@ -15,7 +16,7 @@ export default function Projects() {
       <h1>Projects</h1>
       <main>
         <p>
-          I write software for me and for you.
+          My side projects include programming languages, game solvers, developer tools, databases, and games. My public repositories been starred {totalStars} times.
         </p>
         <h2>Open Source</h2>
         <div className="project-list">
@@ -75,4 +76,13 @@ export default function Projects() {
       `}</style>
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const totalStars = await starCounter(siteConfig.AUTHOR_GITHUB)
+  return {
+    props: {
+      totalStars,
+    },
+  }
 }
