@@ -1,3 +1,4 @@
+import ms from 'ms'
 import siteConfig from "../siteConfig.json";
 import games from "../data/games";
 import projects from "../data/projects";
@@ -16,7 +17,7 @@ export default function Projects({ totalStars }: { totalStars: number }) {
       <h1>Projects</h1>
       <main>
         <p>
-          My side projects include programming languages, game solvers, developer tools, databases, and games. My public repositories been starred {totalStars} times.
+          My side projects include programming languages, game solvers, developer tools, databases, and games. My repositories been starred {totalStars} times.
         </p>
         <h2>Open Source</h2>
         <div className="project-list">
@@ -84,5 +85,6 @@ export async function getStaticProps() {
     props: {
       totalStars,
     },
+    revalidate: ms('6hr')
   }
 }
