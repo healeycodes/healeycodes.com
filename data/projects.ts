@@ -88,6 +88,11 @@ export default [
     desc: "A general-purpose interpreted scripting language with an event loop.",
   },
   {
+    name: "tinyinfra",
+    link: "https://github.com/healeycodes/tinyinfra",
+    desc: "A simple key/value store (get/set) and queue (send/receive/delete).",
+  },
+  {
     name: "in-memory-cache-over-http",
     link: "https://github.com/healeycodes/in-memory-cache-over-http",
     desc: "An in-memory LRU cache server.",
