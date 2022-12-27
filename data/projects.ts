@@ -48,6 +48,12 @@ export default [
     to: "/porting-niceware-to-rust",
   },
   {
+    name: "file-share-cli",
+    link: "https://github.com/healeycodes/file-share-cli",
+    desc: "Share files with friends from your terminal.",
+    to: "/a-personal-file-share-cli",
+  },
+  {
     name: "if-sad-send-cat",
     link: "https://github.com/healeycodes/if-sad-send-cat",
     desc: "A program that sends cats to my phone when I'm sad at the computer.",
