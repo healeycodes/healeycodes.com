@@ -145,4 +145,4 @@ I haven’t implemented any security around downloading. Anyone can download my 
 
 If I change my mind about this design in the future, one security improvement I can make is to add a token parameter that’s returned by a new “secure upload” endpoint and required (and checked) when downloading a secure file. [Verifying integrity with a secret using HMAC](http://www.inanzzz.com/index.php/post/g4nt/signing-messages-and-verifying-integrity-with-a-secret-using-hmac-in-golang) would be a good fit without having to pull in extra libraries.
 
-*Start the clock*, I’m now saving time when sharing files with my friends! Unfortunately, I wrote this blog post, and then wrote a [README](https://github.com/healeycodes/file-share-cli), and now won’t be time-positive for about a decade.
+*Start the clock*, I’m now saving time when sharing files with my friends! Unfortunately, I wrote this blog post, and then wrote a [README](https://github.com/healeycodes/file-share-cli), and now won’t be time-positive for [about a decade](https://xkcd.com/1205/).
