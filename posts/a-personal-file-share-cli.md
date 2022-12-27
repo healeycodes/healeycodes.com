@@ -15,7 +15,7 @@ None of the alternatives are perfect. When I need to quickly share a file during
 
 I estimated that by building [a custom solution](https://github.com/healeycodes/file-share-cli) within a time budget of two hours, I would start *saving time* within one year.
 
-This is where I lose time when I have share a file.
+This is where I lose time when I have to share a file.
 
 - Navigating a user interface
 - Two-factor logging into services
