@@ -63,7 +63,7 @@ export default function Home({ allPostsData, description, words }) {
             <PostList posts={allPostsData.slice(0, 3)} hideTags={true} />
           </section>
           <section className="posts-section">
-            <h2>Most Popular</h2>
+            <h2>Popular</h2>
             <PostList
               posts={allPostsData.filter((post) =>
                 siteConfig.PINNED_POSTS.includes(post.id)
