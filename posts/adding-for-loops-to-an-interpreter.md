@@ -332,6 +332,6 @@ This blog post covers two commits to [nodots](https://github.com/healeycodes/nod
 
 The latter commit also has logic to handle a case that we didn’t cover. When `break;` or `continue;` appears outside of a for loop body, the user should hit a helpful error.
 
-Most of what I know about tree-walk interpreters, I learned from [Crafting Interpreters](https://craftinginterpreters.com/), or another book called Language Implementation Patterns. I recommend the first resource as it’s less dry, assumes less prior knowledge, and has wonderful illustrations.
+Most of what I know about interpreters, I learned from [Crafting Interpreters](https://craftinginterpreters.com/), the [Ink blog](https://dotink.co), the [Oak blog](https://oaklang.org/posts/), or another book called Language Implementation Patterns. I recommend the first resource, Crafting Interpreters, as it assumes less prior knowledge and has wonderful illustrations!
 
 <small>Thanks to [Samuel Eisenhandler](https://samgeo.codes) for providing feedback on an early draft.</small>
