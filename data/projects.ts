@@ -6,6 +6,12 @@ export default [
     to: "/building-my-own-chess-engine",
   },
   {
+    name: "nodots",
+    link: "https://github.com/healeycodes/nodots-lang",
+    desc: "A small programming language without any dots.",
+    to: "/adding-for-loops-to-an-interpreter",
+  },
+  {
     name: "adventlang",
     link: "https://github.com/healeycodes/adventlang",
     desc: "A programming language (+ code playground) for Advent of Code.",
