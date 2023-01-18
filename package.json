@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test:e2e": "playwright test"
+    "test:e2e": "npx playwright install && playwright test"
   },
   "dependencies": {
     "@vercel/analytics": "^0.1.2",

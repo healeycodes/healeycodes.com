@@ -6,9 +6,9 @@ import projects from "../data/projects";
 import Link from "next/link";
 
 import Layout from "../components/layout";
-import { starCounter } from "../lib/github";
+import { statCounter } from "../lib/github";
 
-export default function Projects({ totalStars }: { totalStars: number }) {
+export default function Projects({ totalStars, totalForks, mostRecentPush }: { totalStars: number, totalForks: number, mostRecentPush: number }) {
   return (
     <Layout
       title="Projects"
@@ -17,7 +17,7 @@ export default function Projects({ totalStars }: { totalStars: number }) {
       <h1>Projects</h1>
       <main>
         <p>
-          My side projects include programming languages, game solvers, developer tools, databases, and games. My repositories been starred {totalStars} times.
+          My side projects include programming languages, game solvers, developer tools, databases, and games. My public GitHub repositories been starred {totalStars} times, forked {totalForks} times, and my most recent git push was {mostRecentPush} {mostRecentPush === 1 ? 'hour' : 'hours'} ago (see the script that calculates this <a href="https://github.com/healeycodes/healeycodes.com/blob/main/lib/github.ts">here</a>).
         </p>
         <h2>Open Source</h2>
         <div className="project-list">
@@ -80,11 +80,13 @@ export default function Projects({ totalStars }: { totalStars: number }) {
 }
 
 export async function getStaticProps() {
-  const totalStars = await starCounter(siteConfig.AUTHOR_GITHUB)
+  const { totalStars, totalForks, mostRecentPush } = await statCounter(siteConfig.AUTHOR_GITHUB)
   return {
     props: {
       totalStars,
+      totalForks,
+      mostRecentPush,
     },
-    revalidate: ms('6hr')
+    revalidate: ms('6hr') / 1000, // TIL this is seconds
   }
 }
