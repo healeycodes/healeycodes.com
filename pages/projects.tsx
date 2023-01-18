@@ -17,7 +17,7 @@ export default function Projects({ totalStars, totalForks, mostRecentPush }: { t
       <h1>Projects</h1>
       <main>
         <p>
-          My side projects include programming languages, game solvers, developer tools, databases, and games. My public GitHub repositories been starred {totalStars} times, forked {totalForks} times, and my most recent git push was {mostRecentPush} {mostRecentPush === 1 ? 'hour' : 'hours'} ago (see the script that calculates this <a href="https://github.com/healeycodes/healeycodes.com/blob/main/lib/github.ts">here</a>).
+          My side projects include programming languages, game solvers, developer tools, databases, and games. My public GitHub repositories been starred {totalStars} times, forked {totalForks} times, and my most recent <code>git push</code> was {mostRecentPush} {mostRecentPush === 1 ? 'hour' : 'hours'} ago (see the script that calculates this <a href="https://github.com/healeycodes/healeycodes.com/blob/main/lib/github.ts">here</a>).
         </p>
         <h2>Open Source</h2>
         <div className="project-list">
