@@ -92,7 +92,7 @@ Note: with profiling overhead, the benchmark script takes more than twice as lon
 
 The list of `eval_*` calls are expected. `eval_call` handles *nodots* function calls and `eval_term` handles addition and subtraction. The benchmark program does both these things in abundance. But two lines here stand out: `lexer.py:253(__eq__)` and `tree.py:58(meta)`. These function calls are from library code (*nodots* uses the [Lark](https://github.com/lark-parser/lark) parsing toolkit).
 
-*nodots* recurses on the parse tree that Lark creates. However, as we'll soon discover, these Tree/Token objects are generic and flexible (so that the library is useful and widely applicable) but aren't perfectly tuned for performance.
+*nodots* recurses on the parse tree that Lark creates. However, as we'll soon discover, these Tree/Token objects that Lark creates are generic and flexible (so that the library is useful and widely applicable) but aren't perfectly tuned for performance.
 
 In Python, [\_\_eq\_\_](https://docs.python.org/3/reference/datamodel.html#object.__eq__) is a “rich comparison” method. It's called when two objects are compared with `==`. If we look at [lexer.py:253(\_\_eq\_\_)](https://github.com/lark-parser/lark/blob/f3d79040e2ff59e11661e7b43f593f1334951205/lark/lexer.py#L253), we can see the Lark code that's being called **over one million times** during our benchmark:
 
@@ -124,13 +124,14 @@ My gut says to write my own Tree/Token classes and to make them simple and strai
 
 ## Building a New Tree
 
-The benchmark program spends ~16% of its time in the two methods above. Since we're identified that more work is being performed than our use case requires, we can build our own versions of these classes. We'll build a new tree by consuming the parse tree ahead of any evaluation. We only need to iterate the old parse tree once in order to create the new parse tree so the run time we add will be very small compared to the performance improvement.
+The benchmark program spends ~16% of its time in the two methods above. Since we're identified that more work is being performed than our use case requires, we can build our own versions of these classes. We'll build a new tree by consuming the parse tree ahead of any evaluation. We only need to iterate the old parse tree once in order to create the new parse tree so the run time we add will be very small compared to the performance improvements.
 
 One hard-to-measure benefit of the new tree is that it will have less data in it, so the frequently accessed nodes have a higher chance of sticking around in the CPU cache.
 
 The interpreter uses Lark's `Tree` and `Token` classes in `interpreter.py` so we first change their import names to make the existing type hints happy.
 
-```python
+```diff
+- from lark import Lark, Tree, Token
 + from lark import Lark, Tree as LarkTree, Token as LarkToken
 ```
 
@@ -161,7 +162,7 @@ Next, we create some small classes to represent the things we're replacing from 
 +         return self.value == other
 ```
 
-Now, we need to recurse over Lark's parse tree and use these new classes to build the new tree with our faster methods.
+Now, we need to write a function that will recurse over Lark's parse tree and use these new classes to build a new tree that will use the faster methods.
 
 ```python
 + def build_nodots_tree(children: List[LarkTree | LarkToken]) -> List[Tree | Token]:
@@ -309,8 +310,6 @@ program
 ```
 
 This would require a refactor to have a generic `eval_node` function with branches for every type of node — rather than specific functions like `eval_assignment`. This would improve performance by removing unnecessary function calls, `len` calls, property accesses, and more things like this. Basically: less lines of code would need to run. The performance gains would scale with the complexity of the tree/how often the same sub-tree is iterated more than once.
-
-Another idea I didn't full explore was to cut down on function calls by using a `while True:` loop (with branches for every node type) where the `node` and `context` values are reassigned to the next child/sub-context and the loop continues. Kind of like how Geoffrey Litt [added tail call optimization to a Lisp interpreter](https://www.geoffreylitt.com/2018/01/15/adding-tail-calls-optimization-to-a-lisp-interpreter.html).
 
 I was going to write about how to explore traces with [Snakeviz](https://jiffyclub.github.io/snakeviz/) but sorting the cProfile result by the internal time column was revealing enough.
 
