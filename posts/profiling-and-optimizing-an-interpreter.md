@@ -314,3 +314,5 @@ This would require a refactor to have a generic `eval_node` function with branch
 I was going to write about how to explore traces with [Snakeviz](https://jiffyclub.github.io/snakeviz/) but sorting the cProfile result by the internal time column was revealing enough.
 
 The TL;DR for using Snakeviz: run `pip3 install snakeviz`, export your cProfile to a profile file by adding `-o filename.prof`, and run `snakeviz filename.prof` to open a browser UI.
+
+<small>Thanks to [Samuel Eisenhandler](https://samgeo.codes) for providing feedback on an early draft.</small>
