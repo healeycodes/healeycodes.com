@@ -4,6 +4,7 @@ date:   "2019-05-27"
 tags: ["javascript"]
 path: "javascript/css/challenge/beginners/2019/05/27/interview-question-progress-bar.html"
 description: "Different ways to do one thing well."
+outdated: true
 ---
 
 I saw this question doing the rounds on social media. [Apparently](https://www.reddit.com/r/javascript/comments/3rb88w/ten_questions_ive_been_asked_most_more_than_once/cwmn60t/), [top companies](https://www.glassdoor.com/Interview/-1-Implement-a-loading-bar-that-animates-from-0-to-100-in-3-seconds-2-Start-loading-bar-animation-upon-a-button-cli-QTN_1393903.htm) are using it to screen front end engineers. My fiancée will be applying to jobs soon and I asked her to give it a go. She almost completed the final stage (with a little research) but a tricky recursion bug tripped her up. I wrote this article to help her out. Hopefully, you'll find this useful should you face similar themed questions!

@@ -135,6 +135,7 @@ export default function Layout({ children, title, description }) {
         }
 
         blockquote {
+          color: var(--light-text);
           margin-left: 16px;
           border-left-color: var(--border);
           border-left-style: solid;
@@ -142,6 +143,7 @@ export default function Layout({ children, title, description }) {
         }
 
         blockquote > p {
+          color: var(--light-text);
           padding-left: 16px;
         }
       `}</style>
