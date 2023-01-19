@@ -1,3 +1,5 @@
+import ms from 'ms'
+
 // Inspired by: https://gist.github.com/yyx990803/7745157
 async function statCounter(username: string) {
     const res = await (await fetch(`https://api.github.com/users/${username}`)).json()
@@ -23,10 +25,8 @@ async function statCounter(username: string) {
         })
     }
 
-    const mostRecentPushHours = Math.max(Math.round(
-        Math.abs(Date.now() - mostRecentPush.getTime()) / 36e5
-    ), 1)
-    return { totalStars, totalForks, mostRecentPush: mostRecentPushHours }
+    const mostRecentPushFormatted = ms(Math.abs(Date.now() - mostRecentPush.getTime()), { long: true })
+    return { totalStars, totalForks, mostRecentPushFormatted }
 }
 
 export { statCounter }
