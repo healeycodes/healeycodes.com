@@ -8,7 +8,7 @@ import Link from "next/link";
 import Layout from "../components/layout";
 import { statCounter } from "../lib/github";
 
-export default function Projects({ totalStars, totalForks, mostRecentPush }: { totalStars: number, totalForks: number, mostRecentPush: number }) {
+export default function Projects({ totalStars, totalForks, mostRecentPushFormatted }: { totalStars: number, totalForks: number, mostRecentPushFormatted: string }) {
   return (
     <Layout
       title="Projects"
@@ -17,7 +17,7 @@ export default function Projects({ totalStars, totalForks, mostRecentPush }: { t
       <h1>Projects</h1>
       <main>
         <p>
-          My side projects include programming languages, game solvers, developer tools, databases, and games. My public GitHub repositories been starred {totalStars} times, forked {totalForks} times, and my most recent <code>git push</code> was {mostRecentPush} {mostRecentPush === 1 ? 'hour' : 'hours'} ago (see the script that calculates this <a href="https://github.com/healeycodes/healeycodes.com/blob/main/lib/github.ts">here</a>).
+          My side projects include programming languages, game solvers, developer tools, databases, and games. My public GitHub repositories been starred {totalStars} times, forked {totalForks} times, and my most recent <code>git push</code> was {mostRecentPushFormatted} ago.
         </p>
         <h2>Open Source</h2>
         <div className="project-list">
@@ -80,13 +80,13 @@ export default function Projects({ totalStars, totalForks, mostRecentPush }: { t
 }
 
 export async function getStaticProps() {
-  const { totalStars, totalForks, mostRecentPush } = await statCounter(siteConfig.AUTHOR_GITHUB)
+  const { totalStars, totalForks, mostRecentPushFormatted } = await statCounter(siteConfig.AUTHOR_GITHUB)
   return {
     props: {
       totalStars,
       totalForks,
-      mostRecentPush,
+      mostRecentPushFormatted,
     },
-    revalidate: ms('6hr') / 1000, // TIL this is seconds
+    revalidate: ms('30min') / 1000, // TIL this is seconds
   }
 }
