@@ -15,13 +15,13 @@ Issues/bug reports are very welcome.
 - Code highlighting via `prism-react-renderer`
 - Newsletter CTA (powered by Buttondown)
 - All core features work without JavaScript enabled
-- Privacy-friendly analytics via GoatCounter
+- End-to-end tests with `playwright`
 
 Most configuration is handled via `siteConfig.json`
 
 ## Tests
 
-e2e tests with Playwright. See `.github\workflows\e2e.yml`.
+See `.github\workflows\e2e.yml` for more.
 
 ```
 npm i
