@@ -10,7 +10,7 @@ export default function Layout({ children, title, description }) {
     <div className="container">
       <Head>
         <title>
-          {title} — {siteConfig.AUTHOR_NAME}
+          {`${title} — ${siteConfig.AUTHOR_NAME}`}
         </title>
         <meta name="description" content={description} />
         <link
