@@ -37,12 +37,12 @@ export default function TagList({ otherTags, tag, posts }) {
           Other tags:{" "}
           {formattedTags
             .map((formattedTag, i) => (
-              <Link href={`/tags/${otherTags[i]}`} key={i}>
+              <Link href={`/tags/${otherTags[i]}`} key={i} legacyBehavior>
                 {formattedTag}
               </Link>
             ))
             .reduce((prev, curr) => [prev, ", ", curr])}{" "}
-          or <Link href="/articles">all articles</Link>.
+          or <Link href="/articles" legacyBehavior>all articles</Link>.
         </p>
         <PostList posts={posts} hideTags={false} />
       </main>

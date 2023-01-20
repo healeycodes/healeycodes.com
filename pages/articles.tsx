@@ -23,7 +23,7 @@ export default function Articles({ tags, posts }) {
           Other tags:{" "}
           {formattedTags
             .map((formattedTag, i) => (
-              <Link href={`/tags/${tags[i]}`} key={i}>
+              <Link href={`/tags/${tags[i]}`} key={i} legacyBehavior>
                 {formattedTag}
               </Link>
             ))

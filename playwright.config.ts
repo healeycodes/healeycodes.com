@@ -2,14 +2,12 @@ import { PlaywrightTestConfig, devices } from "@playwright/test";
 import path from "path";
 
 // Reference: https://playwright.dev/docs/test-configuration
+// Also: https://github.com/vercel/next.js/blob/canary/examples/with-playwright/playwright.config.ts
 const config: PlaywrightTestConfig = {
-  // Timeout per test
+  workers: 4,
   timeout: 30 * 1000,
-  // Test directory
   testDir: path.join(__dirname, "e2e"),
-  // If a test fails, retry it additional 1 times
-  retries: 1,
-  // Artifacts folder where screenshots, videos, and traces are stored.
+  retries: 3,
   outputDir: "test-results/",
 
   // Run your local dev server before starting the tests:
@@ -22,14 +20,7 @@ const config: PlaywrightTestConfig = {
   },
 
   use: {
-    // Retry a test if its failing with enabled tracing. This allows you to analyse the DOM, console logs, network traffic etc.
-    // More information: https://playwright.dev/docs/trace-viewer
     trace: "retry-with-trace",
-
-    // All available context options: https://playwright.dev/docs/api/class-browser#browser-new-context
-    // contextOptions: {
-    //   ignoreHTTPSErrors: true,
-    // },
   },
 
   projects: [

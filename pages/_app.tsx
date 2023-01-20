@@ -1,7 +1,7 @@
 import { GCScript } from "../components/gcScript";
 import { Analytics } from '@vercel/analytics/react';
 
-function App({ Component, pageProps }) {
+function MyApp({ Component, pageProps }) {
 
     return <>
         <Analytics />
@@ -10,4 +10,4 @@ function App({ Component, pageProps }) {
     </>
 }
 
-export default App
+export default MyApp
