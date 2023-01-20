@@ -4,7 +4,7 @@ import ms from 'ms'
 async function statCounter(username: string) {
     const res = await (await fetch(`https://api.github.com/users/${username}`)).json()
     if (!res.public_repos) {
-        throw new Error('no public repositories')
+        throw new Error(`no public repositories, or an error..\n\n${JSON.stringify(res)}`)
     }
 
     let totalStars = 0
