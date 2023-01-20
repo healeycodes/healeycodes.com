@@ -16,4 +16,8 @@ test("posts", async ({ page }) => {
   // Subscribe button
   const subButton = await page.locator('[value="Subscribe"]');
   expect(await subButton.isVisible());
+
+  // Code block
+  const codeBlock = await page.locator('span:has-text("move_by_offset")');
+  expect(await codeBlock.isVisible());
 });
