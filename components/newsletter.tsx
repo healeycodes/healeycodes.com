@@ -46,6 +46,7 @@ export default function Newsletter() {
           max-width: 500px;
         }
         .email {
+          width: 212px;
           border: 0 solid;
           border-color: var(--border);
           font-family: inherit;
@@ -53,7 +54,7 @@ export default function Newsletter() {
           border-radius: 0.25rem;
           border-width: 1px;
           background-color: var(--input-background);
-          padding: 0.25rem 0.75rem;
+          padding: 0.5rem 0.75rem;
           font-size: 1rem;
           font-weight: 400;
           margin-right: 0.5rem;

@@ -7,12 +7,12 @@ export default function PostList({ posts, hideTags }) {
     <div>
       {posts.map(({ id, description, date, title, tags }) => (
         <div className="post" key={id}>
-          <Link href={`/${id}`}>
+          <Link href={`/${id}`} legacyBehavior>
             <a>{title}</a>
           </Link>
           <p className="post-desc">{description}</p>
           <p className="post-date">
-            <Date dateString={date} /> {!hideTags && <>in <Link href={`/tags/${tags[0]}`}>{formatTag(tags[0])}</Link></>}
+            <Date dateString={date} /> {!hideTags && <>in <Link href={`/tags/${tags[0]}`} legacyBehavior>{formatTag(tags[0])}</Link></>}
           </p>
         </div>
       ))}

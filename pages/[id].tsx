@@ -88,7 +88,7 @@ export default function Post({
           <Date dateString={date} /> in{" "}
           {tags
             .map((tag, i) => (
-              <Link href={`/tags/${tag}`} key={i}>
+              <Link href={`/tags/${tag}`} key={i} legacyBehavior>
                 {formatTag(tag)}
               </Link>
             ))
@@ -131,12 +131,12 @@ export default function Post({
       <div className="other-posts">
         {prevPost ? (
           <div className="other-posts-link">
-            <Link href={`/${prevPost.id}`}>{`← ${prevPost.title}`}</Link>
+            <Link href={`/${prevPost.id}`} legacyBehavior>{`← ${prevPost.title}`}</Link>
           </div>
         ) : null}
         {nextPost ? (
           <div className="other-posts-link">
-            <Link href={`/${nextPost.id}`}>{`${nextPost.title} →`}</Link>{" "}
+            <Link href={`/${nextPost.id}`} legacyBehavior>{`${nextPost.title} →`}</Link>{" "}
           </div>
         ) : null}
       </div>

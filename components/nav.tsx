@@ -7,16 +7,16 @@ export default function Nav() {
     <nav>
       <ul>
         <li>
-          <Link href="/">{siteConfig.AUTHOR_NAME}</Link>
+          <Link href="/" legacyBehavior>{siteConfig.AUTHOR_NAME}</Link>
         </li>
         <li>
-          <Link href="/articles">Articles</Link>
+          <Link href="/articles" legacyBehavior>Articles</Link>
         </li>
         <li>
-          <Link href="/projects">Projects</Link>
+          <Link href="/projects" legacyBehavior>Projects</Link>
         </li>
         <li>
-          <Link href="/about">About</Link>
+          <Link href="/about" legacyBehavior>About</Link>
         </li>
         <li>
           <a

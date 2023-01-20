@@ -9,23 +9,20 @@
     "test:e2e": "npx playwright install && playwright test"
   },
   "dependencies": {
-    "@vercel/analytics": "^0.1.2",
-    "date-fns": "^2.23.0",
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.0.27",
+    "@vercel/analytics": "^0.1.8",
+    "date-fns": "^2.29.3",
     "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
-    "image-size": "^1.0.0",
-    "markdown-to-jsx": "^7.1.5",
+    "image-size": "^1.0.2",
+    "markdown-to-jsx": "^7.1.8",
     "ms": "^2.1.3",
-    "next": "^12.1.6",
-    "prism-react-renderer": "^1.2.1",
-    "prismjs": "^1.25.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
-  "devDependencies": {
-    "@playwright/test": "^1.22.2",
-    "@types/node": "^17.0.18",
-    "@types/react": "^17.0.37",
-    "typescript": "^4.5.4"
+    "next": "^13.1.3",
+    "prism-react-renderer": "^1.3.5",
+    "prismjs": "^1.29.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.9.4"
   }
 }

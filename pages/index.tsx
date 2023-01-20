@@ -58,7 +58,7 @@ export default function Home({ allPostsData, description, words }) {
           <section className="posts-section">
             <h2>
               Recent (
-              <Link href="/articles">{`${allPostsData.length} articles`}</Link>)
+              <Link href="/articles" legacyBehavior>{`${allPostsData.length} articles`}</Link>)
             </h2>
             <PostList posts={allPostsData.slice(0, 3)} hideTags={true} />
           </section>
@@ -83,7 +83,8 @@ export default function Home({ allPostsData, description, words }) {
           padding-bottom: 6px;
         }
         .avatar-text {
-          margin-left: 16px;
+          margin-left: 28px;
+          max-width: 480px;
         }
         .posts {
           display: flex;

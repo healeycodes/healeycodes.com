@@ -29,7 +29,7 @@ export default function Projects({ totalStars, totalForks, mostRecentPushFormatt
               <p className="project-desc">{project.desc}</p>
               {project.to ? (
                 <p className="project-post">
-                  Read my <Link href={project.to}>write-up</Link>.
+                  Read my <Link href={project.to} legacyBehavior>write-up</Link>.
                 </p>
               ) : null}
             </div>
