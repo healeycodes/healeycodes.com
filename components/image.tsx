@@ -1,6 +1,6 @@
 import siteConfig from "../siteConfig.json";
 
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 function imageResize(imageWidth, imageHeight) {
   let width, height;
