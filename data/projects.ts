@@ -12,6 +12,12 @@ export default [
     to: "/adding-for-loops-to-an-interpreter",
   },
   {
+    name: "noter",
+    link: "https://github.com/healeycodes/noter",
+    desc: "A text editor for macOS. Built using the Ebitengine game engine.",
+    to: "/making-a-text-editor-with-a-game-engine",
+  },
+  {
     name: "adventlang",
     link: "https://github.com/healeycodes/adventlang",
     desc: "A programming language (+ code playground) for Advent of Code.",
