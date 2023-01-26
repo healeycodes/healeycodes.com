@@ -41,6 +41,8 @@ var (
 
 If there's a way to embed nested directories without using any libraries, let me know.
 
+Also, after publishing, tinne26 [had some great advice](https://github.com/healeycodes/noter/issues/1#issue-1557784446) on rendering crisp pixel fonts without resorting to using images.
+
 ## Storing Text in Memory
 
 The text editor stores the entire document in memory (mostly because I can't remember the last time I edited a file that was more than 1% of my available RAM).
@@ -214,6 +216,8 @@ func macOSpaste() ([]byte, error) {
 }
 ```
 
+After publishing, sedyh [recommended the golang-design/clipboard library](https://github.com/healeycodes/noter/issues/1#issuecomment-1404741507) for crossplatform copy/paste, which also avoids creating unnecessary processes on macOS.
+
 ## Navigation
 
 This is a keyboard-only text editor so navigation is a priority. However, the bar that nano sets for navigation is low. As of launch, there are two ways to navigate around; arrow keys and command+arrow keys. The latter works like page up/down.
@@ -225,14 +229,5 @@ It wouldn't be too difficult to allow the mouse to be used. All the font images 
 Text highlighting might arrive at some point. It's required to support more complex copy operations (currently all you can cut or copy is the current line). I suppose that the cursor object could keep track of a "highlight count", a negative or positive integer that describes which runes are highlighted in relation to the cursors position. Visually, this could be relayed using a light blue background, similar to how the cursor is drawn.
 
 You can follow the progress of this quirky, and imperfect, piece of personal software (which, for now, is called *noter*) in [its repository](https://github.com/healeycodes/noter).
-
-<br>
-
-Updates:
-
-- tinne26 [had some great advice](https://github.com/healeycodes/noter/issues/1#issue-1557784446) on efficient GPU usage, and proper pixel font rendering.
-- sedyh [recommended the golang-design/clipboard library](https://github.com/healeycodes/noter/issues/1#issuecomment-1404741507) for crossplatform copy/paste, which also avoids creating unnecessary processes on macOS.
-
-<br>
 
 <small>Thanks to [Zach Goldstein](https://zachgoldstein.engineering/) for providing feedback on an early draft.</small>
