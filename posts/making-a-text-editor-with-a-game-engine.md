@@ -226,4 +226,13 @@ Text highlighting might arrive at some point. It's required to support more comp
 
 You can follow the progress of this quirky, and imperfect, piece of personal software (which, for now, is called *noter*) in [its repository](https://github.com/healeycodes/noter).
 
+<br>
+
+Updates:
+
+- tinne26 [had some great advice](https://github.com/healeycodes/noter/issues/1#issue-1557784446) on efficient GPU usage, and proper pixel font rendering.
+- sedyh [recommended the golang-design/clipboard library](https://github.com/healeycodes/noter/issues/1#issuecomment-1404741507) for crossplatform copy/paste, which also avoids creating unnecessary processes on macOS.
+
+<br>
+
 <small>Thanks to [Zach Goldstein](https://zachgoldstein.engineering/) for providing feedback on an early draft.</small>
