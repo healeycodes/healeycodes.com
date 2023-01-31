@@ -13,7 +13,7 @@ I’ll go over how each feature was implemented and some development strategies 
 
 ## Text Highlighting
 
-Highlighting some text is kinda table stakes when it comes to text editing so I was please to see this feature land.
+Highlighting some text is kinda table stakes when it comes to text editing so I was pleased to see this feature land.
 
 When the user holds Shift, and presses the right arrow twice, the two characters to the right of the cursor get a blue-y purple background during the next draw call. This background signifies to the user that these characters are highlighted and can be cut, copied, deleted via backspace, or replaced by new input.
 
