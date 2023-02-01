@@ -93,7 +93,6 @@ export default function Post({
               </Link>
             ))
             .reduce((prev, curr) => [prev, ", ", curr])}{" "}
-          — <a href={`${siteConfig.EDIT_POST_URL}/${id}.md`}>Edit on GitHub</a>
         </p>
       </header>
       <main className="post-text">

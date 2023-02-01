@@ -78,7 +78,7 @@ export default function Layout({ children, title, description }) {
 
         p {
           margin-bottom: 24px;
-          line-height: 24px;
+          line-height: 25px;
           color: var(--text);
         }
 
@@ -102,7 +102,7 @@ export default function Layout({ children, title, description }) {
 
         div[class*="language-"],
         div[class*="language-"] {
-          line-height: 24px;
+          line-height: 25px;
           padding-top: 8px;
           padding-left: 8px;
           padding-right: 8px;
@@ -126,12 +126,13 @@ export default function Layout({ children, title, description }) {
         }
 
         ul {
+          padding-top: 6px;
           list-style-type: square;
         }
 
         li {
           padding-bottom: 6px;
-          line-height: 24px;
+          line-height: 25px;
         }
 
         blockquote {
