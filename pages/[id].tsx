@@ -1,5 +1,3 @@
-import siteConfig from "../siteConfig.json";
-
 import fs from "fs";
 import path from "path";
 import imageSize from "image-size";
@@ -101,7 +99,6 @@ export default function Post({
         </aside> : null}
         <Markdown
           options={{
-            // Extend plain Markdown posts with React components
             createElement(type, props, children) {
               if (type === "img") {
                 return (
@@ -164,7 +161,7 @@ export default function Post({
           padding-bottom: 32px;
         }
         aside {
-          background-color: #d7d5ce;
+          background-color: var(--aside);
           padding: 1.5em 1.5em;
           margin-bottom: 2.5em;
         }

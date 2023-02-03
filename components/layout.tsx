@@ -53,6 +53,7 @@ export default function Layout({ children, title, description }) {
           --border: #b6b6c2;
           --button: #4a7ddd;
           --button-text: #fff;
+          --aside: #d7d5ce;
         }
 
         html,

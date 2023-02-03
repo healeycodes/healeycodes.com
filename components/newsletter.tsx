@@ -9,8 +9,7 @@ export default function Newsletter() {
   return (
     <div className="newsletter-section">
       <p className="newsletter-desc">
-        Subscribe to new posts by email. Something new approximately once per
-        month.
+        Subscribe to new posts (about once a month).
       </p>
       <form
         action={`https://buttondown.email/api/emails/embed-subscribe/${siteConfig.BUTTON_DOWN_USER}`}
