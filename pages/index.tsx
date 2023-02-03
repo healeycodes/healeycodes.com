@@ -10,16 +10,20 @@ import Newsletter from "../components/newsletter";
 
 import { getSortedPostsData, getPostData } from "../lib/posts";
 import { generateRssFeed } from "../lib/rss";
+import { getAllNotes } from "../lib/notes";
 
 export async function getStaticProps() {
   await generateRssFeed();
 
   const allPostsData = getSortedPostsData();
+  // Count posts
   const words = allPostsData.reduce(
     (count, current) =>
       count + getPostData(current.id).content.split(" ").length,
     0
-  );
+  ) +
+  // Count notes
+  getAllNotes().reduce((count, current) => count + current.content.split(" ").length, 0)
   return {
     props: {
       allPostsData,
@@ -46,7 +50,7 @@ export default function Home({ allPostsData, description, words }) {
             quality={100}
             placeholder="blur"
             priority={true}
-            style={{borderRadius: '0.25em'}}
+            style={{ borderRadius: '0.25em' }}
           />
           <p className="avatar-text">
             Hey, I'm Andrew Healey. I'm a software engineer at Vercel, and I'm interested in the joy of computing. I've written{" "}
