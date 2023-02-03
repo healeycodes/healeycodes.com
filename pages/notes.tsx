@@ -26,7 +26,7 @@ export default function Notes({ notes }: { notes: Note[] }) {
                 notes
                     .map((note) => <div key={note.id} id={note.id.toString()} className="note">
                         <p>
-                            <a className="note-date-link" href={`#${note.id}`}>{(new Date(note.id)).toDateString()} #</a><Like id={`notes-${note.id}`} />
+                            <a className="note-date-link" href={`#${note.id}`}>{(new Date(note.id)).toDateString()} #</a><Like id={`note-${note.id}`} />
                         </p>
                         <p><Markdown
                             options={{
