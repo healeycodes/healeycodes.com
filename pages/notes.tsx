@@ -45,7 +45,7 @@ export default function Notes({ notes }: { notes: Note[] }) {
             <style jsx>{`
             .note-date-link {
                 color: var(--light-text);
-                padding-right: 20px;
+                margin-right: 20px;
             }
             `}</style>
         </Layout>
