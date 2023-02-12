@@ -5,7 +5,7 @@ tags: ["javascript"]
 description: "An overview of the sandboxing landscape – and some experiments with Deno."
 ---
 
-I've been enjoying playing around on [Val Town](https://www.val.town/) lately. Val Town can be described a few ways; a cloud scripting site, a runnable github gists, or [end-programmer programming](https://www.notion.so/End-programmer-Programming-a749beb4a9b143f2990f575fb7e59b33). I first came across it in a [Show HN thread](https://news.ycombinator.com/item?id=34343122).
+I've been enjoying playing around on [Val Town](https://www.val.town/) lately. Val Town can be described a few ways; a cloud scripting site, a runnable github gists, or [end-programmer programming](https://val-town.notion.site/End-programmer-Programming-a749beb4a9b143f2990f575fb7e59b33). I first came across it in a [Show HN thread](https://news.ycombinator.com/item?id=34343122).
 
 > A "val" is a JavaScript/TypeScript function or value that runs on our servers. We aim to get you from idea to running code in seconds: type code, run it, get its API endpoint, schedule it - all from the browser, in a couple keystrokes.
 
@@ -70,10 +70,10 @@ const cmd = [
     release();
 
     setTimeout(async () => {
-			  // (Error handling code has been removed for brevity)
-				scriptProcess.kill();
+        // (Error handling code has been removed for brevity)
+        scriptProcess.kill();
         scriptProcess.close();
-				await Deno.remove(scriptPath);
+        await Deno.remove(scriptPath);
     }, SCRIPT_TIME_LIMIT);
 ```
 
