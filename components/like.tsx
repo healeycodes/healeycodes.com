@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import Cookies from 'js-cookie';
 
-const INITIAL_TEXT = "Like?"
-const THANKS_TEXT = "Thanks!"
-const LIKED_TEXT = "Liked ♥︎"
+const INITIAL_TEXT = <>Like?</>
+const THANKS_TEXT = <>Thanks!</>
+const LIKED_TEXT = <>Liked <small>♥︎</small></>
 
 const THANKS_VISIBLE_FOR_MS = 600
 

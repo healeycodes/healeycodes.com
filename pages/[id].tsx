@@ -13,7 +13,7 @@ import SpacedImage from "../components/image";
 import Code from "../components/code";
 import Date from "../components/date";
 import Newsletter from "../components/newsletter";
-import { formatTag } from "../lib/util";
+import Like from "../components/like";
 
 export async function getStaticPaths() {
   const paths = getAllPostIds();
@@ -83,14 +83,7 @@ export default function Post({
       <header>
         <h1 className="post-title">{title}</h1>
         <p className="post-date">
-          <Date dateString={date} /> in{" "}
-          {tags
-            .map((tag, i) => (
-              <Link href={`/tags/${tag}`} key={i} legacyBehavior>
-                {formatTag(tag)}
-              </Link>
-            ))
-            .reduce((prev, curr) => [prev, ", ", curr])}{" "}
+          <Date dateString={date} />
         </p>
       </header>
       <main className="post-text">
