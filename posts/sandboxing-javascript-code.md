@@ -147,7 +147,7 @@ console.log({
 });
 ```
 
-I was quite impressed by Deno's interfaces for V8. The Deno-to-V8 connection is straightforwards and accessible (compared to using V8 directly in C or C++) without giving up fine grained control. [A Guide to Deno Core](https://denolib.gitbook.io/guide/advanced/interaction-with-v8) is fantastic documentation too.
+I was quite impressed by Deno's interfaces for V8. The Deno-to-V8 connection is straightforwards and accessible (compared to using V8 directly in C or C++) without giving up fine-grained control over things like performance and security. [A Guide to Deno Core](https://denolib.gitbook.io/guide/advanced/interaction-with-v8) is fantastic documentation too.
 
 Reading through Deno's `fetch` implementation — both the [Rust parts](https://github.com/denoland/deno/blob/main/ext/fetch/lib.rs) and the [JavaScript parts](https://github.com/denoland/deno/tree/main/ext/fetch) — reveals the complexity of building a production ready web-standards-based runtime.
 
