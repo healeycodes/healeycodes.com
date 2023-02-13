@@ -60,6 +60,12 @@ export default [
     to: "/porting-niceware-to-rust",
   },
   {
+    name: "deno-script-sandbox",
+    link: "https://github.com/healeycodes/deno-script-sandbox",
+    desc: "An API/sandbox to run untrusted JavaScript/TypeScript scripts.",
+    to: "/sandboxing-javascript-code",
+  },
+  {
     name: "file-share-cli",
     link: "https://github.com/healeycodes/file-share-cli",
     desc: "Share files with friends from your terminal.",
