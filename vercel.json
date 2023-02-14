@@ -1,6 +1,10 @@
 {
   "redirects": [
     {
+      "source": "/tags/(.*)",
+      "destination": "/articles"
+    },
+    {
       "source": "/discuss/webdev/javascript/opensource/2019/06/24/a-website-for-100-years.html",
       "destination": "/a-website-for-100-years"
     },

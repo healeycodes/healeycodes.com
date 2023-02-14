@@ -1,8 +1,6 @@
-import Link from "next/link";
 import { getAllTags, getSortedPostsData } from "../lib/posts";
 import Layout from "../components/layout";
 import PostList from "../components/postList";
-import { formatTag } from "../lib/util";
 
 export function getStaticProps() {
   return {
@@ -10,35 +8,20 @@ export function getStaticProps() {
   };
 }
 
+// TODO: delete all tags code
 export default function Articles({ tags, posts }) {
-  const title = `All posts`;
-  const formattedTags = tags.map(
-    (tag) => formatTag(tag)
-  );
+  const title = `Articles`;
   return (
     <Layout title={title} description="A list of every article I've written.">
-      <h1 className="tag-desc">{title}</h1>
+      <h1>{title}</h1>
       <main>
-        <p className="other-tags">
-          Other tags:{" "}
-          {formattedTags
-            .map((formattedTag, i) => (
-              <Link href={`/tags/${tags[i]}`} key={i} legacyBehavior>
-                {formattedTag}
-              </Link>
-            ))
-            .reduce((prev, curr) => [prev, ", ", curr])}
+        <p className="articles-intro">Here's a chronological list of all the posts on this website.
+          A star means that I thought the post was pretty neat (or, that a lot of other people thought it was pretty neat).
         </p>
-        <PostList posts={posts} hideTags={false} />
+        <PostList posts={posts} showYears={true} />
       </main>
       <style jsx>{`
-        .tag-desc {
-          margin-bottom: 0px;
-          padding-bottom: 0px;
-        }
-        .other-tags {
-          margin-top: 0px;
-          color: var(--light-text);
+        .articles-intro {
           padding-bottom: 24px;
         }
       `}</style>

@@ -12,6 +12,6 @@ test("nav bar links work", async ({ page }) => {
   await new Promise(r => setTimeout(r, 2000));
 
   // Title of `/articles`
-  const title = await page.locator(`h1:has-text("All posts")`);
+  const title = await page.locator(`h1:has-text("Articles")`);
   expect(await title.isVisible()).toBe(true);
 });

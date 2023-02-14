@@ -8,7 +8,6 @@ import { getAllNotes, Note } from "../lib/notes";
 
 export async function getStaticProps() {
     const notes = getAllNotes()
-
     return {
         props: {
             notes
