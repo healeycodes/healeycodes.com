@@ -187,11 +187,6 @@ export default [
     to: "/practical-intro-to-graphs",
   },
   {
-    name: "paircode",
-    link: "https://github.com/healeycodes/paircode",
-    desc: "Real-time pair programming in a HTML/CSS/JS playground.",
-  },
-  {
     name: "broken-link-crawler",
     link: "https://github.com/healeycodes/Broken-Link-Crawler",
     desc: "A bot that crawls your website looking for dead stuff.",
@@ -202,16 +197,6 @@ export default [
     link: "https://github.com/healeycodes/dev-article-analysis",
     desc: "A website that graphs textual statistics from a DEV user's articles.",
     to: "/dev-article-analysis",
-  },
-  {
-    name: "websocket-benchmarker",
-    link: "https://github.com/healeycodes/websocket-benchmarker",
-    desc: "Benchmark a WebSocket server's message throughput.",
-  },
-  {
-    name: "real-rainy-mood",
-    link: "https://github.com/healeycodes/real-rainy-mood",
-    desc: "If it's not raining, you're not allowed in.",
   },
   {
     name: "conways-game-of-life",
