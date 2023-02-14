@@ -6,7 +6,7 @@ path: "algorithms/2019/04/30/majority-vote-algorithm.html"
 description: "Breaking down the Boyer–Moore majority vote algorithm with examples in Python."
 ---
 
-_Boyer–Moore majority vote algorithm_ — I love this algorithm because it's amazing _and_ approachable. I first saw it on a LeetCode discuss thread, and it blew everyone away. Some people were, like, irate. [169. Majority Element](https://leetcode.com/problems/majority-element/).
+_Boyer–Moore majority vote algorithm_ — I love this algorithm because it's amazing _and_ approachable. I first saw it on a LeetCode discuss thread, and it blew everyone away. Some people were, like, irate. [(169) Majority Element](https://leetcode.com/problems/majority-element/).
 
 This problem, common on competitive coding sites, has a solution that was discovered in 1980 but went unpublished until 1991 because of its emphasis on Fortran and mechanical verification.
 
@@ -14,9 +14,13 @@ This problem, common on competitive coding sites, has a solution that was discov
 
 Examples:
 
-`[0, 1, 1, 0, 1, 0, 1, 1] => 1 is the majority element`
+```text
+[0, 1, 1, 0, 1, 0, 1, 1] => 1 is the majority element
+```
 
-`['a', 'b', 'a', 'c', 'b', 'c', 'a', 'a'] => 'a' is the majority here`
+```text
+['a', 'b', 'a', 'c', 'b', 'c', 'a', 'a'] => 'a' is the majority here
+```
 
 A naive solution might look like this. We'll use a Dictionary to keep track of all the votes as well as storing the highest number of votes we've seen.
 
