@@ -3,6 +3,7 @@ import mePresenting from "../public/assets/presenting-high-res.jpg";
 
 import SpacedImage from "../components/image";
 import Layout from "../components/layout";
+import Link from "next/link";
 
 export default function About() {
   return (
@@ -47,6 +48,7 @@ export default function About() {
         <p>I'm a software engineer at Vercel.</p>
         <h2>Education</h2>
         <ul>
+          <li>The Recurse Center (W2'23)</li>
           <li>M.S.c. in Computer Science (Distinction)</li>
           <li>B.A. in Creative Writing (with First Class Honours)</li>
         </ul>
