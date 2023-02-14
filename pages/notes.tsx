@@ -8,7 +8,6 @@ import { getAllNotes, Note } from "../lib/notes";
 
 export async function getStaticProps() {
     const notes = getAllNotes()
-
     return {
         props: {
             notes
@@ -22,7 +21,6 @@ export default function Notes({ notes }: { notes: Note[] }) {
     return (
         <Layout {...seo}>
             <h1>Notes</h1>
-            <p className="notes-intro"></p>
             {
                 notes
                     .map((note) => <div key={note.id} id={note.id.toString()} className="note">
@@ -44,9 +42,6 @@ export default function Notes({ notes }: { notes: Note[] }) {
                     </div>)
             }
             <style jsx>{`
-            .notes-intro {
-                padding-bottom: 24px;
-            }
             .note-date-link {
                 color: var(--light-text);
                 margin-right: 20px;
