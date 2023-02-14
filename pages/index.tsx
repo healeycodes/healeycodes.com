@@ -65,7 +65,7 @@ export default function Home({ allPostsData, description, words }) {
               Recent (
               <Link href="/articles" legacyBehavior>{`${allPostsData.length} articles`}</Link>)
             </h2>
-            <PostList posts={allPostsData.slice(0, 3)} hideTags={true} />
+            <PostList posts={allPostsData.slice(0, 3)} />
           </section>
           <section className="posts-section">
             <h2>Popular</h2>
@@ -73,7 +73,6 @@ export default function Home({ allPostsData, description, words }) {
               posts={allPostsData.filter((post) =>
                 siteConfig.PINNED_POSTS.includes(post.id)
               )}
-              hideTags={true}
             />
           </section>
         </div>

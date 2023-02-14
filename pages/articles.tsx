@@ -8,6 +8,7 @@ export function getStaticProps() {
   };
 }
 
+// TODO: delete all tags code
 export default function Articles({ tags, posts }) {
   const title = `Articles`;
   return (
@@ -17,7 +18,7 @@ export default function Articles({ tags, posts }) {
         <p className="articles-intro">Here's a chronological list of all the posts on this website.
           A star means that I thought the post was pretty neat (or, that a lot of other people thought it was pretty neat).
         </p>
-        <PostList posts={posts} hideTags={false} showYears={true} />
+        <PostList posts={posts} showYears={true} />
       </main>
       <style jsx>{`
         .articles-intro {

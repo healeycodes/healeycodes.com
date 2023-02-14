@@ -24,7 +24,7 @@ const PostStar = <>
 `}</style>
 </>
 
-export default function PostList({ posts, hideTags, showYears }) {
+export default function PostList({ posts, showYears=false }) {
   const years: Record<number, any> = {};
   posts.forEach(post => {
     const postDate = new Date(post.date);
