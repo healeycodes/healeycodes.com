@@ -51,7 +51,7 @@ I read (at least some of):
 - [Language Implementation Patterns](https://pragprog.com/titles/tpdsl/language-implementation-patterns/)
 - [A Guide to Deno Core](https://denolib.gitbook.io/guide/)
 
-You're encouraged to work in the open at RC. There are many ways to [learn generously](twitter.com/recursecenter/status/1489700666062876683). For me, it meant posting updates to the `#checkins` stream in Zulip, replying to people's threads and questions, and attending one of the two daily checkin meetings.
+You're encouraged to work in the open at RC. There are many ways to [learn generously](https://twitter.com/recursecenter/status/1489700666062876683). For me, it meant posting updates to the `#checkins` stream in Zulip, replying to people's threads and questions, and attending one of the two daily checkin meetings.
 
 ![A screenshot of RC's Zulip instance. The message in the screenshot is one of my daily written checkins.](zulip.png)
 
