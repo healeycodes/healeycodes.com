@@ -25,7 +25,7 @@ export default function Notes({ notes }: { notes: Note[] }) {
                 notes
                     .map((note) => <div key={note.id} id={note.id.toString()} className="note">
                         <p>
-                            <a className="note-date-link" href={`#${note.id}`}>{(new Date(note.id)).toDateString()} #</a><Like id={`note-${note.id}`} />
+                            <a className="note-date-link" href={`#${note.id}`}>{(new Date(note.id)).toDateString()}</a>
                         </p>
                         <p><Markdown
                             options={{
@@ -38,6 +38,7 @@ export default function Notes({ notes }: { notes: Note[] }) {
                                 },
                             }}
                         >{note.content}</Markdown></p>
+                        <Like id={`note-${note.id}`} />
                         <hr />
                     </div>)
             }
@@ -45,6 +46,9 @@ export default function Notes({ notes }: { notes: Note[] }) {
             .note-date-link {
                 color: var(--light-text);
                 margin-right: 20px;
+            }
+            .note-date-link:hover {
+                color: var(--text);
             }
             `}</style>
         </Layout>
