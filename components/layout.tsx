@@ -87,12 +87,18 @@ export default function Layout({ children, title, description }) {
         code {
           font-family: "Roboto Mono", monospace;
           font-size: 14px;
+          border-radius: 0.25em;
         }
 
         code {
           background-color: ${codeTheme.plain.backgroundColor};
           color: #e3116c;
-          padding: 2px;
+          padding: 3px;
+          border-radius: 0.25em;
+        }
+
+        .prism-code {
+          border-radius: 0.25em;
         }
 
         hr {
