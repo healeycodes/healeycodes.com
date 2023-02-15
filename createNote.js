@@ -1,5 +1,4 @@
-// Create a note in ./notes/ with the schema ${TIMESTAMP}.md
-// e.g.g  like `./notes/1675415098715.md`
+// Creates a note in ./notes/ with the schema `${TIMESTAMP}.md`
 
 const fs = require('fs')
 const path = require('path')
@@ -12,5 +11,5 @@ if (!fs.existsSync(notesDir)) {
 const filepath = path.join(notesDir, `${Date.now()}.md`)
 fs.writeFileSync(filepath, '')
 
-// This can be cmd+clicked from VS Code's terminal to open it!
+// This can be cmd+clicked from VS Code's terminal to open/edit it!
 console.log(filepath)
