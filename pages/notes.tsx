@@ -21,28 +21,35 @@ export default function Notes({ notes }: { notes: Note[] }) {
     return (
         <Layout {...seo}>
             <h1>Notes</h1>
-            {
-                notes
-                    .map((note) => <div key={note.id} id={note.id.toString()} className="note">
-                        <p>
-                            <a className="note-date-link" href={`#${note.id}`}>{(new Date(note.id)).toDateString()}</a>
-                        </p>
-                        <p><Markdown
-                            options={{
-                                createElement(type, props, children) {
-                                    if (type === "code" && props.className) {
-                                        const language = props.className.replace("lang-", "");
-                                        return <Code children={children} language={language} />;
-                                    }
-                                    return React.createElement(type, props, children);
-                                },
-                            }}
-                        >{note.content}</Markdown></p>
-                        <Like id={`note-${note.id}`} />
-                        <hr />
-                    </div>)
-            }
+            <p className="notes-intro">This is a new page I'm trying out. I'll put shorter content here; thoughts and ideas that aren't full posts. Mostly about software.
+            </p>
+            <main>
+                {
+                    notes
+                        .map((note) => <div key={note.id} id={note.id.toString()} className="note">
+                            <p>
+                                <a className="note-date-link" href={`#${note.id}`}>{(new Date(note.id)).toDateString()}</a>
+                            </p>
+                            <p><Markdown
+                                options={{
+                                    createElement(type, props, children) {
+                                        if (type === "code" && props.className) {
+                                            const language = props.className.replace("lang-", "");
+                                            return <Code children={children} language={language} />;
+                                        }
+                                        return React.createElement(type, props, children);
+                                    },
+                                }}
+                            >{note.content}</Markdown></p>
+                            <Like id={`note-${note.id}`} />
+                            <hr />
+                        </div>)
+                }
+            </main>
             <style jsx>{`
+            .notes-intro {
+                padding-bottom: 24px;
+            }
             .note-date-link {
                 color: var(--light-text);
                 margin-right: 20px;
