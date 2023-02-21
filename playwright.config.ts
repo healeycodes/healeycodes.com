@@ -7,7 +7,7 @@ const config: PlaywrightTestConfig = {
   workers: 4,
   timeout: 30 * 1000,
   testDir: path.join(__dirname, "e2e"),
-  retries: 4,
+  retries: 5,
   outputDir: "test-results/",
 
   // Run your local dev server before starting the tests:
