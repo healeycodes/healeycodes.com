@@ -50,7 +50,7 @@ export default function Home({ allPostsData, description, words }) {
             quality={100}
             placeholder="blur"
             priority={true}
-            style={{ borderRadius: '0.25em' }}
+            style={{ borderRadius: '0.4em' }}
           />
           <p className="avatar-text">
             Hey, I'm Andrew Healey. I'm a software engineer at Vercel, and I'm interested in the joy of computing. I've written{" "}

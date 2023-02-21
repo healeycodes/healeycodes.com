@@ -9,7 +9,7 @@ export default function Newsletter() {
   return (
     <div className="newsletter-section">
       <p className="newsletter-desc">
-        Subscribe to new posts (about once a month).
+        Subscribe to my new posts (about once a month).
       </p>
       <form
         action={`https://buttondown.email/api/emails/embed-subscribe/${siteConfig.BUTTON_DOWN_USER}`}
@@ -38,7 +38,7 @@ export default function Newsletter() {
           padding-right: 16px;
           padding-bottom: 16px;
           border: 1px solid var(--border);
-          border-radius: 0.25rem;
+          border-radius: 0.4rem;
         }
         .control {
           display: flex;
@@ -50,7 +50,7 @@ export default function Newsletter() {
           border-color: var(--border);
           font-family: inherit;
           display: block;
-          border-radius: 0.25rem;
+          border-radius: 0.4rem;
           border-width: 1px;
           background-color: var(--input-background);
           padding: 0.5rem 0.75rem;
@@ -63,7 +63,7 @@ export default function Newsletter() {
           appearance: none;
           font-family: inherit;
           cursor: pointer;
-          border-radius: 0.25rem;
+          border-radius: 0.4rem;
           border-width: 1px;
           border-color: transparent;
           vertical-align: middle;

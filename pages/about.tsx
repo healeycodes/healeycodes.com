@@ -31,7 +31,7 @@ export default function About() {
           originalWidth={mePresenting.width}
           originalHeight={mePresenting.height}
           priority={true}
-          style={{borderRadius: '0.25em'}}
+          style={{borderRadius: '0.4em'}}
         />
         <p>
           I like teaching people things that I know. I like video games,
