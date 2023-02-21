@@ -147,7 +147,7 @@ export default function Layout({ children, title, description }) {
           margin-left: 16px;
           border-left-color: var(--border);
           border-left-style: solid;
-          border-left-width: 1px;
+          border-left-width: 2px;
         }
 
         blockquote > p {
