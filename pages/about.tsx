@@ -31,7 +31,7 @@ export default function About() {
           originalWidth={mePresenting.width}
           originalHeight={mePresenting.height}
           priority={true}
-          style={{borderRadius: '0.4em'}}
+          style={{ borderRadius: '0.4em' }}
         />
         <p>
           I like teaching people things that I know. I like video games,
@@ -39,11 +39,11 @@ export default function About() {
         </p>
         <p>
           I am easily impressed by people and the cool stuff that they build. I
-          read a lot of personal and technical blogs. If we've ever interacted,
+          read a lot of technical blogs. If we've ever interacted,
           I've visited your website and probably think it's cool!
         </p>
-        <p>Technical books I recommend include Grokking Algorithms, Crafting Interpreters, Classic Computing Problems in Python, and The Computational Beauty of Nature. Non-tech authors I recommend include Patricia Lockwood and Ben Lerner. In my undergrad, I mostly studied post-WWII fiction.</p>
-        <p>I like being outside and prefer cold days. I enjoy the rain.</p>
+        <p>Technical books I recommend include Crafting Interpreters, and The Computational Beauty of Nature. Non-tech authors I recommend include Patricia Lockwood and Ben Lerner. In my undergrad, I mostly studied post-WWII fiction.</p>
+        <p>I prefer cold days. I enjoy the rain. I drink lots of coffee.</p>
         <h2>Work</h2>
         <p>I'm a software engineer at Vercel.</p>
         <h2>Education</h2>
