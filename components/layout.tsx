@@ -133,11 +133,13 @@ export default function Layout({ children, title, description }) {
         }
 
         ul {
-          padding-top: 6px;
+          padding-top: 3px;
+          padding-bottom: 3px;
         }
 
         li {
-          padding-bottom: 6px;
+          padding-top: 3px;
+          padding-bottom: 3px;
           line-height: 25px;
         }
 
