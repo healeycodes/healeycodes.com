@@ -18,6 +18,12 @@ export default [
     to: "/making-a-text-editor-with-a-game-engine",
   },
   {
+    name: "jar",
+    link: "https://github.com/healeycodes/jar",
+    desc: "A server-side web framework that deploys to Vercel.",
+    to: "/my-own-python-web-framework",
+  },
+  {
     name: "adventlang",
     link: "https://github.com/healeycodes/adventlang",
     desc: "A programming language (+ code playground) for Advent of Code.",
