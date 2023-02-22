@@ -138,33 +138,33 @@ The interpreter uses Lark's `Tree` and `Token` classes in `interpreter.py` so we
 Next, we create some small classes to represent the things we're replacing from the Lark library. `Tree`, `Token`, and `Meta`.
 
 ```python
-+ Meta = typing.NamedTuple("Meta", [("line", int), ("column", int)])
-+ 
-+ class Tree:
-+     kind = "tree"
-+ 
-+     def __init__(self, data: str, meta: Meta, children: List[Tree | Token]):
-+         self.data = data
-+         self.meta = meta
-+         self.children = children
-+ 
-+ class Token:
-+     kind = "token"
-+     data = "token"
-+     children: List[Any] = []
-+ 
-+     def __init__(self, value: str, meta: Meta):
-+         self.value = value
-+         self.meta = meta
-+ 
-+     # one expression rather than Lark's three expressions!
-+     def __eq__(self, other):
-+         return self.value == other
+Meta = typing.NamedTuple("Meta", [("line", int), ("column", int)])
+
+class Tree:
+    kind = "tree"
+
+    def __init__(self, data: str, meta: Meta, children: List[Tree | Token]):
+        self.data = data
+        self.meta = meta
+        self.children = children
+
+class Token:
+    kind = "token"
+    data = "token"
+    children: List[Any] = []
+
+    def __init__(self, value: str, meta: Meta):
+        self.value = value
+        self.meta = meta
+
+    # one expression rather than Lark's three expressions!
+    def __eq__(self, other):
+        return self.value == other
 ```
 
 Now, we need to write a function that will recurse over Lark's parse tree and use these new classes to build a new tree that will use the faster methods.
 
-```python
+```diff
 + def build_nodots_tree(children: List[LarkTree | LarkToken]) -> List[Tree | Token]:
 +     return [
 +         Tree(
@@ -176,6 +176,7 @@ Now, we need to write a function that will recurse over Lark's parse tree and us
 +         else Token(value=child.value, meta=Meta(child.line, child.column))  # type: ignore
 +         for child in children
 +     ]
+
 
 # ...
 
@@ -222,13 +223,17 @@ This can sometimes lead to improved performance, especially for classes with man
 
 If we add `__slots__` to `Tree` and `Token` we get an additional ~1% speed-up.
 
-```python
+```diff
 class Tree:
 +    __slots__ = ['data', 'meta', 'children']
+
+
 # ..
 
 class Token:
 +    __slots__ = ['value', 'meta']
+
+
 # ..
 ```
 

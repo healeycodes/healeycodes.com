@@ -134,7 +134,7 @@ In Jar, all the project files are copied to each function directory to keep thin
 {"handler": "__handler.app", "runtime": "python3.9", "environment": {}}
 ```
 
-The only difference between functions is the module (aka the page file) that the handler imports at runtime.
+The only difference between functions is the module (aka the page file) that the handler imports at run time.
 
 A fresh/regenerated page in Jar maps one-to-one with a Serverless/Prerender Function. When a request hits Vercel's Edge Network, it's [eventually routed](https://vercel.com/docs/concepts/functions/serverless-functions) to the handler file, which calls the relevant page's `data` and `render` function, and then replies to the client.
 
