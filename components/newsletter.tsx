@@ -40,6 +40,9 @@ export default function Newsletter() {
           border: 1px solid var(--border);
           border-radius: 0.4rem;
         }
+        .newsletter-desc {
+          margin-bottom: 16px;
+        }
         .control {
           display: flex;
           max-width: 500px;
