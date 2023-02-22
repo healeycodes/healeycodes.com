@@ -1,5 +1,6 @@
 // Note: not in any specific order
 export const postStars = [
+  "my-own-python-web-framework",
   "sandboxing-javascript-code",
   "profiling-and-optimizing-an-interpreter",
   "designing-a-programming-language-for-advent-of-code",
