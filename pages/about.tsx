@@ -43,7 +43,7 @@ export default function About() {
           I've visited your website and probably think it's cool!
         </p>
         <p>Technical books I recommend include Crafting Interpreters, and The Computational Beauty of Nature. Non-tech authors I recommend include Patricia Lockwood and Ben Lerner. In my undergrad, I mostly studied post-WWII fiction.</p>
-        <p>I prefer cold days, enjoy the rain, and drink lots of coffee.</p>
+        <p>I prefer cold days and drink coffee everyday.</p>
         <h2>Work</h2>
         <p>I'm a software engineer at Vercel.</p>
         <h2>Education</h2>

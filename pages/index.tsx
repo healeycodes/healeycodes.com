@@ -12,6 +12,8 @@ import { getSortedPostsData, getPostData } from "../lib/posts";
 import { generateRssFeed } from "../lib/rss";
 import { getAllNotes } from "../lib/notes";
 
+import { popularPosts } from "../data/posts";
+
 export async function getStaticProps() {
   await generateRssFeed();
 
@@ -71,7 +73,7 @@ export default function Home({ allPostsData, description, words }) {
             <h2>Popular</h2>
             <PostList
               posts={allPostsData.filter((post) =>
-                siteConfig.PINNED_POSTS.includes(post.id)
+                popularPosts.includes(post.id)
               )}
             />
           </section>

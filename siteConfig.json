@@ -7,11 +7,6 @@
   "SITE_TITLE": "Andrew Healey's Blog",
   "SITE_DESC": "Andrew Healey's blog and personal website. Software engineer, writer, creator.",
   "SITE_URL": "https://healeycodes.com",
-  "PINNED_POSTS": [
-    "beating-grep-with-go",
-    "building-my-own-chess-engine",
-    "geoguessing-with-deep-learning"
-  ],
   "REPO_URL": "https://github.com/healeycodes/healeycodes.com",
   "EDIT_POST_URL": "https://github.com/healeycodes/healeycodes.com/tree/main/posts",
   "BUTTON_DOWN_USER": "healeycodes",
