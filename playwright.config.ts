@@ -4,7 +4,7 @@ import path from "path";
 // Reference: https://playwright.dev/docs/test-configuration
 // Also: https://github.com/vercel/next.js/blob/canary/examples/with-playwright/playwright.config.ts
 const config: PlaywrightTestConfig = {
-  workers: 3,
+  workers: 2,
   timeout: 30 * 1000,
   testDir: path.join(__dirname, "e2e"),
   retries: 5,
