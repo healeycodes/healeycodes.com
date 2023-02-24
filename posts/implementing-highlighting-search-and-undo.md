@@ -33,7 +33,7 @@ Before the cursor moves, there’s a check to see if the Shift modifier is being
 
 Implementing this involved adding new lines amongst the existing movement logic. For the simple case of moving the cursor by a single column, the change was straight forwards.
 
-```go
+```diff
 if e.cursor.x < len(e.cursor.line.values)-1 {
 
 +   if shift {
