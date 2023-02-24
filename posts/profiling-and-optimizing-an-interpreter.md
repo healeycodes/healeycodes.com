@@ -111,9 +111,9 @@ In our interpreter, Tokens are compared to strings to pick the correct evaluatio
 [tree.py:58(meta)](https://github.com/lark-parser/lark/blob/f3d79040e2ff59e11661e7b43f593f1334951205/lark/tree.py#L58) isn't as bad but perhaps accessing metadata would be overall quicker if the  metadata object was smaller in memory, like maybe a named tuple? That's just a guess though.
 
 ```python
-# tree.py(meta) f3d79040
-# a property on the Tree class
-@property
+    # tree.py(meta) f3d79040
+    # a property on the Tree class
+    @property
     def meta(self) -> Meta:
         if self._meta is None:
             self._meta = Meta()
