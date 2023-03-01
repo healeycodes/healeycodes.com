@@ -78,7 +78,8 @@ export default function Layout({ children, title, description }) {
         }
 
         p {
-          margin-bottom: 24px;
+          margin-top: 20px;
+          margin-bottom: 20px;
           line-height: 25px;
           color: var(--text);
         }
@@ -135,6 +136,7 @@ export default function Layout({ children, title, description }) {
         ul {
           padding-top: 3px;
           padding-bottom: 3px;
+          padding-left: 32px;
         }
 
         li {
@@ -145,7 +147,7 @@ export default function Layout({ children, title, description }) {
 
         blockquote {
           color: var(--light-text);
-          margin-left: 16px;
+          margin-left: 14px;
           border-left-color: var(--border);
           border-left-style: solid;
           border-left-width: 2px;
@@ -153,7 +155,7 @@ export default function Layout({ children, title, description }) {
 
         blockquote > p {
           color: var(--light-text);
-          padding-left: 16px;
+          padding-left: 14px;
         }
       `}</style>
       <style jsx>{`
