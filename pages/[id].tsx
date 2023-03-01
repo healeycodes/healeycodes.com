@@ -13,7 +13,6 @@ import SpacedImage from "../components/image";
 import Code from "../components/code";
 import Date from "../components/date";
 import Newsletter from "../components/newsletter";
-import Like from "../components/like";
 
 export async function getStaticPaths() {
   const paths = getAllPostIds();
