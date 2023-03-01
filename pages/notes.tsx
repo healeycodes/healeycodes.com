@@ -30,7 +30,7 @@ export default function Notes({ notes }: { notes: Note[] }) {
                             <p>
                                 <a className="note-date-link" href={`#${note.id}`}>{(new Date(note.id)).toDateString()}</a>
                             </p>
-                            <p><Markdown
+                            <Markdown
                                 options={{
                                     createElement(type, props, children) {
                                         if (type === "code" && props.className) {
@@ -40,7 +40,7 @@ export default function Notes({ notes }: { notes: Note[] }) {
                                         return React.createElement(type, props, children);
                                     },
                                 }}
-                            >{note.content}</Markdown></p>
+                            >{note.content}</Markdown>
                             <Like id={`note-${note.id}`} />
                             <hr />
                         </div>)
