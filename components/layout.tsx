@@ -136,7 +136,7 @@ export default function Layout({ children, title, description }) {
         ul {
           padding-top: 3px;
           padding-bottom: 3px;
-          padding-left: 32px;
+          padding-left: 24px;
         }
 
         li {
@@ -164,8 +164,8 @@ export default function Layout({ children, title, description }) {
           margin-right: auto;
           max-width: ${siteConfig.LAYOUT_WIDTH}px;
           padding-top: 32px;
-          padding-left: 16px;
-          padding-right: 16px;
+          padding-left: 14px;
+          padding-right: 14px;
           padding-bottom: 96px;
         }
       `}</style>
