@@ -42,6 +42,11 @@ export default [
     to: "/implementing-bitcask-a-log-structured-hash-table",
   },
   {
+    name: "drep",
+    link: "https://github.com/healeycodes/drep",
+    desc: "A fast grep clone written with Deno.",
+  },
+  {
     name: "tools",
     link: "https://github.com/healeycodes/tools",
     desc: "Terminal tools, written from scratch.",
