@@ -118,7 +118,7 @@ File "/Users/andrew/Documents/GitHub/nodots-lang/interpreter.py", line 457, in e
 
 The interpreter doesn’t know how to evaluate a for statement. Let’s fix that.
 
-```python
+```diff
 def eval_statement(node: Tree, context: Context) -> ReturnValue | Value:
     for child in node.children:
         if child.data == "expression_stmt":
@@ -267,16 +267,16 @@ A break statement and a continue statement behave similar to return statements. 
 As our interpreter is implemented in a high level language like Python, we have such a tool available to us. We can raise, and catch, exceptions.
 
 ```python
-+ class BreakEscape(Exception):
-+    pass
+class BreakEscape(Exception):
+    pass
 
-+ class ContinueEscape(Exception):
-+    pass
+class ContinueEscape(Exception):
+    pass
 ```
 
 We’ll raise these after hitting a break or continue statement. Inside `eval_statement` we add:
 
-```python
+```diff
 elif child.data == "for_stmt":
   return eval_for_stmt(child, context)
 + elif child.data == "break_stmt":
@@ -287,7 +287,7 @@ elif child.data == "for_stmt":
 
 These exceptions should be caught while we’re executing the body of a for loop, so inside `eval_for_stmt` we alter the section we added earlier.
 
-```python
+```diff
 for decl_expr in parts[3:]:
 +    try:
 +        eval_declaration(decl_expr, for_context)
