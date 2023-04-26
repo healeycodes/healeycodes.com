@@ -17,9 +17,9 @@ Playing around on Val Town, and writing a few small vals, got me thinking about 
 
 *Sandboxing* is a technique of isolating the execution environment of the code, so that malicious code can't access sensitive information or harm the system. We're surrounded by sandboxes, really. You're reading this in a web browser which itself is a sandbox. If you're on an iPhone, that browser is wrapped with Apple's App Sandbox, and then layers of iOS sandboxes after that. It's sandboxes all the way down.
 
-The sandbox that Val Town currently uses is [vm2](https://github.com/patriksimek/vm2) which runs untrusted code in the same process as the parent program. User-supplied code is transformed and evaluated in a locked down section of the same JavaScript environment. You can't submit `process.exit(0)` and kill the server *but* you could find a new vm2 security bug ([here's an example](https://github.com/patriksimek/vm2/issues/467#issuecomment-1247515828)) and remotely execute code within the parent program.
+The sandbox that Val Town ~~currently~~ used to use is [vm2](https://github.com/patriksimek/vm2) which runs untrusted code in the same process as the parent program. User-supplied code is transformed and evaluated in a locked down section of the same JavaScript environment. You can't submit `process.exit(0)` and kill the server *but* you could find a new vm2 security bug ([here's an example](https://github.com/patriksimek/vm2/issues/467#issuecomment-1247515828)) and remotely execute code within the parent program.
 
-Per a [recent newsletter](https://blog.val.town/blog/val-town-newsletter-3#2bcad60775d141e9a3e5c72f31a0d168), Val Town are moving to a more secure runtime soon.
+~~Per a [recent newsletter](https://blog.val.town/blog/val-town-newsletter-3#2bcad60775d141e9a3e5c72f31a0d168), Val Town are moving to a more secure runtime soon.~~ Val Town are now [using their Deno runtime](https://blog.val.town/blog/val-town-newsletter-5).
 
 ## My Own Mini Cloud Platform
 
