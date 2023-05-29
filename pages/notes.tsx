@@ -2,7 +2,6 @@ import Markdown from "markdown-to-jsx";
 import React from "react";
 import Code from "../components/code";
 import Layout from "../components/layout";
-import Like from "../components/like";
 import { getAllNotes, Note } from "../lib/notes";
 
 
@@ -41,7 +40,6 @@ export default function Notes({ notes }: { notes: Note[] }) {
                                     },
                                 }}
                             >{note.content}</Markdown>
-                            <Like id={`note-${note.id}`} />
                             <hr />
                         </div>)
                 }
