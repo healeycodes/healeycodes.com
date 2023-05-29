@@ -5,7 +5,7 @@ tags: ["javascript"]
 description: "The highest user-joy-per-visit than any other project I'll ever work on."
 ---
 
-We run a few websites just for our friends and family. Like a recipe website with all of our favourite recipes (mostly stolen from other recipe websites because recipes websites are the worst), and a family album website (so we don't need to share pictures via social media), and a few other small experiments.
+We run a few websites just for our friends and family. Like a recipe website with all of our favourite recipes (mostly stolen from other recipe websites because recipe websites are the worst), and a family album website (so we don't need to share pictures via social media), and a few other small experiments.
 
 I built the current version of the album website in a few hours and my family visit it often to see what we've all been up to. It's the worst software I've ever written but it also has the highest user-joy-per-visit than any other project I'll ever work on.
 
