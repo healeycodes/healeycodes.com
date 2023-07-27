@@ -24,6 +24,12 @@ export default [
     to: "/my-own-python-web-framework",
   },
   {
+    name: "untrusted-python",
+    link: "https://github.com/healeycodes/untrusted-python",
+    desc: "Run untrusted python code on the server.",
+    to: "/running-untrusted-python-code",
+  },
+  {
     name: "adventlang",
     link: "https://github.com/healeycodes/adventlang",
     desc: "A programming language (+ code playground) for Advent of Code.",
