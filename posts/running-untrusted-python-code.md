@@ -108,7 +108,7 @@ except subprocess.TimeoutExpired:
 
 But during that timeout, what if some code tries to fill all available memory? Or writes GBs of data to stdout/stderr?
 
-`[setrlimit](https://linux.die.net/man/2/setrlimit)` is one of the answers for this – a system call that allows a process to set resource limits on itself/its child processes. There are different limits available but I picked out the ones I'm concerned about. `RLIMIT_CPU` (overall CPU time), `RLIMIT_AS` (maximum virtual memory size), and `RLIMIT_FSIZE` (maximum size of files created by the process).
+[setrlimit](https://linux.die.net/man/2/setrlimit) is one of the answers for this – a system call that allows a process to set resource limits on itself/its child processes. There are different limits available but I picked out the ones I'm concerned about. `RLIMIT_CPU` (overall CPU time), `RLIMIT_AS` (maximum virtual memory size), and `RLIMIT_FSIZE` (maximum size of files created by the process).
 
 Python lets you call into this from the standard library module [resource](https://docs.python.org/3/library/resource.html).
 
