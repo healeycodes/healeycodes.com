@@ -21,7 +21,7 @@ When the API receives some code, it spins up a new Python process. When the proc
 
 The input is source code and the output is stdout/stderr.
 
-I have side-stepped the common mistake of building a sandbox in application land e.g. by removing access to parts of of the runtime.
+I have side-stepped the common mistake of building a sandbox in application land e.g. by removing access to parts of the runtime.
 
 In Python, removing builtins *seems* like it will stop people being able to access the system:
 
