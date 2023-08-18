@@ -8,7 +8,6 @@ async function statCounter(username: string) {
     }
 
     let totalStars = 0
-    let totalForks = 0
     let mostRecentPush = new Date(1970)
     const pages = Math.ceil(res.public_repos / 100)
     let i = pages;
@@ -17,7 +16,6 @@ async function statCounter(username: string) {
         const repositories = await (await fetch(`https://api.github.com/users/${username}/repos?per_page=100&page=${i + 1}`)).json()
         repositories.forEach(repo => {
             totalStars += repo.stargazers_count
-            totalForks += repo.forks_count
             const pushedAt = new Date(repo.pushed_at)
             if (pushedAt > mostRecentPush) {
                 mostRecentPush = pushedAt
@@ -26,7 +24,7 @@ async function statCounter(username: string) {
     }
 
     const mostRecentPushFormatted = ms(Math.abs(Date.now() - mostRecentPush.getTime()), { long: true })
-    return { totalStars, totalForks, mostRecentPushFormatted }
+    return { totalStars, mostRecentPushFormatted }
 }
 
 export { statCounter }
