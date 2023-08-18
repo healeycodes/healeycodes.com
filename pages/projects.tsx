@@ -8,7 +8,7 @@ import Link from "next/link";
 import Layout from "../components/layout";
 import { statCounter } from "../lib/github";
 
-export default function Projects({ totalStars, totalForks, mostRecentPushFormatted }: { totalStars: number, totalForks: number, mostRecentPushFormatted: string }) {
+export default function Projects({ totalStars, mostRecentPushFormatted }: { totalStars: number, mostRecentPushFormatted: string }) {
   return (
     <Layout
       title="Projects"
@@ -80,11 +80,10 @@ export default function Projects({ totalStars, totalForks, mostRecentPushFormatt
 }
 
 export async function getStaticProps() {
-  const { totalStars, totalForks, mostRecentPushFormatted } = await statCounter(siteConfig.AUTHOR_GITHUB)
+  const { totalStars, mostRecentPushFormatted } = await statCounter(siteConfig.AUTHOR_GITHUB)
   return {
     props: {
       totalStars,
-      totalForks,
       mostRecentPushFormatted,
     },
     revalidate: ms('30min') / 1000, // TIL this is seconds
