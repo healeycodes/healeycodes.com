@@ -30,6 +30,12 @@ export default [
     to: "/running-untrusted-python-code",
   },
   {
+    name: "coolrule",
+    link: "https://github.com/healeycodes/coolrule",
+    desc: "Boolean expression evaluation engine (a port of boolrule).",
+    to: "/porting-boolrule-to-rust",
+  },
+  {
     name: "adventlang",
     link: "https://github.com/healeycodes/adventlang",
     desc: "A programming language (+ code playground) for Advent of Code.",
