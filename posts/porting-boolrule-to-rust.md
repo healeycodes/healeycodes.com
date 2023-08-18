@@ -5,7 +5,7 @@ tags: ["rust"]
 description: "Building a fast boolean expression evaluation engine."
 ---
 
-I recently ported a boolean expression engine called [boolrule](https://github.com/tailsdotcom/boolrule) from Python to Rust. My version is called coolrule and it's [open source](https://github.com/healeycodes/coolrule), published on crates, and passes the boolrule test suite.
+I recently ported a boolean expression engine called [boolrule](https://github.com/tailsdotcom/boolrule) from Python to Rust. My version is called coolrule and it's [open source](https://github.com/healeycodes/coolrule), published on [crates](https://crates.io/crates/coolrule), and passes the boolrule test suite.
 
 ```rust
 // Without context
