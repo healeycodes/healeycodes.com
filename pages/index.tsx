@@ -55,8 +55,11 @@ export default function Home({ allPostsData, description, words }) {
             style={{ borderRadius: '0.4em' }}
           />
           <p className="avatar-text">
-            Hey, I'm Andrew Healey. I'm a software engineer at Vercel, and I'm interested in the joy of computing. I've written{" "}
-            {numberWithCommas(words)} words on this{" "}
+          Hi, I am Chenwei Jiang(Chever John). 
+          I am a software engineer and currently work for SHEIN with both challenges and potential and build distributed cloud-native architecture for them. 
+                  
+          I've written{" "}{numberWithCommas(words)} words on this{" "}.
+           
             <a href={siteConfig.REPO_URL}>open source</a> website.
           </p>
         </div>
