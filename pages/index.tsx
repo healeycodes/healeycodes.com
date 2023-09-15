@@ -58,7 +58,7 @@ export default function Home({ allPostsData, description, words }) {
           Hi, I am Chenwei Jiang(Chever John). 
           I am a software engineer and currently work for SHEIN with both challenges and potential and build distributed cloud-native architecture for them. 
                   
-          I've written{" "}{numberWithCommas(words)} words on this{" "}.
+          I've written{" "}{numberWithCommas(words)} words on this{" "}
            
             <a href={siteConfig.REPO_URL}>open source</a> website.
           </p>
