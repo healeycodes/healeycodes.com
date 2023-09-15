@@ -22,7 +22,7 @@ export default function Newsletter() {
           <input
             required
             className="email"
-            placeholder="adalovelace@gmail.com"
+            placeholder="cheverjonathan@gmail.com"
             type="email"
             name="email"
             id="bd-email"
