@@ -1,48 +1,28 @@
 import siteConfig from "../siteConfig.json";
-import mePresenting from "../public/assets/presenting-api-and-cloud-native.png";
-import meAvatar from "../public/assets/avatar.jpg";
-import Image from "next/image";
-import SpacedImage from "../components/image";
+// import mePresenting from "../public/assets/presenting-high-res.jpg";
+
+// import SpacedImage from "../components/image";
 import Layout from "../components/layout";
-import Link from "next/link";
+// import Link from "next/link";
 
 export default function About() {
   return (
     <Layout title="About" description="About me.">
+      <h1>About</h1>
       <main>
-        <div className="avatar">
-          <Image
-            width={140}
-            height={140}
-            src={meAvatar}
-            alt="Chever John."
-            quality={100}
-            placeholder="blur"
-            priority={true}
-            style={{ borderRadius: "0.4em" }}
-          />
-          <p className="avatar-text">
-            I am a software engineer, and I insist on calling myself that. I
-            understand that a software engineer needs to master system design,
-            algorithm solving ability, and engineering building ability, and I
-            have been aiming at these three directions.
-          </p>
-        </div>
         <p>
-          Never hesitate to send me an{" "}
-          <a href="mailto:cheverjonathan@gmail.com">email</a> — if you want to
-          talk with me. I love getting email from you. Priority for technical
-          issues.
+          I write software and write about software. I{" "}
+          <a href="mailto:healeycodes@gmail.com">love getting email</a> —
+          consider this a{" "}
+          <a
+            href="https://www.kalzumeus.com/standing-invitation/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            standing invitation
+          </a>
+          . My research interests include personal computing, game solvers (chess, sokoban, and more), and programming language design. This <a href={siteConfig.REPO_URL}>open source</a> website is built with Next.js.
         </p>
-        <p>
-          My research interests include personal computing,homelab and
-          programming language design. This{" "}
-          <a href={siteConfig.REPO_URL}>open source</a> website is built with
-          Next.js.
-        </p>
-        <h2>What I have done</h2>
-        <p>1. Contribute to some open source project.</p>
-        <p>2. Presenting at some conference.</p>
         {/* <SpacedImage
           src={mePresenting}
           placeholder="blur"
@@ -53,7 +33,6 @@ export default function About() {
           priority={true}
           style={{ borderRadius: '0.4em' }}
         /> */}
-        <h2>What I am doing right now</h2>
         <p>
           I am currently working on api & Gateway & cloud-native architecture.
         </p>
