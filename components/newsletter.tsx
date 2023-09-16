@@ -48,7 +48,7 @@ export default function Newsletter() {
           max-width: 500px;
         }
         .email {
-          width: 212px;
+          width: 252px;
           border: 0 solid;
           border-color: var(--border);
           font-family: inherit;
