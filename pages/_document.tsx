@@ -13,7 +13,7 @@ class MyDocument extends Document {
     // 2. Head 组件，包含了文档的头部信息，例如 <link> 和 <meta> 标签。
     // 3. <link href="https://fonts.googleapis.com 吧啦吧啦，引入 Google Fonts 字体样式表。"
     // 4. <body> 标签，包含了文档的主体内容。
-    // 5. Main 组件，包含了应用程序的根组件，它是从 pages/_app.tsx 中传入的。也就是渲染当前页面（对了，_app.tsx 
+    // 5. Main 组件，包含了应用程序的根组件，它是从 pages/_app.tsx 中传入的。也就是渲染当前页面（对了，_app.tsx
     // 我所介绍过，传入当前页面，并对当前页面做效果，所以这里的 main 可以用来渲染当前页面）。
     // 6. NextScript 组件，包含了 Next.js 自动注入的脚本，包括页面切换时的应用程序状态。
     return (
