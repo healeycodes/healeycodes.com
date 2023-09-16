@@ -1,6 +1,6 @@
 import siteConfig from "../siteConfig.json";
 import mePresenting from "../public/assets/presenting-api-and-cloud-native.png";
-import meAvatar from "../public/assets/avatar.jpg";
+import meAvatar from "../public/assets/angrey.jpg";
 
 import SpacedImage from "../components/image";
 import Layout from "../components/layout";
@@ -15,8 +15,8 @@ export default function About() {
       <main>
         <div className="avatar">
           <Image
-            width={140}
-            height={140}
+            width={128}
+            height={96}
             src={meAvatar}
             alt="Chever John."
             quality={100}
