@@ -12,12 +12,12 @@ export default function Nav() {
         <li>
           <Link href="/articles" legacyBehavior>Articles</Link>
         </li>
-        <li>
+        {/* <li>
           <Link href="/projects" legacyBehavior>Projects</Link>
-        </li>
-        <li>
+        </li> */}
+        {/* <li>
           <Link href="/notes" legacyBehavior>Notes</Link>
-        </li>
+        </li> */}
         <li>
           <Link href="/about" legacyBehavior>About</Link>
         </li>

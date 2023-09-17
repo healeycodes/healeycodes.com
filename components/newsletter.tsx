@@ -9,7 +9,7 @@ export default function Newsletter() {
   return (
     <div className="newsletter-section">
       <p className="newsletter-desc">
-        Subscribe to my new posts (about once a month).
+        Subscribe to my new posts.
       </p>
       <form
         action={`https://buttondown.email/api/emails/embed-subscribe/${siteConfig.BUTTON_DOWN_USER}`}
@@ -22,7 +22,7 @@ export default function Newsletter() {
           <input
             required
             className="email"
-            placeholder="adalovelace@gmail.com"
+            placeholder="cheverjonathan@gmail.com"
             type="email"
             name="email"
             id="bd-email"
@@ -48,7 +48,7 @@ export default function Newsletter() {
           max-width: 500px;
         }
         .email {
-          width: 212px;
+          width: 252px;
           border: 0 solid;
           border-color: var(--border);
           font-family: inherit;

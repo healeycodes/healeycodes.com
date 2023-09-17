@@ -19,13 +19,17 @@ export async function getStaticProps() {
 
   const allPostsData = getSortedPostsData();
   // Count posts
-  const words = allPostsData.reduce(
-    (count, current) =>
-      count + getPostData(current.id).content.split(" ").length,
-    0
-  ) +
-  // Count notes
-  getAllNotes().reduce((count, current) => count + current.content.split(" ").length, 0)
+  const words =
+    allPostsData.reduce(
+      (count, current) =>
+        count + getPostData(current.id).content.split(" ").length,
+      0
+    ) +
+    // Count notes
+    getAllNotes().reduce(
+      (count, current) => count + current.content.split(" ").length,
+      0
+    );
   return {
     props: {
       allPostsData,
@@ -48,14 +52,16 @@ export default function Home({ allPostsData, description, words }) {
             width={140}
             height={140}
             src={meAvatar}
-            alt="Andrew Healey."
+            alt="Chever John."
             quality={100}
             placeholder="blur"
             priority={true}
-            style={{ borderRadius: '0.4em' }}
+            style={{ borderRadius: "0.4em" }}
           />
           <p className="avatar-text">
-            Hey, I'm Andrew Healey. I'm a software engineer at Vercel, and I'm interested in the joy of computing. I've written{" "}
+            Hi, I am Chenwei Jiang(Chever John). I am a software engineer and
+            currently work for SHEIN with both challenges and potential and
+            build distributed cloud-native architecture for them. I've written{" "}
             {numberWithCommas(words)} words on this{" "}
             <a href={siteConfig.REPO_URL}>open source</a> website.
           </p>
@@ -65,7 +71,11 @@ export default function Home({ allPostsData, description, words }) {
           <section className="posts-section">
             <h2>
               Recent (
-              <Link href="/articles" legacyBehavior>{`${allPostsData.length} articles`}</Link>)
+              <Link
+                href="/articles"
+                legacyBehavior
+              >{`${allPostsData.length} articles`}</Link>
+              )
             </h2>
             <PostList posts={allPostsData.slice(0, 3)} />
           </section>
@@ -81,8 +91,19 @@ export default function Home({ allPostsData, description, words }) {
       </main>
       <footer>
         <Newsletter />
+        <div className="powered-by">
+          <p>Powered By Vercel, Next.js</p>
+        </div>
+        <div className="special-thanks">
+          Thanks to{" "}
+          <a href="https://healeycodes.com/" target="_blank" rel="noreferrer">
+            healeycodes.com
+          </a>{" "}
+          for the website's initial code; I forked it.
+        </div>
       </footer>
-      <style jsx>{`.avatar {
+      <style jsx>{`
+        .avatar {
           display: flex;
           align-items: center;
           padding-top: 36px;

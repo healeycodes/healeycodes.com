@@ -27,10 +27,14 @@ export async function generateRssFeed() {
       rss2: `${siteConfig.SITE_URL}/feed.xml`,
     },
     author,
-    copyright: "Andrew Healey",
+    copyright: "Chever John",
   });
 
   posts.forEach((post) => {
+    if (post.id === ".DS_Store") {
+      // print a warning to the console
+      return;
+    }
     const url = `${siteConfig.SITE_URL}/${post.id}`;
 
     feed.addItem({
