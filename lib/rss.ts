@@ -31,6 +31,10 @@ export async function generateRssFeed() {
   });
 
   posts.forEach((post) => {
+    if (post.id === ".DS_Store") {
+      // print a warning to the console
+      return;
+    }
     const url = `${siteConfig.SITE_URL}/${post.id}`;
 
     feed.addItem({

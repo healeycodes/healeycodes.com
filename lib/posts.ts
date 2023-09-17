@@ -37,6 +37,12 @@ export function getSortedPostsData() {
   const allPostsData = fileNames.map((fileName) => {
     // Read markdown file as string
     // 读取文件的内容，并将其作为字符串存储在 fileContents 变量中。
+   // if fileName is .DS_Store, skip it
+    if (fileName === ".DS_Store") {
+      // print a warning to the console
+      return;
+    }
+
     const fullPath = path.join(POSTS_DIRECTORY, path.join(fileName));
     const fileContents = fs.readFileSync(fullPath, "utf8");
 
