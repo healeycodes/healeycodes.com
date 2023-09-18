@@ -1,0 +1,101 @@
+/* reset default style */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* about page layout */
+.container {
+  width: 760px;
+  margin: 0 auto;
+}
+
+header {
+  width: 100%;
+  height: 40px;
+}
+
+footer {
+  margin: 30px 0;
+}
+
+ul {
+  margin: 5px 0 20px;
+}
+
+.common-section {
+  margin: 20px 0 5px;
+}
+
+.article-title {
+  margin: 12px 0;
+}
+
+.article-title-1 {
+  font-weight: 650;
+  margin: 8px 0;
+}
+
+.article-title-2 {
+  font-weight: 550;
+  margin: 4px 0;
+}
+
+/* about text style */
+.text-indent {
+  text-indent: 2em;
+}
+
+.common-text {
+  margin: 8px;
+}
+
+/* about menu */
+.menu {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.menu > .button {
+  color: black;
+  display: inline-block;
+}
+
+.menu a {
+  color: black;
+}
+
+.menu a:hover {
+  background-color: black;
+  color: white;
+}
+
+/* jcw's photo */
+.author-photo {
+  border: 2px solid black;
+  background-position: left;
+  margin: 8px auto;
+  background-image: url("https://cdn.mr8god.cn/img/self_photo_251x335.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 300px;
+}
+
+/* Background Image */
+.background-image {
+  width: 760px;
+  height: 600px;
+  border-radius: 6px;
+
+  margin-bottom: 1em;
+  margin-right: 2em;
+  margin-top: 1em;
+
+  background-image: url("https://cdn.mr8god.cn/img/IMG_20201007_092604.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
