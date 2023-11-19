@@ -19,7 +19,7 @@ export default function SpacedImage(props) {
   let { width, height } = imageResize(originalWidth, originalHeight);
 
   return (
-    <div className="spacer">
+    <span className="spacer">
       <Image {...rest} width={width} height={height} />
       <style jsx>{`
         .spacer {
@@ -27,6 +27,6 @@ export default function SpacedImage(props) {
           padding-bottom: 16px;
         }
       `}</style>
-    </div>
+    </span>
   );
 }
