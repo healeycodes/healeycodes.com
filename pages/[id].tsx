@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import imageSize from "image-size";
+import mp4box from 'mp4box';
 
 import React from "react";
 import Link from "next/link";
@@ -13,6 +14,8 @@ import SpacedImage from "../components/image";
 import Code from "../components/code";
 import Date from "../components/date";
 import Newsletter from "../components/newsletter";
+
+const isVideo = /\.mp4$/;
 
 export async function getStaticPaths() {
   const paths = getAllPostIds();
@@ -27,12 +30,36 @@ export async function getStaticProps({ params }) {
 
   const postImages = path.join(process.cwd(), "public", "posts", params.id);
   const imageMetadata = {};
+  const videoMetadata = {};
+
+  const getVideoDimensions = async (filePath): Promise<{ width: number, height: number }> => {
+    return new Promise((resolve, reject) => {
+      const mp4boxFile = mp4box.createFile();
+      mp4boxFile.onReady = (info) => {
+        resolve({ width: info.tracks[0].video.width, height: info.tracks[0].video.height });
+      };
+      fs.readFile(filePath, (err, data) => {
+        if (err) { throw err };
+        const buf = new Uint8Array(data).buffer
+        // @ts-ignore
+        buf.fileStart = 0
+        mp4boxFile.appendBuffer(buf);
+        mp4boxFile.flush();
+      });
+    });
+  };
 
   if (fs.existsSync(postImages)) {
-    const imageFiles = fs.readdirSync(postImages);
-    imageFiles.forEach((image) => {
-      imageMetadata[image] = { ...imageSize(path.join(postImages, image)) };
-    });
+    const files = fs.readdirSync(postImages);
+    files
+      .filter(fp => !fp.match(isVideo))
+      .forEach((image) => {
+        imageMetadata[image] = { ...imageSize(path.join(postImages, image)) };
+      });
+
+    for (const fp of files.filter(fp => fp.match(isVideo))) {
+      videoMetadata[fp] = { ...(await getVideoDimensions(path.join(postImages, fp))) }
+    }
   }
 
   let prevPost = null;
@@ -56,6 +83,7 @@ export async function getStaticProps({ params }) {
       id: params.id,
       source: postData.content,
       imageMetadata,
+      videoMetadata,
       ...postData,
       prevPost,
       nextPost,
@@ -71,6 +99,7 @@ export default function Post({
   date,
   outdated,
   imageMetadata,
+  videoMetadata,
   source,
   prevPost,
   nextPost,
@@ -93,6 +122,18 @@ export default function Post({
           options={{
             createElement(type, props, children) {
               if (type === "img") {
+                if (props.src.match(isVideo)) {
+                  return <video style={{ display: 'block', margin: '0 auto' }}
+                    key={props.src}
+                    controls
+                    autoPlay
+                    loop
+                    muted
+                    width={videoMetadata[props.src].width}
+                    height={videoMetadata[props.src].height}>
+                    <source src={`/posts/${id}/${props.src}`} type="video/mp4"></source>
+                  </video>
+                }
                 return (
                   <SpacedImage
                     {...props} // @ts-ignore
