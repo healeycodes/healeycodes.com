@@ -127,6 +127,7 @@ export default function Post({
                     key={props.src}
                     controls
                     autoPlay
+                    playsInline
                     loop
                     muted
                     width={videoMetadata[props.src].width}
