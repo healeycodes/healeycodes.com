@@ -1,6 +1,6 @@
 ---
 title: "Rendering Counter-Strike Demos in the Browser"
-date: "2023-11-19"
+date: "2023-11-20"
 tags: ["javascript"]
 description: "Building a demo player for coaches and analysts to visualize CS2 gameplay."
 ---
