@@ -230,7 +230,7 @@ Player sprites have a team color, a direction, a current weapon, and whether the
 
 ![My demo player's full UI.](player-ui.png)
 
-You can try out [the demo player](https://demo-player-prototype-q21yqpl5t-healeycodes.vercel.app/) but be warned that it doesn't really work on mobile yet (I haven't found a customer of these kinds of tools who uses them on mobile yet, and my demo player is just a prototype for now).
+You can try out [the demo player](https://demo-player-prototype-czbho8z0l-healeycodes.vercel.app) but be warned that it doesn't really work on mobile yet (I haven't found a customer of these kinds of tools who uses them on mobile yet, and my demo player is just a prototype for now), and I haven't optimized the per-round JSON splitting so there's an intial download of ~20MB for all the rounds.
 
 A while ago, I traded serious amounts of gaming for serious amounts of coding. There's always room for gaming in my heart and this project has been fun to iterate on, it took me an average of ~1.5hrs an evening for two weeks to go from drawing simple player paths on an image to a feature-complete demo player (albeit missing the capability to upload your own demos, etc.)
 
