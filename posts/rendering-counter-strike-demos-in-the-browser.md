@@ -7,19 +7,19 @@ description: "Building a demo player for coaches and analysts to visualize CS2 g
 
 Counter-Strike 2 (CS2) demos are recorded gameplay files that capture every player's movement, actions, and the overall game state. They're the [flight recorder](https://en.wikipedia.org/wiki/Flight_recorder) of a match, storing the raw data so that it can be watched later on.
 
-Professional players and analysts use these demos to review their team's performance — and they also spend time watching the matches of upcoming opponents to counter strategize. Demos can be watched by loading them from within CS2. They can also be parsed using open source libraries like [demoinfocs-golang](https://github.com/markus-wa/demoinfocs-golang) or [awpy](https://github.com/pnxenopoulos/awpy). There's a range of tools that can be used to watch demos in the browser from a top-down 2D view.
+Professional players and analysts use these demos to review their team's performance — and they also spend time watching upcoming opponents to counter strategize. Demos can be watched by loading them in CS2. They can also be parsed using open source libraries like [demoinfocs-golang](https://github.com/markus-wa/demoinfocs-golang) or [awpy](https://github.com/pnxenopoulos/awpy). There is a range of tools that can be used to watch demos in the browser from a top-down 2D view.
 
 Here's Starcaller's in-browser demo player:
 
 ![Starcaller's user interface during playback. Player positions, in-flight grenades, heath, weapons, etc.](starcaller.png)
 
-The raw demo data is used to render player equipment and positions, smoke grenades paths and effects, gun shots, and other strategically relevant data. There is also an option to overlay multiple rounds into a single view. This can be used to view the aggregate behavior of certain teams or players during specific types of rounds (e.g. buy rounds).
+Raw demo data is used to render player equipment and positions, smoke grenades paths and effects, gun shots, and other strategically relevant data. There is also an option to overlay multiple rounds into a single view. This can be used to view the aggregate behavior of certain teams or players during specific types of rounds (e.g. buy rounds).
 
 Using Chrome's network tools, I saw that each round is a ~5MB file containing pre-processed demo data. Starcaller's player is written in a JavaScript game engine called Phaser which consumes this data.
 
 ![The keys for Starcaller's round object; frames, positions, weapons, etc.](starcaller-json.png)
 
-I learned about Starcaller when my friend, a professional CS2 coach, was showing me his workflow with this tool as he prepared for an upcoming match. He clicked through UI very quickly, filtering his next opponent's matches (official demo files are public) and scanned through different rounds to point out player behaviors and how they might become part of his strategy for the upcoming match. He showed me how he distils this research into a document to be discussed with the rest of his team, with notes and links to certain game rounds in Starcaller to highlight his ideas.
+I learned about Starcaller when my friend, a professional CS2 coach, was showing me his workflow as he prepared for an upcoming match. He clicked through UI very quickly, filtering his next opponent's matches (official demo files are public) and scanned through different rounds to point out player behaviors and how they might become part of his strategy for an upcoming match. He showed me how he distils this research into a document to be discussed with the rest of his team, with notes and links to certain game rounds in Starcaller to highlight his ideas.
 
 These demo analysis tools are a tactical edge that top gaming organizations pay thousands-per-month for. They are not the most polished pieces of software but that's not really the point. The userbase puts up with a clunky UI because they're functional tools that produce real insights.
 
@@ -31,7 +31,7 @@ Uncompressed demo files are quite large and depending on match length can be up 
 
 While there are experimental tools that use WebAssembly to parse demo files within a browser, the download time of a demo file (and the long processing time due to the WebAssembly overhead) excludes this method as a viable option.
 
-Demos must be pre-processed into a schema that can be consumed by an in-browser player — consisting of a mixture of granular position data and other game events and metadata. World positions need to be scaled to the map image that will be displayed — demoinfocs-golang has a [code example](https://github.com/markus-wa/demoinfocs-golang/blob/fd1a1f6d5f8ae7c27d5a200b344ec4272e38d3eb/examples/map_metadata.go) for using map metadata to scale a world position onto a map image. This example hasn't been updated for CS2 yet so I had to use a program called Source 2 Viewer to decompile map images and map metadata from CS2's game files.
+Demos must be pre-processed into a schema that can be consumed by an in-browser player — consisting of a mixture of granular position data and other game events and metadata. World positions need to be scaled to a map image — demoinfocs-golang has a [code example](https://github.com/markus-wa/demoinfocs-golang/blob/fd1a1f6d5f8ae7c27d5a200b344ec4272e38d3eb/examples/map_metadata.go) for using map metadata to scale a world position. That example hasn't been updated for CS2 yet so I had to use a program called Source 2 Viewer to decompile map images and map metadata from CS2's game files.
 
 ![A screenshot of Source 2 Viewer. Showing a list of maps and their metadata files.](source-2-viewer.png)
 
@@ -85,7 +85,7 @@ The `x`, `y`, and `dir` values here are *lerped* between the previous player pos
 ```tsx
 const x = lerp(prevPlayer.pos.x, player.pos.x, t)
 const y = lerp(prevPlayer.pos.y, player.pos.y, t)
-const dir = -angleLerp(prevPlayer.dir, player.dir, t)
+const dir = angleLerp(prevPlayer.dir, player.dir, t)
 ```
 
 There is a little more complexity involved when lerping between two angles because it's important to show the shortest path between two rotation values (otherwise the player will rotate 359 degrees when they pass over zero instead of the most-likely scenario that they rotated two degrees).
@@ -111,9 +111,9 @@ Armed with a few lerp functions, player movement becomes as smooth as the user's
 
 ## Rendering Grenades
 
-A critical aspect of CS2 strategy is the timing and placement of grenades. Both your team's grenades and the opposing team's grenades. Knowing where to hide to counteract the opponents flashes, when to throw molotovs to stop a bombsite rush, what certain smoke timings *mean*, etc.
+A critical aspect of CS2 strategy is the timing and placement of grenades. Both your team's grenades and the opposing team's grenades. Knowing where to hide to counteract the opponents flashes, when to throw molotovs to stop a bombsite rush, what certain smoke timings mean, etc.
 
-Demoinfocs-golang provides a `GrenadeProjectile` which has a `TrajectoryEntry` list containing the world positions, frame ids, and timing of a grenade's trajectory entries. Like player positions, these positions must be scaled to the map image.
+Demoinfocs-golang provides a `GrenadeProjectile` which has a `TrajectoryEntry` list containing the world positions, frame ids, and timing of a grenade's trajectory entries. Like player positions, these coordinates must be scaled to the map image.
 
 In my demo player, as the playback clock passes each trajectory entry's time, a line is drawn from the nade's origin to the next point (and from the next point to the next, and so on). Additionally, an SVG of the grenade (decompiled from CS2's source files) is placed at the furthest point.
 
@@ -226,7 +226,7 @@ return (
 
 The user interface of my player is functional and received rave reviews like "that works" and "not easy on the eyes but contains all the information I need" — which is exactly the kind of thing I was hoping for my prototype.
 
-The icons are more decompiled game files. I had to create the mapping from demoinfocs-golang entity names to CS2 internal names by hand (this was a little tedious).
+Player sprites have a team color, a direction, a current weapon, and whether they are the bomb carrier. When they are flashed, their circle is shaded white and then fades as they become unflashed. The icons are more decompiled game files. I had to create the mapping from demoinfocs-golang entity names to CS2 internal names by hand (this was a little tedious).
 
 ![My demo player's full UI.](player-ui.png)
 
