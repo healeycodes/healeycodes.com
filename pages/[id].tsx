@@ -123,7 +123,7 @@ export default function Post({
             createElement(type, props, children) {
               if (type === "img") {
                 if (props.src.match(isVideo)) {
-                  return <video style={{ display: 'block', margin: '0 auto' }}
+                  return <video style={{ display: 'block', margin: '0 auto', maxWidth: '100%' }}
                     key={props.src}
                     controls
                     autoPlay
