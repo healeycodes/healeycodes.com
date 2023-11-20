@@ -125,7 +125,7 @@ export default function Post({
                 if (props.src.match(isVideo)) {
                   return <video style={{ display: 'block', margin: '0 auto', maxWidth: '100%' }}
                     key={props.src}
-                    controls
+                    controls={false}
                     autoPlay
                     playsInline
                     loop
