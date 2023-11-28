@@ -24,8 +24,8 @@ export async function getStaticProps() {
       count + getPostData(current.id).content.split(" ").length,
     0
   ) +
-  // Count notes
-  getAllNotes().reduce((count, current) => count + current.content.split(" ").length, 0)
+    // Count notes
+    getAllNotes().reduce((count, current) => count + current.content.split(" ").length, 0)
   return {
     props: {
       allPostsData,
