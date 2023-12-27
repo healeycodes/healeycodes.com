@@ -17,7 +17,7 @@ export default function Projects({ totalStars, mostRecentPushFormatted }: { tota
       <h1>Projects</h1>
       <main>
         <p>
-          My side projects include programming languages, web frameworks, game solvers, developer tools, databases, and games. My public GitHub repositories been starred {totalStars} times, and my last open source <code>git push</code> was {mostRecentPushFormatted} ago.
+          My side projects include programming languages, web frameworks, game solvers, developer tools, databases, and games. My public GitHub repositories have been starred {totalStars} times, and my last open source <code>git push</code> was {mostRecentPushFormatted} ago.
         </p>
         <h2>Open Source</h2>
         <div className="project-list">
