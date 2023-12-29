@@ -8,7 +8,7 @@ export default [
   {
     name: "nodots",
     link: "https://github.com/healeycodes/nodots-lang",
-    desc: "A small programming language without any dots.",
+    desc: "A small programming language with an interpreter, and WebAssembly compiler.",
     to: "/adding-for-loops-to-an-interpreter",
   },
   {
