@@ -9,7 +9,7 @@ export default [
     name: "nodots",
     link: "https://github.com/healeycodes/nodots-lang",
     desc: "A small programming language with an interpreter, and a WebAssembly compiler.",
-    to: "/adding-for-loops-to-an-interpreter",
+    to: "/a-custom-webassembly-compiler",
   },
   {
     name: "noter",
