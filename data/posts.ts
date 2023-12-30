@@ -7,6 +7,7 @@ export const popularPosts = [
 
 // Good posts/highly viewed posts (not in any specific order)
 export const postStars = [
+  "a-custom-webassembly-compiler",
   "rendering-counter-strike-demos-in-the-browser",
   "running-untrusted-python-code",
   "my-own-python-web-framework",

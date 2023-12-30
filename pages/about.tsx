@@ -11,7 +11,7 @@ export default function About() {
       <main>
         <p>
           I write software and write about software. I{" "}
-          <a href="mailto:healeycodes@gmail.com">love getting email</a>. My research interests include cloud infrastructure, programming languages, game solvers (chess, sokoban, and more), and isolation/sandboxing.
+          <a href="mailto:healeycodes@gmail.com">love getting email</a>. My research interests include programming languages, game solvers (chess, sokoban, and more), and isolation/sandboxing.
         </p>
         <p>
           This <a href={siteConfig.REPO_URL}>open source</a> website is built with Next.js.
@@ -36,7 +36,7 @@ export default function About() {
           I've visited your website and probably think it's cool!
         </p>
         <p>Technical books I recommend include Crafting Interpreters, and The Computational Beauty of Nature. Non-tech authors I recommend include Patricia Lockwood and Ben Lerner. In my undergrad, I mostly studied post-WWII fiction.</p>
-        <p>I prefer rainy days, I like the colder months, and I drink coffee every day.</p>
+        <p>I prefer rainy days, I like the colder months, and I drink a lot of coffee.</p>
         <h2>Work</h2>
         <p>I'm a software engineer at Vercel in the infrastructure org.</p>
         <h2>Education</h2>
