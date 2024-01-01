@@ -203,8 +203,8 @@ Which compiles down to:
 ```wasm
 ;; push n onto the stack
 (local.get $n)
-;; push 1 onto the stack
-(i32.const 1)
+;; push 0 onto the stack
+(i32.const 0)
 ;; pop both, check if they are equal
 ;; and then push the result (1 or 0)
 (i32.eq)
