@@ -32,7 +32,7 @@ export default [
   {
     name: "coolrule",
     link: "https://github.com/healeycodes/coolrule",
-    desc: "Boolean expression evaluation engine (a port of boolrule).",
+    desc: "Boolean expression evaluation engine (a Rust port of boolrule).",
     to: "/porting-boolrule-to-rust",
   },
   {
