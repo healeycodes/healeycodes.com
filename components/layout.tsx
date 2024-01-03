@@ -51,6 +51,7 @@ export default function Layout({ children, title, description }) {
           --link-hover: #496495;
           --light-text: #73738b;
           --border: #b6b6c2;
+          --code-border: #b6b6c294;
           --button: #4a7ddd;
           --button-text: #fff;
           --aside: #d7d5ce;
@@ -86,20 +87,20 @@ export default function Layout({ children, title, description }) {
 
         pre,
         code {
-          font-family: "Roboto Mono", monospace;
+          font-family: "IBM Plex Mono", monospace;
           font-size: 14px;
           border-radius: 0.4em;
         }
 
         code {
           background-color: ${codeTheme.plain.backgroundColor};
-          color: #e3116c;
           padding: 3px;
           border-radius: 0.4em;
         }
 
         .prism-code {
           border-radius: 0.4em;
+          border: 1px solid var(--code-border);
         }
 
         hr {

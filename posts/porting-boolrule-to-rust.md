@@ -19,7 +19,7 @@ let test = expr.test_with_context(
 )?; // true
 ```
 
-Building this port was harder than I predicted. I had to learn a parsing library, work out how the lesser-used operators of boolrule work, and look into how Python evaluates tuple comparisons. For example, `assert (1, print) < (2, None)` is valid, non-erroring, Python code. The tuples stop being compared after the first index – it's `True`.
+Building this port was harder than I predicted. I had to learn a parsing library, work out how the lesser-used operators of boolrule work, and look into how Python evaluates tuple comparisons. For example, `assert (1, print) < (2, None)` is valid, non-erroring, Python code. The tuples stop being compared after the first index. It's `True`.
 
 Boolrule has a small grammar ([45 LoC](https://github.com/tailsdotcom/boolrule/blob/a1671fc372039cfcf4d09673e575ffe69c1a4679/boolrule/boolrule.py#L59-L112)), powered by [pyparsing](https://github.com/pyparsing/pyparsing), and the evaluation logic is [terse and elegant](https://github.com/tailsdotcom/boolrule/blob/a1671fc372039cfcf4d09673e575ffe69c1a4679/boolrule/boolrule.py#L200-L231). This elegance is lost in my translation but the performance of a compiled language like Rust means it's automatically 3x faster (in my quick benchmarks) without any optimization work – as well as the usual benefits of static types.
 
