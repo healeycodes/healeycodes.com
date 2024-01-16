@@ -101,7 +101,7 @@ Another improvement we can add is move ordering. When we queue up branches, we c
 Here are two move ordering ideas I added to my solver:
 
 - Prioritize moves that push boxes onto goals.
-- Then sort by the total [Manhattan distance](https://en.wikipedia.org/wiki/Taxicab_geometry) of boxes to goals (without taking blocking objects into account) — a lower total implies we're heading towards a more likely solution . Using [A* Search](https://en.wikipedia.org/wiki/A*_search_algorithm) here is better but I decided to cut that corner.
+- Then sort by the total [Manhattan distance](https://en.wikipedia.org/wiki/Taxicab_geometry) of boxes to goals (without taking blocking objects into account) — a lower total implies we're heading towards a more likely solution. Using [A* Search](https://en.wikipedia.org/wiki/A*_search_algorithm) here is better but I decided to cut that corner.
 
 These reduce the work required for the two-box level by an additional 6%. See the heavily commented [solver.ts](https://github.com/healeycodes/sokoban/blob/main/game/solver.ts) file for more information on my searching and heuristic algorithms.
 
