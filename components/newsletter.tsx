@@ -9,7 +9,7 @@ export default function Newsletter() {
   return (
     <div className="newsletter-section">
       <p className="newsletter-desc">
-        Subscribe to be notified of my new posts. I write the newsletters by hand and they are not as frequent as the posts on here.
+        Subscribe to be notified (somewhat irregularly) of my new posts.
       </p>
       <form
         action={`https://buttondown.email/api/emails/embed-subscribe/${siteConfig.BUTTON_DOWN_USER}`}
