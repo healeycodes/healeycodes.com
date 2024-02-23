@@ -16,6 +16,7 @@ export const postStars = [
   "designing-a-programming-language-for-advent-of-code",
   "creating-the-golfcart-programming-language",
   "implementing-bitcask-a-log-structured-hash-table",
+  "building-and-solving-sokoban",
   "beating-grep-with-go",
   "porting-niceware-to-rust",
   "building-my-own-chess-engine",
