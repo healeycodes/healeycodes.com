@@ -89,6 +89,12 @@ export default [
     to: "/sandboxing-javascript-code",
   },
   {
+    name: "compressing-cs2-demos",
+    link: "https://github.com/healeycodes/compressing-cs2-demos",
+    desc: "An example of compressing Counter-Strike 2 demo data.",
+    to: "/compressing-cs2-demos",
+  },
+  {
     name: "file-share-cli",
     link: "https://github.com/healeycodes/file-share-cli",
     desc: "Share files with friends from your terminal.",

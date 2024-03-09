@@ -263,4 +263,4 @@ I could also encode position data using [bit arrays](https://en.wikipedia.org/wi
 
 Instead of storing a map with a `uint8` as a key, and a list of `int8` for the change events. I can compress the data into a bit array where each value is: a player id (4 bits) and an add or remove event (5 bits) for 9 bits total. A frame's equipment change field can just be a list of those (repeating the player id is actually okay because it's rare that multiple piece of equipment are acquired on the same frame).
 
-It's fun to theorize but a protobuf schema is as far as I need to go for now.
+It's fun to theorize but a protobuf schema is as far as I need to go for now. View the source code for this toy compression program [on GitHub](https://github.com/healeycodes/compressing-cs2-demos).
