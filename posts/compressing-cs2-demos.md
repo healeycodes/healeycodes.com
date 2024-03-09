@@ -143,7 +143,7 @@ Here are some optimizations we can make here.
 - Rather than listing the players every frame, just track when they spawn and die
 - Only report equipment when it changes. Also store the equipment names in an object at the top level and use another new short id as a key
 
-This an example of [delta encoding](https://en.wikipedia.org/wiki/Delta_encoding) or [data differencing](https://en.wikipedia.org/wiki/Data_differencing).
+This an example of [delta encoding](https://en.wikipedia.org/wiki/Delta_encoding) (or [data differencing](https://en.wikipedia.org/wiki/Data_differencing)).
 
 The new data types look like this:
 
