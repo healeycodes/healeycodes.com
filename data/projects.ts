@@ -18,6 +18,12 @@ export default [
     to: "/making-a-text-editor-with-a-game-engine",
   },
   {
+    name: "lisp-to-js",
+    link: "https://github.com/healeycodes/lisp-to-js",
+    desc: "A Lisp to JavaScript compiler written in Rust. Supports a variant of Little Lisp.",
+    to: "/lisp-to-javascript-compiler",
+  },
+  {
     name: "jar",
     link: "https://github.com/healeycodes/jar",
     desc: "A server-side web framework that deploys to Vercel.",
