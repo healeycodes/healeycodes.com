@@ -11,7 +11,7 @@ The first step of this project involved choosing a Lisp to implement. There are 
 
 In Lisp terminology, a "form" is a fundamental concept referring to any syntactic construct that can be evaluated to produce a result.
 
-My Lisp has these forms.
+My Lisp has these forms:
 
 ```lisp
 ; atoms
@@ -187,9 +187,7 @@ The function that handles expressions, `compile_expression`, is pretty much just
 
 The code generation logic was a lot of fun to write. I felt much more at home with JavaScript (compared to Lisp) and it was very much a dessert compared to battling types over in parse-land.
 
-I'll show a few of my favorite snippets here.
-
-Like supporting less-than expressions:
+I'll show a few of my favorite snippets here. Like supporting less-than expressions:
 
 ```rust
 // input: (< 1 2 3)
@@ -239,7 +237,7 @@ Expression::LambdaExpression(lambda_expression) => {
 
 Usually, the first program I write with a new interpreter or compiler is a Fibonacci function. It's a good test for a range of functionality (variable binding, boolean logic, comparison, recursion, and sometimes performance too).
 
-Here's my compiler's output for a Fibonacci function with all the odd spacing and hanging commas that my compiler produces.
+Here's my compiler's output for a Fibonacci function with all the odd spacing and hanging commas that my compiler produces:
 
 ```jsx
 /*
