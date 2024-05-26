@@ -5,7 +5,7 @@ tags: ["rust"]
 description: "Transpiling Lisp to JavaScript using Rust."
 ---
 
-I wrote a compiler that takes Lisp code and turns it into JavaScript. The compiler is a [~280 line Rust program](https://github.com/healeycodes/lisp-to-js) that I wrote over a few nights. When I started this project, I thought I understood how basic Lisp worked  (I didn't) but I do now.
+I wrote a compiler that takes Lisp code and turns it into JavaScript. The compiler is a [~280 line Rust program](https://github.com/healeycodes/lisp-to-js) that I wrote over a few nights. When I started this project, I thought I understood how Lisp worked  (I didn't) but I do now.
 
 The first step of this project involved choosing a Lisp to implement. There are many Lisps. I'm a big fan of Mary Rose Cook's [Little Lisp](https://maryrosecook.com/blog/post/little-lisp-interpreter) blog post so I decided to  implement Little Lisp, plus or minus a few forms.
 
