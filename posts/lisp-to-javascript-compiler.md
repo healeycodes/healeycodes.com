@@ -174,8 +174,8 @@ let print = console.log;
 
     program.into_iter().for_each(|expression| {
     
-		    // I found it easier to write to a parent variable
-		    // which didn't feel very Rust-like but it worked for me!
+		// I found it easier to write to a parent variable
+		// which didn't feel very Rust-like but it worked for me!
         output.push_str(&compile_expression(expression));
     });
 
