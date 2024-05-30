@@ -7,6 +7,7 @@ export const popularPosts = [
 
 // Good posts/highly viewed posts (not in any specific order)
 export const postStars = [
+  "lisp-compiler-optimizations",
   "lisp-to-javascript-compiler",
   "compressing-cs2-demos",
   "a-custom-webassembly-compiler",
