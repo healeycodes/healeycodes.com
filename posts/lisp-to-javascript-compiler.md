@@ -190,16 +190,11 @@ The code generation logic was a lot of fun to write. I felt much more at home wi
 I'll show a few of my favorite snippets here. Like supporting less-than expressions:
 
 ```rust
-// input: (< 1 2 3)
-// output: 1 < 2 && 2 < 3
+// input: (< 1 (a))
+// output: 1 < a()
 
 Op::LessThan => ret.push_str(
-    &compiled_expressions
-        .windows(2) // How cool is this std lib function!?
-        .into_iter()
-        .map(|expressions| expressions.join(" < "))
-        .collect::<Vec<String>>()
-        .join(" && "),
+    ret.push_str(&compiled_expressions.join(" < "));
 ),
 ```
 

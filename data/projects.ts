@@ -20,7 +20,7 @@ export default [
   {
     name: "lisp-to-js",
     link: "https://github.com/healeycodes/lisp-to-js",
-    desc: "A Lisp to JavaScript compiler written in Rust. Supports a variant of Little Lisp.",
+    desc: "A Lisp to JavaScript optimizing compiler written in Rust. Supports a variant of Little Lisp.",
     to: "/lisp-to-javascript-compiler",
   },
   {
