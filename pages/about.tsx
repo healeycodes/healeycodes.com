@@ -11,11 +11,9 @@ export default function About() {
       <h1>About</h1>
       <main>
         <p>
-          I write software and write about software. I{" "}
-          <a href="mailto:healeycodes@gmail.com">love getting email</a>. My research interests include programming languages, game solvers (chess, sokoban, and more), and isolation/sandboxing.
-        </p>
+          I write software and write about software. My research interests include programming language design, compilers, JavaScript runtimes, game solvers, and running untrusted code.</p>
         <p>
-          This <a href={siteConfig.REPO_URL}>open source</a> website is built with Next.js.
+          This <a href={siteConfig.REPO_URL}>open source</a> website is built with Next.js, and I <a href="mailto:healeycodes@gmail.com">love getting email.</a>
         </p>
         <SpacedImage
           src={mePresenting}
@@ -28,8 +26,7 @@ export default function About() {
           style={{ borderRadius: '0.4em' }}
         />
         <p>
-          I like teaching people things that I know. I like video games,
-          running, and reading.
+          I like teaching people things that I know. I like video games, classic games (chess, scrabble, sudoku), running, and reading.
         </p>
         <p>
           I am easily impressed by people and the cool stuff they build. I
