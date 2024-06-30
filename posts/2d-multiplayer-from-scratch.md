@@ -150,7 +150,7 @@ func (c *Character) HandleCollision(level *Level, entity Entity) CollisionResult
 }
 ```
 
-When players join or leave the game, it doesn't cause the game loop to move forward — it drives itself. Even things like player input and bullet spawning happen outside the game loop. Even things like player input and bullet spawning happens outside the game loop. For the prototype, I found that this separation made the flow of game time easier to reason about.
+When players join or leave the game, it doesn't cause the game loop to move forward — it drives itself. Even things like player input and bullet spawning happens outside the game loop. For the prototype, I found that this separation made the flow of game time easier to reason about.
 
 ## Client/Server Synchronization
 
