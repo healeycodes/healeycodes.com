@@ -89,6 +89,12 @@ export default [
     to: "/porting-niceware-to-rust",
   },
   {
+    name: "dm-multiplayer",
+    link: "https://github.com/healeycodes/dm-multiplayer",
+    desc: "A game prototype for a 2D arena shooter.",
+    to: "/2d-multiplayer-from-scratch"
+  },
+  {
     name: "deno-script-sandbox",
     link: "https://github.com/healeycodes/deno-script-sandbox",
     desc: "An API/sandbox to run untrusted JavaScript/TypeScript scripts.",
