@@ -9,10 +9,10 @@ Issues/bug reports are very welcome.
 ## Features
 
 - Next.js hosted on Vercel
-- Markdown + images
+- Markdown, images, and videos
 - RSS feed (links, not full content)
 - Simple design focused on content (responsive for desktop/mobile)
-- Code highlighting via `prism-react-renderer`
+- Code highlighting via `prism-react-renderer` (TODO fix Lisp syntax highlighting)
 - Newsletter CTA (powered by Buttondown)
 - All core features work without JavaScript enabled
 - End-to-end tests with `playwright`
@@ -40,4 +40,4 @@ npm run dev
 
 Feel free to use any of my writing or code for educational reasons (e.g. you're teaching a class).
 
-Otherwise, check with me before republishing my writing or code (I'll give permission 99% of the time).
+Otherwise, check with me before republishing my writing (I'll give permission 99% of the time).

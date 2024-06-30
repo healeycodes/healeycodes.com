@@ -8,7 +8,7 @@ export default [
   {
     name: "nodots",
     link: "https://github.com/healeycodes/nodots-lang",
-    desc: "A small programming language with an interpreter, and a WebAssembly compiler.",
+    desc: "A small programming language with an interpreter, a profiler, and a WebAssembly compiler.",
     to: "/a-custom-webassembly-compiler",
   },
   {
@@ -16,6 +16,12 @@ export default [
     link: "https://github.com/healeycodes/noter",
     desc: "A text editor for macOS. Built using the Ebitengine game engine.",
     to: "/making-a-text-editor-with-a-game-engine",
+  },
+  {
+    name: "lisp-to-js",
+    link: "https://github.com/healeycodes/lisp-to-js",
+    desc: "A Lisp-to-JavaScript optimizing compiler written in Rust. Supports a variant of Little Lisp.",
+    to: "/lisp-to-javascript-compiler",
   },
   {
     name: "jar",
