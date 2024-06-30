@@ -2,7 +2,7 @@
 title: "2D Multiplayer From Scratch"
 date: "2024-06-30"
 tags: ["go"]
-description: "Patterns and systems for realtime browser games."
+description: "Exploring patterns and systems for creating realtime browser games."
 ---
 
 I recently built a game prototype for a 2D arena shooter. Here are my notes on some of the patterns I used and the design of the server and client systems.
