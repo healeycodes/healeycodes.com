@@ -54,6 +54,12 @@ export default [
     to: "/creating-the-golfcart-programming-language",
   },
   {
+    name: "unrandom",
+    link: "https://github.com/healeycodes/unrandom",
+    desc: "Intercept and modify getrandom syscalls from a process (x86-64 Linux).",
+    to: "/making-python-less-random",
+  },
+  {
     name: "bitcask-lite",
     link: "https://github.com/healeycodes/bitcask-lite",
     desc: "A log-structured hash table database. Speedy K/V store for datasets larger than memory.",
