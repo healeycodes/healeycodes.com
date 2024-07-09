@@ -16,11 +16,9 @@ import random
 random.randint = lambda a, b: a
 ```
 
-However, I found an imported third-party library was also calling `random` functions. The library's code wasn't well-structured (e.g., importing modules inside functions). I couldn't mock the call sites without altering the dependency locally.
+However, I found a third-party library was also calling `random` functions. At this point, I should have pulled the code I was using out of that library, and refactored my game so that all sources of randomness came from some kind of pseudorandom generator function (e.g., [random.Random](https://docs.python.org/3/library/random.html#random.Random)). This way, I could provide fixed seeds for deterministic debugging. Or, a quicker method would be to use [unittest.mock.patch](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.patch) to alter the library's `random` import.
 
-At this point, I should have pulled the code I was using out of that library, and refactored my game so that all sources of randomness came from some kind of pseudorandom generator function. This way, I could provide fixed seeds for deterministic debugging.
-
-Instead, I took a detour to catch and modify syscalls to `getrandom`.
+Instead, I thought about the different ways to alter the functionality here _without making any code changes_, and took a detour to catch and modify syscalls to `getrandom`.
 
 ## Where Does Python's Randomness Come From?
 
@@ -66,7 +64,7 @@ getrandom("\xcf\xf3\x34\xf4\x65\x49\xd2\xab\xc2\x65\x26\x0
 # ..
 ```
 
-Either way, to achieve deterministic randomness, I need to get between my program and these syscalls to`getrandom`. I'll list all the methods I've heard of, ordered from most tricky to least tricky:
+Either way, to achieve deterministic randomness without making any code changes, I need to get between my program and these syscalls to`getrandom`. I'll list all the methods I've heard of, ordered from most tricky to least tricky:
 
 - Compile the Linux kernel with an altered `getrandom` function. Downside: my computer becomes hilarious, obscurely, insecure and vulnerable
 - Use [kprobes](https://www.kernel.org/doc/Documentation/kprobes.txt) to hook into the kernel's existing `getrandom` function (ideally with some filtering so it's not *all* calls to `getrandom`)
@@ -75,14 +73,11 @@ Either way, to achieve deterministic randomness, I need to get between my progra
 - Use `LD_PRELOAD` to alter the call that Python makes to `libc`'s `getrandom` (read more on this in [LD_PRELOAD: The Hero We Need and Deserve](https://blog.jessfraz.com/post/ld_preload/))
 - Use [ptrace](https://man7.org/linux/man-pages/man2/ptrace.2.html) (process trace) to intercept and modify the return value of the `getrandom` syscall
 
-Note: I've not included methods like monkey patching (e.g. with [MagicMock](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.MagicMock)) because that requires  a code change and doesn't count.
-
 ## Modifying System Calls With ptrace
 
 Given the constraint of no code changes allowed, [ptrace](https://man7.org/linux/man-pages/man2/ptrace.2.html) is well suited for this job. It only affects a specific process and I don't need to recompile my dependencies. About 20 or so lines of C will do it.
 
 > The ptrace() system call provides a means by which one process (the "tracer") may observe and control the execution of another process (the "tracee"), and examine and change the tracee's memory and registers.  It is primarily used to implement breakpoint debugging and system call tracing.
-> 
 
 First, I need to find the process ID (PID) of a running Python program, so with bash:
 
