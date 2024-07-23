@@ -148,6 +148,11 @@ export default [
     to: "/listening-to-satellites-with-my-raspberry-pi",
   },
   {
+    name: "oak-lru-cache",
+    link: "https://github.com/healeycodes/oak-lru-cache",
+    desc: "An LRU cache written in Oak.",
+  },
+  {
     name: "inkbyexample",
     link: "https://github.com/healeycodes/inkbyexample",
     desc: "A hands-on introduction to Ink using annotated example programs.",
@@ -157,6 +162,11 @@ export default [
     name: "hoot-language",
     link: "https://github.com/healeycodes/hoot-language",
     desc: "A general-purpose interpreted scripting language with an event loop.",
+  },
+  {
+    name: "deno-isolate-web-request",
+    link: "https://github.com/healeycodes/deno-isolate-web-request",
+    desc: "Making web requests from inside an isolate.",
   },
   {
     name: "tinyinfra",
