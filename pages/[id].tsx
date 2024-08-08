@@ -14,6 +14,7 @@ import SpacedImage from "../components/image";
 import Code from "../components/code";
 import Date from "../components/date";
 import Newsletter from "../components/newsletter";
+import { AldousBroder, IntroMaze, RandomDFS, TreeDiameter, WilsonsAlgorithm } from "../components/visuals/mazes/components";
 
 const isVideo = /\.mp4$/;
 
@@ -148,6 +149,18 @@ export default function Post({
               } else if (type === "code" && props.className) { // @ts-ignore 
                 const language = props.className.replace("lang-", "");
                 return <Code children={children} language={language} />;
+              } else if (type === "div" && props.className === "mazes") {
+                if (props.id === 'randomDFS') {
+                  return RandomDFS()
+                } else if (props.id === 'introMaze') {
+                  return IntroMaze()
+                } else if (props.id === 'aldousBroder') {
+                  return AldousBroder()
+                } else if (props.id === 'wilsonsAlgorithm') {
+                  return WilsonsAlgorithm()
+                } else if (props.id === 'treeDiameter') {
+                  return TreeDiameter()
+                }
               }
               return React.createElement(type, props, children);
             },
