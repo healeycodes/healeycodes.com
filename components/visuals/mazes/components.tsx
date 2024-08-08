@@ -2,8 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Cell, Maze, solveMazeWithRandomDPS } from './maze';
 import { renderDebug, renderMaze, renderWhiteCell } from './render';
 import { findFurthestCells, randomMember, shuffle, sleep, timeoutWithCancel } from '.';
+import { highResCanvas } from '../../utils';
 
-const FINISHED_MAZE_WAIT_FACTOR = 7;
+const FINISHED_MAZE_WAIT_FACTOR = 10;
 
 async function aldousBroder(maze: Maze, ctx: CanvasRenderingContext2D, cancelSignal: AbortSignal, stepTime: number) {
     const visited = new Set();
@@ -126,6 +127,7 @@ const componentForMaze = (mazeFunction: (maze: Maze, ctx: CanvasRenderingContext
             const canvas = canvasRef.current;
 
             if (!canvas) return;
+            highResCanvas(canvas)
 
             const ctx = canvas.getContext('2d');
             if (!ctx) return;
@@ -186,6 +188,7 @@ export const TreeDiameter = () => {
         const mazeCanvas = mazeCanvasRef.current;
 
         if (!mazeCanvas) return;
+        highResCanvas(mazeCanvas)
 
         const mazeCtx = mazeCanvas.getContext('2d');
         if (!mazeCtx) return;
@@ -207,9 +210,15 @@ export const TreeDiameter = () => {
     }, []);
 
     return (
-        <center key="treeDiameter">
+        <center key="treeDiameter" className="top-bot-padding">
             <canvas ref={mazeCanvasRef} width={340} height={340} />
             <div style={{ width: 340, textAlign: 'left' }}><small>Finding the start and end cells via tree diameter.</small></div>
+            <style jsx>{`
+                .top-bot-padding {
+                    padding-top: 8px;
+                    padding-bottom: 8px;
+                }
+            `}</style>
         </center>
     );
 }
@@ -223,6 +232,8 @@ export const IntroMaze = () => {
         const debugCanvas = debugCanvasRef.current;
 
         if (!mazeCanvas || !debugCanvas) return;
+        highResCanvas(mazeCanvas)
+        highResCanvas(debugCanvas)
 
         const mazeCtx = mazeCanvas.getContext('2d');
         const debugCtx = debugCanvas.getContext('2d')
