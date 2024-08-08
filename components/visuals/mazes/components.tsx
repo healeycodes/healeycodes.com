@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Cell, Maze, solveMazeWithRandomDPS } from './maze';
 import { renderDebug, renderMaze, renderWhiteCell } from './render';
 import { findFurthestCells, randomMember, shuffle, sleep, timeoutWithCancel } from '.';
-import { highResCanvas } from '../../utils';
+import { highResCanvasCtx } from '../../utils';
 
 const FINISHED_MAZE_WAIT_FACTOR = 10;
 
@@ -127,10 +127,7 @@ const componentForMaze = (mazeFunction: (maze: Maze, ctx: CanvasRenderingContext
             const canvas = canvasRef.current;
 
             if (!canvas) return;
-            highResCanvas(canvas)
-
-            const ctx = canvas.getContext('2d');
-            if (!ctx) return;
+            const ctx = highResCanvasCtx(canvas);
 
             const generateMaze = async () => {
                 while (!cancelSignal.aborted) {
@@ -188,10 +185,7 @@ export const TreeDiameter = () => {
         const mazeCanvas = mazeCanvasRef.current;
 
         if (!mazeCanvas) return;
-        highResCanvas(mazeCanvas)
-
-        const mazeCtx = mazeCanvas.getContext('2d');
-        if (!mazeCtx) return;
+        const mazeCtx = highResCanvasCtx(mazeCanvas);
 
         (async () => {
             while (true) {
@@ -232,12 +226,9 @@ export const IntroMaze = () => {
         const debugCanvas = debugCanvasRef.current;
 
         if (!mazeCanvas || !debugCanvas) return;
-        highResCanvas(mazeCanvas)
-        highResCanvas(debugCanvas)
-
-        const mazeCtx = mazeCanvas.getContext('2d');
-        const debugCtx = debugCanvas.getContext('2d')
-        if (!mazeCtx || !debugCtx) return;
+        
+        const mazeCtx = highResCanvasCtx(mazeCanvas);
+        const debugCtx = highResCanvasCtx(debugCanvas);
 
         (async () => {
             while (true) {

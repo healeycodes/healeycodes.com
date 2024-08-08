@@ -1,4 +1,6 @@
-export function highResCanvas(canvas: HTMLCanvasElement) {
+export function highResCanvasCtx(
+  canvas: HTMLCanvasElement,
+): CanvasRenderingContext2D {
   // https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Optimizing_canvas#scaling_for_high_resolution_displays
 
   const ctx = canvas.getContext("2d");
@@ -17,4 +19,6 @@ export function highResCanvas(canvas: HTMLCanvasElement) {
   // Set the "drawn" size of the canvas
   canvas.style.width = `${rect.width}px`;
   canvas.style.height = `${rect.height}px`;
+
+  return ctx;
 }
