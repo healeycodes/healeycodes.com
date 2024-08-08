@@ -130,7 +130,7 @@ const unvisited = new Set<Cell>(maze.cells.flat());
 const visited = new Set<Cell>();
 
 // Choose one cell arbitrarily, add it to the maze, and mark it as visited
-const startCell = maze.getCell(0, 0);
+const startCell = randomMember(maze.cells.flat())
 visited.add(startCell);
 unvisited.delete(startCell);
 
