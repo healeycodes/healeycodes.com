@@ -1,14 +1,14 @@
-// Based off analytics/HN ranking/gut feel
+// Popular posts (ordering affects display)
 export const popularPosts = [
-  "profiling-and-optimizing-an-interpreter",
+  "lisp-compiler-optimizations",
+  "my-time-at-the-recurse-center",
   "building-my-own-chess-engine",
-  "geoguessing-with-deep-learning",
 ];
 
-// Good posts/highly viewed posts (not in any specific order)
+// Starred posts (not in any specific order)
 export const postStars = [
+  "generating-mazes",
   "making-python-less-random",
-  "2d-multiplayer-from-scratch",
   "lisp-compiler-optimizations",
   "lisp-to-javascript-compiler",
   "compressing-cs2-demos",
