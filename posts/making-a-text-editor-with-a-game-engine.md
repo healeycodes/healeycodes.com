@@ -51,11 +51,11 @@ A text document needs to be stored in a way that makes each edit operation effic
 
 Let's starting with the most inefficient and naive strategies. Storing a document in a simple string would result in input lag because any edit operation would require the *entire string* to be recreated. Moving up and down lines, and cutting lines, would be tricky too — the text editor would need to scan for a new line characters and the code would be messy.
 
-Using a dynamic list isn't that much better than a string. Overwriting characters would be efficient and inserting/appending would be quicker than a string. But removing a line would still harder than it should be — and text editors need a lot of line logic. I think that, like the string case, a single dynamic list would cause input lag.
+Using a dynamic list isn't that much better than a string; overwriting characters would be efficient and so would appending but removing a line would still harder than it should be — and text editors need a lot of line logic. I think that, like the string case, a single dynamic list would eventually cause input lag.
 
 I ended up going with a doubly linked list of rune arrays.
 
-I felt this was a good mix between something that's quick to code and something that's performant. Deleting a line takes constant time, it can be taken out of the list by rewiring its previous element and next element to point to each other and then be garbage collected. Inserting or appending to a line is an inefficient operation but, in practice, lines are a fixed size and the cost is negligible.
+I felt this was a good mix between something that's quick to code and something that's performant. Deleting a line takes constant time, it can be taken out of the list by rewiring its previous element and next element to point to each other and then be garbage collected. Appending to a line is fast but inserting or deleting in the middle is slow but, in practice, lines are a fixed size and the cost is negligible.
 
 ```go
 // A loaded document is a linked list of connected Lines
