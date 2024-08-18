@@ -3,7 +3,7 @@ import { Cell, Maze, solveMazeWithRandomDPS } from './maze';
 import { renderDebug, renderMaze, renderWhiteCell } from './render';
 import { findFurthestCells, randomMember, shuffle, sleep, timeoutWithCancel } from '.';
 
-const FINISHED_MAZE_WAIT_FACTOR = 7;
+const FINISHED_MAZE_WAIT_FACTOR = 9;
 
 async function aldousBroder(maze: Maze, ctx: CanvasRenderingContext2D, cancelSignal: AbortSignal, stepTime: number) {
     const visited = new Set();
