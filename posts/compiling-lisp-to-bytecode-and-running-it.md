@@ -124,7 +124,7 @@ An if-expression is compiled into these parts:
 
 During execution, only one branch runs. When the conditional check is true, it increases the position by two, causing the true branch to run followed by skipping over the false branch. When the check is false, the position is incremented by one and we jump directly to the false branch.
 
-There are some instructions here that we haven't seen yet. `less_than` pops two values from the stack and compares them (here, that's `1.0` and `2.0`). The true branch uses `load_var` to load a variable from the stack frame. In this case, a built-in function called `print`.
+There are some instructions here that we haven't seen yet. `less_than` pops two values from the stack and compares them (here, that's `1.0` and `2.0`), and the true branch uses `load_var` to load a variable from the stack frame. In this case, a built-in function called `print`.
 
 In order to call a built-in function, or a closure, we use `call_lambda` followed by the number of arguments we're consuming from the stack. Here, we're passing a single argument, `1.0`.
 
@@ -171,7 +171,9 @@ In order to represent user-defined functions, they are stored in bytecode as a c
 
 When `push_closure` runs, this entire closure is pushed onto the stack, and it can then be stored in the current stack frame using `store_var`.
 
-As execution enters a closure, a child stack frame is created with the arguments that were popped from the stack by `call_lambda`. The child stack frame allows local variables to be set (and discarded after the closure). If the variable isn't found in the current stack frame, the VM looks for it in parent frames, working its way up through the nested stack frames until it either finds the variable or reaches the top.
+A closure needs to be on the stack in order to be executed by `call_lambda`. It's pushed onto the stack by calling `load_var` on a variable that points to a closure.
+
+When execution enters a closure, a child stack frame is created with the arguments that were popped from the stack by `call_lambda`. The child stack frame allows local variables to be set (and discarded after the closure). If the variable isn't found in the current stack frame, the VM looks for it in parent frames, working its way up through the nested stack frames until it either finds the variable or reaches the top.
 
 ```rust
 struct StackFrame {
