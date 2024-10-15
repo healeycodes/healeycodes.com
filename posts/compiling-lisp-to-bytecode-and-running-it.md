@@ -25,7 +25,7 @@ This is a nice example of simple [bytecode](https://en.wikipedia.org/wiki/Byteco
 
 In previous posts, I walked through [compiling Lisp to JavaScript](https://healeycodes.com/lisp-to-javascript-compiler) and [explored some optimizations](https://healeycodes.com/lisp-compiler-optimizations). This time, I'm taking a different approach: compiling Lisp to bytecode and running it in a custom VM. You don't need to have read my previous posts to follow along!
 
-## Running bytecode
+## Running Bytecode
 
 In [a recent commit](https://github.com/healeycodes/lisp-to-js/commit/c5252e313ad2aa7024363317aaccae3b296d4e57) to [lisp-to-js](https://github.com/healeycodes/lisp-to-js), I added the option to compile Lisp code to bytecode and run it in a [stack-based](https://en.wikipedia.org/wiki/Stack_machine) VM. My Lisp variant is quite simple (based on [Little Lisp](https://maryrosecook.com/blog/post/little-lisp-interpreter)). Below, I have a small program and the bytecode it produces.
 
@@ -210,7 +210,7 @@ impl StackFrame {
 }
 ```
 
-## Generating bytecode
+## Generating Bytecode
 
 After parsing, and an optional optimization pass, the compiler produces an Abstract Syntax Tree (AST) representing the Lisp expressions that need to be processed into bytecode.
 
