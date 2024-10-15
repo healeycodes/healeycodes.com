@@ -1,14 +1,16 @@
 export default [
   {
-    name: "andoma",
-    link: "https://github.com/healeycodes/andoma",
-    desc: "A chess engine with alpha-beta pruning, piece-square tables, and move ordering.",
-    to: "/building-my-own-chess-engine",
+    name: "lisp-to-js",
+    link: "https://github.com/healeycodes/lisp-to-js",
+    desc:
+      "An optimizing compiler for a Lisp variant. Compiles and executes byte code in a VM. Can also output JavaScript.",
+    to: "/compiling-lisp-to-bytecode-and-running-it",
   },
   {
     name: "nodots",
     link: "https://github.com/healeycodes/nodots-lang",
-    desc: "A small programming language with an interpreter, a profiler, and a WebAssembly compiler.",
+    desc:
+      "A small programming language with an interpreter, a profiler, and a WebAssembly compiler.",
     to: "/a-custom-webassembly-compiler",
   },
   {
@@ -18,10 +20,11 @@ export default [
     to: "/making-a-text-editor-with-a-game-engine",
   },
   {
-    name: "lisp-to-js",
-    link: "https://github.com/healeycodes/lisp-to-js",
-    desc: "A Lisp-to-JavaScript optimizing compiler written in Rust. Supports a variant of Little Lisp.",
-    to: "/lisp-to-javascript-compiler",
+    name: "andoma",
+    link: "https://github.com/healeycodes/andoma",
+    desc:
+      "A chess engine with alpha-beta pruning, piece-square tables, and move ordering.",
+    to: "/building-my-own-chess-engine",
   },
   {
     name: "jar",
@@ -50,19 +53,22 @@ export default [
   {
     name: "golfcart",
     link: "https://github.com/healeycodes/golfcart",
-    desc: "A minimal programming language inspired by Ink, JavaScript, and Python.",
+    desc:
+      "A minimal programming language inspired by Ink, JavaScript, and Python.",
     to: "/creating-the-golfcart-programming-language",
   },
   {
     name: "unrandom",
     link: "https://github.com/healeycodes/unrandom",
-    desc: "Intercept and modify getrandom syscalls from a process (x86-64 Linux).",
+    desc:
+      "Intercept and modify getrandom syscalls from a process (x86-64 Linux).",
     to: "/making-python-less-random",
   },
   {
     name: "bitcask-lite",
     link: "https://github.com/healeycodes/bitcask-lite",
-    desc: "A log-structured hash table database. Speedy K/V store for datasets larger than memory.",
+    desc:
+      "A log-structured hash table database. Speedy K/V store for datasets larger than memory.",
     to: "/implementing-bitcask-a-log-structured-hash-table",
   },
   {
@@ -79,7 +85,8 @@ export default [
   {
     name: "crane-search",
     link: "https://github.com/healeycodes/crane-search",
-    desc: "A full-text WebAssembly search engine for static websites. Build, index, and fly.",
+    desc:
+      "A full-text WebAssembly search engine for static websites. Build, index, and fly.",
     to: "/webassembly-search-tools-for-static-websites",
   },
   {
@@ -91,14 +98,15 @@ export default [
   {
     name: "niceware",
     link: "https://github.com/healeycodes/niceware",
-    desc: "Generate or convert random bytes into passphrases. A Rust port of niceware.",
+    desc:
+      "Generate or convert random bytes into passphrases. A Rust port of niceware.",
     to: "/porting-niceware-to-rust",
   },
   {
     name: "dm-multiplayer",
     link: "https://github.com/healeycodes/dm-multiplayer",
     desc: "A game prototype for a 2D arena shooter.",
-    to: "/2d-multiplayer-from-scratch"
+    to: "/2d-multiplayer-from-scratch",
   },
   {
     name: "deno-script-sandbox",
@@ -161,7 +169,8 @@ export default [
   {
     name: "hoot-language",
     link: "https://github.com/healeycodes/hoot-language",
-    desc: "A general-purpose interpreted scripting language with an event loop.",
+    desc:
+      "A general-purpose interpreted scripting language with an event loop.",
   },
   {
     name: "deno-isolate-web-request",
@@ -177,7 +186,8 @@ export default [
     name: "in-memory-cache-over-http",
     link: "https://github.com/healeycodes/in-memory-cache-over-http",
     desc: "An in-memory LRU cache server.",
-    to: "/go/tutorial/beginners/showdev/2019/10/21/cloning-memcached-with-go.html",
+    to:
+      "/go/tutorial/beginners/showdev/2019/10/21/cloning-memcached-with-go.html",
   },
   {
     name: "healeycodes.com",
@@ -217,7 +227,8 @@ export default [
   {
     name: "gatsby-serverless-comments",
     link: "https://github.com/healeycodes/gatsby-serverless-comments",
-    desc: "Use Netlify serverless functions to add commenting to a static website.",
+    desc:
+      "Use Netlify serverless functions to add commenting to a static website.",
     to: "/adding-comments-to-gatsby-with-netlify-and-github",
   },
   {
@@ -229,7 +240,8 @@ export default [
   {
     name: "markov-chain-generator",
     link: "https://github.com/healeycodes/markov-chain-generator",
-    desc: "Build and consume Markov chain models to generate random realistic text.",
+    desc:
+      "Build and consume Markov chain models to generate random realistic text.",
     to: "/generating-text-with-markov-chains",
   },
   {
@@ -240,7 +252,8 @@ export default [
   {
     name: "country-borders",
     link: "https://github.com/healeycodes/country-borders",
-    desc: "Calculating the path between two countries with the least border crossings.",
+    desc:
+      "Calculating the path between two countries with the least border crossings.",
     to: "/practical-intro-to-graphs",
   },
   {
@@ -252,13 +265,15 @@ export default [
   {
     name: "dev-article-analysis",
     link: "https://github.com/healeycodes/dev-article-analysis",
-    desc: "A website that graphs textual statistics from a DEV user's articles.",
+    desc:
+      "A website that graphs textual statistics from a DEV user's articles.",
     to: "/dev-article-analysis",
   },
   {
     name: "conways-game-of-life",
     link: "https://github.com/healeycodes/conways-game-of-life",
     desc: "A classic algorithm implemented visually with Ebiten.",
-    to: "/beginners/go/showdev/opensource/2019/10/02/my-first-golang-program.html",
+    to:
+      "/beginners/go/showdev/opensource/2019/10/02/my-first-golang-program.html",
   },
 ];
