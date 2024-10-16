@@ -264,7 +264,7 @@ I'm not too familiar with other bytecode compilers so the instruction set my com
 
 By virtue of being small (i.e. not supporting many features) my VM is quite fast considering the amount effort I've invested (3-4 hours).
 
-_Update: `@jpyo20` on X pointed out that I'm measuring the startup performance of Node.js rather than the computation. I (incorrectly) assumed that Node.js's startup time was single digit milliseconds and didn't matter._
+_Update: `@jpyo20` on X pointed out that I'm measuring the startup performance of Node.js rather than the computation. I (incorrectly) assumed that Node.js's startup time was < 50ms and didn't matter here._
 
 ~~While my Lisp variant is extremely constrained by the programs that can be expressed, it beats Node.js v20 when calculating the 25th Fibonacci number with recursive calls; ~250ms vs. ~300ms.~~
 
