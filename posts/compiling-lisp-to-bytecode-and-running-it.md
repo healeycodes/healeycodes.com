@@ -264,11 +264,13 @@ I'm not too familiar with other bytecode compilers so the instruction set my com
 
 By virtue of being small (i.e. not supporting many features) my VM is quite fast considering the amount effort I've invested (3-4 hours).
 
-While my Lisp variant is extremely constrained by the programs that can be expressed, it beats Node.js v20 when calculating the 25th Fibonacci number with recursive calls; ~250ms vs. ~300ms.
+_Update: `@jpyo20` on X pointed out that I'm measuring the startup performance of Node.js rather than the computation. I (incorrectly) assumed that Node.js's startup time was single digit milliseconds and didn't matter._
 
-The reason my VM is faster likely comes down to the simplicity of the language and execution model. In contrast, Node.js has to support complex features like dynamic typing, object manipulation, and garbage collection, which introduce overhead in both time and memory. My Lisp variant avoids this complexity with a straightforward memory model, where variables are local to the expressions they're defined in and are discarded with the stack frame upon expression completion.
+~~While my Lisp variant is extremely constrained by the programs that can be expressed, it beats Node.js v20 when calculating the 25th Fibonacci number with recursive calls; ~250ms vs. ~300ms.~~
 
-Since my VM uses a simpler memory model with a deterministic lifetime for variables (i.e., they live only as long as the expression), the overhead of garbage collection is very low. In contrast, Node.js's runtime spends additional cycles managing memory with more complex garbage collection.
+~~The reason my VM is faster likely comes down to the simplicity of the language and execution model. In contrast, Node.js has to support complex features like dynamic typing, object manipulation, and garbage collection, which introduce overhead in both time and memory. My Lisp variant avoids this complexity with a straightforward memory model, where variables are local to the expressions they're defined in and are discarded with the stack frame upon expression completion.~~
+
+~~Since my VM uses a simpler memory model with a deterministic lifetime for variables (i.e., they live only as long as the expression), the overhead of garbage collection is very low. In contrast, Node.js's runtime spends additional cycles managing memory with more complex garbage collection.~~
 
 In my VM, stack frames are managed with Rust's `Rc` (reference-counted pointers), which ensures that memory for closures and their variables is shared efficiently between stack frames. When an expression completes, its stack frame is discarded, and Rust's reference counting automatically cleans up the memory:
 
