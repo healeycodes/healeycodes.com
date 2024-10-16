@@ -3,7 +3,7 @@ export default [
     name: "lisp-to-js",
     link: "https://github.com/healeycodes/lisp-to-js",
     desc:
-      "An optimizing compiler for a Lisp variant. Compiles and executes byte code in a VM. Can also output JavaScript.",
+      "An optimizing compiler for a Lisp variant. Compiles and executes bytecode in a VM. Can also output JavaScript.",
     to: "/compiling-lisp-to-bytecode-and-running-it",
   },
   {
