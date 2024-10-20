@@ -262,15 +262,7 @@ I'm not too familiar with other bytecode compilers so the instruction set my com
 
 ## Performance
 
-By virtue of being small (i.e. not supporting many features) my VM is quite fast considering the amount effort I've invested (3-4 hours).
-
-_Update: `@jpyo20` on X pointed out that I'm measuring the startup performance of Node.js rather than the computation. I (incorrectly) assumed that Node.js's startup time was < 50ms and didn't matter here._
-
-~~While my Lisp variant is extremely constrained by the programs that can be expressed, it beats Node.js v20 when calculating the 25th Fibonacci number with recursive calls; ~250ms vs. ~300ms.~~
-
-~~The reason my VM is faster likely comes down to the simplicity of the language and execution model. In contrast, Node.js has to support complex features like dynamic typing, object manipulation, and garbage collection, which introduce overhead in both time and memory. My Lisp variant avoids this complexity with a straightforward memory model, where variables are local to the expressions they're defined in and are discarded with the stack frame upon expression completion.~~
-
-~~Since my VM uses a simpler memory model with a deterministic lifetime for variables (i.e., they live only as long as the expression), the overhead of garbage collection is very low. In contrast, Node.js's runtime spends additional cycles managing memory with more complex garbage collection.~~
+Performance-wise, my VM is fairly naive. All of the operations it performs have a runtime complexity of O(1) — e.g. pushing and popping from a stack, inserting and reading from a hashmap — but they are still _slow_ operations when you consider the overhead of memory management and cache misses. The VM does more work than it needs to.
 
 In my VM, stack frames are managed with Rust's `Rc` (reference-counted pointers), which ensures that memory for closures and their variables is shared efficiently between stack frames. When an expression completes, its stack frame is discarded, and Rust's reference counting automatically cleans up the memory:
 
@@ -307,10 +299,12 @@ ByteCodeInstruction::CallLambda(n) => {
 
 I think it's possible to encode more precise ownership semantics using Rust's lifetime system but I went with reference counting (`Rc`) so that I could ship!
 
-I haven't profiled my VM or made any performance improvements after I got it running but I have two ideas top of mind:
+Reflecting on the current design, I have a few ideas to improve the VM's performance:
 
-- One idea is to compact the stack layout to minimize cache misses. Currently, pushing entire closures and their bytecode onto the stack may introduce inefficiencies in memory access. A better approach might be to store only references to the closure's bytecode on the stack or use a register-based architecture to keep frequently accessed values in fast, CPU-level storage.
-- In practice, most function calls will have a small number of arguments, making Rust's general-purpose `HashMap` an over-engineered solution. Using specialized data structures like `arrayvec` or `smallvec` would allow me to store small numbers of arguments inline, significantly improving lookup speed and reducing memory overhead.
+- One idea is to compact the stack layout to minimize cache misses. Currently, pushing entire closures and their bytecode onto the stack introduces inefficiencies in memory access. A better approach might be to store only references to the closure's bytecode on the stack or use a register-based architecture to keep frequently accessed values in fast, CPU-level storage.
+- In practice, most function calls will have a small number of arguments, making Rust's general-purpose `HashMap` an over-engineered solution. Using specialized data structures like `arrayvec` or `smallvec` would allow me to store small numbers of arguments inline, significantly improving lookup speed and reducing memory overhead. 
+- Instructions can be combined like `load_var` and `call_lambda`, or `less_than` and `jump`.
+- The match-based dispatch mechanism (how instructions are decoded and executed) is not optimal. Possible improvements here involve using direct threading i.e. replacing the big match statement with jump tables. Instead of matching over each bytecode and performing a branch for each one, each bytecode directly jumps to its handler.
 
 The source code can be found [on GitHub](https://github.com/healeycodes/lisp-to-js). I have also come to realize that the repository is now misnamed as it does more than compile to JavaScript but alas!
 
