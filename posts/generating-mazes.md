@@ -5,7 +5,9 @@ tags: ["javascript"]
 description: "Visualizations and techniques for different maze generation algorithms."
 ---
 
-I've been reading about mazes and how to generate them. The type of mazes I'll be talking about are 2D grids of connected cells. They're _perfect mazes_ (i.e. there is exactly one unique path between any two cells aka a uniform spanning tree). I'll refer to the connections between cells as _edges_. An edge can be created between a cell and any of its neighbors (up, right, left, down). When two cells don't share an edge, there is a wall between them. While generating a maze, if a cell isn't reachable, I'll render it dark.
+I've been reading about mazes and how to generate them. The type of mazes I'll be talking about are 2D grids of connected cells. They're _perfect mazes_ (i.e. there is exactly one unique path between any two cells aka a uniform spanning tree).
+
+I'll refer to the connections between cells as _edges_. An edge can be created between a cell and any of its neighbors (up, right, left, down). When two cells don't share an edge, there is a wall between them. While generating a maze, if a cell isn't reachable, I'll render it dark.
 
 <div className="mazes" id="introMaze"></div>
 
