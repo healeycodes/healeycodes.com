@@ -103,6 +103,12 @@ export default [
     to: "/porting-niceware-to-rust",
   },
   {
+    name: "love-game-prototypes",
+    link: "https://github.com/healeycodes/love-game-protoypes",
+    desc: "Some game prototypes made with LÖVE.",
+    to: "/building-game-prototypes-with-love",
+  },
+  {
     name: "dm-multiplayer",
     link: "https://github.com/healeycodes/dm-multiplayer",
     desc: "A game prototype for a 2D arena shooter.",

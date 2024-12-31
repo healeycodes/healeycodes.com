@@ -3,6 +3,8 @@
 import Prism from "prism-react-renderer/prism";
 (typeof global !== "undefined" ? global : window).Prism = Prism;
 require("prismjs/components/prism-rust")
+require("prismjs/components/prism-lua")
+require("prismjs/components/prism-lisp")
 // --
 
 import Highlight, { defaultProps } from "prism-react-renderer";

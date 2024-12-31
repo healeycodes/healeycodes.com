@@ -36,14 +36,17 @@ export async function getStaticProps({ params }) {
   const getVideoDimensions = async (filePath): Promise<{ width: number, height: number }> => {
     return new Promise((resolve, reject) => {
       const mp4boxFile = mp4box.createFile();
-      mp4boxFile.onReady = (info) => {
-        resolve({ width: info.tracks[0].video.width, height: info.tracks[0].video.height });
-      };
       fs.readFile(filePath, (err, data) => {
         if (err) { throw err };
         const buf = new Uint8Array(data).buffer
         // @ts-ignore
         buf.fileStart = 0
+
+        mp4boxFile.onError = reject;
+        mp4boxFile.onReady = (info) => {
+          const videoTracks = info.tracks.filter(track => track.name === 'VideoHandler');
+          resolve({ width: Math.max(...videoTracks.map(t => t.video.width)), height: Math.max(...videoTracks.map(t => t.video.height)) });
+        };
         mp4boxFile.appendBuffer(buf);
         mp4boxFile.flush();
       });
