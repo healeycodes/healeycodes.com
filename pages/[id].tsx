@@ -135,7 +135,7 @@ export default function Post({
                     loop
                     muted
                     width={videoMetadata[props.src].width}
-                    height={videoMetadata[props.src].height}>
+                    height="auto">
                     <source src={`/posts/${id}/${props.src}`} type="video/mp4"></source>
                   </video>
                 }
