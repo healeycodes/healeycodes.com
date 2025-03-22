@@ -80,6 +80,10 @@ export function solveMazeWithRandomDPS(maze: Maze) {
     visited.add(`${x},${y}`);
 
     const current = maze.getCell(x, y);
+    if (!current) {
+      return
+    }
+    
     current.carveEdge(last);
 
     const neighbors: Cell[] = shuffle(current.uncarvedEdges());

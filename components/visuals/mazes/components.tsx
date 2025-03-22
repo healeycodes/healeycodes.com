@@ -72,7 +72,7 @@ async function wilsonsAlgorithm(maze: Maze, ctx: CanvasRenderingContext2D, cance
 
     // Continue until all cells have been visited
     while (unvisited.size > 0) {
-        let path = [];
+        let path: Cell[] = [];
         let current = randomMember(unvisited);
 
         // Perform a random walk until reaching a cell already in the maze
@@ -238,15 +238,15 @@ export const IntroMaze = () => {
                 renderMaze(maze, null, [], mazeCtx)
                 renderDebug(maze, null, [], debugCtx)
                 await sleep(1000);
-                a.carveEdge(b)
+                if (a && b) a.carveEdge(b)
                 renderMaze(maze, b, [], mazeCtx)
                 renderDebug(maze, null, [], debugCtx)
                 await sleep(1000);
-                b.carveEdge(c)
+                if (b && c) b.carveEdge(c)
                 renderMaze(maze, c, [], mazeCtx)
                 renderDebug(maze, null, [], debugCtx)
                 await sleep(1000);
-                c.carveEdge(d)
+                if (c && d) c.carveEdge(d)
                 renderMaze(maze, d, [], mazeCtx)
                 renderDebug(maze, null, [], debugCtx)
                 await sleep(1000);

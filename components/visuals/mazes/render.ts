@@ -178,7 +178,7 @@ export function renderMaze(
 
 export function renderBFSOverlay(
   maze: Maze,
-  visited: Set<Cell>,
+  visited: Set<Cell | null>,
   ctx: CanvasRenderingContext2D,
 ) {
   const canvas = ctx.canvas;
@@ -196,7 +196,7 @@ export function renderBFSOverlay(
     for (let x = 0; x < width; x++) {
       const cell = maze.getCell(x, y);
 
-      if (visited.has(cell)) {
+      if (visited.has(cell) && cell) {
         const centerX = x * cellSize + cellSize / 2;
         const centerY = y * cellSize + cellSize / 2;
 
@@ -226,7 +226,7 @@ export function renderBFSOverlay(
 
 export async function renderDebug(
   maze: Maze,
-  currentCell: Cell,
+  currentCell: Cell | null,
   currentPath: Cell[],
   ctx: CanvasRenderingContext2D,
 ) {

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Date_ from "./date";
 import { postStars } from '../data/posts'
 import siteConfig from '../siteConfig.json'
+import { ReactElement } from "react";
 
 const PostStar = <>
   <span className="star-container" title="star">*</span>
@@ -24,7 +25,7 @@ const PostStar = <>
 `}</style>
 </>
 
-export default function PostList({ posts, showYears=false }) {
+export default function PostList({ posts, showYears = false }) {
   const years: Record<number, any> = {};
   posts.forEach(post => {
     const postDate = new Date(post.date);
@@ -36,7 +37,7 @@ export default function PostList({ posts, showYears=false }) {
   });
 
   if (showYears) {
-    const ret = [];
+    const ret: ReactElement[] = []
     Object.keys(years)
       .sort((a, z) => parseInt(z) - parseInt(a))
       .forEach((year, i) => {

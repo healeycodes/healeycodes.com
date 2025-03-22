@@ -62,7 +62,14 @@ async function bfsFurthestCell(
       await new Promise((r) => setTimeout(r, stepTime));
     }
 
-    const { cell, dist } = queue.shift();
+    const item = queue.shift();
+    let cell;
+    let dist;
+    if (item) {
+      cell = item.cell
+      dist = item.dist
+    }
+    
     if (dist > maxDist) {
       maxDist = dist;
       furthestCell = cell;
