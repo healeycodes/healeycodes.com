@@ -47,7 +47,7 @@ export default function Layout({ children, title, description }) {
         :root {
           --text: #1d1d27;
           --input-background: #fff;
-          --link: #0265d5;
+          --link: #1772ea;
           --link-hover: #496495;
           --light-text: #73738b;
           --border: #b6b6c2;

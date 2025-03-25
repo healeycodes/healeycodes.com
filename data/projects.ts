@@ -33,6 +33,12 @@ export default [
     to: "/my-own-python-web-framework",
   },
   {
+    name: "caladan",
+    link: "https://github.com/healeycodes/caladan",
+    desc: "Experimental npm package manager. Installs from lockfile and runs bin scripts.",
+    to: "/installing-npm-packages-very-quickly",
+  },
+  {
     name: "untrusted-python",
     link: "https://github.com/healeycodes/untrusted-python",
     desc: "Run untrusted python code on the server.",
