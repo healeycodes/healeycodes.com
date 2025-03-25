@@ -69,21 +69,30 @@ export async function getStaticProps({ params }) {
   let prevPost = null;
   let nextPost = null;
   const nextAndPrevPosts = getNextAndPrevPosts(params.id);
+  // @ts-ignore
   if (nextAndPrevPosts.previous !== null) {
+    // @ts-ignore
     prevPost = {
+      // @ts-ignore
       id: nextAndPrevPosts.previous,
+      // @ts-ignore
       ...getPostData(nextAndPrevPosts.previous),
     };
   }
+  // @ts-ignore
   if (nextAndPrevPosts.next !== null) {
+    // @ts-ignore
     nextPost = {
+      // @ts-ignore
       id: nextAndPrevPosts.next,
+      // @ts-ignore
       ...getPostData(nextAndPrevPosts.next),
     };
   }
 
   return {
     props: {
+      // @ts-ignore
       id: params.id,
       source: postData.content,
       imageMetadata,
