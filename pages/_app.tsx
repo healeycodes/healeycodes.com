@@ -4,7 +4,7 @@ import { Analytics } from '@vercel/analytics/react';
 function MyApp({ Component, pageProps }) {
 
     return <>
-        <Analytics />
+        <Analytics debug={true} />
         <GCScript siteUrl={"https://healeycodes.goatcounter.com/count"} />
         <Component {...pageProps} />
     </>
