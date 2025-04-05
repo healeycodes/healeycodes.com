@@ -35,7 +35,7 @@ export default [
   {
     name: "caladan",
     link: "https://github.com/healeycodes/caladan",
-    desc: "Experimental npm package manager. Installs from lockfile and runs bin scripts.",
+    desc: "Experimental npm package manager. Installs from package.json/package-lock.json, and runs bin scripts.",
     to: "/installing-npm-packages-very-quickly",
   },
   {
