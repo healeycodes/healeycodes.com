@@ -207,7 +207,9 @@ export default function BitboardVisualizer({ codeLines, steps, stepDelay = 2000 
         .bitboard-info {
           margin-top: 0.25rem;
           margin-bottom: 0.25rem;
-          display: block;
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
           font-family: "IBM Plex Mono", monospace;
           font-size: 0.875rem;
           width: 100%;
@@ -220,7 +222,6 @@ export default function BitboardVisualizer({ codeLines, steps, stepDelay = 2000 
           padding: 0.5rem;
           background-color: #f9fafb;
           border-radius: 0.25rem;
-          margin-bottom: 0.25rem;
         }
 
         .info-item.binary {
