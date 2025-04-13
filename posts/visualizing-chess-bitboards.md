@@ -60,8 +60,8 @@ Without bitboards, a program has to perform many more (magnitudes more!) instruc
 
 ```js
 attacks = [];
-for (let i = 0; i < 64; i++) {
-    let piece = board.getPiece(i);
+for (i = 0; i < 64; i++) {
+    piece = board.getPiece(i);
     if (piece === "P") { // White pawn
 
         // Check left attack (forward-left)
