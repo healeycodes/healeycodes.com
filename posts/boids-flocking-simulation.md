@@ -48,7 +48,7 @@ func (g *Game) Layout(outsideWidth, outsideHeight int) (int, int) {}
 func main() {}
 ```
 
-### Game Loops
+## Game Loops
 
 Almost every game that you've played uses a programming pattern called a [Game Loop](https://gameprogrammingpatterns.com/game-loop.html).
 
@@ -127,7 +127,7 @@ The last three values are really fun to play with and greatly affect the shape a
 
 I've expanded some of Craig Reynolds' low-resolution diagrams to help explain the three rules that define a boid's behavior.
 
-### Separation
+## Separation
 
 > Steer to avoid crowding local flockmates.
 
@@ -174,7 +174,7 @@ if separationTotal > 0 {
 boid.acceleration.Add(separationSteering)
 ```
 
-### Alignment
+## Alignment
 
 > Steer towards the average heading of local flockmates.
 
@@ -206,7 +206,7 @@ if alignTotal > 0 {
 boid.acceleration.Add(alignSteering)
 ```
 
-### Cohesion
+## Cohesion
 
 > Steer to move toward the average position of local flockmates
 

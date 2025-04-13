@@ -14,13 +14,13 @@ Most of my professional experience is with dynamic languages like JavaScript and
 
 It's very rewarding to make things on your screen move, dance, and die. This is one of the reasons that learning web development is so much fun. Except nothing dies on the web (0.03% of the web still use Internet Explorer 5/6/7!).
 
-### My Reasons for Learning Go
+## My Reasons for Learning Go
 
 I love the single binary deployment of Go. It's totally opposite to Node/Python and it's a lot easier for me to share small things with my friends. People on my team at work are really excited by Go. It's fun to talk to them about the language and I know if I continue to learn they will be interested in hearing about my experience. With other people picking it up, there's a chance that we'll develop some Go microservices in the future too.
 
 I could easily say that I'm learning Go because I like building high-performance applications for the web (which certainly excites me) but one of the main reasons is that it's new and exciting. There's an online buzz for the language similar to the Rust community. I enjoy learning and seeking that spark when something clicks. It's also well-documented and supported (e.g. StackOverflow threads), and there seem to be regular conferences and meetups near me.
 
-### Conway's Game of Life
+## Conway's Game of Life
 
 Conway's Game of Life is a _cellular automaton_ but that doesn't mean a lot to most people. Imagine a grid of cells that exist in two states: alive or dead. The 'animation' that you see is actually successive generations being rendered to the screen. There are four rules that help decide the next generation's state. Wikipedia describes them thusly.
 
@@ -55,7 +55,7 @@ Every cell has a 1-in-15 chance of being alive during the first generation. Ebit
 
 Conway's Game of Life seems to be a rite of passage for Computer Science students. At least, that's what I've learned from the web. It didn't come up in any of my classes so it's been fun to play around with it and read about the amazing things people have created with it. For example, a [replica of a digital clock](https://codegolf.stackexchange.com/a/111932) that has even time-steps.
 
-### Interaction
+## Interaction
 
 ![Interaction GIF](interaction.gif)
 
@@ -70,7 +70,7 @@ if ebiten.IsMouseButtonPressed(ebiten.MouseButtonLeft) {
 
 As low-level as Golang is, it seems to keep out of your way by default.
 
-### Go Modules
+## Go Modules
 
 I understand that Go's module system is a fairly recent addition. I created a mod file by running `go mod init github.com/my/repo` and then whenever I built or ran my code the dependencies were automatically updated. Changing development setup was as easy as cloning the repository and running `go install`.
 

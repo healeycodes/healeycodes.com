@@ -8,7 +8,7 @@ description: "Solutions for: Keyboard Row, Reorder Log Files, and Single Number.
 
 I've been going through the problems roughly sorted by their acceptance rate: higher `->` lower. Today, the difficulty is slowly creeping up. I'm looking forward to tackling some Mediums soon.
 
-### [500. Keyboard Row](https://leetcode.com/problems/keyboard-row/)
+## [500. Keyboard Row](https://leetcode.com/problems/keyboard-row/)
 
 Problem: Given a list of `words`, return only those that can be typed using one keyboard row
 
@@ -41,7 +41,7 @@ Runtime complexity: `O(n)`.
 
 Spacetime complexity: `O(1)`.
 
-### [937. Reorder Log Files](https://leetcode.com/problems/reorder-data-in-log-files/)
+## [937. Reorder Log Files](https://leetcode.com/problems/reorder-data-in-log-files/)
 
 Problem: Given an array of `logs` with alphanumeric identifiers at the start, sort them so that *letter-only* logs come before *digit-only* logs.
 
@@ -82,7 +82,7 @@ Runtime complexity: Separate logs `O(n)`, sort letter logs `O(n log n)`, join lo
 
 Spacetime complexity: `O(n)`.
 
-### [136. Single Number](https://leetcode.com/problems/uncommon-words-from-two-sentences/)
+## [136. Single Number](https://leetcode.com/problems/uncommon-words-from-two-sentences/)
 
 Problem: Given an array `N` of integers, numbers all appear twice except for one. Return that integer.
 

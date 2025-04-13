@@ -8,7 +8,7 @@ description: "Episode one of tacking Leetcode problems and discussing solutions.
 
 This series involves tackling Leetcode problems and discussing my solutions with an aim to improve at problem solving and algorithmic analysis. For most problems, I will be aiming for the most optimal solution. I've recently been reviewing some academic content on algorithms and data-structures.
 
-### [771. Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/)
+## [771. Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/)
 
 Problem: Given a string `J` of unique characters, how many unique characters from this string are present in string `S`.
 
@@ -38,7 +38,7 @@ After reading the discussion board, I saw that this code can be improved by usin
 
 > Counter objects - A counter tool is provided to support convenient and rapid tallies.
 
-### [929. Unique Email Addresses](https://leetcode.com/problems/unique-email-addresses/)
+## [929. Unique Email Addresses](https://leetcode.com/problems/unique-email-addresses/)
 
 Problem: Given a list `E` of emails, return the number of distinct emails.
 
@@ -67,7 +67,7 @@ My solution is not optimized for speed but solves the problem with a reasonably 
 
 To be fully optimal, I presume that a careful manual loop would be required.
 
-### [709. To Lower Case](https://leetcode.com/problems/to-lower-case/)
+## [709. To Lower Case](https://leetcode.com/problems/to-lower-case/)
 
 Problem: implement ToLowerCase() (presumably without standard library functions!)
 

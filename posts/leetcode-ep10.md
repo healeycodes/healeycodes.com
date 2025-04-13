@@ -14,7 +14,7 @@ The most beneficial path to me at this point is to use both types of resources.
 
 Since I have a fixed number that I aim for each day, I am finding myself shying away to the more simple problems but this isn't nesscarily a bad thing. The problems, the research, and the post-solve reading serve as building blocks for taking on the harder ones.
 
-### [137. Single Number II](https://leetcode.com/problems/single-number-ii/)
+## [137. Single Number II](https://leetcode.com/problems/single-number-ii/)
 
 Problem: Given an array of integers, find the only element that doesn't appear three times.
 
@@ -47,7 +47,7 @@ Runtime complexity: `O(n)`.
 
 Spacetime complexity: `O(n)`.
 
-### [509. Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
+## [509. Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
 
 Problem: Given `n` find the `n`th Fibonacci number.
 
@@ -82,7 +82,7 @@ Runtime complexity: `O(n)`.
 
 Space complexity: `O(1)`.
 
-### [383. Ransom Note](https://leetcode.com/problems/ransom-note/)
+## [383. Ransom Note](https://leetcode.com/problems/ransom-note/)
 
 Problem: Given a ransom note string and a magazine string work out whether the ransom note can be constructed from the magazine.
 

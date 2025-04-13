@@ -345,7 +345,7 @@ The strongest argument in favor of this approach is:
 
 However, there are privacy implications when using hashed IP addresses, user agents, and similar pieces of data. Read more in [Introduction to the hash function as a personal data pseudonymisation technique](https://edps.europa.eu/data-protection/our-work/publications/papers/introduction-hash-function-personal-data_en) on the European Data Protection Supervisor.
 
-### Granular Interactions
+## Granular Interactions
 
 With or without session support, it might also be useful to track click events. These events could be configured manually, or automatically e.g. by attaching an event listener to every button which spawns new tracking pixels.
 

@@ -55,7 +55,7 @@ for (let i = 0; i < window.localStorage.length; i++) {
 
 You can try some of these out in your developer console right here. DEV stores the following localStorage keys for me as I'm writing. Make sure **not to delete** any of these though! `algoliasearch-client-js`, `config_body_class`, `current_user`, `https://dev.to/new`, `pusherTransportTLS`.
 
-#### The App
+## The App
 
 Here's what we'll be making. A small but practical note-taking app. Aside from spacing, it uses little styling ([send a pull request](https://github.com/healeycodes/tiny-note-taker)). What's important is how the app communicates with the client's browser storage.
 

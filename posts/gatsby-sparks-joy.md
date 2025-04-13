@@ -3,6 +3,7 @@ title: "Gatsby Sparks Joy"
 date: "2020-01-11"
 tags: ["javascript"]
 description: "Migrating from Jekyll to Gatsby."
+outdated: true
 ---
 
 I migrated from Jekyll to Gatsby recently and so far I've had a really neat time. The whole process took about a week of casual coding (a few hours here and there). The Gatsby ecosystem enabled me to quickly add a few features to my blog that I thought were missing; dark mode, better syntax highlighting, and the ability to design with components.
@@ -81,7 +82,7 @@ body.dark {
 }
 ```
 
-### Designing With Components
+## Designing With Components
 
 The first React component I wrote for my blog was for wrapping the `<ThemeToggler />` from `gatsby-plugin-dark-mode` into a component. It switches between a sun and a moon to let the user know which theme can be switched to. The base for this is the example code from the [docs](https://www.gatsbyjs.org/packages/gatsby-plugin-dark-mode/).
 

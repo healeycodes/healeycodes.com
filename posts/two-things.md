@@ -6,7 +6,7 @@ path: "career/codereview/javascript/2019/03/12/two-things.html"
 description: "On enjoying being part of a team."
 ---
 
-#### Code review is the best part of the job
+## Code review is the best part of the job
 
 I went from being afraid of being judged to embracing team-spirit. Today, I find myself completing a ticket and looking forward to placing it in review. I really enjoy the feedback I receive from my peers and the conversations that start as a result. It's a great chance to learn more about the project's architecture and patterns. In a past life, I was a Creative Writing student so I understand that editing something *always* makes it better.
 
@@ -14,7 +14,7 @@ I like giving as much as getting. I was encouraged from day one to join in the r
 
 Software engineering as a field has so much breadth that even people starting out in the industry have something to offer a team. Whether they read a tech blog, built a project in the stack, or went deep in the documentation.
 
-#### Coding is one of the least important parts of the job
+## Coding is one of the least important parts of the job
 
 Don't get me wrong, if I start slinging bad code into review, I'm going to run into issues. However, I've found that the most important skill at my job is communication. I need to understand what my project manager is telling me so that I can translate it into code. I need to then listen to my manager's feedback about my approach. If I can't explain my design to my teammates then it will take them longer to understand my (hopefully self-documenting) code.
 

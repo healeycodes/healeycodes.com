@@ -10,7 +10,7 @@ Two out of three problems involve reversing today hence the title.
 
 It's also warmer than yesterday and my cold has passed .. onto to my fiancée (sorry).
 
-### [557. Reverse Words in a String III](https://leetcode.com/problems/reverse-words-in-a-string-iii/)
+## [557. Reverse Words in a String III](https://leetcode.com/problems/reverse-words-in-a-string-iii/)
 
 Problem: Reverse the words of a string `N` while preserving the word order.
 
@@ -32,7 +32,7 @@ Runtime complexity: `O(3n)` -> `O(n)`.
 
 Space complexity: I'm not sure. Depending on the implementation, I *believe* that it will mimic the runtime complexity.
 
-### [922. Sort Array By Parity II](https://leetcode.com/problems/sort-array-by-parity-ii/)
+## [922. Sort Array By Parity II](https://leetcode.com/problems/sort-array-by-parity-ii/)
 
 Problem: Sort array `N` so that the even indices have even numbers and the odd indices have odd numbers.
 
@@ -70,7 +70,7 @@ Space complexity is `O(2n)` which becomes `O(n)`.
 
 I looked up some solutions where it was solved in-place without additional data structures so that in future problems I'll have a better idea of where to head. They involved managing two pointers for even and odd and being lazy about swapping. In my solution, a perfectly sorted list (to the problem spec) would be resorted regardless.
 
-### [344. Reverse String](https://leetcode.com/problems/reverse-string/)
+## [344. Reverse String](https://leetcode.com/problems/reverse-string/)
 
 Problem: Reverse a string `N`
 

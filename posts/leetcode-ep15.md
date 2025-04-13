@@ -10,7 +10,7 @@ I felt like it was time to knock some of these tree questions out. I find that s
 
 I went over Heap's Algorithm for solving permutation problems earlier. It hasn't fully *clicked* with me yet though. More studying is required -- as well as checking out alternative solutions. Heap's feels a little heavy-handed to me.
 
-### [226. Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/)
+## [226. Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/)
 
 Problem: Invert a binary tree.
 
@@ -50,7 +50,7 @@ Runtime complexity: `O(n)`.
 
 Spacetime complexity: `O(n)`.
 
-### [590. N-ary Tree Postorder Traversal](https://leetcode.com/problems/n-ary-tree-postorder-traversal/)
+## [590. N-ary Tree Postorder Traversal](https://leetcode.com/problems/n-ary-tree-postorder-traversal/)
 
 Problem: Return the postorder traversal of a tree's values.
 
@@ -88,7 +88,7 @@ Runtime complexity: `O(n)`.
 
 Space complexity: `O(n)`.
 
-### [589. N-ary Tree Preorder Traversal](https://leetcode.com/problems/n-ary-tree-preorder-traversal/)
+## [589. N-ary Tree Preorder Traversal](https://leetcode.com/problems/n-ary-tree-preorder-traversal/)
 
 Problem: Return the preorder traversal of a tree's values.
 

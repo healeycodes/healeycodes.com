@@ -11,7 +11,7 @@ I saw this question doing the rounds on social media. [Apparently](https://www.r
 
 There are a few variations but this question is normally asked in stages which get progressively harder.
 
-#### 1. Implement a loading bar that animates from 0 to 100% in 3 seconds
+## 1. Implement a loading bar that animates from 0 to 100% in 3 seconds
 
 This can be done purely with CSS. If something can be done purely with CSS I tend to go for that option. My rationale is that it's easier to refactor something that is pure CSS than trying to extend a quick JavaScript hack. CSS is very declarative, it's more straightforward to read and understand what's going on under the hood.
 
@@ -51,7 +51,7 @@ At the very least, this quick answer shows that you know what `keyframes` and yo
 
 __[CodePen](https://codepen.io/healeycodes/pen/pmKQzM)__
 
-#### 2. Start loading bar animation upon a button click
+## 2. Start loading bar animation upon a button click
 
 Now we're moving into JavaScript land. I've always thought that `transition` was neat as heck so I'm going to use that with JavaScript to add a class to the `progress-bar` element. It enables you to "define the transition between two states of an element" [(MDN)](https://developer.mozilla.org/en-US/docs/Web/CSS/transition).
 
@@ -95,7 +95,7 @@ function loadBar () {
 
 __[CodePen](https://codepen.io/healeycodes/pen/MdXzqb)__
 
-#### 3. Queue multiple loading bars if the button is clicked more than once. Loading bar N starts animating with loading bar N-1 is done animating.
+## 3. Queue multiple loading bars if the button is clicked more than once. Loading bar N starts animating with loading bar N-1 is done animating.
 
 Here it gets more interesting. There is a way to iterate on our previous solution by removing and adding classes but that feels hacky. I think the intention is for you to use more JavaScript here. Technical interview questions don't really have a finish point. There's always restrictions, extensions, and what-ifs that can be thrown around. I'd love to see what you come up with before reading any further 👀.
 
@@ -158,7 +158,7 @@ function tick() {
 
 __[CodePen](https://codepen.io/healeycodes/pen/ZNRVBa)__
 
-#### 4. Do the same thing but without timers!
+## 4. Do the same thing but without timers!
 
 Okay, they don't really ask this in the interview but someone mentioned `requestAnimationFrame` in the comments on DEV and I thought it would be fun to build an example using it while emulating the previous answer.
 
@@ -224,7 +224,7 @@ function loadBar (increment) {
 
 __[CodePen](https://codepen.io/healeycodes/pen/EzpJNo)__
 
-### End notes
+## End notes
 
 Top marks if you have been shouting `<progress>` at me for the whole article. Yup, this [element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress) has been there since HTML5. You manage it by setting two attributes `max` and `value`. CSS Tricks have an [article](https://css-tricks.com/html5-progress-element/) on how to style and animate it. They also cover the different states, determinate and indeterminate — the latter meaning "progress unknown". These states are great because they give us a native way to communicate with the user.
 

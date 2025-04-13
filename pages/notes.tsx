@@ -20,7 +20,7 @@ export default function Notes({ notes }: { notes: Note[] }) {
     return (
         <Layout {...seo}>
             <h1>Notes</h1>
-            <p className="notes-intro">This is a new page I'm trying out. I'll put shorter content here; thoughts and ideas that aren't full posts.
+            <p className="notes-intro">Thoughts and ideas that aren't full posts.
             </p>
             <main>
                 {

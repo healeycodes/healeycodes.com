@@ -12,7 +12,7 @@ Here's an [test page](https://healeycodes.github.io/embed-DEV-posts/example/) wh
 
 [![](test-embedded.png)](https://healeycodes.github.io/embed-DEV-posts/example/)
 
-#### How easy is the DEV API to use?
+## How easy is the DEV API to use?
 
 [Easy](https://dev.to/api/articles?username=healeycodes). The articles route is `https://dev.to/api/articles?username=$user`. Originally, I experimented with getting more than the latest 30 posts, which is the default. This can be done by adding `&page=$pageNum` — but requesting multiple pages introduces a delay. Since it's impossible to know the number of pages of posts, you need to keep going until you hit an empty page. A late-loading list doesn't make for great UX.
 

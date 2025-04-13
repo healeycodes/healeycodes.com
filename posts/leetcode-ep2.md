@@ -8,7 +8,7 @@ description: "Solutions for: N-Repeated Element in Size 2N Array, Univalued Bina
 
 After warming up (literally, I cycled home in *frosty* weather) I tackled some more Leetcode problems today.
 
-### [961. N-Repeated Element in Size 2N Array](https://leetcode.com/problems/n-repeated-element-in-size-2n-array/submissions/)
+## [961. N-Repeated Element in Size 2N Array](https://leetcode.com/problems/n-repeated-element-in-size-2n-array/submissions/)
 
 Problem: Given an list `A` of size `2N`, there are `N+1` unique elements -- which one is repeated `N` times?
 
@@ -37,7 +37,7 @@ This solution has a runtime complexity of `O(n)` and a space complexity of `O(n)
 
 Leetcode's tests for this problem only have unique elements and so a Set is technically faster but I prefer my solution as it's more 'correct' per the problem statement.
 
-### [965. Univalued Binary Tree](https://leetcode.com/problems/univalued-binary-tree/submissions/)
+## [965. Univalued Binary Tree](https://leetcode.com/problems/univalued-binary-tree/submissions/)
 
 Problem: Are all the values of this binary tree the same?
 
@@ -73,7 +73,7 @@ class Solution:
 
 Whatever the solution to this problem, the runtime complexity will be `O(n)` as every node must be touched to satisfy the problem condition. We used DFS so the stack will only hold one singular winding tree-root in memory at once. Hence the space complexity is `O(d)` where `d` is the depth of the tree.
 
-### [804. Unique Morse Code Words](https://leetcode.com/problems/unique-morse-code-words/)
+## [804. Unique Morse Code Words](https://leetcode.com/problems/unique-morse-code-words/)
 
 Problem: Given a list of lowercase words, how many unique morse code sequences are there?
 

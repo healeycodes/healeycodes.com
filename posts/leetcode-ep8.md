@@ -10,7 +10,7 @@ Three Mediums today. I looked at the Parentheses problem last night so it's been
 
 My fiancée was actually at a Python meet-up while I was solving these. We're a real pair of Pythonistas.
 
-### [535. Encode and Decode TinyURL](https://leetcode.com/problems/encode-and-decode-tinyurl/)
+## [535. Encode and Decode TinyURL](https://leetcode.com/problems/encode-and-decode-tinyurl/)
 
 Problem: Create an URL shortening service.
 
@@ -60,7 +60,7 @@ Runtime complexity: `O(1)`.
 
 Spacetime complexity: `O(n)`.
 
-### [701. Insert into a Binary Search Tree](https://leetcode.com/problems/insert-into-a-binary-search-tree/)
+## [701. Insert into a Binary Search Tree](https://leetcode.com/problems/insert-into-a-binary-search-tree/)
 
 Problem: Given the root node of a BST, insert a given value (that is guaranteed to not already appear in the BST).
 
@@ -101,7 +101,7 @@ Runtime complexity: `O(lg n)`.
 
 Space complexity: `O(1)` -- I think. I believe we are destorying references as we go so the stack size remains constant.
 
-### [921. Minimum Add to Make Parentheses Valid](https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/)
+## [921. Minimum Add to Make Parentheses Valid](https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/)
 
 Problem: Given a string of parentheses, calculate the minimum number of additions to make it 'valid'.
 
@@ -136,7 +136,7 @@ Runtime complexity: `O(n)`.
 Spacetime complexity: `O(1)`.
 
 
-### [824. Goat Latin](https://leetcode.com/problems/goat-latin/)
+## [824. Goat Latin](https://leetcode.com/problems/goat-latin/)
 
 Problem: Translate a sentence `S` into Goat Latin.
 

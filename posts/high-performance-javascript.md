@@ -14,7 +14,7 @@ I like programming puzzles. I also like to go _fast_. We're going to take some L
 
 The environment we're targetting is `nodejs 10.15.0` with `--harmony` ([source](https://support.leetcode.com/hc/en-us/articles/360011833974-What-are-the-environments-for-the-programming-languages-)). The online judge system uses relatively small inputs for test cases as far as I can tell.
 
-### First problem
+## First problem
 
 [771. Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/) ~ _You're given strings `J` representing the types of stones that are jewels, and `S` representing the stones you have.  Each character in `S` is a type of stone you have.  You want to know how many of the stones you have are also jewels._
 
@@ -81,7 +81,7 @@ let numJewelsInStones = function(J, S) {
 
 Et voila, our `100% fastest` [submission](https://leetcode.com/submissions/detail/229804303/). In my tests, this was actually twice as faster as the Set version. Other optimizations I skipped testing were caching lengths, using a while loop instead of a for loop, and placing the incrementor before the number (`++myJewels` vs `myJewels++`).
 
-### Second problem
+## Second problem
 
 [345. Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/) ~ _Write a function that takes a string as input and reverse only the vowels of a string._
 
@@ -183,7 +183,7 @@ let reverseVowels = function(s) {
 
 (I'm sorry).
 
-### Third problem
+## Third problem
 
 [509. Fibonacci Number](https://leetcode.com/problems/fibonacci-number/) ~ _Calculate the nth Fibonacci number_.
 

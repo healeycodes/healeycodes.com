@@ -8,7 +8,7 @@ description: "A little on the history of WebSockets and a brief overview on how 
 
 A little over six months ago, I completed my thesis on WebSocket server performance. I've had a chance to use them in (global) production, and lemme tell you, this technology kicks ass!
 
-#### The Past
+## The Past
 
 The model of the internet is request -> response. You send a request for a page by typing an address in your URL bar -> a web server then responds with data. The information you sent, and the information you received, has what's called a *header*, the rest (what you see on the page) is called the body.
 
@@ -16,7 +16,7 @@ The model of the internet is request -> response. You send a request for a page 
 
 These headers contain critical information about the data transfer. However, as we'll see later on, these headers and this request/response cycle can be problematic when we want to do things in real-time.
 
-#### The Present
+## The Present
 
 We've been discussing the HTTP protocol. *WebSockets* refer to the [WebSocket protocol](https://tools.ietf.org/html/rfc6455). Like `http://` and `https://`, we have `ws://` and `wss://` for WebSockets. (The *S* stands for secure). WebSockets are bidirectional. This means that messages can be sent both ways. There doesn't need to be a request and a message doesn't need to be a response. Once a connection has been made, you can sling data whichever way you wish. (Under the hood, here we're talking about [data frames](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_servers#Exchanging_Data_Frames)).
 
@@ -94,7 +94,7 @@ With polling, every request and response costs processing, memory, and bandwidth
 
 The server pings and the client responds (by the spec, as soon as possible) with a pong. Websockets/ws has this built in. You can call `ws.ping()` at any point after the connection has been made. The endpoint pongs back which triggers the `pong` event. Your browser's `WebSocket class` does this automatically.
 
-#### The Future
+## The Future
 
 Next time you see Twitter has new posts for you, consider the hardworking sockets — and their little heartbeats — which brought you this information, and say thank you to [RFC 6455](https://tools.ietf.org/html/rfc6455) ❤️
 
