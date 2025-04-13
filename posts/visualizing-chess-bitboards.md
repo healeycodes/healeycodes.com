@@ -5,13 +5,11 @@ tags: ["javascript"]
 description: "Brief introduction to chess bitboards and move generation with animations."
 ---
 
-Bitboards are an efficient way to store game state in (usually) 64-bit integers. There are 64 positions on a chess board so we can use each bit as an on/off switch.
+When simulating board games on a computer, one of the challenges is keeping track of the game pieces. Bitboards are an efficient way to store game state in (usually) 64-bit integers. There are 64 positions on a chess board so we can use each bit as an on/off switch.
 
-I want to describe a board where `f5` is occupied. We can use `67108864`.
+Let's say I want to describe a board where `f5` is occupied. For that, we can use the number `67108864`. In decimal notation, it doesn't seem much like a chessboard. In hex, we can see that there's some structure: `0x0000000004000000`.
 
-This number doesn't really scream that `f5` is occupied though.
-
-I'll show it represented as a binary number with 64 digits.
+For me, it starts to make more sense when representated as a binary number with 64 digits.
 
 ```text
 0 0 0 0 0 0 0 0  I've added a line break
@@ -23,8 +21,6 @@ I'll show it represented as a binary number with 64 digits.
 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0
 ```
-
-In my examples, I'll use hex representation. In this case that would be `0x0000000004000000`.
 
 We can't pack an _entire_ game's state into a number (e.g. piece color, piece type, castling rights) so we use groups of numbers.
 
@@ -60,7 +56,7 @@ Two numbers will probably stick out; `7` and `9`. If you picture that long row o
 
 <div className="bitboards" id="whitePawnAttacks"></div>
 
-Without bitboards, a program has to perform many more (magnitudes more!) instructions. The equivalent code, without bitwise operations, would look something like this.
+Without bitboards, a program has to perform many more (magnitudes more!) instructions. The equivalent code, without bitwise operations, would look something like this:
 
 ```js
 attacks = [];

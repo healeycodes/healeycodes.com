@@ -130,8 +130,7 @@ export default function BitboardVisualizer({ codeLines, steps, stepDelay = 2000 
         }
 
         .visualizer-content {
-          display: flex;
-          flex-direction: column;
+          display: block;
         }
 
         .code-line.highlighted {
@@ -160,10 +159,7 @@ export default function BitboardVisualizer({ codeLines, steps, stepDelay = 2000 
 
         .square {
           position: relative;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
+          display: block;
           border: 1px solid #e5e7eb;
         }
 
@@ -182,9 +178,7 @@ export default function BitboardVisualizer({ codeLines, steps, stepDelay = 2000 
         .bit-overlay {
           position: absolute;
           inset: 0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          display: block;
           transition: opacity 0.5s;
           background-color: rgba(59, 130, 246, 0.5);
           opacity: 0;
@@ -213,9 +207,7 @@ export default function BitboardVisualizer({ codeLines, steps, stepDelay = 2000 
         .bitboard-info {
           margin-top: 0.25rem;
           margin-bottom: 0.25rem;
-          display: flex;
-          flex-direction: column;
-          gap: 0.25rem;
+          display: block;
           font-family: "IBM Plex Mono", monospace;
           font-size: 0.875rem;
           width: 100%;
@@ -228,6 +220,7 @@ export default function BitboardVisualizer({ codeLines, steps, stepDelay = 2000 
           padding: 0.5rem;
           background-color: #f9fafb;
           border-radius: 0.25rem;
+          margin-bottom: 0.25rem;
         }
 
         .info-item.binary {
