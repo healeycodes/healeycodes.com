@@ -7,7 +7,7 @@ description: "Brief introduction to chess bitboards and move generation with ani
 
 When simulating board games on a computer, one of the challenges is keeping track of the game pieces. Bitboards are an efficient way to store game state in (usually) 64-bit integers. There are 64 positions on a chess board so we can use each bit as an on/off switch.
 
-Let's say I want to describe a board where `f5` is occupied. For that, we can use the number `67108864`. In decimal notation, it doesn't seem much like a chessboard. In hex, we can see that there's some structure: `0x0000000004000000`.
+Let's say I want to describe a board where `f5` is occupied. For that, we can use the number `67108864`. In decimal notation, it doesn't look that much like a chessboard. In hex, we can see that there's a little more structure: `0x0000000004000000`.
 
 For me, it starts to make more sense when representated as a binary number with 64 digits.
 
@@ -24,12 +24,12 @@ For me, it starts to make more sense when representated as a binary number with 
 
 We can't pack an _entire_ game's state into a number (e.g. piece color, piece type, castling rights) so we use groups of numbers.
 
-We can use _bitwise_ operations on these numbers to manipulate individual bits using operators like `AND`, `OR`, `XOR`, `NOT`, and bit shifts. These operations are fast (they're directly executed by the CPU in a single clock cycle with no need for complex computation or memory access).
+We can use _bitwise_ operations on these numbers to manipulate individual bits using operators like `AND`, `OR`, `XOR`, `NOT`, and bit shifts. These operations are are among the fastest operations a CPU can perform. Bitboards are also cache-friendly since they pack data into fewer memory locations.
 
 In order to move a piece at `f5` forwards we can shift the bitboard left by 8 bits.
 
 ```js
-pieceOnF5 = 0x0000000004000000n;
+pieceOnF5 = 0x0000000004000000;
 // Move one rank forward (from f5 to f6)
 pieceOnF5 << 8n; // 0x0000000400000000n
 ```
@@ -40,19 +40,19 @@ Why 8? Well, if you picture all of a chessboard's squares lined up in one long r
 
 A mask is a bitboard used to isolate, modify, or test specific squares using bitwise operations.
 
-An example of a mask might be the `A` file: `0x0101010101010101`. To check if there are any pieces there we can use bitwise `AND`.
+An example of a mask might be the `A` file: `0x0101010101010101`. To check if there are any pieces on the `A` file, we can use bitwise `AND`.
 
 ```js
-if (pieces & 0x0101010101010101n) {
-  // There is at least one piece on the A file
+if (pieces & 0x0101010101010101) {
+  // At least one piece on the A file
 }
 ```
 
-Even though I know a little bit about bitboards, I still find them fairly confusing and unintuitive. I'm also prone to mistakes while working with them.
+Even though I know a little bit about bitboards, I still find them confusing and unintuitive. I'm also prone to mistakes while working with them.
 
 I've found that visual examples (and interactive debugging tools) can be very helpful. Let's take a look at how we can generate the initial white pawn attacks.
 
-Two numbers will probably stick out; `7` and `9`. If you picture that long row of chessboard squares I mentioned before, think about how many squares you'd have to move to be diagonally forwards or backwards from your starting position.
+Two numbers will probably stick out in the below example; `7` and `9`. If you picture that long row of chessboard squares I mentioned before, think about how many squares you'd have to move to be diagonally forwards or backwards from your starting position.
 
 <div className="bitboards" id="whitePawnAttacks"></div>
 
@@ -61,19 +61,19 @@ Without bitboards, a program has to perform many more (magnitudes more!) instruc
 ```js
 attacks = [];
 for (i = 0; i < 64; i++) {
-    piece = board.getPiece(i);
-    if (piece === "P") { // White pawn
+  piece = board.getPiece(i);
+  if (piece === "P") { // White pawn
 
-        // Check left attack (forward-left)
-        if (!board.isOnFileA(i)) {
-            attacks.push(i + 7);
-        }
-        
-        // Check right attack (forward-right)
-        if (!board.isOnFileH(i)) {
-            attacks.push(i + 9);
-        }
+    // Check left attack (forward-left)
+    if (!board.isOnFileA(i)) {
+        attacks.push(i + 7);
     }
+    
+    // Check right attack (forward-right)
+    if (!board.isOnFileH(i)) {
+        attacks.push(i + 9);
+    }
+  }
 }
 ```
 
@@ -83,9 +83,11 @@ I've got one more example where we generate a knight's attacks. We start with th
 
 Inside a chess engine, we would then use more bitwise operations to see if those positions were occupied so we could evaluated the strength of each potential move.
 
-The "not file" masks here are used to prevent invalid wraparounds.
+The "not file" masks here are used to prevent invalid wraparounds. From `g5`, these masks stop the knight from moving to `l6` and `l4` (which aren't real squares).
 
 <div className="bitboards" id="knightAttack"></div>
+
+In practice, chess engines often pre-compute and store attack masks in lookup tables for even better performance, rather than calculating them on the fly like this – as well as other sophisticated techniques like [zobrist hashing](https://www.chessprogramming.org/Zobrist_Hashing) and [magic bitboard](https://www.chessprogramming.org/Magic_Bitboards).
 
 I hope this helps show how bitboards can be the building blocks of any kind of chess computation.
 
