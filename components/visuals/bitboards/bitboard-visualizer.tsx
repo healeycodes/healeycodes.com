@@ -17,9 +17,9 @@ export default function BitboardVisualizer({ codeLines, steps, stepDelay = 2000 
     const [bitIndices, setBitIndices] = useState<number[]>([])
 
     // Ensure we have valid steps and a valid current step
-    const currentStep = steps && steps.length > 0 ? steps[currentStepIndex] : { highlightLines: [], board: 0n }
+    const currentStep = steps && steps.length > 0 ? steps[currentStepIndex] : { highlightLines: [], board: BigInt(0) }
     const boardValue =
-        currentStep && typeof currentStep.board === "string" ? BigInt(currentStep.board) : currentStep?.board || 0n
+        currentStep && typeof currentStep.board === "string" ? BigInt(currentStep.board) : currentStep?.board || BigInt(0)
 
     // Convert bitboard to binary string (padded to 64 bits)
     const binaryString = boardValue.toString(2).padStart(64, "0")
