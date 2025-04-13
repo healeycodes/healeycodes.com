@@ -12,7 +12,7 @@ I drank one coffee more than I should have and completed my daily three problems
 
 As I hoped, each successful problem has served as a building block for tackling harder problems. The mini-research I do after getting an optimal solution is vital. The Leetcode discussion board, and the wider internet, information that really clicks because the problem that the information helps to solve is still fresh in my head.
 
-### [938. Range Sum of BST](https://leetcode.com/problems/range-sum-of-bst/)
+## [938. Range Sum of BST](https://leetcode.com/problems/range-sum-of-bst/)
 
 Problem: Given a binary search tree, return the sum of all values between `L` and `R`.
 
@@ -52,7 +52,7 @@ Runtime complexity: We may have to search the whole tree, so: `O(n)`.
 
 Spacetime complexity: Nothing is created, so `O(1)`? Either that, or in the worst case we hold the entire tree in memory (on the stack).
 
-### [807. Max Increase to Keep City Skyline](https://leetcode.com/problems/max-increase-to-keep-city-skyline/)
+## [807. Max Increase to Keep City Skyline](https://leetcode.com/problems/max-increase-to-keep-city-skyline/)
 
 Problem: Given a 2D grid, find the total possible increase to values so that the max(row) and max(column) isn't increased.
 
@@ -93,7 +93,7 @@ Runtime complexity: `O(2n)` -> `O(n)`.
 
 Space complexity: `O(2*sqrt(n)` -> `O(sqrt(n)` -- an interesting one.
 
-### [791. Custom Sort String](https://leetcode.com/problems/custom-sort-string/)
+## [791. Custom Sort String](https://leetcode.com/problems/custom-sort-string/)
 
 Problem: Return a permutation of string `T` so that the letters are sorted in accordance with the order of string `S`.
 

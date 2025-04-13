@@ -10,7 +10,7 @@ Today we're doing 'Saturday Morning Coffee' solutions -- instead of '10pm Work N
 
 Continuing with the streak of string-based problems, all of the code here is 'optimal' -- i.e., *~97th* percentile or higher in the rankings.
 
-### [953. Verifying an Alien Dictionary](https://leetcode.com/problems/verifying-an-alien-dictionary/)
+## [953. Verifying an Alien Dictionary](https://leetcode.com/problems/verifying-an-alien-dictionary/)
 
 Problem: Given the `order` of an alien alphabet, are these given alien `words` ordered lexiographically?
 
@@ -64,7 +64,7 @@ Runtime complexity: `O(n)`.
 
 Spacetime complexity: Assuming an `order` of 26: `O(1)`.
 
-### [917. Reverse Only Letters](https://leetcode.com/problems/reverse-only-letters/)
+## [917. Reverse Only Letters](https://leetcode.com/problems/reverse-only-letters/)
 
 Problem: Reverse the letters in string `S` leaving all other characters in place.
 
@@ -101,7 +101,7 @@ Runtime complexity: `O(n)`.
 
 Space complexity: `O(1)`.
 
-### [844. Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/)
+## [844. Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/)
 
 Problem: Given string `S` and `T`, are they equal when written in a text editor when `#` is backspace?
 

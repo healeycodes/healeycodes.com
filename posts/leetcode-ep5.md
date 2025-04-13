@@ -8,7 +8,7 @@ description: "Solutions for: Uncommon Words from Two Sentences, Search in a Bina
 
 Title refers to my runtime rankings against other users *not* how long it took me to complete these. Ran into a couple of stubborn bugs, one of which was failing to read the question properly because I jumped ahead - doh.
 
-### [884. Uncommon Words from Two Sentences](https://leetcode.com/problems/uncommon-words-from-two-sentences/)
+## [884. Uncommon Words from Two Sentences](https://leetcode.com/problems/uncommon-words-from-two-sentences/)
 
 Problem: Return the uncommon words from two sentences `A` and `B`
 
@@ -43,7 +43,7 @@ Runtime complexity: `O(n)`.
 
 Space complexity: `O(n)`.
 
-### [700. Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree/)
+## [700. Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree/)
 
 Problem: Search a Binary Tree.
 
@@ -82,7 +82,7 @@ Spacetime complexity: `-`.
 
 Nothing complicated to see here.
 
-### [412. Fizz Buzz](https://leetcode.com/problems/fizz-buzz/)
+## [412. Fizz Buzz](https://leetcode.com/problems/fizz-buzz/)
 
 Problem: Implement the [infamous](https://blog.codinghorror.com/why-cant-programmers-program/) FizzBuzz algorithm.
 

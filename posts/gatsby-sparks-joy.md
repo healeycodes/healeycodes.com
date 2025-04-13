@@ -81,7 +81,7 @@ body.dark {
 }
 ```
 
-### Designing With Components
+## Designing With Components
 
 The first React component I wrote for my blog was for wrapping the `<ThemeToggler />` from `gatsby-plugin-dark-mode` into a component. It switches between a sun and a moon to let the user know which theme can be switched to. The base for this is the example code from the [docs](https://www.gatsbyjs.org/packages/gatsby-plugin-dark-mode/).
 

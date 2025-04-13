@@ -12,7 +12,7 @@ I really feel like I'm graduating from String School and feel fairly comfortable
 
 Not too much else to report. I've also been reading up on permutation algorithms and reviewing the trade-offs between BFS and DFS.
 
-### [345. Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/)
+## [345. Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/)
 
 Problem: Reverse the vowels of a given string.
 
@@ -49,7 +49,7 @@ Runtime complexity: `O(n)`.
 
 Spacetime complexity: `O(1)`.
 
-### [205. Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/)
+## [205. Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/)
 
 Problem: Given two strings, check if they are isomorphic.
 
@@ -94,7 +94,7 @@ Runtime complexity: `O(n)`.
 
 Space complexity: `O(n)`.
 
-### [151. Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/)
+## [151. Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/)
 
 Problem: Reverse the words in a string, remove leading and trailing spaces, have no more than one space between words.
 

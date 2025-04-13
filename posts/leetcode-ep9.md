@@ -12,7 +12,7 @@ I came close to completing a couple of Medium problems but I didn't want to brut
 
 The goal is to get better at solving problems and algorithm analysis -- not to get the green text that reads *Accepted*. I ended up searching for some Easys to complete so I could get to bed on time.
 
-### [169. Majority Element](https://leetcode.com/problems/majority-element/)
+## [169. Majority Element](https://leetcode.com/problems/majority-element/)
 
 Problem: Given an array of size `n` find the majority element that appears more than `n/2` times.
 
@@ -46,7 +46,7 @@ Runtime complexity: `O(n)`.
 
 Spacetime complexity: `O(1)`.
 
-### [520. Detect Capital](https://leetcode.com/problems/detect-capital/)
+## [520. Detect Capital](https://leetcode.com/problems/detect-capital/)
 
 Problem: Judge whether a word uses correct capitals.
 
@@ -104,7 +104,7 @@ Runtime complexity: `O(n)`.
 
 Space complexity: `O(1)`.
 
-### [620. Not Boring Movies](https://leetcode.com/problems/not-boring-movies/)
+## [620. Not Boring Movies](https://leetcode.com/problems/not-boring-movies/)
 
 Problem: Given a SQL table `cinema` find movies with an odd numbered ID and a description that is not (literally) 'boring'.
 

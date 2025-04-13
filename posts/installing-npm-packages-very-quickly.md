@@ -146,7 +146,7 @@ go tool pprof -text cpu_without_sema.prof > cpu_without_sema.txt
 go tool pprof -text cpu_with_sema.prof > cpu_with_sema.txt
 ```
 
-### **Decompression Performance Improvement**
+## **Decompression Performance Improvement**
 
 With the semaphore, the core decompression functions represented less of the overall percentage of program time, and were also quicker to run. Below is the profile data for `huffmanBlock` (decoding a single Huffman block), and `huffSym` (reading the next Huffman-encoded symbol).
 
@@ -164,7 +164,7 @@ With the semaphore, the core decompression functions represented less of the ove
 
 There was also a ~5% decrease in the time spent waiting on system calls (`syscall.syscall`) and I/O (`os.(*File).Write` and `os.(*File).ReadFrom`).
 
-### More Detail on Why
+## More Detail on Why
 
 The semaphore limits the number of concurrent extraction operations, preventing CPU, memory, and I/O contention. By matching the extraction concurrency to available CPU resources (using 1.5x cores), the system avoids thrashing and context switching.
 

@@ -15,6 +15,7 @@ import Code from "../components/code";
 import Date from "../components/date";
 import Newsletter from "../components/newsletter";
 import { AldousBroder, IntroMaze, RandomDFS, TreeDiameter, WilsonsAlgorithm } from "../components/visuals/mazes/components";
+import { KnightAttack, WhitePawnAttacks } from "../components/visuals/bitboards/components";
 
 const isVideo = /\.mp4$/;
 
@@ -108,7 +109,6 @@ export default function Post({
   id,
   title,
   description,
-  tags,
   date,
   outdated,
   imageMetadata,
@@ -172,6 +172,12 @@ export default function Post({
                   return WilsonsAlgorithm()
                 } else if (props.id === 'treeDiameter') {
                   return TreeDiameter()
+                }
+              } else if (type === "div" && props.className === "bitboards") {
+                if (props.id === 'whitePawnAttacks') {
+                  return WhitePawnAttacks()
+                } else if (props.id === 'knightAttack') {
+                  return KnightAttack()
                 }
               }
               return React.createElement(type, props, children);

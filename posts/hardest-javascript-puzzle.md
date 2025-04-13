@@ -14,7 +14,7 @@ __The puzzle took me two weeks to solve__. I became stuck almost instantly and t
 
 Don't scroll too fast unless you want spoilers.
 
-### [Codewars: Multi Line Task++: Hello World](https://www.codewars.com/kata/5935558a32fb828aad001213)
+## [Codewars: Multi Line Task++: Hello World](https://www.codewars.com/kata/5935558a32fb828aad001213)
 
 - Write a function `f` that returns `Hello, world!`.
 - Every line must have at most 2 characters, and the total number of lines must be less than 40.
@@ -74,7 +74,7 @@ g
 
 No errors, I was declaring a function but now I couldn't figure out how to return from the _inner_ function without using the `return` keyword. It felt like I was close but I wasn't. I was still stuck on defining the string without newline characters as well.
 
-### Finding inspiration: [JSFuck](http://www.jsfuck.com/)
+## Finding inspiration: [JSFuck](http://www.jsfuck.com/)
 
 > JSFuck is an esoteric and educational programming style based on the atomic parts of JavaScript. It uses only six different characters to write and execute code.
 
@@ -121,7 +121,7 @@ I also used tagged templates to pass `Hello, world!` as an argument to bind.
 
 Let's take it up a level to the harder version that started this journey!
 
-### Codewars: [Multi Line Task∞: Hello World](https://www.codewars.com/kata/59a421985eb5d4bb41000031)
+## Codewars: [Multi Line Task∞: Hello World](https://www.codewars.com/kata/59a421985eb5d4bb41000031)
 
 - Write a function `f` that returns `Hello, world!`.
 - Every line must have __at most 1 character__, and the total number of lines must be less than 145.

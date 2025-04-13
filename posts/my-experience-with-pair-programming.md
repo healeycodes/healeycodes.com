@@ -29,16 +29,16 @@ Pairing is good for when:
 - The team needs shared knowledge
 - There is one time-sensitive feature
 
-### Some tickets don't require it
+## Some tickets don't require it
 
 I've read about peoples' experiences at companies where _every line of code_ is pair programmed. I'm curious about the benefit of such a requirement. I imagine that the [bus factor](https://en.wikipedia.org/wiki/Bus_factor) of a team would be incredibly low. But I'm thinking about the stories and bugs where I'm working in parts of the codebase that I know well. Where most of the work is setting up boilerplate code and some tests.
 
 My favourite setup that I've experienced so far is a team where pair programming was left up to the developers. If we felt that a ticket required pair programming to be efficient then all we had to do was let our manager know that was the plan.
 
-### As a mentor
+## As a mentor
 
 Over the past year, I've been teaching my wife how to code. The largest jumps in her knowledge are when we've tackled a feature or a project as a pair-team. It gives me a chance to observe how she goes about tackling a problem and lets me guide her down the right path (or at least close to it). While I'm driving, the most helpful things she's reported watching are the steps that aren't coding but are more knowledge-based e.g. setting up a dev environment, proper version control, different test suites and CI/CD integrations.
 
-### N.b.
+## N.b.
 
 This reads a little like propaganda from the Pair Programming Institute (tm). Some people don't mix well with pair programming and may find it distressing and inefficient. And there's nothing wrong with that at all!

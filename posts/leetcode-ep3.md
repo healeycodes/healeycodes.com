@@ -10,7 +10,7 @@ Continuing the Leetcode streak with more Python solving. I have a New Year's Res
 
 Before solving/typing these up (I do it at the same time) I completed [595](https://leetcode.com/problems/big-countries/). It required a short SQL query checking two conditions. The speed-up catch was using a UNION.
 
-### [905. Sort Array By Parity](https://leetcode.com/problems/sort-array-by-parity/)
+## [905. Sort Array By Parity](https://leetcode.com/problems/sort-array-by-parity/)
 
 Problem: Given a list `N` return an array split by even/odd from the numbers in `N`.
 
@@ -44,7 +44,7 @@ The runtime complexity for this solution is `O(n)` due to the above statement an
 
 I wonder if there's a faster version where the deque isn't converted to a list..
 
-### [657. Robot Return to Origin](https://leetcode.com/problems/robot-return-to-origin/)
+## [657. Robot Return to Origin](https://leetcode.com/problems/robot-return-to-origin/)
 
 Problem: Will this robot return home? Moving on a 2D plane via the commands: `U R D L`.
 
@@ -83,7 +83,7 @@ I did like this person's (4x slower) Python one-liner though:
 
 `return moves.count('L') - moves.count('R') == moves.count('D') - moves.count('U') == 0`
 
-### [728. Self Dividing Numbers](https://leetcode.com/problems/self-dividing-numbers/)
+## [728. Self Dividing Numbers](https://leetcode.com/problems/self-dividing-numbers/)
 
 Problem: Given a range of numbers `N` -> `M` return a list of self-divding numbers within that range.
 

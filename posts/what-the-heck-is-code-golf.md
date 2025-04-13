@@ -31,7 +31,7 @@ Let's see an extreme example, the [GolfScript](https://codegolf.stackexchange.co
 
 GolfScript is _quite_ hard to follow. Most of the time, we write code for humans — not machines. In code golf one writes to score points. The standard programming languages, while often used, can be restrictive. For example, I have never seen a C# or Java answer come top in a shortest-answer-wins challenge.
 
-#### Esoteric languages
+## Esoteric languages
 
 An esoteric language:
 
@@ -56,13 +56,13 @@ l ; ; o ; * 4
 
 Intrigued? One of my favorite pieces of code golf writing is the language creator's [description](https://codegolf.stackexchange.com/a/57706/78322) of his primality testing program. Reading about these solutions, and experimenting with my own, exercises my problem-solving muscle. It helps me to learn the edges of my languages.
 
-#### Community
+## Community
 
 Similar to the open source community, code golf is often a collaborative effort. Languages are developed in the open, and questions will find helpful answers. Competition 'entries' will also receive polite assistance. I remember my first attempt at code golf, I received welcome messages and suggestions for shaving off bytes.
 
 The [Programming Puzzles & Code Golf](https://codegolf.stackexchange.com/) section of StackExchange is the most active code golf community on the internet and this is where you can find many of these languages in use. [Esolangs](https://esolangs.org/wiki/Main_Page) is a community wiki where the most esoteric languages are covered in-depth. The #codegolf tag on Twitter is slow but welcoming.
 
-#### RegEx that only matches itself
+## RegEx that only matches itself
 
 As promised, [this](https://codegolf.stackexchange.com/questions/28821/regex-that-only-matches-itself) post is a fun one. The poster begins by stating that _this may well be impossible_ before elaborating on the challenge. Fortunately, [jimmy23013](https://codegolf.stackexchange.com/users/25180/jimmy23013) shows us that not only is this challenge possible but is solvable quite tersely indeed.
 
@@ -75,7 +75,7 @@ As promised, [this](https://codegolf.stackexchange.com/questions/28821/regex-tha
 /^\/()(?R){2}\/\z|\1\Q^\/()(?R){2}\/\z|\1\Q/
 ```
 
-#### Is this number prime?
+## Is this number prime?
 
 Let's start with a Python [answer](https://codegolf.stackexchange.com/a/57650/78322) (59 bytes). It's as naive as prime-checking gets but is creatively short. It demonstrates a typical code golf answer: _solve the problem the long way round then apply syntax tricks_. (Comments my own).
 
@@ -96,7 +96,7 @@ alert(!/^(?!(..+)\1+$)../.test(prompt()))
 
 The [poster](https://codegolf.stackexchange.com/a/57692/78322) tells us that it uses a 'cool unary regex to determine primality'. Further research found [this](https://iluxonchik.github.io/regular-expression-check-if-number-is-prime/) ~5000 word article which explains said RegEx expression. As you've probably started to realize, code golf is like programming in that it's a rabbit hole that doesn't end. But it does get more rewarding the further you dive in.
 
-#### Elsewhere on the web
+## Elsewhere on the web
 
 [JS1k](https://js1k.com/) is a JavaScript demo competitive for 'fancy pancy JavaScript demos' that come in under 1024 bytes. They are very visually impressive.
 

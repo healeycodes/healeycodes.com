@@ -41,4 +41,4 @@ this.render = (extra = '') => {
 
 Secret Sudoku is the perfect project to work on to help me relax in the evenings. It makes programming feel far more fun than logic abstraction should. Taking pull-requests today and every day hereafter.
 
-#### [Repository](https://github.com/healeycodes/secret-sudoku)
+## [Repository](https://github.com/healeycodes/secret-sudoku)

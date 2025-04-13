@@ -10,7 +10,7 @@ More algorithms today. Pretty efficient ones at that. All above 90% ranked on th
 
 I'm really happy that I finally solved *Flipping an Image* -- I had been in the thicket of a messy solution for a couple days but I was able to Pythonize it (read: refactor it)! I got hung up on solving it optimally before peaking at any resources.
 
-### [832. Flipping an Image](https://leetcode.com/problems/flipping-an-image/)
+## [832. Flipping an Image](https://leetcode.com/problems/flipping-an-image/)
 
 Problem: Flip a binary matrix and then invert it.
 
@@ -37,7 +37,7 @@ Runtime complexity: `O(n)`.
 
 Spacetime complexity: `O(n)`.
 
-### [872. Leaf-Similar Trees](https://leetcode.com/problems/leaf-similar-trees/)
+## [872. Leaf-Similar Trees](https://leetcode.com/problems/leaf-similar-trees/)
 
 Problem: Do these two trees have similar leaves -- read left-to-right.
 
@@ -81,7 +81,7 @@ Runtime complexity: `O(n)`.
 
 Spacetime complexity: `O(n)`.
 
-### [559. Maximum Depth of N-ary Tree](https://leetcode.com/problems/maximum-depth-of-n-ary-tree/)
+## [559. Maximum Depth of N-ary Tree](https://leetcode.com/problems/maximum-depth-of-n-ary-tree/)
 
 Problem: What is the deepest level of this n-ary tree?
 

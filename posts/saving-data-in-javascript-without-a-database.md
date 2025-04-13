@@ -60,7 +60,7 @@ fs.readFile('users.json', (err, data) => {
 });
 ```
 
-### Lightweight databases
+## Lightweight databases
 
 SQLite uses a local file as a database — and is one of my favorite pieces of software in the world. It enables many of my smaller projects to exist with low maintenance and little deploying hassle.
 

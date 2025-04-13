@@ -10,7 +10,7 @@ I'm a big fan of all three problems and solutions today. I must say that these E
 
 There's also a 'perfect' solution included for the *Move Zeroes* problem!
 
-### [283. Move Zeroes](https://leetcode.com/problems/move-zeroes/)
+## [283. Move Zeroes](https://leetcode.com/problems/move-zeroes/)
 
 Problem: Move all the zeroes to the end of the array, in-place.
 
@@ -48,7 +48,7 @@ Runtime complexity: `O(n)`.
 
 Space complexity: `O(n)`.
 
-### [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
+## [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
 
 Problem: Merge two sorted linked list, return as a linked list
 
@@ -92,7 +92,7 @@ Runtime complexity: `O(n)`.
 
 Spacetime complexity: `O(n)`.
 
-### [617. Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/)
+## [617. Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/)
 
 Problem: Merge two binary trees, that is to say, fold them onto one and other, summing overlapping nodes.
 

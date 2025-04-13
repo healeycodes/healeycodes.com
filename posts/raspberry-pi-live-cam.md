@@ -18,7 +18,7 @@ Let's work back to front, starting with the web server. The Flask app we'll be c
 
 A different thread of the app is created for each user. These instances can't share state at the application level. We solve this by storing the image data in a local SQLite database called `global.db`. Dealing with multiple readers and writers is easy for databases. They handle it by using _locks_. This ensures that our Flask app won't ask for an image that is halfway through being written to the database and then send corrupted data to the client.
 
-#### Flask App
+## Flask App
 
 ```python
 # app.py
@@ -113,7 +113,7 @@ $ FLASK_APP=app.py flask run
 
 For installation and running questions related to Flask, see their [docs](http://flask.pocoo.org/).
 
-#### Raspberry Pi Script
+## Raspberry Pi Script
 
 The script that runs on the Pi will capture images and send them via a POST request. We install our modules with `pip install requests picamera`. The script is run via `python camera.py` or `python3 camera.py`.
 
@@ -147,7 +147,7 @@ with picamera.PiCamera(framerate=framerate, resolution=res) as camera:
 You will probably want to run this as a [startup script](https://www.google.com/search?q=rc.local) for maximum uptime. If there's a network problem, the script will keep attempting to post an image until it gets through. If there's a problem with your Pi, our Flask app will keep serving the latest image it received. Robust!
 
 
-#### Possible Improvements
+## Possible Improvements
 
 Some thoughts to improve the project but make it a worse tutorial.
 

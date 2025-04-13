@@ -23,7 +23,7 @@ Sites like [LeetCode](https://leetcode.com/) and [HackerRank](https://www.hacker
 
 If you've seen my other writing, you'll know that I won't stop recommending _Grokking Algorithms_. I chose the Computer Science textbooks that I enjoyed, not necessarily ones that would help in my job search. These books didn't have to have code or math in them, e.g. _Code: The Hidden Language .._ or _The Mythical Man-Month_. A lot of the stuff I did during my job search was to get in the right headspace. This is embarrassing to say but I did the things that I pictured a good software engineer doing. Which I suppose is like wanting to be a good basketball player and spending your post-practice time standing in center court just staring at the hoop. It's good to just rest some times, ya know.
 
-### Study interview question trivia every day
+## Study interview question trivia every day
 
 I wasn't trying to memorize, which would have felt cheap, I was trying to understand what these questions implied in order to direct my learning. They are asked for a reason. `setTimeout` trivia questions are really about asynchronous programming and the Event Loop. I had to know the answer and be able to speak about the subject it represented. These sessions were scary first as they further revealed everything I didn't know (and still don't!). 
 

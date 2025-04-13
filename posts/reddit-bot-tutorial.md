@@ -8,11 +8,11 @@ description: "The basics of building a Reddit bot that listens for phrases and r
 
 We're going to write a Reddit bot that listens for specific phrases and responds to comments that contain them. We'll learn how the Reddit API can be interacted with in Python, while making a bot buddy of our own.
 
-#### Bottiquette
+## Bottiquette
 
 You've probably heard of the [three laws of robotics](https://en.wikipedia.org/wiki/Three_Laws_of_Robotics) but have you heard of Reddit's [bottiquette](https://www.reddit.com/wiki/bottiquette)? It's a list of rules that will help you create a polite bot that won't get in anyone's way. The most important rule is not to impersonate a human with your bot. While it's okay to cast up- and down-votes, the command to do so must come directly from a human.
 
-#### Setup
+## Setup
 
 You'll need [PRAW](https://praw.readthedocs.io/en/latest/index.html), the _The Python Reddit API Wrapper_. Install this package with: `pip install praw`. Its got extensive documentation, and there's also a [r/redditdev](https://www.reddit.com/r/redditdev/) subreddit should you need more inspiration or assistance.
 
@@ -47,7 +47,7 @@ print(reddit.user.me())
 
 Since our sensitive information is defined elsewhere, we can commit this without leaking any details. It's also easier to test and let's other developers work more easily with this code.
 
-#### All the comments
+## All the comments
 
 This is a fun one to do. My challenge to you: try and read every comment as it's posted to Reddit. This really gives you an idea of the scale of data that's available.
 
@@ -78,7 +78,7 @@ search = [phrase.strip() for phrase in args.search.split(',')]
 print(search)
 ```
 
-#### Replying to comments
+## Replying to comments
 
 Reddit's [r/test](https://www.reddit.com/r/test/) is a good battleground to try this out. We'll use [Comment#reply](https://praw.readthedocs.io/en/latest/code_overview/models/comment.html#praw.models.Comment.reply). Since we'll be searching comment bodies for our phrases, we'll already have a reference to a comment object, and we can simply use its `reply` method. Otherwise, you can find create a comment object with an id.
 
@@ -93,7 +93,7 @@ comment.reply('hi again!')
 
 You may need two accounts to properly test this, as newly created Reddit accounts can't post two comments instantly, i.e., posting a target phrase and then a posting reply to that comment.
 
-#### Where we are so far
+## Where we are so far
 
 Let's check how our bot is shaping up. You'll see I've used `argparse` to genericize the search phrases. We're making a configurable bot, rather than a hardcoded one that's harder to extend and work with in the future.
 
@@ -133,13 +133,13 @@ for comment in reddit.subreddit('all').stream.comments():
 
 ```
 
-#### Where to go from here
+## Where to go from here
 
 - Clone the [tutorial repository](https://github.com/healeycodes/Reddit-Bot-Tutorial) and get hacking!
 - Get the poster's name and use it in your reply: `comment.author.name`
 - Host your bot on a Raspberry Pi or in the cloud with [Heroku](https://devcenter.heroku.com/categories/python-support).
 - Connect your bot to a backend service, like I did with my [EmojiStreamer](https://github.com/healeycodes/EmojiStreamer) project, which streams every single emoji posted to Reddit.
 
-#### More
+## More
 
 I recently joined [coding coach](https://mentors.codingcoach.io/). If you're developing a Reddit bot, or need dev assistance in general, I can help out!

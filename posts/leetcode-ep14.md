@@ -10,7 +10,7 @@ I'm not too excited about any of my solutions today. They're all fairly optimal 
 
 I hope to put aside some time soon to study a new topic (e.g., permutation) that will unlock more difficult challenges and research areas within algorithms. That's the good thing about the streak, if I wait too long then I'll be forced to study more just to keep it up!
 
-### [896. Monotonic Array](https://leetcode.com/problems/monotonic-array/submissions/)
+## [896. Monotonic Array](https://leetcode.com/problems/monotonic-array/submissions/)
 
 Problem: Is this array monotonic? I.e., only decreasing or only increasing.
 
@@ -49,7 +49,7 @@ Runtime complexity: `O(n)`.
 
 Spacetime complexity: `O(1)`.
 
-### [485. Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones/submissions/)
+## [485. Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones/submissions/)
 
 Problem: Given a binary array, find the max number of `1`s in a row.
 
@@ -80,7 +80,7 @@ Runtime complexity: `O(n)`.
 
 Space complexity: `O(1)`.
 
-### [217. Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
+## [217. Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
 
 Problem: Given an array of integers, are there any duplicates?
 

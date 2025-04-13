@@ -10,7 +10,7 @@ This blog is now live! A lot of these posts were just sitting on my computer but
 
 In solving news: I'm focusing on using more Python languages features at the moment.
 
-### [1. Two Sum](https://leetcode.com/problems/two-sum/)
+## [1. Two Sum](https://leetcode.com/problems/two-sum/)
 
 Problem: Given an array of integers and a target, return the indices of the two numbers that add up to the target.
 
@@ -39,7 +39,7 @@ Runtime complexity: `O(n)`.
 
 Spacetime complexity: `O(n)`.
 
-### [242. Valid Anagram](https://leetcode.com/problems/valid-anagram/)
+## [242. Valid Anagram](https://leetcode.com/problems/valid-anagram/)
 
 Problem: Given two strings `t` and `s`, dermine if `t` is an anagram of `s`.
 
@@ -83,7 +83,7 @@ Another ['solution'](https://stackoverflow.com/a/17004897):
 
 > Fastest algorithm would be to map each of the 26 English characters to a unique prime number. Then calculate the product of the string. By the fundamental theorem of arithmetic, 2 strings are anagrams if and only if their products are the same.
 
-### [58. Length of Last Word](https://leetcode.com/problems/length-of-last-word/)
+## [58. Length of Last Word](https://leetcode.com/problems/length-of-last-word/)
 
 Problem: Given a string, return the length of the last word.
 

@@ -10,7 +10,7 @@ WebSockets run a large part of the web today. But which servers and frameworks a
 
 ![WebSocket Benchmarker](wsbenchheader.png)
 
-#### [WebSocket Benchmarker](https://github.com/healeycodes/websocket-benchmarker)
+## [WebSocket Benchmarker](https://github.com/healeycodes/websocket-benchmarker)
 
 I wrote my Masters' thesis on benchmarking WebSockets servers and frameworks, and coded a benchmark program using Node.js and [ws](https://github.com/websockets/ws). The program, while effective in reaching my research goal, was not fit for publication. The goals with [WebSocket Benchmarker](https://github.com/healeycodes/websocket-benchmarker) were to learn more about asynchronous Python and to create something that other people could use. Usability here meaning some end-to-end tests, maintainability, and nicely commented code with Docstrings:
 

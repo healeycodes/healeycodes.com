@@ -13,7 +13,7 @@ This weekend I used the [DEV API](https://docs.dev.to/api/) to build [a tool](ht
 
 It's open-sourced at [healeycodes/dev-article-analysis](https://github.com/healeycodes/dev-article-analysis)!
 
-### Readability
+## Readability
 
 The Flesch–Kincaid readability tests were developed in the U.S. Navy in the 70s. These scales are used to measure and compare books, newspapers, and articles. In Florida, they are used to encourage readable language in insurance policies.
 
@@ -25,13 +25,13 @@ Flesch reading ease is a similar test with different weightings. It results in a
 
 Technical articles, especially those with code excerpts, get wide-ranging scores. However, a user's writing style (e.g. a similar amount of code per article) means that a reasonable line can be drawn over time, perhaps leading to some basic conclusions. [text-readability](https://www.npmjs.com/package/text-readability) was used to calculate these scores in the project.
 
-### Sentiment
+## Sentiment
 
 Sentiment analysis helps us understand the emotional polarity of a text. For example, the phrase `I love cats, but I am allergic to them.` gives a comparative score of `0.1111111111111111`. To calculate this, a list of words (and emojis) are given weightings. -5 to 5, positive to negative. The only tokens in our sentence with scores are `{ allergic: -2 }, { love: 3 }`. We take the number of tokens, `9`, and calculate `(3 + -2) / 9` to find the comparative score. This example is used in the documentation of [sentiment](https://www.npmjs.com/package/sentiment).
 
 The DEV API provides the text of an article in HTML or markdown, neither of which is friendly to analysis. This is why [remove-markdown](https://www.npmjs.com/package/remove-markdown) is used to reduce the `body_markdown` value to plaintext.
 
-### Interaction
+## Interaction
 
 Users enter a DEV username. As the articles are retrieved, a progress status (and a random positive emoji) are sent to the page via WebSocket. This means the user isn't left sitting looking at a spinner.
 
@@ -41,7 +41,7 @@ The charts can be hovered to see article titles and their scores for each metric
 
 When arriving at the website, the graphs are already filled with precalculated data from my own DEV username (healeycodes). This is to help visitors better understand what the end result of their interaction will be.
 
-### Deployment
+## Deployment
 
 I developed this Node/Express application on [Glitch](https://glitch.com/). Their cloud IDE and console lets me move fast and get feedback from people seconds after I've made a change. You can export the project to a GitHub project (it creates a `glitch` branch which you can open a pull request from).
 

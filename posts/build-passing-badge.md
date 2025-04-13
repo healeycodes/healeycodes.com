@@ -10,13 +10,13 @@ Travis CI offers free test builds for open source projects on GitHub. You'd be a
 
 In this tutorial, we will be setting up an Express app for continuous integration (CI). Whenever we commit to our `master` branch, Travis CI will clone our repository, spin up a cloud build of linux, install any required dependencies, and run our tests! Hopefully, they pass!  If not, we'll be alerted.
 
-#### Install
+## Install
 
 Set up a quick `package.json` file with: `npm init -y`. Then grab Express: `npm i express --save` as well as supertest and Jest, our development dependencies: `npm i supertest jest --save-dev`.
 
 Or clone the [repository](https://github.com/healeycodes/earn-a-build-passing-badge), which serves as a live example of the project!
 
-#### Taking the App Out of Express
+## Taking the App Out of Express
 
 A default hello world application with Express looks like this:
 
@@ -68,7 +68,7 @@ To launch our application, we now use `node server.js`. Let's add that to our `p
 },
 ```
 
-#### The Tests
+## The Tests
 
 A common pattern is to place your tests inside a folder called `__tests__` in the root directory. Another pattern is to repeat the names of the files being tested with `.test` inserted before the `.js`. Thus, `__tests__/app.test.js`.
 
@@ -119,7 +119,7 @@ Time:        2.681s
 Ran all test suites.
 ```
 
-#### Travis CI
+## Travis CI
 
 Let's [get this code into a repository](https://help.github.com/en/articles/create-a-repo) on GitHub, and install the [Travis CI GitHub App](https://github.com/apps/travis-ci). Make sure that the repo you're testing has Travis CI enabled.
 
