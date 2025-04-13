@@ -87,9 +87,9 @@ The "not file" masks here are used to prevent invalid wraparounds. From `g5`, th
 
 <div className="bitboards" id="knightAttack"></div>
 
-In practice, chess engines often pre-compute and store attack masks in lookup tables for even better performance, rather than calculating them on the fly like this – as well as other sophisticated techniques like [zobrist hashing](https://www.chessprogramming.org/Zobrist_Hashing) and [magic bitboard](https://www.chessprogramming.org/Magic_Bitboards).
-
 I hope this helps show how bitboards can be the building blocks of any kind of chess computation.
+
+In practice, chess engines often pre-compute and store attack masks in lookup tables for even better performance, rather than calculating them on the fly like this – as well as other sophisticated techniques like [zobrist hashing](https://www.chessprogramming.org/Zobrist_Hashing) and [magic bitboards](https://www.chessprogramming.org/Magic_Bitboards).
 
 For further reading, I've found the [Chess Programming Wiki](https://www.chessprogramming.org/Bitboards) and the source code for `python-chess` (e.g. [calculating attack masks](https://github.com/niklasf/python-chess/blob/ffa04827e325de5b4d39a67eee3528474b814285/chess/__init__.py#L875)) to both be very useful.
 

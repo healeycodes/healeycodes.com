@@ -110,7 +110,7 @@ export default function BitboardVisualizer({ codeLines, steps, stepDelay = 2000 
           </div>
           <div className="info-item">
             <span className="info-label">Set bits: </span>
-            <span className="info-value">{bitIndices.length > 0 ? bitIndices.join(", ") : "none"}</span>
+            <span className="info-value">{bitIndices.length > 0 ? bitIndices.join(", ").padEnd(32, " \u00A0") : "none".padEnd(32, " \u00A0")}</span>
           </div>
         </div>
       </div>
