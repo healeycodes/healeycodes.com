@@ -31,7 +31,7 @@ In order to move a piece at `f5` forwards we can shift the bitboard left by 8 bi
 ```js
 pieceOnF5 = 0x0000000004000000;
 // Move one rank forward (from f5 to f6)
-pieceOnF5 << 8n; // 0x0000000400000000n
+pieceOnF5 << 8; // 0x0000000400000000
 ```
 
 Why 8? Well, if you picture all of a chessboard's squares lined up in one long row, moving upwards would require you to move 8 places to the left.
