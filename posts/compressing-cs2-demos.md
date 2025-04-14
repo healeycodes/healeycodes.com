@@ -261,6 +261,6 @@ There are other tricks to achieve further compression like this blog series on [
 
 I could also encode position data using [bit arrays](https://en.wikipedia.org/wiki/Bit_array). I'll explain how this would work with equipment changes as it's easier to explain than float compression.
 
-Instead of storing a map with a `uint8` as a key, and a list of `int8` for the change events. I can compress the data into a bit array where each value is: a player id (4 bits) and an add or remove event (5 bits) for 9 bits total. A frame's equipment change field can just be a list of those (repeating the player id is actually okay because it's rare that multiple piece of equipment are acquired on the same frame).
+Instead of storing a map with a `uint32` as a key and a list of `int32` for the change events, we could compress the data into bit arrays where each value is: a player id (4 bits), an equipment id (5 bits), and an add/remove flag (1 bit) for 10 bits total. A frame's equipment change field could be a list of these 10-bit values, where each value represents a single equipment change event. While this means repeating the player id when multiple pieces of equipment change in the same frame, this is rare in practice and the space savings from the bit array would outweigh this minor redundancy.
 
 It's fun to theorize but a protobuf schema is as far as I need to go for now. View the source code for this toy compression program [on GitHub](https://github.com/healeycodes/compressing-cs2-demos).

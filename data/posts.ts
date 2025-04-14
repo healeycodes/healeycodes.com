@@ -7,6 +7,7 @@ export const popularPosts = [
 
 // Starred posts (not in any specific order)
 export const postStars = [
+  "visualizing-chess-bitboards",
   "installing-npm-packages-very-quickly",
   "compiling-lisp-to-bytecode-and-running-it",
   "making-python-less-random",
