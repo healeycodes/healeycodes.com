@@ -2,7 +2,7 @@
 export const popularPosts = [
   "lisp-compiler-optimizations",
   "my-time-at-the-recurse-center",
-  "building-my-own-chess-engine",
+  "rendering-counter-strike-demos-in-the-browser",
 ];
 
 // Starred posts (not in any specific order)

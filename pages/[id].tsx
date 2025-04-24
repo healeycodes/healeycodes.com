@@ -191,13 +191,13 @@ export default function Post({
       <Newsletter />
       <div className="other-posts">
         {prevPost ? (
-          <div className="other-posts-link">
+          <div className="other-posts-link prev">
             <Link href={`/${prevPost.id}`} legacyBehavior>{`← ${prevPost.title}`}</Link>
           </div>
         ) : null}
         {nextPost ? (
-          <div className="other-posts-link">
-            <Link href={`/${nextPost.id}`} legacyBehavior>{`${nextPost.title} →`}</Link>{" "}
+          <div className="other-posts-link next">
+            <Link href={`/${nextPost.id}`} legacyBehavior>{`${nextPost.title} →`}</Link>
           </div>
         ) : null}
       </div>
@@ -220,10 +220,19 @@ export default function Post({
         }
         .other-posts {
           padding-top: 48px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          gap: 16px;
         }
         .other-posts-link {
-          display: block;
           padding-bottom: 32px;
+        }
+        .other-posts-link.prev {
+          text-align: left;
+        }
+        .other-posts-link.next {
+          text-align: right;
         }
         aside {
           background-color: var(--aside);
