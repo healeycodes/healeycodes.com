@@ -2,14 +2,14 @@
 title: "How I Made Queuedle"
 date: "2025-05-28"
 tags: ["javascript"]
-description: "A daily word sliding puzzle game inspired by Wordle and Scrabble"
+description: "A daily word sliding puzzle game inspired by Wordle and Scrabble."
 ---
 
 [Queuedle](https://queuedle.com) is a daily word sliding puzzle game inspired by Wordle and Scrabble. It combines the positional gameplay of Scrabble with the daily puzzle and discovery elements of Wordle. Everyone plays the same board and it can be played quickly or slowly.
 
 Players pull from a letter queue and push onto the board, and words are automatically highlighted. Your score is the number of letters used in words. Letters can count twice so `MOON` is actually two words: `MOO` and `MOON`.
 
-During playtesting, players who are into things like NYT puzzles tended to plan several moves ahead. Since you can see enough of the queue, you can strategize. A big vocabulary helps, as does knowing the Scrabble dictionary (but two-letter words don’t count).
+During playtesting, players who were into things like NYT puzzles tended to plan several moves ahead. Because part of the letter queue is hidden, it's not a game of perfect information, but you can still strategize many moves ahead. A big vocabulary helps, as does knowing the Scrabble dictionary (but two-letter words don’t count).
 
 ![A game of Queuedle being played.](overview.mp4)
 
