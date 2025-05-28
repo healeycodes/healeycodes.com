@@ -27,6 +27,12 @@ export default [
     to: "/building-my-own-chess-engine",
   },
   {
+    name: "queuedle",
+    link: "https://queuedle.com",
+    desc: "A daily word sliding puzzle game inspired by Wordle and Scrabble.",
+    to: "/how-i-made-queuedle",
+  },
+  {
     name: "jar",
     link: "https://github.com/healeycodes/jar",
     desc: "A server-side web framework that deploys to Vercel.",
