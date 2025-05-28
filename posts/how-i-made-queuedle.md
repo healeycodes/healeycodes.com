@@ -9,7 +9,7 @@ description: "A daily word sliding puzzle game inspired by Wordle and Scrabble"
 
 Players pull from a letter queue and push onto the board, and words are automatically highlighted. Your score is the number of letters used in words. Letters can count twice so `MOON` is actually two words: `MOO` and `MOON`.
 
-Playtesters who are into NYT puzzles tend to plan several moves ahead. Since you can see enough of the queue, you can strategize. A big vocabulary helps, as does knowing the Scrabble dictionary (but two-letter words don’t count).
+During playtesting, players who are into things like NYT puzzles tended to plan several moves ahead. Since you can see enough of the queue, you can strategize. A big vocabulary helps, as does knowing the Scrabble dictionary (but two-letter words don’t count).
 
 ![A game of Queuedle being played.](overview.mp4)
 
@@ -17,7 +17,7 @@ Playtesters who are into NYT puzzles tend to plan several moves ahead. Since you
 
 Famously, Wordle had the next day's puzzle embedded in the source code. You could look it up if you wanted to spoil yourself. However, for Queuedle, there's a bit more setup required. I need to generate a board and a letter queue.
 
-I didn't attempt to do this manually as it's far too much work. I don't think there's much of a payoff for the user if I design interesting starting states because there are too many starting moves – and each move jumbles the board.
+I didn't attempt to do this manually as it's far too much work. I don't think there's much of a payoff for the user if I design interesting starting states because there are too many starting _moves_ – and each move jumbles the board.
 
 In order to generate a board and a letter queue with the same *vibe* as Scrabble, I use the Scrabble letter distribution when I randomly pick letters (Qs are rare, Es are everywhere).
 
@@ -60,7 +60,7 @@ Each date becomes a unique seed. The [Lehmer random number generator](https://en
   }
 ```
 
-The first time I set up the game generation logic, I ran into a problem. The starting board would contain words! In retrospective, it's unsurprising that a random 5x5 board of letters would contain at least one three letter word from the 178691 words in the Scrabble tournament word list.
+The first time I set up the game generation logic, I ran into a problem. The starting board sometimes contained multiple outlined words! In retrospective, it's unsurprising that a random 5x5 board of letters would contain at least one three letter word from the 178691 words in the Scrabble tournament word list.
 
 I decided to throw the user's CPU at this problem. I simply generate boards, deterministically, until the starting board contains zero words.
 
@@ -126,6 +126,6 @@ One design problem I haven't solved yet is how to better communicate when a lett
 
 I tried to solve this problem by cycling through a small pallete of rainbow colors for the different word outlines to better distinguish one word outline from another. However, players kept asking me what the different colors mean, hah.
 
-One idea I had, was to highlight word outlines when a letter is tapped. But I don't want to give up the simple controls of: just tap the arrows. For example, on desktop, if I show that letters are clickable, people will try and move them, etc.
+One idea I had, was to highlight the words a letter belongs to when it's tapped. But I don't want to give up the simple controls of: just tap the arrows. For example, on desktop, if I show that letters are clickable, people will try to move them, etc.
 
-My goal was for [Queuedle](https://queuedle.com) to be roughly as hard to pick for the first time as Wordle. I think I got there. I thought about adding a tutorial animation ... but I always skip them.
+My goal was for [Queuedle](https://queuedle.com) to be roughly as hard to pick up for the first time as Wordle. I think I got there. I thought about adding a tutorial animation ... but I always skip them.
