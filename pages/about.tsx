@@ -17,7 +17,7 @@ export default function About() {
           This <a href={siteConfig.REPO_URL}>open source</a> website is built with Next.js and is {daysSince1stJan2019} days old – some of the development is covered in <Link href="/notes">my notes</Link>. The very first version was built with Jekyll.
         </p>
         <p>
-          Free free to <a href="mailto:healeycodes@gmail.com">email me</a> with any questions or comments.
+          Feel free to <a href="mailto:healeycodes@gmail.com">email me</a> with any questions or comments.
         </p>
         <SpacedImage
           src={mePresenting}
