@@ -1,7 +1,7 @@
 import siteConfig from "../siteConfig.json";
 import mePresenting from "../public/assets/presenting-high-res.jpg";
 
-import SpacedImage from "../components/image";
+import Image from "next/image";
 import Layout from "../components/layout";
 import Link from "next/link";
 
@@ -19,15 +19,13 @@ export default function About() {
         <p>
           Feel free to <a href="mailto:healeycodes@gmail.com">email me</a> with any questions or comments.
         </p>
-        <SpacedImage
+        <Image
           src={mePresenting}
           placeholder="blur"
           alt="Presenting: When Does Development Spark Joy? Sentimental analysis of commit messages."
           quality={100}
-          originalWidth={mePresenting.width}
-          originalHeight={mePresenting.height}
           priority={true}
-          style={{ borderRadius: '0.4em' }}
+          style={{ borderRadius: '0.4em', width: '100%', height: 'auto' }}
         />
         <p>
           I like teaching people things that I know. I like video games (especially classic FPS games like Quake and Counter-Strike), classic games (chess, scrabble, sudoku), running, and reading.
