@@ -146,7 +146,7 @@ Luckily, this was a one-line change:
 for (const move of getValidMoves(node.state)) {
 	const nextState = handleSlide(node.state, move.direction, move.index);
 
-	                                       // Consider remaining moves!
+	                                      // Consider remaining moves!
 	const score = evaluateState(nextState) + (15 - node.moves.length);
 ```
 
