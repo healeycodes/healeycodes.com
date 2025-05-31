@@ -19,11 +19,11 @@ In Queuedle, there's a 5x5 grid of letters:
 
 - 5 rows and 5 columns
     - For each row: 2 possible moves (left, right)
-    - For each column: 2 possible moves (left, right)
+    - For each column: 2 possible moves (up, down)
 - Total possible moves per state (before restrictions):
     - (5 rows × 2) + (5 columns × 2) = 10 + 10 = 20
 
-At the start of the game, the branching factor is 20 (compared to chess, where the average branching factor is ~35). It drops when moves get restricted (rows and columns may only slide one way).
+At the start of the game, the branching factor is 20 (compared to chess, where the average branching factor is ~35). It drops when moves get restricted (rows and columns can't slide back).
 
 The search space is in the quintillions. With a letter queue of 15 and a branching factor starting around 20, we're looking at roughly 20^15 ≈ 3×10^19 possible move sequences (including duplicate board states).
 
@@ -60,7 +60,7 @@ I've put together an example journey below.
 │  ├───[right 0] ········(s:25, q:13)
 │  └──┬───[down  4] ·····(s:26, q:13)
 │     ├───[right 0] ·····(s:29, q:12)
-│     └───[left. 4] ·····(s:32, q:12) ★ best
+│     └───[left  4] ·····(s:32, q:12) ★ best
 ├───[up   4] ·············(s:3, q:14)
 ├───[down 4] ·············(s:7, q:14)
 │..
