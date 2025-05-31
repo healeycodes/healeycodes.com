@@ -1,6 +1,6 @@
 import siteConfig from "../siteConfig.json";
 
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 function imageResize(imageWidth, imageHeight) {
   let width, height;
@@ -20,7 +20,12 @@ export default function SpacedImage(props) {
 
   return (
     <span className="spacer">
-      <Image {...rest} width={width} height={height} />
+      <Image style={{
+        display: 'block',
+        marginInline: 'auto',
+        maxWidth: '100%',
+        height: 'auto',
+      }} {...rest} width={width} height={height} />
       <style jsx>{`
         .spacer {
           padding-top: 16px;
