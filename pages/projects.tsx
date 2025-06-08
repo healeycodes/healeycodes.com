@@ -86,6 +86,6 @@ export async function getStaticProps() {
       totalStars,
       mostRecentPushFormatted,
     },
-    revalidate: ms('30min') / 1000, // TIL this is seconds
+    revalidate: ms('30min') / 1000,
   }
 }

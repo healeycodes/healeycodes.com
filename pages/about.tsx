@@ -4,9 +4,9 @@ import mePresenting from "../public/assets/presenting-high-res.jpg";
 import Image from "next/image";
 import Layout from "../components/layout";
 import Link from "next/link";
+import ms from "ms";
 
-export default function About() {
-  const daysSince1stJan2019 = Math.floor((new Date().getTime() - new Date("2019-01-01").getTime()) / (1000 * 60 * 60 * 24));
+export default function About({ daysSince }: { daysSince: number }) {
   return (
     <Layout title="About" description="About me.">
       <h1>About</h1>
@@ -14,7 +14,7 @@ export default function About() {
         <p>
           I write software and write about software. My research interests include programming language design, compilers, puzzle/game solvers, and distributed systems.</p>
         <p>
-          This <a href={siteConfig.REPO_URL}>open source</a> website is built with Next.js and is {daysSince1stJan2019} days old – some of the development is covered in <Link href="/notes">my notes</Link>. The very first version was built with Jekyll.
+          This <a href={siteConfig.REPO_URL}>open source</a> website is built with Next.js and is {daysSince} days old – some of the development is covered in <Link href="/notes">my notes</Link>. The very first version was built with Jekyll.
         </p>
         <p>
           Feel free to <a href="mailto:healeycodes@gmail.com">email me</a> with any questions or comments.
@@ -48,4 +48,14 @@ export default function About() {
       </main>
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const startDate = new Date("2019-01-01");
+  const daysSince = Math.floor((new Date().getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
+  
+  return {
+    props: { daysSince },
+    revalidate: ms('1d') / 1000
+  }
 }
