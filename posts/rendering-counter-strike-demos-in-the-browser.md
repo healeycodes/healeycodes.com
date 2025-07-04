@@ -5,7 +5,7 @@ tags: ["javascript"]
 description: "Building a demo player for coaches and analysts to visualize CS2 gameplay."
 ---
 
-_Try out [my demo player]((https://demo-player-prototype-czbho8z0l-healeycodes.vercel.app) (desktop only)._
+_Try out [my demo player](https://demo-player-prototype-czbho8z0l-healeycodes.vercel.app) (desktop only)._
 
 Counter-Strike 2 (CS2) demos are recorded gameplay files that capture every player's movement, actions, and the overall game state. They're the [flight recorder](https://en.wikipedia.org/wiki/Flight_recorder) of a match, storing the raw data so that it can be watched later on.
 
