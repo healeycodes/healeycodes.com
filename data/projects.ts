@@ -14,6 +14,12 @@ export default [
     to: "/a-custom-webassembly-compiler",
   },
   {
+    name: "llmfs",
+    link: "https://github.com/healeycodes/llmfs",
+    desc: "FUSE filesystem where file operations are handled by an LLM.",
+    to: "/filesystem-backed-by-an-llm",
+  },
+  {
     name: "noter",
     link: "https://github.com/healeycodes/noter",
     desc: "A text editor for macOS. Built using the Ebitengine game engine.",
