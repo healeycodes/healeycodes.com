@@ -245,4 +245,4 @@ To extend support for *all* file operations, like a good filesystem, I think I'l
 
 In order to support more features, I'm wondering if I can de-/serialize entire [bazil.org/fuse](http://bazil.org/fuse) library objects so everything works out of the box. My gut says this could work with the latest LLM models with a good setup.
 
-Let me know if you have other ideas.
+Let me know if you have other ideas! The demo repo is https://github.com/healeycodes/llmfs.
