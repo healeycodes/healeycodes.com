@@ -52,7 +52,7 @@ cat: secrets.txt: Permission denied
 
 ### Interacting With FUSE
 
-After mounting the filesystem with the Go library [bazil.org/fuse](http://basil.org/fuse), the kernel intercepts Virtual File System (VFS) calls like open/read/write and forwards them through `/dev/fuse` to the userspace daemon.
+After mounting the filesystem with the Go library [bazil.org/fuse](http://bazil.org/fuse), the kernel intercepts Virtual File System (VFS) calls like open/read/write and forwards them through `/dev/fuse` to the userspace daemon.
 
 ```go
 import "bazil.org/fuse"
