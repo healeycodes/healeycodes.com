@@ -33,6 +33,12 @@ export default [
     to: "/building-my-own-chess-engine",
   },
   {
+    name: "dumac",
+    link: "https://github.com/healeycodes/dumac",
+    desc: "Very fast alternative to 'du -sh' for macOS.",
+    to: "/maybe-the-fastest-disk-usage-program-on-macos",
+  },
+  {
     name: "queuedle",
     link: "https://queuedle.com",
     desc: "A daily word-sliding puzzle game inspired by Wordle and Scrabble.",
