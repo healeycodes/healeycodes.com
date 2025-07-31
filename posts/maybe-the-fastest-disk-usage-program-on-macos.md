@@ -112,9 +112,7 @@ I found some background on this syscall in a [mailing list](https://lists.apple.
 
 > Also note that as of Yosemite, we have added a new API: getattrlistbulk(2), which is like getdirentriesattr(), but supported in VFS for all filesystems.  getdirentriesattr() is now deprecated.
 
-The main advantage of the bulk call is that we can return results in most cases without having to create a vnode in-kernel, which saves on I/O: HFS+ on-disk layout is such that all of the directory
-entries in a given directory are clustered together and we can get multiple directory entries from the same cached on-disk blocks.
-> 
+> The main advantage of the bulk call is that we can return results in most cases without having to create a vnode in-kernel, which saves on I/O: HFS+ on-disk layout is such that all of the directory entries in a given directory are clustered together and we can get multiple directory entries from the same cached on-disk blocks.
 
 My first attempt at wiring up this syscall used CGO. I wrote a C function that took a directory file descriptor and called `getattrlistbulk` in a loop until it had all the file info, and then returned the list of files and their attributes to Go.
 
