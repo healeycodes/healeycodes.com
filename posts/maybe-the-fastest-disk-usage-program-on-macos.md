@@ -7,7 +7,7 @@ description: "A very fast du -sh clone for macOS."
 
 I set out to write the fastest `du -sh` clone on macOS and I think I've done it. On a large benchmark, [dumac](https://github.com/healeycodes/dumac) is 6.4x faster than `du` and 2.58x faster than [diskus](https://github.com/sharkdp/diskus) with a warm disk cache.
 
-The odds were certainly in my favor as diskus does not use macOS-specific syscalls and instead uses standard POSIX APIs. As I'll go on to explain, I used [tokio tasks](https://docs.rs/tokio/latest/tokio/task/) and [getattrlistbulk](https://man.freebsd.org/cgi/man.cgi?query=getattrlistbulk&sektion=2&manpath=macOS+13.6.5) to be faster than the current crop of `du -sh` clones that run on macOS.
+The odds were certainly in my favor as `diskus` does not use macOS-specific syscalls and instead uses standard POSIX APIs. As I'll go on to explain, I used [tokio tasks](https://docs.rs/tokio/latest/tokio/task/) and [getattrlistbulk](https://man.freebsd.org/cgi/man.cgi?query=getattrlistbulk&sektion=2&manpath=macOS+13.6.5) to be faster than the current crop of `du -sh` clones that run on macOS.
 
 ## The Challenge
 
@@ -52,7 +52,7 @@ func handleDir(rootDir string, ch chan int64) {
     }
     defer dir.Close()
 
-    // readdir()
+    // getdirentries64()
     files, err := dir.Readdir(0)
     if err != nil {
         panic(err)
@@ -67,7 +67,7 @@ func handleDir(rootDir string, ch chan int64) {
             size += childSize
         } else {
         
-            // stat()
+            // lstat64()
             size += file.Sys().(*syscall.Stat_t).Blocks * 512
         }
         <-sem
