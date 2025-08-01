@@ -26,17 +26,17 @@ export default [
     to: "/making-a-text-editor-with-a-game-engine",
   },
   {
+    name: "dumac",
+    link: "https://github.com/healeycodes/dumac",
+    desc: "A very fast alternative to 'du -sh' for macOS that uses getattrlistbulk.",
+    to: "/maybe-the-fastest-disk-usage-program-on-macos",
+  },
+  {
     name: "andoma",
     link: "https://github.com/healeycodes/andoma",
     desc:
       "A chess engine with alpha-beta pruning, piece-square tables, and move ordering.",
     to: "/building-my-own-chess-engine",
-  },
-  {
-    name: "dumac",
-    link: "https://github.com/healeycodes/dumac",
-    desc: "A very fast alternative to 'du -sh' for macOS that uses getattrlistbulk.",
-    to: "/maybe-the-fastest-disk-usage-program-on-macos",
   },
   {
     name: "queuedle",
