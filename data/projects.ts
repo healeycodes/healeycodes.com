@@ -35,7 +35,7 @@ export default [
   {
     name: "dumac",
     link: "https://github.com/healeycodes/dumac",
-    desc: "A veryfast alternative to 'du -sh' for macOS that uses getattrlistbulk.",
+    desc: "A very fast alternative to 'du -sh' for macOS that uses getattrlistbulk.",
     to: "/maybe-the-fastest-disk-usage-program-on-macos",
   },
   {
