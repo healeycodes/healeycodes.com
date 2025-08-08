@@ -14,12 +14,6 @@ export default [
     to: "/a-custom-webassembly-compiler",
   },
   {
-    name: "llmfs",
-    link: "https://github.com/healeycodes/llmfs",
-    desc: "FUSE filesystem where file operations are handled by an LLM.",
-    to: "/filesystem-backed-by-an-llm",
-  },
-  {
     name: "noter",
     link: "https://github.com/healeycodes/noter",
     desc: "A text editor for macOS. Built using the Ebitengine game engine.",
@@ -43,6 +37,12 @@ export default [
     link: "https://queuedle.com",
     desc: "A daily word-sliding puzzle game inspired by Wordle and Scrabble.",
     to: "/solving-queuedle",
+  },
+  {
+    name: "llmfs",
+    link: "https://github.com/healeycodes/llmfs",
+    desc: "FUSE filesystem where file operations are handled by an LLM.",
+    to: "/filesystem-backed-by-an-llm",
   },
   {
     name: "jar",
