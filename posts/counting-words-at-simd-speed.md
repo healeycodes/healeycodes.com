@@ -2,7 +2,7 @@
 title: "Counting Words at SIMD Speed"
 date: "2025-08-13"
 tags: ["c"]
-description: "Rewriting a word counting program five times until it's 500x faster."
+description: "Rewriting a word counting program five times until it's 494x faster."
 ---
 
 I've written some progressively faster word counting programs. First, we'll start with Python, and then we'll drop down to C, and finally, we'll use single instruction, multiple data (SIMD) programming to go as fast as possible.
