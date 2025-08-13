@@ -63,6 +63,12 @@ export default [
     to: "/running-untrusted-python-code",
   },
   {
+    name: "counting-words-at-simd-speed",
+    link: "https://github.com/healeycodes/counting-words-at-simd-speed",
+    desc: "Applying SIMD instructions to a word counting program.",
+    to: "/counting-words-at-simd-speed",
+  },
+  {
     name: "coolrule",
     link: "https://github.com/healeycodes/coolrule",
     desc: "Boolean expression evaluation engine (a Rust port of boolrule).",
