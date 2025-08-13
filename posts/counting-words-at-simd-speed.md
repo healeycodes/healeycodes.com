@@ -43,7 +43,7 @@ with open(sys.argv[1], "rb") as f:
 print(words)
 ```
 
-This program is horrendously slow. It takes 86.6 seconds on my Apple M1 Pro. Python code runs for every byte, incurring interpreter dispatch and object checks again and again.
+This program is horrendously slow. It takes 89.6 seconds on my Apple M1 Pro. Python code runs for every byte, incurring interpreter dispatch and object checks again and again.
 
 ## Using CPython efficiently (13.7 seconds)
 
@@ -70,7 +70,7 @@ This version is ~6× faster than the initial Python version.
 
 I think the above Python version is very close to the limit that we can get with straightforward Python (e.g. no NumPy, no threads).
 
-By porting our first Python attempt to C, we're rewarded with a ~11× speedup.
+By porting our first Python attempt to C, we're rewarded with a ~74× speedup.
 
 ```c
 // 2_mvp.c
@@ -100,7 +100,7 @@ Why is it so much quicker? Before, `re.finditer(...)` was creating a Python `Mat
 
 The regex engine was also doing extra work when it searched, matched, backtracked, and performed bookkeeping. Even though that's in C, it's still building Python objects for the iterator.
 
-In comparison, this version's C loop is a single pass over bytes with two booleans (`prev_ws`, `cur_ws`) and a predictable branch. Compilers turn this into very tight code, i.e., no per-word allocations, and no callbacks into the interpreter.
+In comparison, this version's C loop is a single pass over bytes with two booleans (`prev_ws`, `cur_ws`) and a simple branch. Compilers turn this into very tight code, i.e., no per-word allocations, and no callbacks into the interpreter.
 
 ## Adding SIMD (249 milliseconds)
 
