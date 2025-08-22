@@ -274,9 +274,9 @@ async function run(fp: string, file: string, shouldStop: () => boolean, setTermi
             const a = pop(stack);
             const b = pop(stack);
             const c = pop(stack);
-            stack.push(b);
-            stack.push(a);
-            stack.push(c);
+            stack.push(b); // bottom
+            stack.push(a); // middle
+            stack.push(c); // top
             continue;
         }
 
