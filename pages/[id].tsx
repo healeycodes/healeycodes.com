@@ -16,6 +16,7 @@ import Date from "../components/date";
 import Newsletter from "../components/newsletter";
 import { AldousBroder, IntroMaze, RandomDFS, TreeDiameter, WilsonsAlgorithm } from "../components/visuals/mazes/components";
 import { KnightAttack, WhitePawnAttacks } from "../components/visuals/bitboards/components";
+import { Fibonacci, HelloWorld, Ladder } from "../components/visuals/icepath/components";
 
 const isVideo = /\.mp4$/;
 
@@ -172,6 +173,14 @@ export default function Post({
                   return WilsonsAlgorithm()
                 } else if (props.id === 'treeDiameter') {
                   return TreeDiameter()
+                }
+              } else if (type === "div" && props.className === "icepath") {
+                if (props.id === 'fibonacci') {
+                  return Fibonacci()
+                } else if (props.id === 'helloWorld') {
+                  return HelloWorld()
+                } else if (props.id === 'ladder') {
+                  return Ladder()
                 }
               } else if (type === "div" && props.className === "bitboards") {
                 if (props.id === 'whitePawnAttacks') {
