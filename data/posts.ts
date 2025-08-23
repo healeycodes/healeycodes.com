@@ -1,7 +1,7 @@
 // Popular posts (ordering affects display)
 export const popularPosts = [
+  "maybe-the-fastest-disk-usage-program-on-macos",
   "lisp-compiler-optimizations",
-  "my-time-at-the-recurse-center",
   "rendering-counter-strike-demos-in-the-browser",
 ];
 
