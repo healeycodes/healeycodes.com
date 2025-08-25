@@ -1,6 +1,14 @@
 {
   "redirects": [
     {
+      "source": "/about",
+      "destination": "/"
+    },
+    {
+      "source": "/about/",
+      "destination": "/"
+    },
+    {
       "source": "/tags/(.*)",
       "destination": "/articles"
     },

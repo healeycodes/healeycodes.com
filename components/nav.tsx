@@ -19,9 +19,6 @@ export default function Nav() {
           <Link href="/notes" legacyBehavior>Notes</Link>
         </li>
         <li>
-          <Link href="/about" legacyBehavior>About</Link>
-        </li>
-        <li>
           <a
             href={`https://github.com/${siteConfig.AUTHOR_GITHUB}`}
             target="_blank"
