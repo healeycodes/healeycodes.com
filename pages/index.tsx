@@ -42,8 +42,8 @@ export default function Home({ allPostsData, description, words }) {
   return (
     <Layout title="Blog" description={description}>
       <main>
-        <div className="about">
-          <h1>About</h1>
+        <div className="intro">
+          <h1>Intro</h1>
           <p>
             Hello and welcome to my website. I'm a software engineer who writes about software. I've
             written {numberWithCommas(words)} words
@@ -60,17 +60,17 @@ export default function Home({ allPostsData, description, words }) {
             I enjoy understanding how things work and making them faster. Like how SIMD can make some programs <Link href="/counting-words-at-simd-speed">orders of magnitude quicker</Link>.
           </p>
           <p>
-            I wrote <Link href="/maybe-the-fastest-disk-usage-program-on-macos">one of the fastest disk usage programs on macOS</Link> by
+            I wrote <Link href="/maybe-the-fastest-disk-usage-program-on-macos">one of the fastest disk-usage programs on macOS</Link> by
             using macOS-specific system calls, and then
             made it faster by <Link href="/optimizing-my-disk-usage-program">reducing thread scheduling overhead and lock contention</Link>. I
-            also showed how you can beat the performance of <code>grep</code> by just <Link href="/beating-grep-with-go">using goroutines</Link>.
+            also showed how to beat the performance of <code>grep</code> by just <Link href="/beating-grep-with-go">using goroutines</Link>.
           </p>
           <p>
-            My <Link href="/installing-npm-packages-very-quickly">experimental package manager</Link> uses simple concurrency patterns to be faster than every package manager aside from Bun (which is 11% faster) when cold installing from a lockfile.
+            My <Link href="/installing-npm-packages-very-quickly">experimental package manager</Link> uses simple concurrency patterns to be faster than every package manager aside from Bun (which is 11% faster) when cold-installing from a lockfile.
           </p>
           <p>
-            I've created a few small programming languages and related tool, including a <Link href="/lisp-to-javascript-compiler">Lisp-to-JavaScript compiler</Link>, which I turned into an <Link href="/lisp-compiler-optimizations">optimizing compiler</Link>, and for which I wrote a <Link href="/compiling-lisp-to-bytecode-and-running-it">bytecode VM</Link>.
-            I also build an <Link href="/adding-for-loops-to-an-interpreter">interpreted language</Link> with a C-style syntax, which I <Link href="/profiling-and-optimizing-an-interpreter">profiled and made faster</Link>; I later added a <Link href="/a-custom-webassembly-compiler">WebAssembly compiler</Link> and a <Link href="/adding-a-line-profiler-to-my-language">line profiler</Link>. I also <Link href="/porting-boolrule-to-rust">ported an expression engine</Link> to Rust.
+            I've created a few small programming languages and related tools, including a <Link href="/lisp-to-javascript-compiler">Lisp-to-JavaScript compiler</Link>, which I turned into an <Link href="/lisp-compiler-optimizations">optimizing compiler</Link>, and for which I wrote a <Link href="/compiling-lisp-to-bytecode-and-running-it">bytecode VM</Link>.
+            I also built an <Link href="/adding-for-loops-to-an-interpreter">interpreted language</Link> with a C-style syntax, which I <Link href="/profiling-and-optimizing-an-interpreter">profiled and made faster</Link>; I later added a <Link href="/a-custom-webassembly-compiler">WebAssembly compiler</Link> and a <Link href="/adding-a-line-profiler-to-my-language">line profiler</Link>. I also <Link href="/porting-boolrule-to-rust">ported an expression engine</Link> to Rust.
           </p>
           <p>
             Below, you can see my <Link href="/icepath-a-2d-programming-language">2D programming language</Link> calculating the first ten numbers in the Fibonacci sequence.
@@ -83,10 +83,10 @@ export default function Home({ allPostsData, description, words }) {
             My favorite solver I've worked on is <Link href="/building-and-solving-sokoban">for Sokoban</Link>.
           </p>
           <p>
-            I'm a big fan of classic FPS games like Quake and Counter-Strike. I worked on a tool to <Link href="/rendering-counter-strike-demos-in-the-browser">analyze Counter-Strike demos in the browser</Link>, and a program that <Link href="/compressing-cs2-demos">compresses Counter-Strike demos by 13x</Link>.
+            I'm a big fan of classic FPS games like Quake and Counter-Strike. I worked on a tool to <Link href="/rendering-counter-strike-demos-in-the-browser">analyze Counter-Strike demos in the browser</Link>, and a program that <Link href="/compressing-cs2-demos">compresses Counter-Strike demos by 13×</Link>.
           </p>
           <p>
-            I did a <Link href="/my-time-at-the-recurse-center">six week batch at the Recurse Center</Link> where I worked on many projects and paired with many excellent programmers. One of the projects I worked on was a text editor that I <Link href="/making-a-text-editor-with-a-game-engine">built using a game engine</Link>, and to which I <Link href="/implementing-highlighting-search-and-undo">added highlighting, search, and undo</Link>.
+            I did a <Link href="/my-time-at-the-recurse-center">six-week batch at the Recurse Center</Link> where I worked on many projects and paired with many excellent programmers. One of the projects I worked on was a text editor that I <Link href="/making-a-text-editor-with-a-game-engine">built using a game engine</Link>, and to which I <Link href="/implementing-highlighting-search-and-undo">added highlighting, search, and undo</Link>.
           </p>
           <p>
             I've written about <Link href="/sandboxing-javascript-code">how to sandbox JavaScript</Link> using Deno, how to <Link href="/running-untrusted-python-code">sandbox Python using seccomp</Link>, and how to take over the <code>getrandom</code> system call <Link href="/making-python-less-random">using ptrace</Link>.
@@ -109,7 +109,7 @@ export default function Home({ allPostsData, description, words }) {
             I've worked remotely at Vercel since 2021, mostly on the distributed build pipeline that runs untrusted customer code, as well as the underlying ephemeral compute platform.
           </p>
           <p>
-            Technical books I recommend include <i>Crafting Interpreters</i> and <i>The Computational Beauty of Nature</i>. For general fiction, I recommend the authors Patricia Lockwood and Ben Lerner. For sci-fi, I recommend the <i>Dune</i> series (1-6 are amazing, 7-9 are good) and the <i>Remembrance of Earth's Past</i> trilogy. For non-fiction, I recommend <i>The Orchid Thief</i> and <i>Nothing To Envy</i>.
+            Technical books I recommend include <i>Crafting Interpreters</i> and <i>The Computational Beauty of Nature</i>. For general fiction, I recommend the authors Patricia Lockwood and Ben Lerner. For sci-fi, I recommend the <i>Dune</i> series (1-6 are amazing, 7-9 are good) and the <i>Remembrance of Earth's Past</i> trilogy. For non-fiction, I recommend <i>The Orchid Thief</i> and <i>Nothing to Envy</i>.
           </p>
           <p>
             I love getting email and you can reach me by running the following code in your browser's developer console: <code>atob('aGVhbGV5Y29kZXNAZ21haWwuY29t')</code>.
@@ -120,7 +120,7 @@ export default function Home({ allPostsData, description, words }) {
         <Newsletter />
       </footer>
       <style jsx>{`
-        .about {
+        .intro {
           padding-bottom: 20px;
         }
         .posts {
