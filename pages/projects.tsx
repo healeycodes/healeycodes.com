@@ -17,7 +17,10 @@ export default function Projects({ totalStars, mostRecentPushFormatted }: { tota
       <h1>Projects</h1>
       <main>
         <p>
-          My side projects include interpreters and compilers, web frameworks, game solvers, developer tools, databases, games, and more. My public GitHub repositories have been starred {totalStars} times, and my last open source <code>git push</code> was {mostRecentPushFormatted} ago.
+          I enjoy building things that reveal how systems work and how to make them faster.
+        </p>
+        <p>
+          My side projects range from interpreters and compilers to game solvers, developer tools, databases, visualization tools, experimental filesystems, and web frameworks. My public GitHub repositories have been starred {totalStars} times. I continue to publish and share regularly and my last open source <code>git push</code> was {mostRecentPushFormatted} ago.
         </p>
         <h2>Open Source</h2>
         <div className="project-list">
