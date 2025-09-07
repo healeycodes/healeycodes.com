@@ -1,10 +1,12 @@
 import { PlaywrightTestConfig, devices } from "@playwright/test";
 import path from "path";
+import os from "os";
 
 // Reference: https://playwright.dev/docs/test-configuration
 // Also: https://github.com/vercel/next.js/blob/canary/examples/with-playwright/playwright.config.ts
 const config: PlaywrightTestConfig = {
-  workers: 2,
+  // Use cores
+  workers: os.cpus().length,
   timeout: 30 * 1000,
   testDir: path.join(__dirname, "e2e"),
   retries: 5,

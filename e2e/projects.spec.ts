@@ -7,7 +7,7 @@ test("project page renders", async ({ page }) => {
   await new Promise(r => setTimeout(r, 2000));
 
   // Intro visible
-  const intro = await page.locator("text=My side projects include");
+  const intro = await page.locator("text=My side projects range");
   expect(await intro.isVisible()).toBe(true);
 
   // Some project is visible too
