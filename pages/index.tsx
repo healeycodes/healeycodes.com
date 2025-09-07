@@ -52,6 +52,9 @@ export default function Home({ allPostsData, description, words }) {
             articles have reached the front page of Hacker
             News <a href="https://hn.algolia.com/?dateRange=all&page=0&prefix=false&query=healeycodes.com%20-queuedle&sort=byPopularity&type=story">20 times</a>.
           </p>
+          <p>
+            I've worked at Vercel since 2021, mostly on the distributed build pipeline that runs untrusted customer code, as well as on the underlying ephemeral compute platform.
+          </p>
           {/* Maybe link to latest? */}
           {/* <p>
             My latest article is <Link href={`/${allPostsData[0].id}`}>{allPostsData[0].title}</Link>.
@@ -104,9 +107,6 @@ export default function Home({ allPostsData, description, words }) {
           />
           <p>
             I live in the UK with my wife, our three young children, and a cat called Moose.
-          </p>
-          <p>
-            I've worked remotely at Vercel since 2021, mostly on the distributed build pipeline that runs untrusted customer code, as well as the underlying ephemeral compute platform.
           </p>
           <p>
             Technical books I recommend include <i>Crafting Interpreters</i> and <i>The Computational Beauty of Nature</i>. For general fiction, I recommend the authors Patricia Lockwood and Ben Lerner. For sci-fi, I recommend the <i>Dune</i> series (1-6 are amazing, 7-9 are good) and the <i>Remembrance of Earth's Past</i> trilogy. For non-fiction, I recommend <i>The Orchid Thief</i> and <i>Nothing to Envy</i>.
