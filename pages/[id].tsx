@@ -16,7 +16,8 @@ import Date from "../components/date";
 import Newsletter from "../components/newsletter";
 import { AldousBroder, IntroMaze, RandomDFS, TreeDiameter, WilsonsAlgorithm } from "../components/visuals/mazes/components";
 import { KnightAttack, WhitePawnAttacks } from "../components/visuals/bitboards/components";
-import { Fibonacci, HelloWorld, Ladder } from "../components/visuals/icepath/components";
+import { Fibonacci, HelloWorld, Ladder } from "../components/visuals/icepath/components"; 
+import { Compiler, Tokenizer, VM } from "../components/visuals/forth/components";
 
 const isVideo = /\.mp4$/;
 
@@ -187,6 +188,14 @@ export default function Post({
                   return WhitePawnAttacks()
                 } else if (props.id === 'knightAttack') {
                   return KnightAttack()
+                }
+              } else if (type === "div" && props.className === "forth") {
+                if (props.id === 'tokenizer') {
+                  return <Tokenizer />
+                } else if (props.id === 'compiler') {
+                  return <Compiler />
+                } else if (props.id === 'vm') {
+                  return <VM />
                 }
               }
               return React.createElement(type, props, children);

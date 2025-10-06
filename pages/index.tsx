@@ -72,7 +72,7 @@ export default function Home({ allPostsData, description, words }) {
             My <Link href="/installing-npm-packages-very-quickly">experimental package manager</Link> uses simple concurrency patterns to be faster than every package manager aside from Bun (which is 11% faster) when cold-installing from a lockfile.
           </p>
           <p>
-            I've created a few small programming languages and related tools, including a <Link href="/lisp-to-javascript-compiler">Lisp-to-JavaScript compiler</Link>, which I turned into an <Link href="/lisp-compiler-optimizations">optimizing compiler</Link>, and for which I wrote a <Link href="/compiling-lisp-to-bytecode-and-running-it">bytecode VM</Link>.
+            I've created a few small programming languages and related tools, including a <Link href="/compiling-a-forth"> Forth compiler</Link>, a <Link href="/lisp-to-javascript-compiler">Lisp-to-JavaScript compiler</Link>, which I turned into an <Link href="/lisp-compiler-optimizations">optimizing compiler</Link>, and for which I wrote a <Link href="/compiling-lisp-to-bytecode-and-running-it">bytecode VM</Link>.
             I also built an <Link href="/adding-for-loops-to-an-interpreter">interpreted language</Link> with a C-style syntax, which I <Link href="/profiling-and-optimizing-an-interpreter">profiled and made faster</Link>; I later added a <Link href="/a-custom-webassembly-compiler">WebAssembly compiler</Link> and a <Link href="/adding-a-line-profiler-to-my-language">line profiler</Link>. I also <Link href="/porting-boolrule-to-rust">ported an expression engine</Link> to Rust.
           </p>
           <p>

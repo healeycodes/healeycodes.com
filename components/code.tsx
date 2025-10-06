@@ -5,6 +5,7 @@ import Prism from "prism-react-renderer/prism";
 require("prismjs/components/prism-rust")
 require("prismjs/components/prism-lua")
 require("prismjs/components/prism-lisp")
+require("../lib/prism-forth")
 // --
 
 import Highlight, { defaultProps, Language } from "prism-react-renderer";
