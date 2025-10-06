@@ -530,14 +530,15 @@ export function Tokenizer() {
     const [tokens, setTokens] = useState<Token[]>([]);
     const [isRunning, setIsRunning] = useState(false);
 
-    const runTokenizer = async () => {
-        if (isRunning) return;
+    const runTokenizer = async (shouldStop: () => boolean) => {
+        if (isRunning || shouldStop()) return;
         setIsRunning(true);
         setTokens([]);
         setHighlight({ start: 0, end: 0 });
 
         try {
             await tokenize(fib10, async (newHighlight, newTokens) => {
+                if (shouldStop()) return;
                 setHighlight(newHighlight);
                 setTokens([...newTokens]);
                 await new Promise(resolve => setTimeout(resolve, 150));
@@ -547,21 +548,26 @@ export function Tokenizer() {
         }
 
         // Sleep for 2 seconds before allowing next run
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        if (!shouldStop()) {
+            await new Promise(resolve => setTimeout(resolve, 2000));
+        }
         setIsRunning(false);
     };
 
     // Auto-start tokenization loop
     useEffect(() => {
-        let shouldContinue = true;
+        // Only run in browser environment
+        if (typeof window === 'undefined') return;
+        
+        let cancelled = false;
         const loop = async () => {
-            while (shouldContinue) {
-                await runTokenizer();
+            while (!cancelled) {
+                await runTokenizer(() => cancelled);
             }
         };
         loop();
         return () => {
-            shouldContinue = false;
+            cancelled = true;
         };
     }, []);
 
@@ -688,8 +694,8 @@ export function Compiler() {
     const [bytecode, setBytecode] = useState<Bytecode[]>([]);
     const [isRunning, setIsRunning] = useState(false);
 
-    const runCompiler = async () => {
-        if (isRunning) return;
+    const runCompiler = async (shouldStop: () => boolean) => {
+        if (isRunning || shouldStop()) return;
         setIsRunning(true);
         setTokens([]);
         setBytecode([]);
@@ -703,6 +709,7 @@ export function Compiler() {
 
             // Then compile with highlighting
             await compile(allTokens, async (highlight, newBytecode) => {
+                if (shouldStop()) return;
                 setHighlightRange({ start: highlight.tokenIdxStart, end: highlight.tokenIdxEnd });
                 setTokens([...allTokens]);
                 setBytecode([...newBytecode]);
@@ -713,23 +720,26 @@ export function Compiler() {
         }
 
         // Sleep for 2 seconds before next run
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        if (!shouldStop()) {
+            await new Promise(resolve => setTimeout(resolve, 2000));
+        }
         setIsRunning(false);
     };
 
     useEffect(() => {
-        let shouldContinue = true;
+        // Only run in browser environment
+        if (typeof window === 'undefined') return;
+        
+        let cancelled = false;
         const loop = async () => {
-            while (shouldContinue) {
-                while (true) {
-                    await runCompiler();
-                }
+            while (!cancelled) {
+                await runCompiler(() => cancelled);
             }
-            return () => {
-                shouldContinue = false;
-            };
         };
         loop();
+        return () => {
+            cancelled = true;
+        };
     }, []);
 
     // Calculate which tokens to show
@@ -852,8 +862,8 @@ export function VM() {
     const [variableTable, setVariableTable] = useState<number[]>([]);
     const [isRunning, setIsRunning] = useState(false);
 
-    const runVM = async () => {
-        if (isRunning) return;
+    const runVM = async (shouldStop: () => boolean) => {
+        if (isRunning || shouldStop()) return;
         setIsRunning(true);
         setBytecode([]);
         setDataStack([]);
@@ -875,6 +885,7 @@ export function VM() {
 
             // Run the VM with highlighting
             await vm(program, async (highlight, newDataStack, newReturnStack, newVariableTable) => {
+                if (shouldStop()) return;
                 setHighlightIP(highlight.ip);
                 setDataStack([...newDataStack]);
                 setReturnStack([...newReturnStack]);
@@ -886,21 +897,26 @@ export function VM() {
         }
 
         // Sleep for 2 seconds before next run
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        if (!shouldStop()) {
+            await new Promise(resolve => setTimeout(resolve, 2000));
+        }
         setIsRunning(false);
     };
 
     useEffect(() => {
-        let shouldContinue = true;
+        // Only run in browser environment
+        if (typeof window === 'undefined') return;
+        
+        let cancelled = false;
         const loop = async () => {
-            while (shouldContinue) {
-                await runVM();
+            while (!cancelled) {
+                await runVM(() => cancelled);
             }
-            return () => {
-                shouldContinue = false;
-            };
         };
         loop();
+        return () => {
+            cancelled = true;
+        };
     }, []);
 
     // Calculate which bytecode lines to show (scrolled around IP)
