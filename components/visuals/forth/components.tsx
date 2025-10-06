@@ -532,22 +532,17 @@ export function Tokenizer() {
     const [terminal, setTerminal] = useState<React.ReactNode>(null);
 
     useEffect(() => {
-        console.log('[Tokenizer] Component mounted, starting loop');
         let cancelled = false;
         (async () => {
             while (!cancelled) {
-                console.log('[Tokenizer] Starting tokenization run');
                 await runTokenizer(() => cancelled, (node) => {
-                    console.log('[Tokenizer] Setting terminal node');
                     setTerminal(node);
                 });
-                console.log('[Tokenizer] Tokenization run complete, waiting before next run');
                 await new Promise((resolve) => setTimeout(resolve, TOKENIZER_FINISH_TIME));
             }
         })();
 
         return () => {
-            console.log('[Tokenizer] Component unmounting, cancelling');
             cancelled = true;
         }
     }, []);
@@ -558,20 +553,17 @@ export function Tokenizer() {
 }
 
 async function runTokenizer(shouldStop: () => boolean, setTerminal: (node: React.ReactNode) => void) {
-    console.log('[runTokenizer] Starting tokenization process');
     const tokens: Token[] = [];
     let highlight = { start: 0, end: 0 };
 
     try {
         await tokenize(fib10, async (newHighlight, newTokens) => {
             if (shouldStop()) {
-                console.log('[runTokenizer] Stopping due to cancellation');
                 return;
             }
             
             highlight = newHighlight;
             tokens.splice(0, tokens.length, ...newTokens);
-            console.log(`[runTokenizer] Tokenized ${tokens.length} tokens, highlighting ${highlight.start}-${highlight.end}`);
             
             const terminalNode = renderTokenizer(highlight, tokens);
             setTerminal(terminalNode);
@@ -705,22 +697,17 @@ export function Compiler() {
     const [terminal, setTerminal] = useState<React.ReactNode>(null);
 
     useEffect(() => {
-        console.log('[Compiler] Component mounted, starting loop');
         let cancelled = false;
         (async () => {
             while (!cancelled) {
-                console.log('[Compiler] Starting compilation run');
                 await runCompiler(() => cancelled, (node) => {
-                    console.log('[Compiler] Setting terminal node');
                     setTerminal(node);
                 });
-                console.log('[Compiler] Compilation run complete, waiting before next run');
                 await new Promise((resolve) => setTimeout(resolve, COMPILER_FINISH_TIME));
             }
         })();
 
         return () => {
-            console.log('[Compiler] Component unmounting, cancelling');
             cancelled = true;
         }
     }, []);
@@ -731,36 +718,30 @@ export function Compiler() {
 }
 
 async function runCompiler(shouldStop: () => boolean, setTerminal: (node: React.ReactNode) => void) {
-    console.log('[runCompiler] Starting compilation process');
     let tokens: Token[] = [];
     let bytecode: Bytecode[] = [];
     let highlightRange = { start: -1, end: -1 };
 
     try {
         // First tokenize the source
-        console.log('[runCompiler] Tokenizing source');
         const allTokens = await tokenize(fib10, async () => {
             // No-op callback for tokenization, just need the tokens
         });
 
         if (shouldStop()) {
-            console.log('[runCompiler] Stopping due to cancellation after tokenization');
             return;
         }
 
         tokens = allTokens;
-        console.log(`[runCompiler] Tokenized ${tokens.length} tokens`);
 
         // Then compile with highlighting
         await compile(allTokens, async (highlight, newBytecode) => {
             if (shouldStop()) {
-                console.log('[runCompiler] Stopping due to cancellation during compilation');
                 return;
             }
             
             highlightRange = { start: highlight.tokenIdxStart, end: highlight.tokenIdxEnd };
             bytecode = [...newBytecode];
-            console.log(`[runCompiler] Compiled ${bytecode.length} bytecode ops, highlighting tokens ${highlightRange.start}-${highlightRange.end}`);
             
             const terminalNode = renderCompiler(highlightRange, tokens, bytecode);
             setTerminal(terminalNode);
@@ -888,22 +869,17 @@ export function VM() {
     const [terminal, setTerminal] = useState<React.ReactNode>(null);
 
     useEffect(() => {
-        console.log('[VM] Component mounted, starting loop');
         let cancelled = false;
         (async () => {
             while (!cancelled) {
-                console.log('[VM] Starting VM run');
                 await runVM(() => cancelled, (node) => {
-                    console.log('[VM] Setting terminal node');
                     setTerminal(node);
                 });
-                console.log('[VM] VM run complete, waiting before next run');
                 await new Promise((resolve) => setTimeout(resolve, VM_FINISH_TIME));
             }
         })();
 
         return () => {
-            console.log('[VM] Component unmounting, cancelling');
             cancelled = true;
         }
     }, []);
@@ -914,7 +890,6 @@ export function VM() {
 }
 
 async function runVM(shouldStop: () => boolean, setTerminal: (node: React.ReactNode) => void) {
-    console.log('[runVM] Starting VM execution process');
     let bytecode: Bytecode[] = [];
     let highlightIP = -1;
     let dataStack: number[] = [];
@@ -923,13 +898,11 @@ async function runVM(shouldStop: () => boolean, setTerminal: (node: React.ReactN
 
     try {
         // First tokenize and compile to get the program
-        console.log('[runVM] Tokenizing and compiling source');
         const allTokens = await tokenize(fib10, async () => {
             // No-op
         });
 
         if (shouldStop()) {
-            console.log('[runVM] Stopping due to cancellation after tokenization');
             return;
         }
 
@@ -938,17 +911,14 @@ async function runVM(shouldStop: () => boolean, setTerminal: (node: React.ReactN
         });
 
         if (shouldStop()) {
-            console.log('[runVM] Stopping due to cancellation after compilation');
             return;
         }
 
         bytecode = program.bytecode;
-        console.log(`[runVM] Compiled program with ${bytecode.length} bytecode ops`);
 
         // Run the VM with highlighting
         await vm(program, async (highlight, newDataStack, newReturnStack, newVariableTable) => {
             if (shouldStop()) {
-                console.log('[runVM] Stopping due to cancellation during VM execution');
                 return;
             }
             
@@ -956,7 +926,6 @@ async function runVM(shouldStop: () => boolean, setTerminal: (node: React.ReactN
             dataStack = [...newDataStack];
             returnStack = [...newReturnStack];
             variableTable = [...newVariableTable];
-            console.log(`[runVM] VM step at IP ${highlightIP}, DS: [${dataStack.join(',')}], RS: [${returnStack.join(',')}]`);
             
             const terminalNode = renderVM(highlightIP, bytecode, dataStack, returnStack, variableTable);
             setTerminal(terminalNode);
