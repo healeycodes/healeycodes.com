@@ -553,12 +553,16 @@ export function Tokenizer() {
 
     // Auto-start tokenization loop
     useEffect(() => {
+        let shouldContinue = true;
         const loop = async () => {
-            while (true) {
+            while (shouldContinue) {
                 await runTokenizer();
             }
         };
         loop();
+        return () => {
+            shouldContinue = false;
+        };
     }, []);
 
     const charNodes: ReactNode[] = [];
@@ -714,10 +718,16 @@ export function Compiler() {
     };
 
     useEffect(() => {
+        let shouldContinue = true;
         const loop = async () => {
-            while (true) {
-                await runCompiler();
+            while (shouldContinue) {
+                while (true) {
+                    await runCompiler();
+                }
             }
+            return () => {
+                shouldContinue = false;
+            };
         };
         loop();
     }, []);
@@ -881,10 +891,14 @@ export function VM() {
     };
 
     useEffect(() => {
+        let shouldContinue = true;
         const loop = async () => {
-            while (true) {
+            while (shouldContinue) {
                 await runVM();
             }
+            return () => {
+                shouldContinue = false;
+            };
         };
         loop();
     }, []);
