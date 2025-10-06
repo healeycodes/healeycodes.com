@@ -525,52 +525,65 @@ async function vm(program: Program, callback: (highlight: { ip: number }, dataSt
     }
 }
 
+const TOKENIZER_WAIT_TIME = 150;
+const TOKENIZER_FINISH_TIME = 2000;
+
 export function Tokenizer() {
-    const [highlight, setHighlight] = useState<{ start: number, end: number }>({ start: 0, end: 0 });
-    const [tokens, setTokens] = useState<Token[]>([]);
-    const [isRunning, setIsRunning] = useState(false);
+    const [terminal, setTerminal] = useState<React.ReactNode>(null);
 
-    const runTokenizer = async (shouldStop: () => boolean) => {
-        if (isRunning || shouldStop()) return;
-        setIsRunning(true);
-        setTokens([]);
-        setHighlight({ start: 0, end: 0 });
-
-        try {
-            await tokenize(fib10, async (newHighlight, newTokens) => {
-                if (shouldStop()) return;
-                setHighlight(newHighlight);
-                setTokens([...newTokens]);
-                await new Promise(resolve => setTimeout(resolve, 150));
-            });
-        } catch (error) {
-            console.error('Tokenization error:', error);
-        }
-
-        // Sleep for 2 seconds before allowing next run
-        if (!shouldStop()) {
-            await new Promise(resolve => setTimeout(resolve, 2000));
-        }
-        setIsRunning(false);
-    };
-
-    // Auto-start tokenization loop
     useEffect(() => {
-        // Only run in browser environment
-        if (typeof window === 'undefined') return;
-        
+        console.log('[Tokenizer] Component mounted, starting loop');
         let cancelled = false;
-        const loop = async () => {
+        (async () => {
             while (!cancelled) {
-                await runTokenizer(() => cancelled);
+                console.log('[Tokenizer] Starting tokenization run');
+                await runTokenizer(() => cancelled, (node) => {
+                    console.log('[Tokenizer] Setting terminal node');
+                    setTerminal(node);
+                });
+                console.log('[Tokenizer] Tokenization run complete, waiting before next run');
+                await new Promise((resolve) => setTimeout(resolve, TOKENIZER_FINISH_TIME));
             }
-        };
-        loop();
+        })();
+
         return () => {
+            console.log('[Tokenizer] Component unmounting, cancelling');
             cancelled = true;
-        };
+        }
     }, []);
 
+    return (
+        <div>{terminal}</div>
+    );
+}
+
+async function runTokenizer(shouldStop: () => boolean, setTerminal: (node: React.ReactNode) => void) {
+    console.log('[runTokenizer] Starting tokenization process');
+    const tokens: Token[] = [];
+    let highlight = { start: 0, end: 0 };
+
+    try {
+        await tokenize(fib10, async (newHighlight, newTokens) => {
+            if (shouldStop()) {
+                console.log('[runTokenizer] Stopping due to cancellation');
+                return;
+            }
+            
+            highlight = newHighlight;
+            tokens.splice(0, tokens.length, ...newTokens);
+            console.log(`[runTokenizer] Tokenized ${tokens.length} tokens, highlighting ${highlight.start}-${highlight.end}`);
+            
+            const terminalNode = renderTokenizer(highlight, tokens);
+            setTerminal(terminalNode);
+            
+            await new Promise(resolve => setTimeout(resolve, TOKENIZER_WAIT_TIME));
+        });
+    } catch (error) {
+        console.error('[runTokenizer] Tokenization error:', error);
+    }
+}
+
+function renderTokenizer(highlight: { start: number, end: number }, tokens: Token[]): React.ReactNode {
     const charNodes: ReactNode[] = [];
     let inComment = false;
 
@@ -586,13 +599,13 @@ export function Tokenizer() {
         const ch = fib10[i];
 
         if (ch === '\n') {
-            inComment = false; // Reset comment flag on new line
+            inComment = false;
             charNodes.push(<br key={`br-${i}`} />);
             continue;
         }
 
         if (ch === '\\') {
-            inComment = true; // Start comment from backslash
+            inComment = true;
         }
 
         const highlightClass = getHighlightClass(i);
@@ -619,7 +632,6 @@ export function Tokenizer() {
             } else if (highlightClass === ' hl-end') {
                 inlineStyle.borderRadius = '0 2px 2px 0';
             }
-            // hl-mid has no border radius
         }
 
         charNodes.push(
@@ -627,7 +639,6 @@ export function Tokenizer() {
         );
     }
 
-    // Get the latest 5 tokens for display, pad with empty slots if needed
     const latestTokens = tokens.slice(-5);
 
     const renderTokenLine = (i: number) => {
@@ -647,7 +658,6 @@ export function Tokenizer() {
                 prefix = 'symbol';
             }
 
-            // Fixed-width layout for alignment
             const indexPart = `${tokenIndex.toString().padStart(2, '\u00A0')}:`;
             const valuePart = `\u00A0${tokenStr}`;
             const prefixPart = `(${prefix})`;
@@ -688,65 +698,84 @@ export function Tokenizer() {
     );
 }
 
+const COMPILER_WAIT_TIME = 500;
+const COMPILER_FINISH_TIME = 2000;
+
 export function Compiler() {
-    const [highlightRange, setHighlightRange] = useState<{ start: number, end: number }>({ start: -1, end: -1 });
-    const [tokens, setTokens] = useState<Token[]>([]);
-    const [bytecode, setBytecode] = useState<Bytecode[]>([]);
-    const [isRunning, setIsRunning] = useState(false);
-
-    const runCompiler = async (shouldStop: () => boolean) => {
-        if (isRunning || shouldStop()) return;
-        setIsRunning(true);
-        setTokens([]);
-        setBytecode([]);
-        setHighlightRange({ start: -1, end: -1 });
-
-        try {
-            // First tokenize the source
-            const allTokens = await tokenize(fib10, async () => {
-                // No-op callback for tokenization, just need the tokens
-            });
-
-            // Then compile with highlighting
-            await compile(allTokens, async (highlight, newBytecode) => {
-                if (shouldStop()) return;
-                setHighlightRange({ start: highlight.tokenIdxStart, end: highlight.tokenIdxEnd });
-                setTokens([...allTokens]);
-                setBytecode([...newBytecode]);
-                await new Promise(resolve => setTimeout(resolve, 500));
-            });
-        } catch (error) {
-            console.error('Compilation error:', error);
-        }
-
-        // Sleep for 2 seconds before next run
-        if (!shouldStop()) {
-            await new Promise(resolve => setTimeout(resolve, 2000));
-        }
-        setIsRunning(false);
-    };
+    const [terminal, setTerminal] = useState<React.ReactNode>(null);
 
     useEffect(() => {
-        // Only run in browser environment
-        if (typeof window === 'undefined') return;
-        
+        console.log('[Compiler] Component mounted, starting loop');
         let cancelled = false;
-        const loop = async () => {
+        (async () => {
             while (!cancelled) {
-                await runCompiler(() => cancelled);
+                console.log('[Compiler] Starting compilation run');
+                await runCompiler(() => cancelled, (node) => {
+                    console.log('[Compiler] Setting terminal node');
+                    setTerminal(node);
+                });
+                console.log('[Compiler] Compilation run complete, waiting before next run');
+                await new Promise((resolve) => setTimeout(resolve, COMPILER_FINISH_TIME));
             }
-        };
-        loop();
+        })();
+
         return () => {
+            console.log('[Compiler] Component unmounting, cancelling');
             cancelled = true;
-        };
+        }
     }, []);
 
-    // Calculate which tokens to show
+    return (
+        <div>{terminal}</div>
+    );
+}
+
+async function runCompiler(shouldStop: () => boolean, setTerminal: (node: React.ReactNode) => void) {
+    console.log('[runCompiler] Starting compilation process');
+    let tokens: Token[] = [];
+    let bytecode: Bytecode[] = [];
+    let highlightRange = { start: -1, end: -1 };
+
+    try {
+        // First tokenize the source
+        console.log('[runCompiler] Tokenizing source');
+        const allTokens = await tokenize(fib10, async () => {
+            // No-op callback for tokenization, just need the tokens
+        });
+
+        if (shouldStop()) {
+            console.log('[runCompiler] Stopping due to cancellation after tokenization');
+            return;
+        }
+
+        tokens = allTokens;
+        console.log(`[runCompiler] Tokenized ${tokens.length} tokens`);
+
+        // Then compile with highlighting
+        await compile(allTokens, async (highlight, newBytecode) => {
+            if (shouldStop()) {
+                console.log('[runCompiler] Stopping due to cancellation during compilation');
+                return;
+            }
+            
+            highlightRange = { start: highlight.tokenIdxStart, end: highlight.tokenIdxEnd };
+            bytecode = [...newBytecode];
+            console.log(`[runCompiler] Compiled ${bytecode.length} bytecode ops, highlighting tokens ${highlightRange.start}-${highlightRange.end}`);
+            
+            const terminalNode = renderCompiler(highlightRange, tokens, bytecode);
+            setTerminal(terminalNode);
+            
+            await new Promise(resolve => setTimeout(resolve, COMPILER_WAIT_TIME));
+        });
+    } catch (error) {
+        console.error('[runCompiler] Compilation error:', error);
+    }
+}
+
+function renderCompiler(highlightRange: { start: number, end: number }, tokens: Token[], bytecode: Bytecode[]): React.ReactNode {
     const visibleTokenCount = 10;
     let startIndex = 0;
 
-    // If we have a highlighted token and it would be below the visible area, scroll
     if (highlightRange.start >= 0 && tokens.length > 0) {
         const maxVisibleIndex = startIndex + visibleTokenCount - 1;
         if (highlightRange.start > maxVisibleIndex) {
@@ -775,7 +804,6 @@ export function Compiler() {
                 prefix = 'symbol';
             }
 
-            // Fixed-width layout for alignment
             const indexPart = `${tokenIndex.toString().padStart(2, '\u00A0')}:`;
             const valuePart = `\u00A0${tokenStr}`;
             const prefixPart = `(${prefix})`;
@@ -800,7 +828,6 @@ export function Compiler() {
         }
     };
 
-    // Latest bytecode ops
     const latestBytecode = bytecode.slice(-10);
     const renderBytecodeLine = (i: number) => {
         if (i < latestBytecode.length) {
@@ -854,76 +881,97 @@ export function Compiler() {
     );
 }
 
+const VM_WAIT_TIME = 750;
+const VM_FINISH_TIME = 2000;
+
 export function VM() {
-    const [highlightIP, setHighlightIP] = useState<number>(-1);
-    const [bytecode, setBytecode] = useState<Bytecode[]>([]);
-    const [dataStack, setDataStack] = useState<number[]>([]);
-    const [returnStack, setReturnStack] = useState<number[]>([]);
-    const [variableTable, setVariableTable] = useState<number[]>([]);
-    const [isRunning, setIsRunning] = useState(false);
-
-    const runVM = async (shouldStop: () => boolean) => {
-        if (isRunning || shouldStop()) return;
-        setIsRunning(true);
-        setBytecode([]);
-        setDataStack([]);
-        setReturnStack([]);
-        setVariableTable([]);
-        setHighlightIP(-1);
-
-        try {
-            // First tokenize and compile to get the program
-            const allTokens = await tokenize(fib10, async () => {
-                // No-op
-            });
-
-            const program = await compile(allTokens, async () => {
-                // No-op
-            });
-
-            setBytecode(program.bytecode);
-
-            // Run the VM with highlighting
-            await vm(program, async (highlight, newDataStack, newReturnStack, newVariableTable) => {
-                if (shouldStop()) return;
-                setHighlightIP(highlight.ip);
-                setDataStack([...newDataStack]);
-                setReturnStack([...newReturnStack]);
-                setVariableTable([...newVariableTable]);
-                await new Promise(resolve => setTimeout(resolve, 750));
-            });
-        } catch (error) {
-            console.error('VM execution error:', error);
-        }
-
-        // Sleep for 2 seconds before next run
-        if (!shouldStop()) {
-            await new Promise(resolve => setTimeout(resolve, 2000));
-        }
-        setIsRunning(false);
-    };
+    const [terminal, setTerminal] = useState<React.ReactNode>(null);
 
     useEffect(() => {
-        // Only run in browser environment
-        if (typeof window === 'undefined') return;
-        
+        console.log('[VM] Component mounted, starting loop');
         let cancelled = false;
-        const loop = async () => {
+        (async () => {
             while (!cancelled) {
-                await runVM(() => cancelled);
+                console.log('[VM] Starting VM run');
+                await runVM(() => cancelled, (node) => {
+                    console.log('[VM] Setting terminal node');
+                    setTerminal(node);
+                });
+                console.log('[VM] VM run complete, waiting before next run');
+                await new Promise((resolve) => setTimeout(resolve, VM_FINISH_TIME));
             }
-        };
-        loop();
+        })();
+
         return () => {
+            console.log('[VM] Component unmounting, cancelling');
             cancelled = true;
-        };
+        }
     }, []);
 
-    // Calculate which bytecode lines to show (scrolled around IP)
+    return (
+        <div>{terminal}</div>
+    );
+}
+
+async function runVM(shouldStop: () => boolean, setTerminal: (node: React.ReactNode) => void) {
+    console.log('[runVM] Starting VM execution process');
+    let bytecode: Bytecode[] = [];
+    let highlightIP = -1;
+    let dataStack: number[] = [];
+    let returnStack: number[] = [];
+    let variableTable: number[] = [];
+
+    try {
+        // First tokenize and compile to get the program
+        console.log('[runVM] Tokenizing and compiling source');
+        const allTokens = await tokenize(fib10, async () => {
+            // No-op
+        });
+
+        if (shouldStop()) {
+            console.log('[runVM] Stopping due to cancellation after tokenization');
+            return;
+        }
+
+        const program = await compile(allTokens, async () => {
+            // No-op
+        });
+
+        if (shouldStop()) {
+            console.log('[runVM] Stopping due to cancellation after compilation');
+            return;
+        }
+
+        bytecode = program.bytecode;
+        console.log(`[runVM] Compiled program with ${bytecode.length} bytecode ops`);
+
+        // Run the VM with highlighting
+        await vm(program, async (highlight, newDataStack, newReturnStack, newVariableTable) => {
+            if (shouldStop()) {
+                console.log('[runVM] Stopping due to cancellation during VM execution');
+                return;
+            }
+            
+            highlightIP = highlight.ip;
+            dataStack = [...newDataStack];
+            returnStack = [...newReturnStack];
+            variableTable = [...newVariableTable];
+            console.log(`[runVM] VM step at IP ${highlightIP}, DS: [${dataStack.join(',')}], RS: [${returnStack.join(',')}]`);
+            
+            const terminalNode = renderVM(highlightIP, bytecode, dataStack, returnStack, variableTable);
+            setTerminal(terminalNode);
+            
+            await new Promise(resolve => setTimeout(resolve, VM_WAIT_TIME));
+        });
+    } catch (error) {
+        console.error('[runVM] VM execution error:', error);
+    }
+}
+
+function renderVM(highlightIP: number, bytecode: Bytecode[], dataStack: number[], returnStack: number[], variableTable: number[]): React.ReactNode {
     const visibleBytecodeCount = 15;
     let startIndex = 0;
 
-    // If we have a highlighted IP and it would be below the visible area, scroll
     if (highlightIP >= 0 && bytecode.length > 0) {
         const maxVisibleIndex = startIndex + visibleBytecodeCount - 1;
         if (highlightIP > maxVisibleIndex) {
@@ -931,7 +979,6 @@ export function VM() {
         } else if (highlightIP < startIndex) {
             startIndex = Math.max(0, highlightIP - Math.floor(visibleBytecodeCount / 2));
         }
-        // Ensure we don't scroll past the end!
         if (startIndex + visibleBytecodeCount > bytecode.length) {
             startIndex = Math.max(0, bytecode.length - visibleBytecodeCount);
         }
@@ -976,9 +1023,8 @@ export function VM() {
         }
     };
 
-    // Format stack display (show up to 5 items, most recent at top)
-    const formatStack = (stack: number[], name: string) => {
-        const displayStack = stack.slice(-5).reverse(); // Show last 5, most recent first
+    const formatStack = (stack: number[]) => {
+        const displayStack = stack.slice(-5).reverse();
         const lines: ReactNode[] = [];
 
         for (let i = 0; i < 5; i++) {
@@ -1003,7 +1049,6 @@ export function VM() {
         return lines;
     };
 
-    // Format variable table display
     const formatVariables = () => {
         const lines: ReactNode[] = [];
 
@@ -1032,11 +1077,11 @@ export function VM() {
                 <div style={{ display: 'flex', gap: '24px' }}>
                     <div style={{ flex: 1 }}>
                         <div className="tokens-label">Data Stack</div>
-                        {formatStack(dataStack, 'DS')}
+                        {formatStack(dataStack)}
                     </div>
                     <div style={{ flex: 1 }}>
                         <div className="tokens-label">Return Stack</div>
-                        {formatStack(returnStack, 'RS')}
+                        {formatStack(returnStack)}
                     </div>
                     <div style={{ flex: 1 }}>
                         <div className="tokens-label">Variables</div>
