@@ -140,9 +140,9 @@ With our list of tokens, we're ready to start generating bytecode for the VM.
 
 ## Generating Bytecode
 
-Usually, in a compiler, the step after tokenization is _parsing_ where an abstract syntax tree is built. However, the feature set of my Forth is so small, that I decided to generate bytecode directly from the list of tokens.
+Usually, in a compiler, the step after tokenization is called _parsing_ where an abstract syntax tree is built. However, the feature set of my Forth is so small, that I decided to generate bytecode directly from the list of tokens.
 
-_After_ bytecode generation, my VM needs two things:
+After bytecode generation, my VM needs two things:
 
 - A list of operations for the VM's instruction pointer to navigate
 - The number of variables that the program refers to
@@ -194,95 +194,107 @@ The bytecode generation step scans through the list of tokens and, as it process
 Identifier tokens are either variable references, or words (function calls).
 
 ```tsx
-let index = 0;
-while (index < tokens.length) {
-    const token = tokens[index];
-    
-    if (token.type === "identifier") {
-        if (token.value === "VARIABLE") {
-            const nextToken = tokens[index + 1];
+function compile(tokens: Token[]) {
 
-            // Store a binding of variable name to memory address
-            variableTable[nextToken.value] = Object.keys(variableTable).length;
-            index += 2;
-            continue;
-        }
+    // Bytecode that runs in the VM
+    const bytecode: Bytecode[] = [];
 
-        // If the variable has been declared as a word like `: FIB10`
-        // then we have previously stored the bytecode offset which we
-        // will set the instruction pointer to at runtime
-        if (wordTable[token.value] !== undefined) {
-            bytecode.push({ op: "call", address: wordTable[token.value] });
+    // Word -> bytecode offsets (for calls)
+    const wordTable: { [key: string]: number } = {};
+
+    // Variable -> memory address
+    const variableTable: { [key: string]: number } = {};
+
+    // ..
+
+    let index = 0;
+    while (index < tokens.length) {
+        const token = tokens[index];
+        
+        if (token.type === "identifier") {
+            if (token.value === "VARIABLE") {
+                const nextToken = tokens[index + 1];
+
+                // Store a binding of variable name to memory address
+                variableTable[nextToken.value] = Object.keys(variableTable).length;
+                index += 2;
+                continue;
+            }
+
+            // If the variable has been declared as a word like `: FIB10`
+            // then we have previously stored the bytecode offset which we
+            // will set the instruction pointer to at runtime
+            if (wordTable[token.value] !== undefined) {
+                bytecode.push({ op: "call", address: wordTable[token.value] });
+                index++;
+                continue;
+            }
+
+            // If it's not a variable declaration, or a word, then we
+            // look up the memory address
+            bytecode.push({ op: "lit", value: variableTable[token.value] });
             index++;
             continue;
         }
 
-        // If it's not a variable declaration, or a word, then we
-        // look up the memory address
-        bytecode.push({ op: "lit", value: variableTable[token.value] });
-        index++;
-        continue;
-    }
-
-    // ..
-}
+        // ..
 ```
 
 Setting up the `DO`/`LOOP` bytecode generation was the trickiest part of this project. It's a minefield of possible off-by-one errors. It's also not easy to read and understand but I've chosen to put it here anyway because even just glancing over it should help you understand how the loop variables (limit, iterator) and instruction pointer jumps are combined to execute loops in Forth.
 
 ```tsx
-  // ..
+        // .. still inside compile()
 
-  if (token.type === "do") {
-      index++;
-      
-      // Expect: DS has [limit, start] (start is top)
-      // Move both to RS: start then limit (RS top becomes limit)
-      bytecode.push({ op: "rs_push" }) // start -> RS
-      bytecode.push({ op: "rs_push" }) // limit -> RS
+        if (token.type === "do") {
+            index++;
+            
+            // Expect: DS has [limit, start] (start is top)
+            // Move both to RS: start then limit (RS top becomes limit)
+            bytecode.push({ op: "rs_push" }) // start -> RS
+            bytecode.push({ op: "rs_push" }) // limit -> RS
 
-      // Mark first instruction of loop body
-      loopStart.push(bytecode.length);
-      continue;
-  }
-  
-  if (token.type === "loop") {
+            // Mark first instruction of loop body
+            loopStart.push(bytecode.length);
+            continue;
+        }
+        
+        if (token.type === "loop") {
 
-      // Pop limit and i from RS (RS top is limit)
-      bytecode.push({ op: "rs_pop" }) // limit -> DS
-      bytecode.push({ op: "rs_pop" }) // i -> DS
-  
-      // Increment i
-      bytecode.push({ op: "lit", value: 1 })
-      bytecode.push({ op: "add" }) // i on DS
-  
-      // Duplicate i and limit for compare and possible restore
-      bytecode.push({ op: "dup2" })
-      bytecode.push({ op: "eq" }) // eq flag on DS
-  
-      const loopStartAddress = loopStart.pop(); // first instr of loop body
-  
-      // Branch: continue when not equal (eq==0), exit when equal
-      const continueAddress = bytecode.length + 4; // skip equal-path (2 drops + jmp)
-      bytecode.push({ op: "jz", address: continueAddress })
-  
-      // Equal path (fallthrough): cleanup and exit
-      bytecode.push({ op: "drop" }) // drop i
-      bytecode.push({ op: "drop" }) // drop limit
-      const afterBlockAddress = bytecode.length + 1 /* jmp */ + 3 /* continue block */;
-      bytecode.push({ op: "jmp", address: afterBlockAddress })
-  
-      // Continue path:
-      // address == continueAddress
-      bytecode.push({ op: "rs_push" }) // i -> RS (top)
-      bytecode.push({ op: "rs_push" }) // limit -> RS
-      bytecode.push({ op: "jmp", address: loopStartAddress })
-  
-      index++;
-      continue;
-  }
+            // Pop limit and i from RS (RS top is limit)
+            bytecode.push({ op: "rs_pop" }) // limit -> DS
+            bytecode.push({ op: "rs_pop" }) // i -> DS
+        
+            // Increment i
+            bytecode.push({ op: "lit", value: 1 })
+            bytecode.push({ op: "add" }) // i on DS
+        
+            // Duplicate i and limit for compare and possible restore
+            bytecode.push({ op: "dup2" })
+            bytecode.push({ op: "eq" }) // eq flag on DS
+        
+            const loopStartAddress = loopStart.pop(); // first instr of loop body
+        
+            // Branch: continue when not equal (eq==0), exit when equal
+            const continueAddress = bytecode.length + 4; // skip equal-path (2 drops + jmp)
+            bytecode.push({ op: "jz", address: continueAddress })
+        
+            // Equal path (fallthrough): cleanup and exit
+            bytecode.push({ op: "drop" }) // drop i
+            bytecode.push({ op: "drop" }) // drop limit
+            const afterBlockAddress = bytecode.length + 1 /* jmp */ + 3 /* continue block */;
+            bytecode.push({ op: "jmp", address: afterBlockAddress })
+        
+            // Continue path:
+            // address == continueAddress
+            bytecode.push({ op: "rs_push" }) // i -> RS (top)
+            bytecode.push({ op: "rs_push" }) // limit -> RS
+            bytecode.push({ op: "jmp", address: loopStartAddress })
+        
+            index++;
+            continue;
+        }
 
-  // ..
+        // .. trimmed other tokens, see source
 ```
 
 The rest of the token branches are more straightforward. Tokens like dot, store, load, and print all map directly to bytecode operations.
