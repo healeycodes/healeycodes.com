@@ -789,7 +789,7 @@ function renderCompiler(highlightRange: { start: number, end: number }, tokens: 
             const valuePart = `\u00A0${tokenStr}`;
             const prefixPart = `(${prefix})`;
             const totalBeforePrefix = indexPart.length + valuePart.length;
-            const paddingNeeded = Math.max(0, 13 - totalBeforePrefix);
+            const paddingNeeded = Math.max(0, 14 - totalBeforePrefix);
             const padding = '\u00A0'.repeat(paddingNeeded);
 
             return (
