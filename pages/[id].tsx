@@ -16,8 +16,9 @@ import Date from "../components/date";
 import Newsletter from "../components/newsletter";
 import { AldousBroder, IntroMaze, RandomDFS, TreeDiameter, WilsonsAlgorithm } from "../components/visuals/mazes/components";
 import { KnightAttack, WhitePawnAttacks } from "../components/visuals/bitboards/components";
-import { Fibonacci, HelloWorld, Ladder } from "../components/visuals/icepath/components"; 
+import { Fibonacci, HelloWorld, Ladder } from "../components/visuals/icepath/components";
 import { Compiler, Tokenizer, VM } from "../components/visuals/forth/components";
+import { Easy16thOct25Solver, Medium14thOct25Solver, Hard16thOct25Solver } from "../components/visuals/pips/components";
 
 const isVideo = /\.mp4$/;
 
@@ -196,6 +197,15 @@ export default function Post({
                   return <Compiler />
                 } else if (props.id === 'vm') {
                   return <VM />
+                }
+              } else if (type === "div" && props.className === "pips") {
+                const text = props.text ? <p>{props.text}</p> : null;
+                if (props.id === 'easy') {
+                  return <Easy16thOct25Solver showCanvas={props.canvas} withOptimizations={props.withOptimizations}>{text}</Easy16thOct25Solver>
+                } else if (props.id === 'medium') {
+                  return <Medium14thOct25Solver showCanvas={props.canvas} withOptimizations={props.withOptimizations}>{text}</Medium14thOct25Solver>
+                } else if (props.id === 'hard') {
+                  return <Hard16thOct25Solver showCanvas={props.canvas} withOptimizations={props.withOptimizations}>{text}</Hard16thOct25Solver>
                 }
               }
               return React.createElement(type, props, children);

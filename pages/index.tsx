@@ -50,7 +50,7 @@ export default function Home({ allPostsData, description, words }) {
             across <Link href="/articles">{allPostsData.length} articles</Link> on
             this <a href={siteConfig.REPO_URL}>open source</a> website. These
             articles have reached the front page of Hacker
-            News <a href="https://hn.algolia.com/?dateRange=all&page=0&prefix=false&query=healeycodes.com%20-queuedle&sort=byPopularity&type=story">20 times</a>.
+            News <a href="https://hn.algolia.com/?dateRange=all&page=0&prefix=false&query=healeycodes.com%20-queuedle&sort=byPopularity&type=story">21 times</a>.
           </p>
           <p>
             I've worked at Vercel since 2021, mostly on the distributed build pipeline that runs untrusted customer code, as well as on the underlying ephemeral compute platform.
@@ -80,10 +80,10 @@ export default function Home({ allPostsData, description, words }) {
           </p>
           <Fibonacci />
           <p>
-            I really enjoy games (chess, scrabble, sudoku), puzzles, and solvers. I built my <Link href="/building-my-own-chess-engine">own chess engine</Link>, and created visualizations for understanding <Link href="/visualizing-chess-bitboards">how bitboards can be used to store chess game state</Link>. I wrote about <Link href="/building-game-prototypes-with-love">building game prototypes in Lua</Link>, how to <Link href="/2d-multiplayer-from-scratch">build 2D multiplayer from scratch</Link>, a daily puzzle game I designed called <Link href="/how-i-made-queuedle">Queuedle</Link>, a <Link href="/solving-queuedle">solver for it</Link>, and some <Link href="/generating-mazes">maze generation algorithms</Link>.
+            I really enjoy games (chess, scrabble, sudoku), puzzles, and solvers. I built my <Link href="/building-my-own-chess-engine">own chess engine</Link>, and created visualizations for understanding <Link href="/visualizing-chess-bitboards">how bitboards can be used to store chess game state</Link>. I built a <Link href="/building-and-solving-sokoban">Sokoban solver</Link>. I wrote about <Link href="/building-game-prototypes-with-love">building game prototypes in Lua</Link>, how to <Link href="/2d-multiplayer-from-scratch">build 2D multiplayer from scratch</Link>, a daily puzzle game I designed called <Link href="/how-i-made-queuedle">Queuedle</Link>, a <Link href="/solving-queuedle">solver for it</Link>, and some <Link href="/generating-mazes">maze generation algorithms</Link>.
           </p>
           <p>
-            My favorite solver I've worked on is <Link href="/building-and-solving-sokoban">for Sokoban</Link>.
+            My favorite solver I've worked on is <Link href="/solving-nyt-pips-puzzle">for The New York Times' Pips puzzle</Link>.
           </p>
           <p>
             I'm a big fan of classic FPS games like Quake and Counter-Strike. I worked on a tool to <Link href="/rendering-counter-strike-demos-in-the-browser">analyze Counter-Strike demos in the browser</Link>, and a program that <Link href="/compressing-cs2-demos">compresses Counter-Strike demos by 13×</Link>.
