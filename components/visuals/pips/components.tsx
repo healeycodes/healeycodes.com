@@ -817,7 +817,7 @@ function GraphCanvas({ treeBufferRef }: { treeBufferRef: React.RefObject<Map<num
         if (!ctx) return;
 
         const displayWidth = 350;
-        const displayHeight = 400;
+        const displayHeight = 250;
         const leftMargin = 35; // Space for the node count labels
         const topPadding = 8; // Space at the top
         const rightPadding = 8; // Space on the right
