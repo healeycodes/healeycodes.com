@@ -223,7 +223,7 @@ Are there any checks we can perform to kill branches sooner?
 
 <div className="pips" id="hard" canvas="false" with-optimizations="false"></div>
 
-The first optimization I found was rather silly and simple and had a huge impact. If you recall the `solver()` function code from above, for each domino I check both orientations. For example, `5|6` can also be placed like `6|5`. However, I didn't have a check for when the sides of the domino are the same! So the solver would do a lot of duplicate work for dominos like `3|3`.
+The first optimization I found was quite silly and simple and had a huge impact. If you recall the `solver()` function code from above, for each domino I check both orientations. For example, `5|6` can also be placed like `6|5`. However, I didn't have a check for when the sides of the domino are the same! So the solver would do a lot of duplicate work for dominos like `3|3`.
 
 The fix was simple: check for matching sides before searching the branch for the flipped orientation.
 
@@ -313,6 +313,8 @@ I also tried some _move ordering_ ideas but wasn't able to get anything working 
 Move ordering is a really great lever when you have a DFS/backtracking solver that's _correct but slow_. Changing the order that you search the tree doesn't alter the completeness, or correctness, it only changes the order that the tree is explored. The hope is that this nudges the solver to find the golden branch sooner rather than later.
 
 It felt odd that I wasn't able to get move ordering working since I've been able to apply it in my [chess](https://healeycodes.com/building-my-own-chess-engine), [sokoban](https://healeycodes.com/building-and-solving-sokoban), and [queuedle solvers](https://healeycodes.com/solving-queuedle)! I must be missing something about tile-like puzzles like Pips.
+
+I ran out of time to add further optimizations but my intuition is that I've only scratched the surface here. I also haven't spent any time making the solver code run faster (e.g. things like [bitboards](https://healeycodes.com/visualizing-chess-bitboards)).
 
 ## UI
 
