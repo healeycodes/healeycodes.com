@@ -69,7 +69,7 @@ export default function Home({ allPostsData, description, words }) {
             also showed how to beat the performance of <code>grep</code> by just <Link href="/beating-grep-with-go">using goroutines</Link>.
           </p>
           <p>
-            My <Link href="/installing-npm-packages-very-quickly">experimental package manager</Link> uses simple concurrency patterns to be faster than every package manager aside from Bun (which is 11% faster) when cold-installing from a lockfile.
+            My <Link href="/installing-npm-packages-very-quickly">experimental package manager</Link> uses simple concurrency patterns to be faster than every package manager aside from Bun (mine is 11% slower) when cold-installing from a lockfile.
           </p>
           <p>
             I've created a few small programming languages and related tools, including a <Link href="/compiling-a-forth"> Forth compiler</Link>, a <Link href="/lisp-to-javascript-compiler">Lisp-to-JavaScript compiler</Link>, which I turned into an <Link href="/lisp-compiler-optimizations">optimizing compiler</Link>, and for which I wrote a <Link href="/compiling-lisp-to-bytecode-and-running-it">bytecode VM</Link>.
