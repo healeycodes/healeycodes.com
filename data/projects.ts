@@ -39,6 +39,12 @@ export default [
     to: "/solving-queuedle",
   },
   {
+    name: "andsh",
+    link: "https://github.com/healeycodes/andsh",
+    desc: "A tiny shell in C with pipes, cd, env var expansion, history, and tab completion.",
+    to: "/building-a-shell",
+  },
+  {
     name: "llmfs",
     link: "https://github.com/healeycodes/llmfs",
     desc: "FUSE filesystem where file operations are handled by an LLM.",
