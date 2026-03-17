@@ -37,7 +37,7 @@ If you prefer reading C over prose, head straight to [healeycodes/andsh](https:/
 
 ## REPL
 
-A shell is an interactive program before it's a language implementation, and the user experience starts at the prompt. This first step is about building the interactive skeleton: print a prompt, read a line, keep a little state, and leave a clean place to plug executio logic into.
+A shell is an interactive program before it's a language implementation, and the user experience starts at the prompt. This first step is about building the interactive skeleton: print a prompt, read a line, keep a little state, and leave a clean place to plug execution logic into.
 
 ```c
 // repl.h
