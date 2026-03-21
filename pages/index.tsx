@@ -109,7 +109,7 @@ export default function Home({ allPostsData, description, words }) {
             I live in the UK with my wife, our three young children, and a cat called Moose.
           </p>
           <p>
-            Technical books I recommend include <i>Crafting Interpreters</i> and <i>The Computational Beauty of Nature</i>. For general fiction, I recommend the authors Patricia Lockwood and Ben Lerner. For sci-fi, I recommend the <i>Dune</i> series (1-6 are amazing, 7-9 are good) and the <i>Remembrance of Earth's Past</i> trilogy. For non-fiction, I recommend <i>The Orchid Thief</i> and <i>Nothing to Envy</i>.
+            Technical books I recommend include <i>Crafting Interpreters</i> and <i>The Computational Beauty of Nature</i>. For general fiction, I recommend the authors Patricia Lockwood and Ben Lerner. For sci-fi, I recommend the <i>Dune</i> series (1-6 are amazing, 7-9 are odd) and the <i>Remembrance of Earth's Past</i> trilogy. For non-fiction, I recommend <i>The Orchid Thief</i> and <i>Nothing to Envy</i>.
           </p>
           <p>
             I love getting email and you can reach me by running the following code in your browser's developer console: <code>atob('aGVhbGV5Y29kZXNAZ21haWwuY29t')</code>.
