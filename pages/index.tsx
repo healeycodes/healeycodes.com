@@ -50,7 +50,7 @@ export default function Home({ allPostsData, description, words }) {
             across <Link href="/articles">{allPostsData.length} articles</Link> on
             this <a href={siteConfig.REPO_URL}>open source</a> website. These
             articles have reached the front page of Hacker
-            News <a href="https://hn.algolia.com/?dateRange=all&page=0&prefix=false&query=healeycodes.com%20-queuedle&sort=byPopularity&type=story">21 times</a>.
+            News <a href="https://hn.algolia.com/?dateRange=all&page=0&prefix=false&query=healeycodes.com%20-queuedle&sort=byPopularity&type=story">23 times</a>.
           </p>
           <p>
             I've worked at Vercel since 2021, mostly on the distributed build pipeline that runs untrusted customer code, as well as on the underlying ephemeral compute platform.
@@ -66,7 +66,10 @@ export default function Home({ allPostsData, description, words }) {
             I wrote <Link href="/maybe-the-fastest-disk-usage-program-on-macos">one of the fastest disk-usage programs on macOS</Link> by
             using macOS-specific system calls, and then
             made it faster by <Link href="/optimizing-my-disk-usage-program">reducing thread scheduling overhead and lock contention</Link>. I
-            also showed how to beat the performance of <code>grep</code> by just <Link href="/beating-grep-with-go">using goroutines</Link>. I like learning by building things from scratch; like <Link href="/building-a-shell">a tiny shell</Link>, and <Link href="/a-fair-cancelable-semaphore-in-go">a fair, and cancelable semaphore in Go</Link>.
+            also showed how to beat the performance of <code>grep</code> by just <Link href="/beating-grep-with-go">using goroutines</Link>.
+          </p>
+          <p>
+          I like learning by building things from scratch; like a <Link href="/building-a-runtime-with-quickjs">JavaScript runtime</Link>, a <Link href="/building-a-shell">tiny shell</Link>, and <Link href="/a-fair-cancelable-semaphore-in-go">a fair, and cancelable semaphore in Go</Link>.
           </p>
           <p>
             My <Link href="/installing-npm-packages-very-quickly">experimental package manager</Link> uses simple concurrency patterns to be faster than every package manager aside from Bun (mine is 11% slower) when cold-installing from a lockfile.
