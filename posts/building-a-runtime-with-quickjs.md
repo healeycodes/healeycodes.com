@@ -656,7 +656,7 @@ File-read portion:
 - `node`  3.828 ms
 - `andjs` 4.620 ms
 
-It's no surprise that QuickJS, and a barebones runtime, has a faster startup. That's one of QuickJS's value propositions as an engine. To get comparatively close on the core time is quite nice.
+It's no surprise that QuickJS, and a barebones runtime, has a faster startup. That's one of QuickJS's value propositions as an engine. To get comparatively close on the file-read portion is quite nice.
 
 Although, not much is being measured. There isn't really much overhead you can put on top of ten small file-read tasks. But measuring things is fun nonetheless!
 
