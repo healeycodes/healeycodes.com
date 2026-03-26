@@ -1,12 +1,6 @@
-// Popular posts (ordering affects display)
-export const popularPosts = [
-  "maybe-the-fastest-disk-usage-program-on-macos",
-  "lisp-compiler-optimizations",
-  "rendering-counter-strike-demos-in-the-browser",
-];
-
 // Starred posts (not in any specific order)
 export const postStars = [
+  "building-a-runtime-with-quickjs",
   "building-a-shell",
   "solving-nyt-pips-puzzle",
   "compiling-a-forth",

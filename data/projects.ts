@@ -39,6 +39,12 @@ export default [
     to: "/solving-queuedle",
   },
   {
+    name: "andjs",
+    link: "https://github.com/healeycodes/andjs",
+    desc: "A tiny JavaScript runtime built on QuickJS with timers, file I/O, an event loop, and a worker pool.",
+    to: "/building-a-runtime-with-quickjs",
+  },
+  {
     name: "andsh",
     link: "https://github.com/healeycodes/andsh",
     desc: "A tiny shell in C with pipes, cd, env var expansion, history, and tab completion.",
