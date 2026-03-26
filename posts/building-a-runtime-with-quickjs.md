@@ -9,7 +9,7 @@ A JavaScript engine (e.g. V8, JavaScriptCore) executes JavaScript code. It doesn
 
 On the other hand, a JavaScript runtime (e.g. Node.js, Bun) is a more complete environment where JavaScript runs. It contains a JavaScript engine, extra APIs, an event loop and task queues, and platform-specific features.
 
-That's what I'm hacking on today: a [tiny runtime](https://github.com/healeycodes/andjs) with `console.log`, `process.uptime()`, `setTimeout` and `clearTimeout`, `readFileSync` and `readFile`, as well as an event loop and worker pool for file I/O. Built on top of QuickJS.
+That's what I'm hacking on today: a [tiny runtime](https://github.com/healeycodes/andjs) with `console.log`, `process.uptime()`, `setTimeout` and `clearTimeout`, `fs.readFileSync` and `fs.readFile`, as well as an event loop and worker pool for file I/O. Built on top of QuickJS.
 
 Here's an example program it can run:
 
