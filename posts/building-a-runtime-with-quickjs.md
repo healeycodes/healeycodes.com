@@ -212,7 +212,7 @@ $ ./andjs example-process-uptime.js
 
 We're getting closer to one of the reasons I wanted to build this project, and write this post, which is that I wanted to build an event loop from scratch.
 
-The event loop is the scheduler behind JavaScript. First, sync code runs. Then, async work like timers, events, and promises start triggering callbacks, running more sync (and the cycle continues). The event loop schedules all this work.
+The event loop is the scheduler behind JavaScript. First, sync code runs. Then, async work like timers, events, and promises start triggering callbacks, running more sync code (and the cycle continues). The event loop schedules all this work.
 
 Even though we don't have an event loop just yet, we can still queue up work for it to handle. Essentially, that's all a timer is: some queued work.
 
@@ -227,7 +227,7 @@ struct Timer {
 };
 ```
 
-I chose a sorted linked list to store all the scheduled timers because it's fast enough and requires (compared to alternative solutions like a priority queue) very little code to implement.
+I chose a sorted linked list to store all the scheduled timers because it's fast enough and requires very little code to implement, compared to alternative solutions like a priority queue.
 
 Timers are sorted because, when it's time to run one, and there are multiple that are past their deadline, we only need to read the first item to get started.
 
@@ -272,9 +272,9 @@ static JSValue js_set_timeout(JSContext *ctx, JSValueConst this_val,
 }
 ```
 
-The callback lifetime is host-managed via `JS_DupValue(...)` and `JS_FreeValue(...)`. In QuickJS, values (`JSValue`) are reference-counted. So when we call _dup_ or _free_, we're saying "hey I have another reference to this value, please don't garbage collect it until I let you know I'm finished with it".
+The callback lifetime is host-managed via `JS_DupValue(...)` and `JS_FreeValue(...)`. In QuickJS, values (`JSValue`) are reference-counted. So when we call _dup_, we're saying "hey, I have another reference to this value". And when we call _free_, we're releasing one of those references.
 
-I didn't have too much trouble managing shared data between the runtime and the engine once I understood the APIs (which did not take as long as I would've thought); and this shows the care that QuickJS was built with.
+I didn't have too much trouble managing shared data between the runtime and the engine once I understood the APIs (which did not take as long as I would've thought); this shows the care that QuickJS was built with.
 
 Clearing a timer is simpler. We delete it, free memory, and return `undefined`.
 
@@ -303,7 +303,7 @@ static JSValue js_clear_timeout(JSContext *ctx, JSValueConst this_val,
 }
 ```
 
-These two functions, `js_set_timeout` and `js_clear_timeout`, are set on the global object like `console`. As we step into the more head-y runtime internals, I’ll be able to show fewer code snippets without spamming you, but the wiring is mostly the same.
+These two functions, `js_set_timeout` and `js_clear_timeout`, are set on the global object like `console`. As we step into the more heady runtime internals, I’ll be able to show fewer code snippets without spamming you, but the wiring is mostly the same.
 
 At this point, we're able to schedule as many timers as our heap will allow; but they stay waiting until the next section.
 
@@ -411,7 +411,7 @@ static int wait_for_events(RuntimeState *state, struct timeval *timeout_ptr)
 }
 ```
 
-The wakeup pipe will not deliver the completed work e.g. the contents of a file that's been read. It will only deliver a single byte (literally `1`) to signal that some work has been done. The async file jobs are stored in a linked list that contains the resolve and reject `JSValue`s and the bytes that have been read. But more on that when we get to async I/O.
+The wakeup pipe will not deliver the completed work e.g. the contents of a file that's been read. It will only deliver a single byte (literally `1`) to signal that some work has been done. The async file jobs are stored in a linked list that contains the promise's `resolve` and `reject` functions (as `JSValue`s), along with the bytes that have been read. But more on that when we get to async I/O.
 
 First we need to handle plain old sync I/O.
 
@@ -472,7 +472,7 @@ struct AsyncFileJob {
 typedef struct {
     // ...
     pthread_mutex_t mutex;
-    pthread_cond_t worker_cond; // For Waking up worker
+    pthread_cond_t worker_cond; // For waking up worker
     int wakeup_pipe[2];         // Worker uses to signal main thread
     size_t active_file_jobs;    // The count, so runtime can exit
 
