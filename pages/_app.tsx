@@ -1,13 +1,14 @@
 import { GCScript } from "../components/gcScript";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/next";
 
 function MyApp({ Component, pageProps }) {
-
-    return <>
-        <Analytics debug={true} />
-        <GCScript siteUrl={"https://healeycodes.goatcounter.com/count"} />
-        <Component {...pageProps} />
+  return (
+    <>
+      <Component {...pageProps} />
+      <Analytics />
+      <GCScript siteUrl={"https://healeycodes.goatcounter.com/count"} />
     </>
+  );
 }
 
-export default MyApp
+export default MyApp;
