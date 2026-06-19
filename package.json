@@ -9,10 +9,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test:e2e": "npx playwright install && playwright test"
+    "test:e2e": "playwright test"
   },
   "dependencies": {
-    "@playwright/test": "^1.29.2",
+    "@playwright/test": "1.61.0",
     "@types/js-cookie": "^3.0.2",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.27",

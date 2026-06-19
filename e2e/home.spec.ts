@@ -4,10 +4,12 @@ test("index page renders", async ({ page }) => {
   await page.goto("/");
 
   // Intro bio
-  const bio = await page.locator("text=love getting email");
-  expect(await bio.isVisible()).toBe(true);
+  const bio = page.getByText("love getting email");
+  await expect(bio).toBeVisible();
 
   // Bio image
-  const bioImage = await page.locator('[alt="Presenting: When Does Development Spark Joy? Sentimental analysis of commit messages."]');
-  expect(await bioImage.isVisible()).toBe(true);
+  const bioImage = page.getByAltText(
+    "Presenting: When Does Development Spark Joy? Sentimental analysis of commit messages."
+  );
+  await expect(bioImage).toBeVisible();
 });

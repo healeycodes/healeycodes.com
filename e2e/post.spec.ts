@@ -4,20 +4,20 @@ test("posts", async ({ page }) => {
   await page.goto("/geoguessing-with-deep-learning");
 
   // Post title
-  const title = await page.locator(
-    'h1:has-text("GeoGuessing with Deep Learning")'
-  );
-  expect(await title.isVisible()).toBe(true);
+  const title = page.getByRole("heading", {
+    name: "GeoGuessing with Deep Learning",
+  });
+  await expect(title).toBeVisible();
 
   // Content
-  const aParagraph = await page.locator("text=GeoGuessrers");
-  expect(await aParagraph.isVisible());
+  const aParagraph = page.getByText("GeoGuessrers");
+  await expect(aParagraph).toBeVisible();
 
   // Subscribe button
-  const subButton = await page.locator('[value="Subscribe"]');
-  expect(await subButton.isVisible());
+  const subButton = page.locator('[value="Subscribe"]');
+  await expect(subButton).toBeVisible();
 
   // Code block
-  const codeBlock = await page.locator('span:has-text("move_by_offset")');
-  expect(await codeBlock.isVisible());
+  const codeBlock = page.getByText("move_by_offset");
+  await expect(codeBlock).toBeVisible();
 });
