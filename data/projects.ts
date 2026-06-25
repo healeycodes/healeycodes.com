@@ -26,6 +26,12 @@ export default [
     to: "/maybe-the-fastest-disk-usage-program-on-macos",
   },
   {
+    name: "kernel-lowering",
+    link: "https://github.com/healeycodes/kernel-lowering",
+    desc: "A tiny compiler that lowers kernel loops into explicit data-parallel code.",
+    to: "/a-tiny-compiler-for-data-parallel-kernels",
+  },
+  {
     name: "andoma",
     link: "https://github.com/healeycodes/andoma",
     desc:

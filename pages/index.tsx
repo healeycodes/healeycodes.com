@@ -60,7 +60,7 @@ export default function Home({ allPostsData, description, words }) {
             My latest article is <Link href={`/${allPostsData[0].id}`}>{allPostsData[0].title}</Link>.
           </p> */}
           <p>
-            I enjoy understanding how things work and making them faster. Like how SIMD can make some programs <Link href="/counting-words-at-simd-speed">orders of magnitude quicker</Link>.
+            I enjoy understanding how things work and making them faster. Like how SIMD can make some programs <Link href="/counting-words-at-simd-speed">orders of magnitude quicker</Link>, or how a compiler can <Link href="/a-tiny-compiler-for-data-parallel-kernels">rewrite kernel loops for explicit data parallelism</Link>.
           </p>
           <p>
             I wrote <Link href="/maybe-the-fastest-disk-usage-program-on-macos">one of the fastest disk-usage programs on macOS</Link> by
