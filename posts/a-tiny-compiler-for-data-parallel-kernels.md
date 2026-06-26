@@ -105,7 +105,9 @@ env[i] = VARYING
 
 From there, varying-ness flows through the expression. Since `i` is varying, `samples[i]` is varying. Since `samples[i]` is varying, `samples[i] * volume` is varying (even though `volume` itself is uniform).
 
-This classification tells the compiler what to emit. If each lane reads the next adjacent element, like `samples[i]`, the compiler can use a masked load. That keeps the operation grouped while preventing inactive lanes from reading past the end:
+This classification tells the compiler what to emit. When the loop is lowered, `i` becomes `base + lane_id`. For a four-lane group with `base = 8`, the lanes hold `[8, 9, 10, 11]`. So `samples[i]` asks for `samples[8]`, `samples[9]`, `samples[10]`, and `samples[11]`. One contiguous run of memory!
+
+The compiler records that `i` is the loop's contiguous index. A load using that index becomes a masked load. The mask only matters for the final group, where some lane indices may be outside the array:
 
 ```kernel
 samples[i] -> masked_load(samples, i, active)
