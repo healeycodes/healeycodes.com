@@ -24,7 +24,7 @@ func withSemaphore(ctx context.Context, sem *semaphore.Weighted) error {
 ```
 
 TypeScript doesn't have a strict equivalent of `defer`. You might use
-`try/finally`, like:
+`try`/`finally`, like:
 
 ```ts
 async function readFile(path: string) {
