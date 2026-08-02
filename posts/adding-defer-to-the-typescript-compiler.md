@@ -50,6 +50,8 @@ So the goal is to be able to write TypeScript code like this:
 async function readFile(path: string) {
   await sema.acquire();
   defer sema.release(); // New!
+
+  // ... use resource
 }
 ```
 
