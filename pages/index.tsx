@@ -60,7 +60,7 @@ export default function Home({ allPostsData, description, words }) {
             My latest article is <Link href={`/${allPostsData[0].id}`}>{allPostsData[0].title}</Link>.
           </p> */}
           <p>
-            I enjoy understanding how things work and making them faster. Like how SIMD can make some programs <Link href="/counting-words-at-simd-speed">orders of magnitude quicker</Link>, or how a compiler can <Link href="/a-tiny-compiler-for-data-parallel-kernels">rewrite kernel loops for explicit data parallelism</Link>.
+            I enjoy understanding how things work and making them faster. Like how SIMD can make some programs <Link href="/counting-words-at-simd-speed">orders of magnitude quicker</Link>.
           </p>
           <p>
             I wrote <Link href="/maybe-the-fastest-disk-usage-program-on-macos">one of the fastest disk-usage programs on macOS</Link> by
@@ -69,14 +69,17 @@ export default function Home({ allPostsData, description, words }) {
             also showed how to beat the performance of <code>grep</code> by just <Link href="/beating-grep-with-go">using goroutines</Link>.
           </p>
           <p>
-          I like learning by building things from scratch; like a <Link href="/building-a-runtime-with-quickjs">JavaScript runtime</Link>, a <Link href="/building-a-shell">tiny shell</Link>, and <Link href="/a-fair-cancelable-semaphore-in-go">a fair, and cancelable semaphore in Go</Link>.
+            I like learning by building things from scratch; like a <Link href="/building-a-runtime-with-quickjs">JavaScript runtime</Link>, a <Link href="/building-a-shell">tiny shell</Link>, and <Link href="/a-fair-cancelable-semaphore-in-go">a fair, and cancelable semaphore in Go</Link>.
           </p>
           <p>
             My <Link href="/installing-npm-packages-very-quickly">experimental package manager</Link> uses simple concurrency patterns to be faster than every package manager aside from Bun (mine is 11% slower) when cold-installing from a lockfile.
           </p>
           <p>
             I've created a few small programming languages and related tools, including a <Link href="/compiling-a-forth"> Forth compiler</Link>, a <Link href="/lisp-to-javascript-compiler">Lisp-to-JavaScript compiler</Link>, which I turned into an <Link href="/lisp-compiler-optimizations">optimizing compiler</Link>, and for which I wrote a <Link href="/compiling-lisp-to-bytecode-and-running-it">bytecode VM</Link>.
-            I also built an <Link href="/adding-for-loops-to-an-interpreter">interpreted language</Link> with a C-style syntax, which I <Link href="/profiling-and-optimizing-an-interpreter">profiled and made faster</Link>; I later added a <Link href="/a-custom-webassembly-compiler">WebAssembly compiler</Link> and a <Link href="/adding-a-line-profiler-to-my-language">line profiler</Link>. I also <Link href="/porting-boolrule-to-rust">ported an expression engine</Link> to Rust.
+            I also built an <Link href="/adding-for-loops-to-an-interpreter">interpreted language</Link> with a C-style syntax, which I <Link href="/profiling-and-optimizing-an-interpreter">profiled and made faster</Link>; I later added a <Link href="/a-custom-webassembly-compiler">WebAssembly compiler</Link> and a <Link href="/adding-a-line-profiler-to-my-language">line profiler</Link>. I also <Link href="/porting-boolrule-to-rust">ported an expression engine</Link> to Rust, and looked into how a compiler can <Link href="/a-tiny-compiler-for-data-parallel-kernels">rewrite kernel loops for explicit data parallelism</Link>.
+          </p>
+          <p>
+            One of my favorite compiler hacks is <Link href="/adding-defer-to-the-typescript-compiler">adding Go's defer to the TypeScript compiler</Link>.
           </p>
           <p>
             Below, you can see my <Link href="/icepath-a-2d-programming-language">2D programming language</Link> calculating the first ten numbers in the Fibonacci sequence.
