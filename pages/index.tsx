@@ -53,7 +53,7 @@ export default function Home({ allPostsData, description, words }) {
             News <a href="https://hn.algolia.com/?dateRange=all&page=0&prefix=false&query=healeycodes.com%20-queuedle&sort=byPopularity&type=story">23 times</a>.
           </p>
           <p>
-            I've worked at Vercel since 2021, mostly on the distributed build pipeline that runs untrusted customer code, as well as on the underlying ephemeral compute platform.
+            I've worked at Vercel since 2021, mostly on the distributed build pipeline that runs untrusted customer code, as well as on the underlying platform that powers all of Vercel's compute products.
           </p>
           {/* Maybe link to latest? */}
           {/* <p>
