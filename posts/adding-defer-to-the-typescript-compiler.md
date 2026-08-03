@@ -157,7 +157,7 @@ defer console.log(x);
 x = 2;
 ```
 
-It must print `1`.
+This must print `1`.
 
 An extreme case we need to survive is the callable method being redefined like:
 
