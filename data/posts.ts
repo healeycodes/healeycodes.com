@@ -1,5 +1,6 @@
 // Starred posts (not in any specific order)
 export const postStars = [
+  "what-makes-llm-tokenization-slow",
   "building-a-runtime-with-quickjs",
   "building-a-shell",
   "solving-nyt-pips-puzzle",

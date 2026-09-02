@@ -20,6 +20,12 @@ export default [
     to: "/making-a-text-editor-with-a-game-engine",
   },
   {
+    name: "gpt-2-tokenizer",
+    link: "https://github.com/healeycodes/gpt-2-tokenizer",
+    desc: "A small Rust port of GPT-2's tokenizer and a few faster variants.",
+    to: "/what-makes-llm-tokenization-slow",
+  },
+  {
     name: "dumac",
     link: "https://github.com/healeycodes/dumac",
     desc: "A very fast alternative to 'du -sh' for macOS that uses getattrlistbulk.",
