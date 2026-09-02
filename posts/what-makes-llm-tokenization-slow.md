@@ -403,4 +403,4 @@ In terms of performance takeaways, it's a common one: contiguous scans are cheap
 
 My measurements and findings are for GPT-2's byte-level BPE, regex, and vocabulary construction. Modern tokenizers can use different vocabularies, normalizers, regexes, and special-token rules. But the underlying work is roughly the same.
 
-My email is on my [home page](https://healeycodes.com). Let me know if I got something wrong, or if I missed an important optimization :)
+The source code and benchmarks can be found here: [github.com/healeycodes/gpt-2-tokenizer](https://github.com/healeycodes/gpt-2-tokenizer). My email is on my [home page](https://healeycodes.com). Let me know if I got something wrong, or if I missed an important optimization :)
