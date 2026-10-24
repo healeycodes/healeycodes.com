@@ -2,21 +2,23 @@ import siteConfig from "../siteConfig.json";
 
 import Image from "next/image";
 
-function imageResize(imageWidth, imageHeight) {
-  let width, height;
-  if (imageWidth > siteConfig.LAYOUT_WIDTH) {
-    width = siteConfig.LAYOUT_WIDTH;
-    height = imageHeight * (siteConfig.LAYOUT_WIDTH / imageWidth);
-  } else {
-    width = imageWidth;
-    height = imageHeight;
-  }
+function imageResize(imageWidth, imageHeight, requestedWidth) {
+  const naturalWidth = Math.min(imageWidth, siteConfig.LAYOUT_WIDTH);
+  const width = requestedWidth
+    ? Math.min(requestedWidth, naturalWidth)
+    : naturalWidth;
+  const height = imageHeight * (width / imageWidth);
   return { width, height };
 }
 
 export default function SpacedImage(props) {
-  const { originalWidth, originalHeight, ...rest } = props;
-  let { width, height } = imageResize(originalWidth, originalHeight);
+  const { originalWidth, originalHeight, width: requestedWidth, height: _requestedHeight, ...rest } = props;
+  const pixelWidth = Number(requestedWidth);
+  const { width, height } = imageResize(
+    originalWidth,
+    originalHeight,
+    Number.isFinite(pixelWidth) && pixelWidth > 0 ? pixelWidth : undefined,
+  );
 
   return (
     <span className="spacer">

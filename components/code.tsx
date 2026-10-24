@@ -5,6 +5,7 @@ import Prism from "prism-react-renderer/prism";
 require("prismjs/components/prism-rust")
 require("prismjs/components/prism-lua")
 require("prismjs/components/prism-lisp")
+require("../lib/prism-fft2")
 require("../lib/prism-forth")
 require("../lib/prism-kernel")
 require("../lib/prism-ts-with-defer")

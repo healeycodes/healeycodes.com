@@ -22,6 +22,13 @@ import { Easy16thOct25Solver, Medium14thOct25Solver, Hard16thOct25Solver } from 
 
 const isVideo = /\.mp4$/;
 
+function requestedPixelWidth(width) {
+  const pixelWidth = Number(width);
+  return Number.isFinite(pixelWidth) && pixelWidth > 0
+    ? Math.floor(pixelWidth)
+    : undefined;
+}
+
 export async function getStaticPaths() {
   const paths = getAllPostIds();
   return {
@@ -139,6 +146,8 @@ export default function Post({
             createElement(type, props, children) {
               if (type === "img") {
                 if (props.src.match(isVideo)) {
+                  const naturalWidth = videoMetadata[props.src].width;
+                  const requestedWidth = requestedPixelWidth(props.width);
                   return <video style={{ display: 'block', margin: '0 auto', maxWidth: '100%' }}
                     key={props.src}
                     controls={false}
@@ -146,7 +155,7 @@ export default function Post({
                     playsInline
                     loop
                     muted
-                    width={videoMetadata[props.src].width}
+                    width={requestedWidth ? Math.min(requestedWidth, naturalWidth) : naturalWidth}
                     height="auto">
                     <source src={`/posts/${id}/${props.src}`} type="video/mp4"></source>
                   </video>
