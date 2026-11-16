@@ -1,5 +1,6 @@
 // Starred posts (not in any specific order)
 export const postStars = [
+  "introducing-the-worlds-strongest-sokoban-solver",
   "decompiling-fast-food-tycoon-2-drawing-the-world",
   "what-makes-llm-tokenization-slow",
   "building-a-runtime-with-quickjs",
@@ -25,7 +26,6 @@ export const postStars = [
   "designing-a-programming-language-for-advent-of-code",
   "creating-the-golfcart-programming-language",
   "implementing-bitcask-a-log-structured-hash-table",
-  "building-and-solving-sokoban",
   "beating-grep-with-go",
   "porting-niceware-to-rust",
   "building-my-own-chess-engine",
