@@ -297,7 +297,7 @@ In order to save hundreds of $, I decided to only benchmark against the stronges
 
 Being a few levels short, or even a few levels over, was clearly not good enough. It was within the noise threshold, so back to the design board we went.
 
-After further experiments and promotions, it was time to run the final benchmark. 8 dedicated cores and a 15 GB cgroup each, along with each solution being verified. My solver pulled ahead, beyond the noise threshold, to just enough to be able to claim victory: +10 on LTS and +20 on OTS.
+After further experiments and promotions, it was time to run the final benchmark. 8 dedicated cores and a 15 GB cgroup each, along with each solution being verified. My solver pulled ahead, beyond the noise threshold, to just enough to be able to claim victory: +10 on LTS and +20 on OTS ([full results](https://github.com/healeycodes/soksolv/blob/main/bench/RESULTS-2026-11-15.md)).
 
 <div className="sokoban" id="closingTheGap"></div>
 
@@ -307,7 +307,7 @@ I've gone with a somewhat spiky claim in this article, stating that my solver is
 
 <div className="sokoban" id="leadByLimit"></div>
 
-Note: charts and numbers in this post use Festival measured on our hardware at every limit (+10 LTS / +20 OTS at 10 min). Where charts reference rivals, they use their published numbers (from other benchmarks) because I could not afford the compute to be thorough.
+Note: charts and numbers in this post use Festival measured on our hardware at every limit (+10 LTS / +20 OTS at 10 min). Where charts reference rivals, they use their published numbers (from other benchmarks) because I could not afford the compute to be thorough. Full benchmark results, with per-level times and every solution, are [in the repo](https://github.com/healeycodes/soksolv/blob/main/bench/RESULTS-2026-11-15.md).
 
 Median time per solved board is 0.05 sec (ours) vs. 1.00 sec (Festival). On the 9,223 levels that both solver solve, there's a 4.32 sec vs 14.16 sec mean, and ours is faster on 8,811 (96%).
 
