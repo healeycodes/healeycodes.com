@@ -100,9 +100,6 @@ export default function Home({ allPostsData, description, words }) {
           <p>
             I've written about <Link href="/sandboxing-javascript-code">how to sandbox JavaScript</Link> using Deno, how to <Link href="/running-untrusted-python-code">sandbox Python using seccomp</Link>, and how to take over the <code>getrandom</code> system call <Link href="/making-python-less-random">using ptrace</Link>.
           </p>
-          <p>
-            I'd like to write more about AI. I recently created <Link href="/filesystem-backed-by-an-llm">a FUSE filesystem where file operations are handled by an LLM</Link>.
-          </p>
           <Image
             src={mePresenting}
             placeholder="blur"
