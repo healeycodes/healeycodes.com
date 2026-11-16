@@ -1,5 +1,11 @@
 export default [
   {
+    name: "soksolv",
+    link: "https://github.com/healeycodes/soksolv",
+    desc: "The world's strongest Sokoban solver. Beats every published solver on both standard benchmarks.",
+    to: "/introducing-the-worlds-strongest-sokoban-solver",
+  },
+  {
     name: "lisp-to-js",
     link: "https://github.com/healeycodes/lisp-to-js",
     desc:

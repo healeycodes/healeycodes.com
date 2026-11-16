@@ -5,6 +5,8 @@ tags: ["javascript"]
 description: "Creating an automated solver for Sokoban puzzles."
 ---
 
+_Update: I suggest reading my 2026 post: [Introducing the World's Strongest Sokoban Solver](/introducing-the-worlds-strongest-sokoban-solver)._
+
 There are many parallels between chess engines and [Sokoban](https://en.wikipedia.org/wiki/Sokoban) solvers. Both games have a large branching factor, and similar algorithms and techniques are shared between them. However, unlike the game of chess where computers reign supreme, complex Sokoban puzzles are out of reach for automated solvers.
 
 ![Screenshots of the original Sokoban, published in Europe for the 1984 Apple II E](screenshots.png)
