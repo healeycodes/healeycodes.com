@@ -19,6 +19,7 @@ import { KnightAttack, WhitePawnAttacks } from "../components/visuals/bitboards/
 import { Fibonacci, HelloWorld, Ladder } from "../components/visuals/icepath/components";
 import { Compiler, Tokenizer, VM } from "../components/visuals/forth/components";
 import { Easy16thOct25Solver, Medium14thOct25Solver, Hard16thOct25Solver } from "../components/visuals/pips/components";
+import { SokobanVisual } from "../components/visuals/sokoban/components";
 
 const isVideo = /\.mp4$/;
 
@@ -216,6 +217,8 @@ export default function Post({
                 } else if (props.id === 'hard') {
                   return <Hard16thOct25Solver showCanvas={props.canvas} withOptimizations={props.withOptimizations}>{text}</Hard16thOct25Solver>
                 }
+              } else if (type === "div" && props.className === "sokoban") {
+                return <SokobanVisual key={props.id} id={props.id} />
               }
               return React.createElement(type, props, children);
             },
