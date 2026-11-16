@@ -5,7 +5,7 @@ tags: ["go"]
 description: "Using agents to do state-of-the-art solver research."
 ---
 
-[Soksolv](https://github.com/healeycodes/soksolv) solves more levels than any published Sokoban solver on both standard benchmark suites, including 24 world-first automated level solves. It's also significantly faster on the levels that other solvers solve.
+[Soksolv](https://github.com/healeycodes/soksolv) solves more levels than any published Sokoban solver on both standard benchmark suites, including 24 world-first automated level solves. It's also faster on the levels that other solvers solve (~3.3x in total time).
 
 <div className="sokoban" id="solvedByTime"></div>
 
