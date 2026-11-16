@@ -2,7 +2,7 @@
 title: "Introducing the World's Strongest Sokoban Solver"
 date: "2026-11-16"
 tags: ["go"]
-description: "Using agents to do state of the art solver-research."
+description: "Using agents to do state-of-the-art solver research."
 ---
 
 [Soksolv](https://github.com/healeycodes/soksolv) solves more levels than any published Sokoban solver on both standard benchmark suites, including 24 world-first automated level solves. It's also significantly faster on the levels that other solvers solve.
