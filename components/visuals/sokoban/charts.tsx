@@ -398,7 +398,7 @@ export function AgentMap() {
                     </>
                 )}
                 {link('every result')}
-                {tier(<div style={{ flex: '0 1 380px' }}>{box('Experiment log and per-level ledger', ['792 experiments, 13,317 levels', 'read by the planner before each decision'], C.muted)}</div>)}
+                {tier(<div style={{ flex: '0 1 380px' }}>{box('Experiment log and per-level ledger', ['792 experiments, 13,315 levels', 'read by the planner before each decision'], C.muted)}</div>)}
             </div>
         </Figure>
     );

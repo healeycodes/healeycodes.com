@@ -5,11 +5,10 @@
 // ---------------------------------------------------------------------------
 // PROVISIONAL  PROVISIONAL  PROVISIONAL
 // Source: soksolv research/blog-post/boxes-on-goals.md (ledger/levels.tsv, distinct
-// boards counted 2026-11-14; 9,759 after de-duplicating twins, slightly more than
-// the 9,476 boards of the benchmark run).
+// distinct boards counted 2026-11-14; denominator set to the benchmark's 9,756 real distinct boards).
 // ---------------------------------------------------------------------------
 export const PROVISIONAL_BOARDS2 = {
-    nearPacked: { boards: 1106, of: 9759 }, // boards that start with >= 75% of boxes on goals
+    nearPacked: { boards: 1106, of: 9756 }, // boards that start with >= 75% of boxes on goals
 };
 
 // greedyTrap: found by a small random search over boards <= 8x6 for a level where

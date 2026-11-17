@@ -21,7 +21,7 @@
 export const FINAL = {
     suites: {
         lts: { name: 'Large Test Suite', levels: 3272 },
-        ots: { name: 'Open Test Suite', levels: 10045 },
+        ots: { name: 'Open Test Suite', levels: 10043 },
     },
     // solved[suite][time limit in seconds][solver]
     solved: {
@@ -46,8 +46,8 @@ export const FINAL = {
     // The two full benchmark runs of our solver (bench/2026-11-14 and bench/2026-11-14b), end times UTC.
     firstRun: { lts: 3217, ots: 9594, end: '2026-11-14T12:31' },
     finalRun: { lts: 3218, ots: 9622, end: '2026-11-15T02:00' },
-    // Head to head on the 9,758 distinct boards.
-    boards: { distinct: 9758, ours: 9341, festival: 9321, both: 9223, oursOnly: 118, festivalOnly: 98, oursFaster: 8811, firstEver: 24 },
+    // Head to head on the 9,756 distinct boards.
+    boards: { distinct: 9756, ours: 9341, festival: 9321, both: 9223, oursOnly: 118, festivalOnly: 98, oursFaster: 8811, firstEver: 24 },
     medianS: { ours: 0.048, festival: 1 },
     meanBothS: { ours: 4.32, festival: 14.16 },
 };
