@@ -32,10 +32,10 @@ export const FINAL = {
             600: { ours: 3218, festival: 3208, sokolution: 3207, takaken: 2953, yass: 2899, boxsearch: 2748 },
         },
         ots: {
-            1: { ours: 8294, festival: 6040, sokolution: 7837, takaken: 6751, yass: 6393, boxsearch: 5161 },
-            10: { ours: 9047, festival: 8419, sokolution: 8703, takaken: 7891, yass: 6981, boxsearch: 6914 },
-            60: { ours: 9380, festival: 8885, sokolution: 9101, takaken: 8495, yass: 7335, boxsearch: 7569 },
-            600: { ours: 9622, festival: 9602, sokolution: 9515, takaken: 8720, yass: 8338, boxsearch: 8110 },
+            1: { ours: 8287, festival: 6040, sokolution: 7837, takaken: 6751, yass: 6393, boxsearch: 5161 },
+            10: { ours: 9042, festival: 8419, sokolution: 8703, takaken: 7891, yass: 6981, boxsearch: 6914 },
+            60: { ours: 9376, festival: 8885, sokolution: 9101, takaken: 8495, yass: 7335, boxsearch: 7569 },
+            600: { ours: 9620, festival: 9602, sokolution: 9515, takaken: 8720, yass: 8338, boxsearch: 8110 },
         },
     },
     // Festival 3.1 measured head to head (Festival reports whole seconds).
@@ -45,11 +45,11 @@ export const FINAL = {
     },
     // The two full benchmark runs of our solver (bench/2026-11-14 and bench/2026-11-14b), end times UTC.
     firstRun: { lts: 3217, ots: 9594, end: '2026-11-14T12:31' },
-    finalRun: { lts: 3218, ots: 9622, end: '2026-11-15T02:00' },
+    finalRun: { lts: 3218, ots: 9620, end: '2026-11-15T02:00' }, // incl. the 2026-11-18 re-run of the 18 levels that start solved
     // Head to head on the 9,756 distinct boards.
-    boards: { distinct: 9756, ours: 9341, festival: 9321, both: 9223, oursOnly: 118, festivalOnly: 98, oursFaster: 8811, firstEver: 24 },
-    medianS: { ours: 0.048, festival: 1 },
-    meanBothS: { ours: 4.32, festival: 14.16 },
+    boards: { distinct: 9756, ours: 9339, festival: 9321, both: 9223, oursOnly: 116, festivalOnly: 98, oursFaster: 8809, firstEver: 24 },
+    medianS: { ours: 0.049, festival: 1 },
+    meanBothS: { ours: 4.40, festival: 14.16 },
 };
 
 // ---------------------------------------------------------------------------

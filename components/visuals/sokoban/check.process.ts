@@ -40,7 +40,7 @@ for (const s of ['lts', 'ots'] as const) {
     ok(lim.every((l, i) => D.FINAL.solved[s][l].festival === meas[i] && G.CURVES[s].festival[G.CURVE_T.indexOf(l)] === meas[i]), `${s}: Festival measured ${meas.join(' / ')} in FINAL.solved and CURVES`);
     ok(lim.every((l) => D.FINAL.solved[s][l].ours === G.CURVES[s].ours[G.CURVE_T.indexOf(l)]), `${s}: our curve matches FINAL.solved`);
 }
-ok(D.FINAL.solved.lts[600].ours - D.FINAL.solved.lts[600].festival === 10 && D.FINAL.solved.ots[600].ours - D.FINAL.solved.ots[600].festival === 20, 'final margins +10 LTS / +20 OTS');
+ok(D.FINAL.solved.lts[600].ours - D.FINAL.solved.lts[600].festival === 10 && D.FINAL.solved.ots[600].ours - D.FINAL.solved.ots[600].festival === 18, 'final margins +10 LTS / +18 OTS');
 
 if (failed) {
     console.log(`${failed} check(s) failed`);
