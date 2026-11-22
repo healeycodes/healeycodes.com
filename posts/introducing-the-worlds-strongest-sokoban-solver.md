@@ -303,6 +303,8 @@ After further experiments and promotions, it was time to run the final benchmark
 
 ## Results
 
+_Update: on 20/11/26, Soksolv was verified as the best-performing Sokoban solver by the Sokoban Wiki project. See the results published on [the wiki](http://sokobano.de/wiki/index.php?title=Solver_Statistics#Open_Test_Suite) and the solver [statistics pages](https://sokoban-solver-statistics.sourceforge.io/statistics/OpenTestSuite/)._
+
 I've gone with a somewhat spiky claim in this article, stating that my solver is the strongest in the world, and I believe I have a pretty good claim to it.
 
 <div className="sokoban" id="leadByLimit"></div>
@@ -338,6 +340,8 @@ In the end it took 388 messages to the planner over 14 days.
 This project would not have been possible if Yaron Shoham (Festival, FESS) had not published incredible work, as well as open sourcing a strong solver with multiple releases.
 
 I took deep inspiration from any open source solver that I could find, as well as watching closed-source solver behavior as much as possible. I initially thought I would need to reverse engineer the closed-source ones to cross the finish line but it did not come to pass.
+
+Thanks also to Matthias Meger, from the Sokoban Wiki project, for independently benchmarking Soksolv and for spotting two rule issues (the level count and levels that start solved) that made the results more accurate.
 
 The animations in this article were generated using Fable 5.2 and use the Lager skin by Borgar Þorsteinsson (CC BY 3.0).
 
