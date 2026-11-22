@@ -50,7 +50,7 @@ export default function Home({ allPostsData, description, words }) {
             across <Link href="/articles">{allPostsData.length} articles</Link> on
             this <a href={siteConfig.REPO_URL}>open source</a> website. These
             articles have reached the front page of Hacker
-            News <a href="https://hn.algolia.com/?dateRange=all&page=0&prefix=false&query=healeycodes.com%20-queuedle&sort=byPopularity&type=story">23 times</a>.
+            News <a href="https://hn.algolia.com/?dateRange=all&page=0&prefix=false&query=healeycodes.com%20-queuedle&sort=byPopularity&type=story">25 times</a>.
           </p>
           <p>
             I've worked at Vercel since 2021, mostly on the distributed build pipeline that runs untrusted customer code, as well as on the underlying platform that powers all of Vercel's compute products.
@@ -62,6 +62,7 @@ export default function Home({ allPostsData, description, words }) {
           <p>
             I enjoy understanding how things work and making them faster. Like how SIMD can make some programs <Link href="/counting-words-at-simd-speed">orders of magnitude quicker</Link>, or <Link href="/what-makes-llm-tokenization-slow">what makes LLM tokenization slow</Link>.
           </p>
+          <p>My <Link href="/introducing-the-worlds-strongest-sokoban-solver">state-of-the-art Sokoban solver</Link> has been independently verified as the strongest Sokoban solver in the world, leading both the Open Test Suite and Large Test Suite.</p>
           <p>
             I wrote <Link href="/maybe-the-fastest-disk-usage-program-on-macos">one of the fastest disk-usage programs on macOS</Link> by
             using macOS-specific system calls, and then
@@ -86,7 +87,7 @@ export default function Home({ allPostsData, description, words }) {
           </p>
           <Fibonacci />
           <p>
-            I really enjoy games (chess, scrabble, sudoku), puzzles, and solvers. I built my <Link href="/building-my-own-chess-engine">own chess engine</Link>, and created visualizations for understanding <Link href="/visualizing-chess-bitboards">how bitboards can be used to store chess game state</Link>. I also built a state-of-the-art <Link href="/introducing-the-worlds-strongest-sokoban-solver">Sokoban solver</Link>. I wrote about <Link href="/building-game-prototypes-with-love">building game prototypes in Lua</Link>, how to <Link href="/2d-multiplayer-from-scratch">build 2D multiplayer from scratch</Link>, a daily puzzle game I designed called <Link href="/how-i-made-queuedle">Queuedle</Link>, a <Link href="/solving-queuedle">solver for it</Link>, and some <Link href="/generating-mazes">maze generation algorithms</Link>.
+            I really enjoy games (chess, scrabble, sudoku), puzzles, and solvers. I built my <Link href="/building-my-own-chess-engine">own chess engine</Link>, and created visualizations for understanding <Link href="/visualizing-chess-bitboards">how bitboards can be used to store chess game state</Link>. I wrote about <Link href="/building-game-prototypes-with-love">building game prototypes in Lua</Link>, how to <Link href="/2d-multiplayer-from-scratch">build 2D multiplayer from scratch</Link>, a daily puzzle game I designed called <Link href="/how-i-made-queuedle">Queuedle</Link>, a <Link href="/solving-queuedle">solver for it</Link>, and some <Link href="/generating-mazes">maze generation algorithms</Link>.
           </p>
           <p>
             My favorite solver I've worked on is <Link href="/solving-nyt-pips-puzzle">for The New York Times' Pips puzzle</Link>.

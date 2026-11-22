@@ -129,7 +129,7 @@ Consider again the branching factor of ~16 that I mentioned. Each additional dee
 
 ## Feature Space Search (FESS)
 
-Feature Space Search (FESS) was used by the first solver to solve the 90 XSokoban levels (a benchmark once out of reach for computers). [The paper](https://doi.org/10.1109/CoG47356.2020.9231929) is incredibly interesting and clear and approachable (it's also not math-heavy!). I really recommend reading it directly but I will also summarize the key concepts here.
+Feature Space Search (FESS) was used by the first solver to solve the 90 XSokoban levels (a benchmark once out of reach for computers). [The paper](https://ieee-cog.org/2020/papers/paper_44.pdf) is incredibly interesting and clear and approachable (it's also not math-heavy!). I really recommend reading it directly but I will also summarize the key concepts here.
 
 I should also note that the primary author of the FESS paper, Yaron Shoham, is also the author of the very-strong Sokoban solver Festival, of which my solver is greatly indebted to the methods of.
 
