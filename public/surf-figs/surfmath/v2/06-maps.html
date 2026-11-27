@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title><link rel="stylesheet" href="style.css">
+<style>
+  /* one WebGL canvas for the whole page; it follows the scroll position and draws each tile in a scissor box */
+  #mini-gl { position: absolute; left: 0; top: 0; pointer-events: none; z-index: 1; }
+  .stage.mini { aspect-ratio: 1 / 1; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none;
+    background: radial-gradient(ellipse at 50% 38%, #fbfbfc 0%, #f1f1f5 100%); }
+  .stage.mini.hero { aspect-ratio: 697 / 430; }
+  .stage.mini.drag { cursor: grabbing; }
+  .stage.mini .stg { position: absolute; left: 10px; top: 8px; z-index: 2; font-size: 13px; font-weight: 600; color: var(--ink); background: rgba(255,255,255,0.85); border-radius: 4px; padding: 1px 7px; pointer-events: none; }
+  html.bare .fig > .title, html.bare .fig .cap, html.bare .fig .note, html.bare .fig .tag { display: none; }
+  .stage.mini .hud { z-index: 2; background: none; color: var(--muted); }
+  .stage.mini .eng { position: absolute; right: 8px; top: 8px; z-index: 2; font-size: 11.5px; padding: 1px 8px; color: var(--muted);
+    background: rgba(255,255,255,0.85); border-color: var(--line); }
+  .stage.mini .eng.zb { top: 34px; }
+  .fig .full + .pair { margin-top: 16px; }
+  .stage.mini .eng.wb { top: 60px; }
+  .stage.mini .eng.on { color: #fff; background: #3d6fae; border-color: #3d6fae; }
+  .tile .title { margin-bottom: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tile .stats { display: block; margin-top: 8px; min-height: 76px; color: var(--muted); font-size: 12px; line-height: 1.45; }
+  .tile .stats .hist { display: block; }
+  .tile .stats .txt { margin-top: 2px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .tile .stats b { color: var(--ink); font-weight: 600; }
+  .tile .stats .hist { flex: none; }
+  .legend { display: flex; flex-wrap: wrap; gap: 4px 14px; color: var(--muted); font-size: 12px; margin-top: 10px; }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; vertical-align: -1px; margin-right: 4px; }
+  table.maps { border-collapse: collapse; width: 100%; font-size: 12.5px; font-variant-numeric: tabular-nums; }
+  table.maps th { text-align: right; font-weight: 600; color: var(--muted); border-bottom: 1px solid var(--grid); padding: 4px 6px; white-space: nowrap; }
+  table.maps td { text-align: right; padding: 4px 6px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  table.maps th:first-child, table.maps td:first-child { text-align: left; }
+  table.maps td .bar { display: inline-block; height: 8px; background: #3d6fae; border-radius: 0 2px 2px 0; vertical-align: 0; margin-right: 6px; }
+  table.maps tr.era td { color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--grid); padding-top: 12px; text-align: left; }
+  .scrollx { overflow-x: auto; }
+</style></head>
+<body><script>new URLSearchParams(location.search).get("bare") === "1" && document.documentElement.classList.add("bare")</script><div class="container">
+<div class="nav" id="nav"></div>
+
+
+
+
+<div class="fig">
+  
+  <div class="pair" data-tiles="[[&quot;16_surf_egypt&quot;,{&quot;link&quot;:&quot;egypt&quot;,&quot;yaw&quot;:2.3,&quot;zoom&quot;:1.15}],[&quot;surf_egypt&quot;,{&quot;link&quot;:&quot;egypt&quot;,&quot;yaw&quot;:2.3,&quot;yawOff&quot;:-1.5708,&quot;zoom&quot;:1.15}]]"></div>
+  <div class="legend" id="legend"></div>
+  
+</div>
+
+
+
+<div class="fig">
+  
+  <div class="pair" data-tiles="[[&quot;16_surf_the-gap&quot;,{&quot;yaw&quot;:0.5,&quot;pitch&quot;:0.35,&quot;zoom&quot;:1.2}],[&quot;16_surf_ski&quot;,{&quot;yaw&quot;:-0.9,&quot;zoom&quot;:1.15}],[&quot;16_surf_ninja&quot;,{&quot;yaw&quot;:-0.9,&quot;zoom&quot;:1.2}],[&quot;16_surf_christmas&quot;,{&quot;yaw&quot;:-0.5,&quot;zoom&quot;:1.3}]]"></div>
+  
+</div>
+
+
+
+<div class="fig">
+  
+  <div class="pair" data-tiles="[[&quot;surf_10x_final&quot;,{&quot;yaw&quot;:-0.9,&quot;zoom&quot;:1.35}],[&quot;surf_greatriver&quot;,{&quot;yaw&quot;:-0.9,&quot;zoom&quot;:1.2}],[&quot;surf_aircontrol_v3&quot;,{&quot;cut&quot;:1,&quot;yaw&quot;:-0.9,&quot;zoom&quot;:1.2}],[&quot;surf_japan_v2&quot;,{&quot;yaw&quot;:-0.9,&quot;zoom&quot;:1.2}],[&quot;surf_machine&quot;,{&quot;yaw&quot;:-0.9,&quot;zoom&quot;:1.2}],[&quot;surf_leet_xl_beta7z&quot;,{&quot;cut&quot;:1,&quot;yaw&quot;:-0.9,&quot;zoom&quot;:1.15}],[&quot;surf_legends&quot;,{&quot;cut&quot;:1,&quot;yaw&quot;:-0.9,&quot;zoom&quot;:1.2}],[&quot;surf_water-run&quot;,{&quot;yaw&quot;:-0.9,&quot;zoom&quot;:1.2}]]"></div>
+  
+</div>
+
+
+
+<div class="fig">
+  
+  <div class="pair" data-tiles="[[&quot;surf_forbidden_ways_2nd&quot;,{&quot;cut&quot;:1,&quot;yaw&quot;:-0.9,&quot;zoom&quot;:1.2}],[&quot;surf_lore&quot;,{&quot;cut&quot;:1,&quot;yaw&quot;:-0.9,&quot;zoom&quot;:1.2}],[&quot;surf_and_destroy&quot;,{&quot;cut&quot;:1,&quot;yaw&quot;:-0.9,&quot;zoom&quot;:1.2}],[&quot;surf_ski_2&quot;,{&quot;yaw&quot;:-0.9,&quot;zoom&quot;:1.2}],[&quot;surf_fruits&quot;,{&quot;cut&quot;:1,&quot;yaw&quot;:-0.9,&quot;gain&quot;:1.5,&quot;zoom&quot;:1.2}],[&quot;surf_greatriver_xdre4m&quot;,{&quot;yaw&quot;:-0.9,&quot;zoom&quot;:1.2}],[&quot;surf_vegetables&quot;,{&quot;cut&quot;:1,&quot;yaw&quot;:-0.9,&quot;zoom&quot;:1.2}],[&quot;surf_calamity&quot;,{&quot;cut&quot;:1,&quot;yaw&quot;:-0.9,&quot;zoom&quot;:1.2}]]"></div>
+  
+</div>
+
+
+
+<div class="fig">
+  
+  <div class="full" data-tiles="[[&quot;surf_fruits&quot;,{&quot;hero&quot;:1,&quot;cut&quot;:1,&quot;yaw&quot;:-0.9,&quot;pitch&quot;:0.62,&quot;zoom&quot;:1.2,&quot;zones&quot;:1,&quot;gain&quot;:1.5}]]"></div>
+  <div class="pair" data-tiles="[[&quot;surf_greatriver&quot;,{&quot;yaw&quot;:-0.9,&quot;pitch&quot;:0.6,&quot;zoom&quot;:1.2,&quot;zones&quot;:1}],[&quot;surf_forbidden_ways_2nd&quot;,{&quot;cut&quot;:1,&quot;yaw&quot;:-0.9,&quot;pitch&quot;:0.7,&quot;zoom&quot;:1.2,&quot;zones&quot;:1}]]"></div>
+  <div class="legend" id="zlegend"></div>
+  
+</div>
+
+
+
+<div class="fig">
+  
+  <div class="pair" data-tiles="[[&quot;surf_mesa&quot;,{&quot;yaw&quot;:-0.9,&quot;zoom&quot;:1.15}],[&quot;surf_kitsune&quot;,{&quot;yaw&quot;:-0.9,&quot;zoom&quot;:1.2}],[&quot;surf_whiteout&quot;,{&quot;yaw&quot;:-0.9,&quot;zoom&quot;:1.15}],[&quot;surf_nyx&quot;,{&quot;yaw&quot;:-0.9,&quot;zoom&quot;:1.15}]]"></div>
+  
+</div>
+
+
+
+<div class="fig">
+  
+  <div id="era"></div>
+  
+</div>
+
+
+
+<div class="fig">
+  
+  <div class="scrollx"><table class="maps" id="table"></table></div>
+  
+</div>
+
+
+
+<div class="fig" id="f-pipeline">
+  
+  <div class="full" data-tiles="[[&quot;surf_mesa&quot;,{&quot;hero&quot;:1,&quot;pipeline&quot;:1,&quot;yaw&quot;:-0.9,&quot;pitch&quot;:0.62,&quot;zoom&quot;:1.6}]]"></div>
+  
+</div>
+<div class="note"><span id="perf" class="src"></span></div>
+</div>
+<script src="kit.js"></script>
+<script src="nav.js"></script>
+<script src="06-maps.js"></script>
+<script src="06-table.js"></script>
+
+</body></html>

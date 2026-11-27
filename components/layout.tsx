@@ -135,7 +135,6 @@ export default function Layout({ children, title, description }) {
         }
 
         ul {
-          padding-top: 3px;
           padding-bottom: 3px;
           padding-left: 24px;
         }

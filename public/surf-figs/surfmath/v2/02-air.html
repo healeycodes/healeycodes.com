@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title><link rel="stylesheet" href="style.css">
+<style>
+  .fig button.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .fig .ro { font-size: 12.5px; color: var(--ink); margin-top: 8px; min-height: 3em; font-variant-numeric: tabular-nums; }
+  .fig .ro b { font-weight: 600; }
+  .fig .cell .lab { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+  .fig .cell:has(> pre) { container-type: inline-size; }
+  .fig .cell pre { margin: 0; font-size: min(12.5px, 3.45cqi); line-height: 1.7; padding: 10px 6px 10px 10px; white-space: pre; }
+  .fig pre .hl { background: #fbe9df; color: #9a4a1f; font-weight: 600; }
+  .fig pre .hl.ghost { background: #eef0f5; color: var(--ink); font-weight: 500; }
+  .fig .ctl label { display: inline-flex; align-items: center; gap: 6px; }
+  .cv { color: var(--vel); } .cw { color: var(--wish); } .cg { color: var(--gain); } .cl { color: var(--loss); }
+  .s3 { width: 100%; aspect-ratio: 6 / 5; border-radius: 6px; background: var(--panel); overflow: hidden; }
+  .s3 .hud { z-index: 3; }
+  .s3 .tagline { left: 10px; bottom: 8px; font-size: 11px; color: var(--muted); pointer-events: none; }
+  .s3 .hud { max-width: calc(100% - 90px); }
+  .khud { right: 8px; top: 8px; pointer-events: none; display: flex; flex-direction: column; align-items: center; gap: 3px; }
+  .khud .krow { display: flex; gap: 3px; }
+  .khud i { font-style: normal; font-size: 11px; font-weight: 600; width: 20px; height: 20px; line-height: 20px; text-align: center; border-radius: 4px;
+    background: rgba(255,255,255,0.9); color: var(--faint); border: 1px solid var(--grid); }
+  .khud i.on { background: var(--wish); color: #fff; border-color: var(--wish); }
+  .khud .mouse { margin-top: 2px; font-size: 10.5px; color: var(--muted); background: rgba(255,255,255,0.9); border-radius: 4px; padding: 0 4px; display: flex; gap: 4px; align-items: center; }
+  .khud .mouse b { color: var(--grid); font-size: 10px; } .khud .mouse b.on { color: var(--wish); }
+  details.older { margin: 6px 0 22px; } details.older > summary { cursor: pointer; font-size: 13px; color: var(--muted); }
+  details.older[open] > summary { margin-bottom: 10px; }
+  #f-toy .stage { height: 360px; touch-action: none; cursor: crosshair; user-select: none; -webkit-user-select: none; }
+</style></head>
+<body><div class="container">
+<div class="nav" id="nav"></div>
+
+
+
+
+<div class="fig" id="f-code">
+  
+  <div class="pair">
+    <div class="cell"><div class="lab">ground (Accelerate)</div>
+<pre><span class="hl ghost">wishspd = wishspeed         </span>  // no cap: 250
+// speed already going that way:
+already = dot(v, wishdir)
+// how much more it will give:
+room    = wishspd - already
+if room &lt;= 0: return
+step    = accel    * wishspeed * dt
+v       += min(step, room) * wishdir</pre></div>
+    <div class="cell"><div class="lab">air (AirAccelerate)</div>
+<pre><span class="hl">wishspd = min(wishspeed, 30)</span>  // cap: 30
+// speed already going that way:
+already = dot(v, wishdir)
+// how much more it will give:
+room    = wishspd - already
+if room &lt;= 0: return
+step    = airaccel * wishspeed * dt
+v       += min(step, room) * wishdir</pre></div>
+  </div>
+  
+</div>
+
+
+
+<div class="fig" id="f-wall3">
+  
+  <div class="pair">
+    <div class="cell"><div class="lab">on the floor under the player: v, its shadow on the ŵ line, and two walls across that line</div></div>
+    <div class="cell"><div class="lab">the shadow v·ŵ against both walls, and the push each tick</div></div>
+  </div>
+  <div class="ro" id="wall3-ro"></div>
+  
+</div>
+
+<details class="older">
+<div class="fig" id="f-wall">
+  
+  <div class="pair">
+    <div class="cell"><div class="lab">ground: shadow may reach 250</div></div>
+    <div class="cell"><div class="lab">air: shadow may reach 30</div></div>
+  </div>
+  <div class="ro" id="wall-ro"></div>
+  
+</div>
+
+
+</details>
+
+
+<div class="fig" id="f-key">
+  
+  <div class="pair">
+    <div class="cell"><div class="lab">velocity space</div></div>
+    <div class="cell"><div class="lab">speed gained this tick vs angle between v and ŵ</div></div>
+  </div>
+  <div class="ctl"><label>speed <input id="key-sp" type="range" min="100" max="1000" step="10" value="400"> <b id="key-spv" class="num">400</b></label>
+    <span id="key-set"><button data-v="0">aa 10 · 100 fps</button><button data-v="1">aa 10 · 66 tick</button><button data-v="2" class="on">aa 100 · 66 tick</button></span></div>
+  <div class="ro" id="key-ro"></div>
+  
+</div>
+
+
+
+<div class="fig" id="f-spiral">
+  
+  <div class="pair" id="sp-r3">
+    <div class="cell"><div class="lab">holding D without moving the mouse</div></div>
+    <div class="cell"><div class="lab">holding D and turning the mouse to follow velocity</div></div>
+  </div>
+  
+</div>
+<div class="fig" id="f-spiral2">
+  
+  <div class="pair">
+    <div class="cell"><div class="lab">ŵ fixed</div></div>
+    <div class="cell"><div class="lab">ŵ kept at 90° to v</div></div>
+  </div>
+  <span id="sp-ro" class="num" hidden=""></span>
+  
+</div>
+
+
+
+<div class="fig" id="f-sqrt">
+  
+  <div class="pair">
+    <div class="cell"><div class="lab">speed over time</div></div>
+    <div class="cell"><div class="lab">speed gained per second, at a given speed</div></div>
+  </div>
+  
+</div>
+
+
+
+<div class="fig" id="f-turn">
+  
+  <div class="pair">
+    <div class="cell"><div class="lab">gain vs how far v turned this tick</div></div>
+    <div class="cell"><div class="lab">tightest free turn, top-down, to scale</div></div>
+  </div>
+  <div class="ctl"><label>speed <input id="turn-sp" type="range" min="250" max="2000" step="10" value="600"> <b id="turn-spv" class="num">600</b></label>
+    <span id="turn-tick"><button data-v="66" class="on">66 tick</button><button data-v="100">100 tick</button></span></div>
+  <div class="ro" id="turn-ro"></div>
+  
+</div>
+
+
+
+<div class="fig" id="f-toy">
+  
+  <div class="stage"><div class="hud" id="toy-hud"></div></div>
+  <div class="ctl"><span id="toy-ro" class="num"></span></div>
+  
+</div>
+
+
+</div>
+<script src="kit.js"></script><script src="nav.js"></script><script src="../../vendor/three.min.js"></script><script src="../physics.js"></script><script src="stage.js"></script><script src="02-air.js"></script>
+
+</body></html>

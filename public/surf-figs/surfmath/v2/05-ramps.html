@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title><link rel="stylesheet" href="style.css">
+<style>
+  .cv { width: 100%; }
+  .cv canvas { cursor: default; }
+  .cv.grab canvas { cursor: grab; }
+  .stage .hud { z-index: 2; }
+  /* WASD overlay, same look as chapter 1's (01-moving.html) */
+  .khud { position: absolute; z-index: 3; right: 8px; top: 8px; pointer-events: none; display: flex; flex-direction: column; align-items: center; gap: 3px; }
+  .khud .krow { display: flex; gap: 3px; }
+  .khud i { font-style: normal; font-size: 11px; font-weight: 600; width: 20px; height: 20px; line-height: 20px; text-align: center; border-radius: 4px;
+    background: rgba(255,255,255,0.9); color: var(--faint); border: 1px solid var(--grid); }
+  .khud i.on { background: var(--wish); color: #fff; border-color: var(--wish); }
+  .fig .out { font-size: 12.5px; color: var(--ink); margin-top: 8px; font-variant-numeric: tabular-nums; min-height: 2.8em; }
+  .fig .out b { font-weight: 600; }
+  .fig button.on { border-color: var(--ink); background: var(--ink); color: #fff; }
+  .fig pre { margin: 0; font-size: 11.5px; line-height: 1.55; white-space: pre-wrap; }
+  .fig label { display: inline-flex; align-items: center; gap: 6px; }
+  .fig input[type=range] { width: 150px; max-width: 42vw; }
+  .state { border-left: 3px solid var(--line); padding: 4px 0 4px 10px; margin: 0 0 12px; opacity: 0.38; transition: opacity 0.12s; }
+  .state.on { opacity: 1; }
+  .state.on.g { border-color: var(--gain); } .state.on.a { border-color: var(--vel); }
+  .state h4 { margin: 0 0 2px; font-size: 13px; }
+  .state ul, .steps { margin: 0; padding: 0; list-style: none; }
+  .state li { color: var(--muted); font-size: 12.5px; } .state li code { color: var(--ink); }
+  .steps li { border-left: 3px solid var(--line); padding: 3px 0 3px 10px; margin: 0 0 5px; color: var(--muted); font-size: 12.5px; cursor: pointer; }
+  .steps li b { color: var(--ink); font-weight: 600; } .steps li code { display: block; font-size: 11px; }
+  .steps li.on { border-color: var(--ink); background: var(--panel); color: var(--ink); }
+  .steps li .num { float: right; padding-right: 6px; color: var(--ink); }
+  .k-vel { color: var(--vel); } .k-wish { color: var(--wish); } .k-gain { color: var(--gain); } .k-loss { color: var(--loss); }
+  .k-grav { color: var(--grav); } .k-norm { color: var(--norm); }
+  .key b { font-weight: 600; }
+</style></head>
+<body><div class="container">
+<div class="nav" id="nav"></div>
+
+
+
+
+<div class="fig" id="f1">
+  
+  <div class="pair">
+    <div class="cell"><div class="cv stage" id="f1a"><div class="hud" id="f1h"></div></div></div>
+    <div class="cell">
+      <div class="state g" id="f1g"><ul>
+        <li>friction</li>
+        <li>walk (up to 250 u/s)</li>
+        <li>no gravity</li></ul></div>
+      <div class="state a" id="f1s"><ul>
+        <li>no friction</li>
+        <li>air control (capped at 30)</li>
+        <li>gravity</li>
+        <li>slides along the surface</li></ul></div>
+    </div>
+  </div>
+  
+</div>
+
+
+
+<div class="fig" id="f2">
+  
+  <div class="pair">
+    <div class="cell"><div class="cv grab stage" id="f2a"><div class="hud" id="f2h"></div></div></div>
+    <div class="cell">
+      <pre id="f2o"></pre>
+      <div class="cv" id="f2k" style="margin-top:12px"></div>
+    </div>
+  </div>
+  
+</div>
+
+
+
+<div class="fig" id="fA">
+  
+  <div class="pair">
+    <div class="cell"><div class="cv grab" id="fAa"></div></div>
+    <div class="cell"><div class="cv" id="fAb"></div></div>
+  </div>
+  <div class="ctl"><label>slope <input type="range" id="fAr" min="40" max="89.5" step="0.5" value="56"></label>
+    <span><button data-tick="66.67" class="on">66.7 tick</button> <button data-tick="100">100 tick</button></span></div>
+  <div class="out" id="fAo"></div>
+  
+</div>
+
+
+<div class="fig" id="fB">
+  
+  <div class="full"><div class="cv grab stage" id="fBa"></div></div>
+  
+</div>
+
+
+<div class="fig" id="f-transfer">
+  
+  <div class="full"><div class="cv stage" id="fTa"><div class="hud" id="fTh"></div></div></div>
+  
+</div>
+
+
+
+<div class="fig" id="fC">
+  
+  <div class="pair">
+    <div class="cell"><div class="cv grab" id="fCa"></div></div>
+    <div class="cell"><div class="cv" id="fCb"></div></div>
+  </div>
+  <div class="ctl"><span><button data-map="kitsune" class="on">surf_kitsune</button> <button data-map="utopia">surf_utopia</button> <button data-map="fruits">surf_fruits</button></span></div>
+  <div class="out" id="fCo"></div>
+  
+</div>
+
+
+
+<div class="fig" id="fD">
+  
+  <div class="pair">
+    <div class="cell"><div class="cv grab" id="fDa"></div></div>
+    <div class="cell"><div class="cv" id="fDb"></div></div>
+  </div>
+  <div class="ctl"><label>approach angle <input type="range" id="fDr" min="0" max="60" step="0.5" value="12"></label></div>
+  <div class="out" id="fDo"></div>
+  
+</div>
+
+
+
+<div class="fig" id="fE">
+  
+  <div class="full"><div class="cv grab" id="fEa"></div></div>
+  
+</div>
+
+
+
+<div class="fig" id="fF">
+  
+  <div class="full"><div class="cv grab" id="fFa"></div></div>
+  <div class="ctl"><label>slope <input type="range" id="fFr" min="46" max="85" step="0.5" value="56"></label></div>
+  
+</div>
+
+
+
+<div class="fig" id="f8">
+  
+  <div class="pair">
+    <div class="cell"><div class="cv" id="f8a"></div></div>
+    <div class="cell">
+      <ol class="steps" id="f8l">
+        <li><span class="num"></span><b>Start of tick</b><code>v from the last tick</code></li>
+        <li><span class="num"></span><b class="k-grav">StartGravity</b><code>v.z −= ½ · 800 · dt</code></li>
+        <li><span class="num"></span><b class="k-wish">AirAccelerate</b><code>v += wishdir · min(30 − v·wishdir, A)</code></li>
+        <li><span class="num"></span><b class="k-loss">TryPlayerMove → ClipVelocity</b><code>v −= (v·n) n, then move along the surface</code></li>
+        <li><span class="num"></span><b>CategorizePosition</b><code>n.z = 0.559 &lt; 0.7 → still in the air</code></li>
+        <li><span class="num"></span><b class="k-grav">FinishGravity + CheckVelocity</b><code>v.z −= ½ · 800 · dt; clamp each axis to ±3500</code></li>
+      </ol>
+      <div class="ctl"><button id="f8p">◀ back</button><button id="f8n">step ▶</button><button id="f8a2">play</button><button id="f8r">reset</button></div>
+      <div class="out" id="f8o"></div>
+    </div>
+  </div>
+  
+</div>
+
+
+
+<div class="fig" id="f9">
+  
+  <div class="pair">
+    <div class="cell"><div class="cv grab" id="f9a"></div></div>
+    <div class="cell"><div class="cv" id="f9b"></div></div>
+  </div>
+  <div class="out" id="f9o"></div>
+  
+</div>
+
+
+
+<div class="fig" id="f10">
+  
+  <div class="pair">
+    <div class="cell"><div class="cv" id="f10a"></div>
+      <div class="ctl"><label>phantom tilt <input type="range" id="f10r" min="0" max="90" step="1" value="32"></label></div></div>
+    <div class="cell"><div class="cv" id="f10b"></div>
+      <div class="ctl"><label>dive angle <input type="range" id="f10d" min="0" max="60" step="1" value="20"></label></div></div>
+  </div>
+  <div class="out" id="f10o"></div>
+  
+</div>
+
+
+
+<div class="fig" id="fJ">
+  
+  <div class="full"><div class="cv" id="fJa"></div></div>
+  <div class="ctl"><button id="fJx">restart</button><span>green: a ghost that strafes perfectly</span></div>
+  
+</div>
+
+
+</div>
+<script src="kit.js"></script><script src="nav.js"></script>
+<script src="05-sim.js"></script><script src="05-scene.js"></script><script src="05-wr.js"></script>
+<script src="05-ramps.js"></script><script src="05-figs.js"></script>
+<script src="04-pm.js"></script><script src="05-transfer.js"></script>
+
+</body></html>

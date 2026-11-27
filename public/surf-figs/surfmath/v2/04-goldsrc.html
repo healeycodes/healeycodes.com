@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title><link rel="stylesheet" href="style.css">
+<style>
+  .fig .ro { font-size: 12.5px; color: var(--ink); margin-top: 8px; min-height: 3.2em; font-variant-numeric: tabular-nums; }
+  .fig .ro b { font-weight: 600; }
+  html.bare .fig .ro { display: none; }   /* post embeds: no readout lines under figures */
+  .cv { color: var(--vel); } .cw { color: var(--wish); } .cg { color: var(--gain); } .cl { color: var(--loss); }
+  .fig button.on { border-color: var(--ink); background: var(--ink); color: #fff; }
+  #f-ski-stage canvas { display: block; }
+  #f-ski-stage .hud { font-size: 12.5px; line-height: 1.45; padding: 4px 8px; }
+  #f-ski-chart { margin-top: 8px; }
+  .stage .hud { z-index: 2; }
+  #f-ski-stage canvas, #f-turn1-stage canvas { display: block; }
+  details.older { margin: 6px 0 22px; } details.older > summary { cursor: pointer; font-size: 13px; color: var(--muted); }
+  details.older[open] > summary { margin-bottom: 10px; }
+</style></head>
+<body><div class="container">
+<div class="nav" id="nav"></div>
+
+
+
+
+<div class="fig">
+  
+  <div class="full"><div class="stage" id="f-ski-stage"></div></div>
+  <div class="full" id="f-ski-chart"></div>
+  <div class="ctl" id="f-ski-ctl"><span>mouse:</span> <button data-h="hard">hard hands</button> <button data-h="gentle">gentle hands</button></div>
+  
+</div>
+
+
+
+<div class="fig" id="f-turn1">
+  
+  <div class="full"><div class="stage" id="f-turn1-stage"></div></div>
+  <div class="pair" style="margin-top:8px">
+    <div class="cell" id="f-turn1-a"></div>
+    <div class="cell" id="f-turn1-b"></div>
+  </div>
+  
+</div>
+
+<details class="older">
+<div class="fig" id="f-turn0">
+  
+  <div class="pair">
+    <div class="cell" id="f-turn-a"></div>
+    <div class="cell" id="f-turn-b"></div>
+  </div>
+  <div class="ro" id="f-turn-ro"></div>
+  
+</div>
+
+
+</details>
+
+
+<div class="fig">
+  
+  <div class="pair">
+    <div class="cell" id="f-regime-a"></div>
+    <div class="cell" id="f-regime-b"></div>
+  </div>
+  <div class="ctl" id="f-regime-ctl"></div>
+  <div class="ro" id="f-regime-ro"></div>
+  
+</div>
+
+
+
+<div class="fig" id="f-cube">
+  
+  <div class="pair">
+    <div class="cell stage" id="f-cube3-a"><div class="hud" style="line-height:1.4"><b style="color:var(--norm)">each axis ≤ 2,000</b><br><span style="color:var(--muted)">dashed: 2,000 total</span></div></div>
+    <div class="cell stage" id="f-cube3-b"></div>
+  </div>
+  <div class="ro" id="f-cube3-ro"></div>
+  
+</div>
+
+
+
+<div class="fig">
+  
+  <div class="full" id="f-fps"></div>
+  
+</div>
+
+
+
+<div class="fig">
+  
+  <div class="pair">
+    <div class="cell" id="f-bhop-a"></div>
+    <div class="cell" id="f-bhop-b"></div>
+  </div>
+  
+</div>
+
+
+</div>
+<script src="kit.js"></script><script src="nav.js"></script><script src="03-games.js"></script>
+<script src="04-pm.js"></script><script src="04-goldsrc.js"></script><script src="04-scenes.js"></script><script src="04-map.js"></script>
+
+</body></html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title><link rel="stylesheet" href="style.css">
+<style>.leg{display:flex;flex-wrap:wrap;gap:2px 14px;font-size:12px;color:var(--muted);margin-top:6px}.leg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.seg{display:inline-flex;border:1px solid var(--faint);border-radius:6px;overflow:hidden;flex-wrap:wrap}.seg button{border:0;border-radius:0;border-right:1px solid var(--faint)}.seg button:last-child{border-right:0}.seg button.on{background:var(--ink);color:#fff}
+.gl3{position:fixed;left:0;top:0;pointer-events:none;z-index:1}
+.stage.v3{background:transparent;touch-action:none}.stage.v3 .hud{z-index:2}
+.chips{display:flex;flex-wrap:wrap;gap:4px 6px;margin-top:8px}.chips button{font-size:12px;padding:1px 8px;display:inline-flex;align-items:center;gap:5px}.chips button i{width:9px;height:9px;border-radius:2px;display:inline-block}
+.chips button.on{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}.chips .d{color:var(--muted);font-variant-numeric:tabular-nums}
+.quad{display:grid;grid-template-columns:1fr 1fr;gap:18px 24px}@media (max-width:560px){.quad{grid-template-columns:1fr}}
+.hex{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px 18px}@media (max-width:560px){.hex{grid-template-columns:1fr 1fr}}
+.quad canvas,.hex canvas{width:100%;height:auto}
+.stage.v3 .fade{position:absolute;inset:0;background:#f7f7f9;opacity:0;pointer-events:none;z-index:3}
+#wr .ctl{flex-wrap:wrap;gap:6px 10px}
+html.wrpost #wr>.title,html.wrpost #wr>.ctl,html.wrpost #wr>.cap{display:none}
+html.bare .fig .title,html.bare .fig .cap,html.bare .fig .note,html.bare .fig .tag{display:none}</style></head>
+<body><script>new URLSearchParams(location.search).get("bare") === "1" && document.documentElement.classList.add("bare")</script><div class="container">
+<div class="nav" id="nav"></div>
+
+
+
+<div class="fig" id="wr"><div class="title"><span class="sub" id="v1sub"></span></div>
+<div class="stage v3" id="v1" style="aspect-ratio:697/440"><div class="hud" id="v1hud"></div></div>
+<div class="ctl"><span class="seg" id="v1map"></span><span class="seg" id="v1mode"><button data-m="eye" class="on">first person</button><button data-m="chase">chase</button><button data-m="orbit">orbit</button></span></div>
+</div>
+
+
+<div class="ctl" style="margin:18px 0 0"><span class="seg" id="mapsel"></span></div>
+
+<div class="fig"><div class="title"><span class="sub" id="v2sub"></span></div>
+<div class="stage v3" id="v2" style="aspect-ratio:697/400"><div class="hud" id="v2hud"></div></div>
+<div class="chips" id="v2chips"></div>
+</div>
+
+
+
+<div class="fig">
+<div class="quad" id="splits"></div>
+</div>
+
+
+<div class="fig"><div class="title"><span class="sub" id="spsub"></span></div>
+<div class="full" id="sp"></div>
+<div class="leg"><span><i style="background:var(--vel)"></i>speed</span><span><i style="background:var(--grav)"></i>height</span>
+ <span><i style="background:var(--gain)"></i>on a ramp</span><span><i style="background:var(--norm)"></i>booster</span><span><i style="background:var(--loss)"></i>speed cap</span><span><i style="background:#cfc8b8"></i>ground / jump</span><span><i style="background:var(--ink)"></i>teleport</span></div>
+</div>
+
+
+<div class="fig">
+<div class="quad" id="wf"></div>
+</div>
+
+
+<div class="fig"><div class="full" id="share"></div></div>
+
+
+<div class="fig">
+<div class="quad" id="ang"></div>
+</div>
+
+
+<div class="fig">
+<div class="quad" id="wr4"></div>
+</div>
+
+
+<div class="fig">
+<div class="hex" id="years"></div>
+<div class="leg"><span><i style="background:var(--ink)"></i>world record as archived (archive.org snapshot of the map's top 100)</span><span><i style="background:#fff;border:1.5px solid var(--vel);box-sizing:border-box"></i>fastest run of that year still on the board today; dashed: running best of those, an upper bound on the record</span></div>
+</div>
+
+
+
+</div>
+<script src="../../vendor/three.min.js"></script><script src="../../vendor/OrbitControls.js"></script>
+<script src="kit.js"></script><script src="nav.js"></script><script src="07-runs.js"></script>
+
+</body></html>

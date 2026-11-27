@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title><link rel="stylesheet" href="style.css">
+<style>
+  .stage .hud { z-index: 2; }
+  .stage.wide { aspect-ratio: 16 / 9; }
+  .stage.sq { aspect-ratio: 1 / 1; }
+  @media (max-width: 560px) { .stage.wide { aspect-ratio: 4 / 3; } }
+  /* in the blog on a phone, the hop figure is the map view and the chart: the from-above arrows panel is dropped */
+  @media (max-width: 599px) { html.embed .cell:has(> #q-hop-vec) { display: none; } }
+  .leg { display: flex; flex-wrap: wrap; gap: 2px 14px; font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .chartwrap { margin-top: 6px; }
+  .khud { position: absolute; right: 8px; top: 8px; z-index: 3; pointer-events: none; display: flex; flex-direction: column; align-items: center; gap: 3px;
+    background: rgba(255,255,255,0.8); border-radius: 6px; padding: 5px 6px 4px; }
+  .khud .krow { display: flex; gap: 3px; }
+  .khud i { font-style: normal; font-size: 11px; font-weight: 600; width: 20px; height: 20px; line-height: 20px; text-align: center; border-radius: 4px;
+    background: #fff; color: #b6b6c2; border: 1px solid var(--grid); }
+  .khud i.jump { width: 66px; font-size: 10px; font-weight: 500; }
+  .khud i.on { background: var(--wish); color: #fff; border-color: var(--wish); }
+  .khud .mouse { font-size: 10.5px; color: var(--muted); display: flex; gap: 4px; align-items: center; }
+  .khud .mouse b { color: var(--grid); font-size: 10px; } .khud .mouse b.on { color: var(--ink); }
+  .khud .inf { font-size: 9.5px; color: var(--muted); font-style: italic; }
+</style></head>
+<body><div class="container">
+<div class="nav" id="nav"></div>
+
+
+
+
+<div class="fig">
+  
+  <div class="stage wide" id="q-wr" data-og=""><div class="hud" id="q-wr-hud">loading…</div></div>
+  <div class="chartwrap" id="q-wr-chart"></div>
+  
+</div>
+
+
+
+<div class="fig">
+  
+  <div class="stage wide" id="q-ghosts" data-og=""><div class="hud" id="q-ghosts-hud">loading…</div></div>
+  <div class="leg" id="q-ghosts-leg"></div>
+  <div class="chartwrap" id="q-ghosts-chart"></div>
+  
+</div>
+
+
+
+<div class="fig">
+  
+  <div class="pair">
+    <div class="cell"><div class="stage sq" id="q-hop" data-og=""><div class="hud" id="q-hop-hud">loading…</div><div class="khud" id="q-hop-keys"><div class="krow"><i data-k="w">W</i></div><div class="krow"><i data-k="a">A</i><i data-k="s">S</i><i data-k="d">D</i></div><div class="krow"><i data-k="j" class="jump">jump</i></div></div></div></div>
+    <div class="cell"><div id="q-hop-vec"></div></div>
+  </div>
+  <div class="chartwrap" id="q-hop-chart"></div>
+  
+</div>
+
+<div class="fig">
+  
+  <div class="full" id="q-hop-all"></div>
+  <div class="cap"><b id="q-hop-all-n"></b></div>
+</div>
+
+
+
+<div class="fig">
+  
+  <div class="stage wide" id="q3-lane" data-og=""><div class="hud" id="q3-lane-hud">loading…</div></div>
+  <div class="chartwrap" id="q3-lane-chart"></div>
+  <div class="cap"><span id="q3-lane-n"></span></div>
+</div>
+
+
+</div>
+<script src="kit.js"></script><script src="nav.js"></script><script src="03-quake.js"></script>
+
+</body></html>
