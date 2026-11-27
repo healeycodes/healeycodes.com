@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title><link rel="stylesheet" href="style.css">
+<style>
+  .fig button.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .fig .ro { font-size: 12.5px; color: var(--ink); margin-top: 8px; min-height: 1.5em; font-variant-numeric: tabular-nums; }
+  .fig .ro b { font-weight: 600; }
+  html.bare .fig .ro { display: none; }   /* post embeds: no readout lines under figures */
+  .fig .cell .lab { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+  .fig .cell:has(> pre) { container-type: inline-size; }
+  .fig .cell pre { margin: 0; font-size: min(12.5px, 3.45cqi); line-height: 1.7; padding: 10px 6px 10px 10px; white-space: pre; }
+  .cv { color: var(--vel); } .cw { color: var(--wish); } .cg { color: var(--gain); } .cl { color: var(--loss); }
+  /* 3D stage tiles (stage.js draws them through one shared WebGL canvas) */
+  .s3 { width: 100%; aspect-ratio: 6 / 5; border-radius: 6px; background: var(--panel); overflow: hidden; margin-bottom: 8px; }
+  .s3 .hud { z-index: 3; }
+  #f-vel .s3 { aspect-ratio: 1 / 1; margin-bottom: 0; }   /* same height as the chart beside it */
+  .s3 .tagline { left: 10px; bottom: 8px; font-size: 11px; line-height: 1.35; color: var(--muted); pointer-events: none; }
+  .khud { right: 8px; top: 8px; pointer-events: none; display: flex; flex-direction: column; align-items: center; gap: 3px; }
+  .khud .krow { display: flex; gap: 3px; }
+  .khud i { font-style: normal; font-size: 11px; font-weight: 600; width: 20px; height: 20px; line-height: 20px; text-align: center; border-radius: 4px;
+    background: rgba(255,255,255,0.9); color: var(--faint); border: 1px solid var(--grid); }
+  .khud i.on { background: var(--wish); color: #fff; border-color: var(--wish); }
+  .khud .mouse { margin-top: 2px; font-size: 10.5px; color: var(--muted); background: rgba(255,255,255,0.9); border-radius: 4px; padding: 0 4px; display: flex; gap: 4px; align-items: center; }
+  .khud .mouse b { color: var(--grid); font-size: 10px; } .khud .mouse b.on { color: var(--wish); }
+</style></head>
+<body><div class="container">
+<div class="nav" id="nav"></div>
+
+
+
+
+<div class="fig" id="f-vel">
+  
+  <div class="pair">
+    <div class="cell"><div class="lab">holding W and steering with the mouse</div></div>
+    <div class="cell"><div class="lab">looking at velocity's length from above</div></div>
+  </div>
+  
+</div>
+
+
+
+<div class="fig" id="f-wish">
+  
+  <div class="pair">
+    <div class="cell"><div class="lab">W, W + D, D, then W while turning</div></div>
+    <div class="cell"><div class="lab">W + D</div></div>
+  </div>
+  
+</div>
+
+
+
+<div class="fig" id="f-acc">
+  
+  <div class="pair">
+    <div class="cell"><div class="lab">walking forwards and then letting go of W</div></div>
+    <div class="cell"><div class="lab">speed</div></div>
+  </div>
+  <div class="ro" id="acc-ro"></div>
+  
+</div>
+
+
+
+<div class="fig" id="f-dot">
+  
+  <div class="pair">
+    <div class="cell"><div class="lab">pale blue = v · ŵ ("done"), orange line = what is left of 250, orange arrow = push</div></div>
+    <div class="cell"><div class="lab">done vs left over time, and the push each tick</div></div>
+  </div>
+  
+  <div style="margin-top:10px"><pre>currentspeed = velocity · wishdir    <span class="cv">// done</span>
+addspeed     = wishspeed − currentspeed  <span class="cw">// left</span>
+if (addspeed &lt;= 0) return
+accelspeed   = accel · frametime · wishspeed
+if (accelspeed &gt; addspeed) accelspeed = addspeed
+velocity    += accelspeed · wishdir</pre>
+    
+  </div>
+</div>
+
+
+
+<div class="fig" id="f-fric">
+  
+  <div class="pair">
+    <div class="cell"><div class="lab">one red dot per tick: watch the gaps shrink</div></div>
+    <div class="cell"><div class="lab">speed removed on each tick</div></div>
+  </div>
+  
+  <div style="margin-top:10px"><pre>control  = max(speed, sv_stopspeed)   <span class="cl">// 75</span>
+drop     = control · sv_friction · frametime
+newspeed = max(0, speed − drop)
+velocity *= newspeed / speed  <span class="cl">// direction unchanged</span></pre>
+    
+  </div>
+</div>
+
+
+
+<div class="fig" id="f-top">
+  
+  <div class="pair">
+    <div class="cell"><div class="lab">from a standstill, holding W (arrows ×3)</div></div>
+    <div class="cell"><div class="lab">per tick: push available vs friction, at the speed you start the tick with</div></div>
+  </div>
+  <div class="ctl"><label>sv_accelerate <input id="top-acc" type="range" min="1" max="10" step="0.5" value="5"> <b id="top-accv" class="num">5</b></label>
+    <span id="top-ro" class="num"></span></div>
+  
+</div>
+
+
+
+<div class="fig" id="f-path">
+  
+  <div class="pair">
+    <div class="cell"><div class="lab">one dot per tick (grey line = the 66-tick path)</div></div>
+    <div class="cell"><div class="lab">speed</div></div>
+  </div>
+  <div class="ctl"><span>ticks per second</span><span id="path-rate"><button data-v="10">10</button><button data-v="33">33</button><button data-v="66" class="on">66</button><button data-v="100">100</button></span></div>
+  
+</div>
+
+
+
+<div class="fig" id="f-air">
+  
+  <div class="pair">
+    <div class="cell"><div class="lab">ground</div></div>
+    <div class="cell"><div class="lab">air</div></div>
+  </div>
+  <div class="ro" id="air-ro"></div>
+  
+  <div class="pair" style="margin-top:10px">
+    <div class="cell"><pre><span style="color:var(--muted)">// ground: Accelerate</span>
+room = wishspeed − v·ŵ        <span class="cw">// 250 − done</span>
+v    += min(5·wishspeed·dt, room)·ŵ
+<span style="color:var(--muted)">// + Friction every tick</span></pre></div>
+    <div class="cell"><pre><span style="color:var(--muted)">// air: AirAccelerate</span>
+room = min(wishspeed, 30) − v·ŵ <span class="cw">// 30 − done</span>
+v    += min(10·wishspeed·dt, room)·ŵ
+<span style="color:var(--muted)">// no friction</span></pre></div>
+  </div>
+</div>
+
+
+</div>
+<script src="kit.js"></script><script src="nav.js"></script><script src="../../vendor/three.min.js"></script><script src="../physics.js"></script><script src="stage.js"></script><script src="01-moving.js"></script>
+
+</body></html>

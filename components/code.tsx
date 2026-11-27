@@ -8,6 +8,7 @@ require("prismjs/components/prism-lisp")
 require("../lib/prism-fft2")
 require("../lib/prism-forth")
 require("../lib/prism-kernel")
+require("../lib/prism-goal-surf")
 require("../lib/prism-ts-with-defer")
 require("../lib/prism-ts-with-using")
 // --

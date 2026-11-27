@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title><link rel="stylesheet" href="style.css">
+<style>
+  .cv { width: 100%; }
+  .fig .out { font-size: 12.5px; color: var(--ink); margin-top: 8px; font-variant-numeric: tabular-nums; min-height: 1.4em; }
+  .fig .out b { font-weight: 600; }
+  .fig button.on { border-color: var(--ink); background: var(--ink); color: #fff; }
+  .fig label { display: inline-flex; align-items: center; gap: 6px; }
+  .fig input[type=range] { width: 150px; max-width: 42vw; }
+  .fig table.kt { border-collapse: collapse; width: 100%; font-size: 12.5px; font-variant-numeric: tabular-nums; }
+  .fig table.kt th { text-align: right; font-weight: 400; color: var(--muted); padding: 3px 6px; border-bottom: 1px solid var(--line); }
+  .fig table.kt td { text-align: right; padding: 5px 6px; border-bottom: 1px solid var(--line); }
+  .fig table.kt th:first-child, .fig table.kt td:first-child { text-align: left; }
+  .fig table.kt td.why { color: var(--muted); }
+  .kc { display: inline-block; min-width: 18px; text-align: center; border: 1px solid var(--faint); border-radius: 4px; padding: 0 4px; font-weight: 600; font-size: 12px; background: #fff; }
+  .k-vel { color: var(--vel); } .k-wish { color: var(--wish); } .k-gain { color: var(--gain); } .k-loss { color: var(--loss); }
+  .k-grav { color: var(--grav); } .k-norm { color: var(--norm); }
+  .key b { font-weight: 600; }
+  .rows { font-size: 12.5px; font-variant-numeric: tabular-nums; }
+  .rows div { display: flex; justify-content: space-between; gap: 10px; padding: 5px 0; border-bottom: 1px solid var(--line); }
+  .rows div span:first-child { color: var(--muted); }
+  .rows div span:last-child { text-align: right; }
+  .rows b.ok { color: var(--gain); } .rows b.bad { color: var(--loss); } .rows b.na { color: var(--muted); }
+  .stage.s3s { margin-top: 2px; }
+  .stage.s3s > canvas.s3 { position: absolute; inset: 0; width: 100%; height: 100%; cursor: grab; }
+  .stage.s3s .hud { z-index: 1; }
+  #curve-bars { position: absolute; left: 0; right: 0; bottom: 4px; z-index: 1; pointer-events: none; }   /* seam bars sit in the stage, under the ramp */
+  html.bare #curve-o3 { display: none; }
+  @media (max-width: 560px) { .stage.s3s { aspect-ratio: 4 / 3 !important; } }
+  .tag.measured { background: #e7f1ea; color: #2f6b42; }
+</style></head>
+<body><div class="container">
+<div class="nav" id="nav"></div>
+
+
+
+
+<div class="fig" id="f-keys">
+  
+  <div class="pair">
+    <div class="cell"><div class="cv" id="keys-a"></div></div>
+    <div class="cell">
+      <table class="kt" id="keys-t"></table>
+      <div class="ctl"><label>speed <input type="range" id="keys-sp" min="0" max="3500" step="10" value="1000"></label></div>
+    </div>
+  </div>
+  
+</div>
+
+
+
+<div class="fig" id="f-valve">
+  
+  <div class="stage s3s" id="valve-v" style="aspect-ratio:697/380"><div class="hud" id="valve-hud"></div></div>
+  <div class="pair" style="margin-top:14px">
+    <div class="cell"><div class="cv" id="valve-a"></div></div>
+    <div class="cell"><div class="cv" id="valve-b"></div></div>
+  </div>
+  <div class="out" id="valve-o"></div>
+  
+</div>
+
+
+
+<div class="fig" id="f-sf">
+  
+  <div class="pair">
+    <div class="cell"><div class="cv" id="sf-a"></div></div>
+    <div class="cell"><div class="cv" id="sf-b"></div></div>
+  </div>
+  
+</div>
+
+
+
+<div class="fig" id="f-boost3">
+  
+  <div class="stage s3s" id="boost-v" style="aspect-ratio:697/360"><div class="hud" id="boost-hud"></div></div>
+  
+</div>
+
+
+<div class="fig" id="f-boost">
+  
+  <div class="pair">
+    <div class="cell"><div class="cv" id="boost-a"></div>
+      <div class="ctl"><label>push speed <input type="range" id="boost-s" min="0" max="2500" step="5" value="705"></label></div>
+      <div class="out" id="boost-o"></div></div>
+    <div class="cell"><div class="cv" id="boost-b"></div></div>
+  </div>
+  <div class="full" style="margin-top:18px"><div class="cv" id="boost-c"></div></div>
+  
+</div>
+
+
+
+<div class="fig" id="f-angles">
+  
+  <div class="full"><div class="cv" id="angles-a"></div></div>
+  
+</div>
+
+
+
+<div class="fig" id="f-curve3">
+  
+  <div class="stage s3s" id="curve-v" style="aspect-ratio:697/380"><div class="hud" id="curve-hud"></div><div class="cv" id="curve-bars"></div></div>
+  <div class="out" id="curve-o3"></div>
+  
+</div>
+
+<div class="fig" id="f-curve3b">
+  
+  <div class="cv" id="curve-a" style="max-width:420px;margin:0 auto"></div>
+  <div class="out" id="curve-o" style="text-align:center"></div>
+  
+</div>
+
+
+
+<div class="fig" id="f-gap3">
+  
+  <div class="stage s3s" id="gap-v" style="aspect-ratio:697/400"><div class="hud" id="gap-hud"></div></div>
+  <div class="pair" style="margin-top:14px">
+    <div class="cell"><div class="cv" id="gap-a"></div>
+      <div class="ctl"><label>gap <input type="range" id="gap-l" min="250" max="2000" step="10" value="1000"></label></div>
+      <div class="out" id="gap-o"></div></div>
+    <div class="cell"><div class="out" id="gap-o3" style="margin-top:0"></div></div>
+  </div>
+  
+</div>
+
+
+
+
+<div class="fig" id="f-tiers">
+  
+  <div class="pair">
+    <div class="cell"><div class="cv" id="tiers-a"></div></div>
+    <div class="cell"><div class="cv" id="tiers-b"></div></div>
+  </div>
+  
+</div>
+
+
+
+<div class="fig" id="f-sync">
+  
+  <div class="pair">
+    <div class="cell"><div class="cv" id="sync-a"></div></div>
+    <div class="cell">
+      <div class="ctl" id="sync-k" style="margin-top:0">keys
+        <button data-f="0" data-s="-1" class="on">A</button><button data-f="0" data-s="1">D</button><button data-f="1" data-s="0">W</button>
+        <button data-f="-1" data-s="0">S</button><button data-f="1" data-s="-1">W+A</button><button data-f="1" data-s="1">W+D</button></div>
+      <div class="ctl"><label>mouse <input type="range" id="sync-y" min="-4" max="4" step="0.05" value="1.7"></label><span id="sync-yl" class="num"></span></div>
+      <div class="ctl"><label>speed <input type="range" id="sync-sp" min="300" max="3500" step="10" value="1000"></label><span id="sync-spl" class="num"></span></div>
+      <div class="rows" id="sync-o" style="margin-top:8px"></div>
+    </div>
+  </div>
+  <div class="ctl" id="sync-p">try
+    <button data-p="0">air strafe</button><button data-p="1">wrong key</button><button data-p="2">ramp: dive for speed</button>
+    <button data-p="3">ramp: carve up</button><button data-p="4">sideways</button><button data-p="5">backwards</button></div>
+  
+</div>
+
+
+
+<div class="fig" id="f-styles">
+  
+  <div class="full"><div class="cv" id="styles-a"></div></div>
+  
+</div>
+
+
+
+<div class="fig" id="f-var">
+  
+  <div class="full"><div class="cv" id="var-a"></div></div>
+  
+</div>
+
+
+
+
+
+</div>
+<script src="../../vendor/three.min.js"></script>
+<script src="kit.js"></script><script src="nav.js"></script><script src="08-craft.js"></script>
+
+</body></html>

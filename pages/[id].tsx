@@ -20,6 +20,7 @@ import { Fibonacci, HelloWorld, Ladder } from "../components/visuals/icepath/com
 import { Compiler, Tokenizer, VM } from "../components/visuals/forth/components";
 import { Easy16thOct25Solver, Medium14thOct25Solver, Hard16thOct25Solver } from "../components/visuals/pips/components";
 import { SokobanVisual } from "../components/visuals/sokoban/components";
+import { SurfVisual } from "../components/visuals/surf/components";
 
 const isVideo = /\.mp4$/;
 
@@ -219,6 +220,8 @@ export default function Post({
                 }
               } else if (type === "div" && props.className === "sokoban") {
                 return <SokobanVisual key={props.id} id={props.id} />
+              } else if (type === "div" && props.className === "surf") {
+                return <SurfVisual key={props.id} id={props.id} caption={props.caption} />
               }
               return React.createElement(type, props, children);
             },

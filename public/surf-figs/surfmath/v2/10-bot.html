@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title><link rel="stylesheet" href="style.css">
+<style>
+  .leg { display: flex; flex-wrap: wrap; gap: 2px 14px; font-size: 12px; color: var(--muted); margin-top: 6px; }
+  html.bare #f-search .leg { display: none; }
+  .leg i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+  .seg { display: inline-flex; border: 1px solid var(--faint); border-radius: 6px; overflow: hidden; }
+  .seg button { border: 0; border-radius: 0; border-right: 1px solid var(--faint); }
+  .seg button:last-child { border-right: 0; } .seg button.on { background: var(--ink); color: #fff; }
+  .fig .out { font-size: 12.5px; margin-top: 8px; font-variant-numeric: tabular-nums; }
+  .stage.s3s > canvas.s3 { position: absolute; inset: 0; width: 100%; height: 100%; cursor: grab; }
+  .stage.s3s .hud { z-index: 1; }
+  @media (max-width: 560px) { .stage.s3s { aspect-ratio: 4 / 3 !important; } }
+  .tag.measured { background: #e7f1ea; color: #2f6b42; }
+  details.more { margin: 28px 0 40px; font-size: 13px; line-height: 1.5; color: var(--ink); }
+  details.more summary { cursor: pointer; font-weight: 600; }
+  details.more h4 { margin: 14px 0 4px; font-size: 13px; }
+  details.more p { margin: 0 0 8px; }
+</style></head>
+<body><div class="container">
+<div class="nav" id="nav"></div>
+
+
+
+
+<div class="fig" id="f-leet">
+  
+  <div class="stage s3s" id="leet-v" style="aspect-ratio:697/420"><div class="hud" id="leet-hud"></div></div>
+  
+</div>
+
+
+<div class="fig" id="f-search">
+  
+  <div class="stage s3s" id="sec-v" style="aspect-ratio:697/420"><div class="hud" id="sec-hud"></div></div>
+  <div class="full" id="sec-top" style="margin-top:2px"></div>
+  <div class="leg"><span><i style="background:#f4f4f7;border:1px solid var(--muted)"></i>trying</span><span><i style="background:var(--vel)"></i>kept</span><span><i style="background:#9a9aab"></i>ranked out</span><span><i style="background:var(--loss)"></i>died</span><span><i style="background:var(--gain)"></i>made it</span></div>
+  
+</div>
+<div class="fig" id="f-fork">
+  
+  <div class="full" id="fork"></div>
+  
+</div>
+<div class="fig" id="f-code">
+  
+<pre># an exact game state from the finished run
+start = replay(finished_run, ticks=715)
+beam = [start]
+every 20 ticks:
+    tries = []
+    for state in beam:
+        for heading in 6 near the velocity:
+            tries.add(state, strafe to heading)
+        sometimes:
+            tries.add(state, brake 1 tick, strafe)
+
+    # 4 servers * 30 puppets (in parallel):
+    # restore, play 20 ticks, read every tick
+    results = run_on_puppets(tries)
+
+    alive = []
+    for t in results:
+        if t hit a kill plane: continue
+        if t took 100 fall damage: continue
+        if t went through the door:
+            return t.inputs
+        alive.add(t.end)
+
+    score(s) = -distance_to_go(s)
+               + 2 * horizontal_speed(s)
+               + speed_along_route(s)
+               + 0.2 * (z(s) + speed(s)^2 / 1600)
+    beam = best 40 of alive, one per cell
+
+# then: replay start + inputs in real time
+</pre>
+  
+</div>
+<div class="fig" id="f-sfates">
+  
+  <div class="full" id="sfates"></div>
+  <div class="leg"><span><i style="background:var(--gain)"></i>made it</span><span><i style="background:var(--vel)"></i>kept (≤ 40)</span><span><i style="background:#b9b9c6"></i>ranked out</span><span><i style="background:var(--loss)"></i>died</span></div>
+  
+</div>
+<div class="fig" id="f-tasin">
+  
+  <div class="full" id="tasin"></div>
+  
+</div>
+<div class="fig" id="f-width">
+  
+  <div class="full" id="width"></div>
+  
+</div>
+<div class="fig" id="f-restore">
+  
+  <div class="full" id="restore"></div>
+  
+</div>
+<div class="fig" id="f-origin">
+  
+  <div class="full" id="origin"></div>
+  
+</div>
+
+
+<div class="fig" id="f-inputs">
+  
+  <div class="pair"><div class="cell" id="inputs"></div>
+    <div class="cell" style="font-size:12.5px;line-height:1.45">
+      
+      
+      
+    </div></div>
+  
+</div>
+<div class="fig" id="f-fan">
+  
+  <div class="stage s3s" id="fan-v" style="aspect-ratio:697/420"><div class="hud" id="fan-hud"></div></div>
+  <div class="full" id="fan-top" style="margin-top:6px"></div>
+  <div class="leg"><span><i style="background:#f4f4f7;border:1px solid var(--muted)"></i>trying</span><span><i style="background:var(--vel)"></i>kept</span><span><i style="background:#9a9aab"></i>ranked out</span><span><i style="background:var(--loss)"></i>died</span><span><i style="background:var(--gain)"></i>made it</span><span><i style="background:var(--wish)"></i>an earlier full-stage run</span></div>
+  
+</div>
+<div class="fig" id="f-fates">
+  
+  <div class="full" id="fates"></div>
+  <div class="leg"><span><i style="background:var(--gain)"></i>made it</span><span><i style="background:var(--vel)"></i>kept (≤ 80)</span><span><i style="background:#b9b9c6"></i>ranked out</span><span><i style="background:#dedee6"></i>pruned</span><span><i style="background:var(--loss)"></i>fail teleport</span></div>
+  
+</div>
+<div class="fig" id="f-sp"><div class="pair">
+ <div class="cell" id="sp0"></div><div class="cell" id="sp1"></div></div>
+ <div class="leg"><span><i style="background:var(--vel)"></i>speed</span><span><i style="background:var(--faint)"></i>speed if every unit of height lost became speed</span>
+ <span><i style="background:var(--gain)"></i>on a ramp</span><span><i style="background:var(--norm)"></i>booster</span><span><i style="background:var(--loss)"></i>edgebug</span><span><i style="background:var(--grav)"></i>jump</span><span><i style="background:#cfc8b8"></i>on the ground</span></div>
+ </div>
+<div class="fig" id="f-share"><div class="full" id="share"></div>
+</div>
+
+
+<div class="fig" id="f-yaw">
+<div class="full" id="yawrate"></div>
+<div class="out" id="yawrate-o"></div>
+</div>
+<div class="fig" id="f-wrcmp">
+<div class="full" id="wrcmp"></div>
+</div>
+<div class="fig" id="f-v3">
+<div class="stage s3s" id="v3" style="aspect-ratio:697/440"><div class="hud" id="v3hud"></div></div>
+<div class="ctl"><span class="seg" id="v3mode"><button data-m="orbit" class="on">orbit</button><button data-m="chase">chase</button><button data-m="eye">first person</button></span>
+<button id="v3who">camera on: our run</button><button id="v3play">pause</button><input type="range" id="v3t" min="0" max="852" value="0" style="flex:1;min-width:120px"></div>
+</div>
+
+
+</div>
+<script src="../../vendor/three.min.js"></script>
+<script src="kit.js"></script><script src="nav.js"></script><script src="10-bot.js"></script>
+
+</body></html>
