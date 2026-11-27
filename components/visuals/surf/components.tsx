@@ -11,7 +11,7 @@ import React, { useEffect, useRef, useState } from 'react';
 const BASE = '/surf-figs/surfmath/v2/';
 
 export const SURF_FIGS: Record<string, { src: string; h: number; m: number }> = {
-    fig1: { src: '07-runs.html?fig=wr&post=1&bare=1', h: 456, m: 245 },
+    fig1: { src: '07-runs.html?fig=wr&post=1&bare=1&notouch=1', h: 456, m: 245 },
     fig2: { src: '01-moving.html?fig=f-vel&bare=1', h: 374, m: 806 },
     fig3: { src: '01-moving.html?fig=f-acc&bare=1', h: 327, m: 692 },
     fig4: { src: '01-moving.html?fig=f-air&bare=1', h: 627, m: 1329 },
@@ -34,7 +34,7 @@ export const SURF_FIGS: Record<string, { src: string; h: number; m: number }> = 
     fig21: { src: '10-bot.html?fig=f-tasin&bare=1', h: 235, m: 300 },
     fig22: { src: '10-bot.html?fig=f-fork&bare=1&notouch=1', h: 346, m: 477 },
     fig23: { src: '10-bot.html?fig=f-code&bare=1', h: 626, m: 900 },
-    fig24: { src: '10-bot.html?fig=f-search&bare=1', h: 528, m: 351 },
+    fig24: { src: '10-bot.html?fig=f-search&bare=1&notouch=1', h: 528, m: 351 },
     fig25: { src: '06-maps.html?fig=f-pipeline&bare=1', h: 464, m: 300 },
 };
 
