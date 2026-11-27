@@ -17,7 +17,7 @@ export const SURF_FIGS: Record<string, { src: string; h: number; m: number }> = 
     fig4: { src: '01-moving.html?fig=f-air&bare=1', h: 627, m: 1329 },
     fig5: { src: '02-air.html?fig=f-code&bare=1', h: 217, m: 466 },
     fig6: { src: '02-air.html?fig=f-spiral&bare=1', h: 318, m: 685 },
-    fig7: { src: '05-ramps.html?fig=f1&bare=1', h: 286, m: 540 },
+    fig7: { src: '05-ramps.html?fig=f1&bare=1', h: 286, m: 493 },
     fig8: { src: '05-ramps.html?fig=f2&bare=1', h: 327, m: 661 },
     fig9: { src: '05-ramps.html?fig=fB&bare=1', h: 446, m: 316 },
     fig10: { src: '05-ramps.html?fig=f-transfer&bare=1', h: 399, m: 282 },
@@ -26,13 +26,13 @@ export const SURF_FIGS: Record<string, { src: string; h: number; m: number }> = 
     fig13: { src: '08-craft.html?fig=f-curve3&bare=1', h: 398, m: 290 },
     fig14: { src: '08-craft.html?fig=f-boost3&bare=1', h: 378, m: 290 },
     fig15: { src: '04-goldsrc.html?fig=f-cube&cap=3500&bare=1', h: 346, m: 750 },
-    fig16: { src: '03-quake.html?fig=1&bare=1', h: 565, m: 444 },
-    fig17: { src: '03-quake.html?fig=2&bare=1', h: 606, m: 504 },
-    fig18: { src: '03-quake.html?fig=3&bare=1', h: 499, m: 848 },
+    fig16: { src: '03-quake.html?fig=1&bare=1&notouch=1', h: 565, m: 444 },
+    fig17: { src: '03-quake.html?fig=2&bare=1&notouch=1', h: 606, m: 504 },
+    fig18: { src: '03-quake.html?fig=3&bare=1&notouch=1', h: 499, m: 524 },
     fig19: { src: '03-games.html?fig=1&bare=1', h: 398, m: 420 },
     fig20: { src: '10-bot.html?fig=f-leet&bare=1', h: 436, m: 288 },
     fig21: { src: '10-bot.html?fig=f-tasin&bare=1', h: 235, m: 300 },
-    fig22: { src: '10-bot.html?fig=f-fork&bare=1', h: 346, m: 477 },
+    fig22: { src: '10-bot.html?fig=f-fork&bare=1&notouch=1', h: 346, m: 477 },
     fig23: { src: '10-bot.html?fig=f-code&bare=1', h: 626, m: 900 },
     fig24: { src: '10-bot.html?fig=f-search&bare=1', h: 528, m: 351 },
     fig25: { src: '06-maps.html?fig=f-pipeline&bare=1', h: 464, m: 300 },
@@ -64,7 +64,7 @@ export function SurfVisual({ id, caption }: { id: string; caption?: string }) {
     if (!fig) return null;
     return (
         <div style={{ margin: '28px 0' }}>
-        <div ref={wrap} className="surf-fig" style={{ height, background: '#f7f7f9', borderRadius: 6, overflow: 'hidden' }}>
+        <div ref={wrap} className="surf-fig" style={{ height: caption ? height - 8 : height, background: '#f7f7f9', borderRadius: 6, overflow: 'hidden' }}>
             {live ? (
                 <iframe
                     ref={frame}
@@ -76,7 +76,8 @@ export function SurfVisual({ id, caption }: { id: string; caption?: string }) {
                 />
             ) : null}
         </div>
-        {caption ? <p style={{ fontSize: 14, lineHeight: 1.5, color: 'var(--light-text)', margin: '-8px 0 0' }}>{caption}</p> : null}
+        {/* the frame above is 8px shorter (only empty space is cut) so the caption sits close without overlapping the iframe, which phones draw on top */}
+        {caption ? <p style={{ fontSize: 14, lineHeight: 1.5, color: 'var(--light-text)', margin: 0 }}>{caption}</p> : null}
         </div>
     );
 }
